@@ -1,0 +1,17 @@
+<%
+  infoHtml = @settingsRec.infoFlashHtml rescue nil
+  if(infoHtml.to_s =~ /\S/)
+%>
+
+  <div class="container-fluid">
+    <div class="row row-pad">
+      <div class="col-xs-12">
+        <div class="alert alert-info alert-dismissible" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <%= infoHtml.html_safe %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

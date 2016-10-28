@@ -1,0 +1,17 @@
+[
+  {
+    "name" : "search",
+    "icon": "fa fa-search",
+    "title" : "Apply filters"
+  },
+  {
+    "name" : "add",
+    "icon": "fa fa-plus-circle",
+    "title" : "Select All"
+  },
+  {
+    "name" : "delete",
+    "icon": "fa fa-times-circle",
+    "title" : "Clear Selections"
+  }
+]

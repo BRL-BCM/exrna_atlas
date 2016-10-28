@@ -1,0 +1,23 @@
+<ul id="newsLinksListShort" class="unstyledList">
+<% if news.nil? %>
+  <% # @todo should just internal server error instead %>
+  <h3>Unable to load news</h3>
+<% else %>
+  <% # @todo this is the short form %>
+  <% news[0...5].each do |newsItem| %>
+    <li class="samplesNews">
+      <% if newsItem['type'] == 'new-samples' %>
+        <i class="fa fa-book"></i>
+      <% else %>
+        <i class="fa fa-plus-square"></i>
+      <% end %>
+      <%= newsItem['title'] %>.
+      <% if !newsItem['pmid'].nil? %>
+        <a href=<%="http://www.ncbi.nlm.nih.gov/pubmed/#{newsItem['pmid']}"%> target="_blank">Pubmed</a>
+      <% end %>
+      <span class="news">(<%=newsItem['date']%>)</span></li>
+    </li>
+  <% end %>
+  <a href=<%="#{@relLinkBase}news"%>>More...</a>
+<% end %>
+</ul>

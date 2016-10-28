@@ -1,0 +1,12 @@
+{
+  "sampleSummaryConf": "sampleSummaryFiles.json",
+  "dataSummaryConf": "nonFilter.1D.files.json",
+  "donutConf": "conf.json",
+  "linearConf": "lt_conf.json",
+  "linearTreeSummaryConf" : "linearTree.json",
+  "filterMenu": "filterMenu.json",
+  "sbfilterMenu": "sbFilterMenu.json",
+  "barConf": "barConf.json",
+  "totalReadsConf": "totalInputReadsconf.json",  
+  "studiesProfileConf": "studiesProfileConf.json"  
+}

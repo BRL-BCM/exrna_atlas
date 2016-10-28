@@ -1,0 +1,2719 @@
+/* ------------------------------------------
+PURE CSS GUI ICONS
+by Nicolas Gallagher
+- http://nicolasgallagher.com/pure-css-gui-icons/
+
+http://nicolasgallagher.com
+http://twitter.com/necolas
+
+Created: 29 July 2010
+Version: 1.0.1
+
+Dual licensed under MIT and GNU GPLv2 Nicolas Gallagher
+------------------------------------------ */
+
+/*
+Yes, this file is big.
+No, this won't work in IE.
+
+Some icons could be produced with fewer pseudo-elements and
+still work in Opera...if Opera didn't have a buggy
+implementation of background-clip
+*/
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== GENERAL STYLES
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+html, body                             {padding:0; margin:0; font:1em/1.4 Cambria, Georgia, sans-serif; color:#333; background:#fff;}
+header, hgroup                         {display:block;}
+
+.floatMenu-ng a:link, a:visited                      {border-bottom:1px solid rgba(0,0,0,0.25); color:rgba(0,0,0,0.25); text-decoration:none;}
+.floatMenu-ng a:visited                              {border-bottom:1px solid rgb(225, 112, 10); color:rgb(225, 112, 10);}
+.floatMenu-ng a:hover, a:focus, a:active             {border:0; color:#D5D5D5; background:#D5D5D5;}
+
+.floatMenu-ng .container                             {width:540px; overflow:hidden; padding:0 0 10px; margin:0 auto 40px;}
+.floatMenu-ng .header                                {border-bottom:1px solid #ddd;}
+.floatMenu-ng .footer                                {padding:0 0 30px; margin-top:20px; margin-bottom:0; text-align:center;}
+
+.floatMenu-ng .section                               {float:left; width:30%; margin-left:4.9%;}
+.floatMenu-ng h2 + .section                          {margin-left:0;}
+
+.floatMenu-ng h1                                     {margin:1em 0 0; font-size:2.5em; font-weight:normal; line-height:1.2; text-align:center;}
+.floatMenu-ng h2                                     {margin:0.5em 0 1.5em; font-size:1.25em; font-weight:normal; font-style:italic; text-align:center;}
+.floatMenu-ng p                                      {margin:1em 0; line-height:1.4em;}
+
+.floatMenu-ng pre                                    {margin:1.4em 0; font-size:12px; line-height:1.4em; white-space:pre-wrap; word-wrap:break-word;}
+
+.floatMenu-ng .follow                                {clear:both; margin-top:1em;}
+.floatMenu-ng .follow span                           {font-weight:bold;}
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== ICONS STYLES
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng ul {
+    padding:0;
+    margin:0;
+}
+
+.floatMenu-ng li {
+    position:relative;
+    z-index:1;
+    overflow:hidden;
+    list-style:none;
+    padding:0;
+    /* margin:0 0 0.25em; */
+}
+
+.floatMenu-ng li a:link,
+.floatMenu-ng li a:visited {
+    display:block;
+    border:0;
+    padding-left:28px;
+    color: rgba(0,0,0,0.25);
+}
+
+.floatMenu-ng li a:hover,
+.floatMenu-ng li a:focus,
+.floatMenu-ng li a:active {
+    color: rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng li:before,
+.floatMenu-ng li:after,
+.floatMenu-ng li a:before,
+.floatMenu-ng li a:after {
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+}
+
+.floatMenu-ng li a:before,
+.floatMenu-ng li a:after {
+    margin:-8px 0 0;
+    background:#D5D5D5;
+}
+
+.floatMenu-ng li a:hover:before,
+.floatMenu-ng li a:focus:before,
+.floatMenu-ng li a:active:before {
+    background:rgb(225, 112, 10);
+}
+
+/* Not links */
+
+.floatMenu-ng .player,
+.floatMenu-ng .headphones,
+.floatMenu-ng .ribbon,
+.floatMenu-ng .views,
+.floatMenu-ng .location,
+.floatMenu-ng .info,
+.floatMenu-ng .help,
+.floatMenu-ng .pie,
+.floatMenu-ng .success,
+.floatMenu-ng .success-alt,
+.floatMenu-ng .warning,
+.floatMenu-ng .denied {
+    padding-left:28px;
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== USER INTERACTIONS
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+/* SEARCH
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .search a:before {
+    width:6px;
+    height:6px;
+    border:3px solid #D5D5D5;
+    background:transparent;
+    /* css3 */
+    -webkit-border-radius:12px;
+    -moz-border-radius:12px;
+    border-radius:12px;
+}
+
+.floatMenu-ng .search a:after {
+    left:10px;
+    width:3px;
+    height:7px;
+    margin-top:0;
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .search a:hover:before,
+.floatMenu-ng .search a:focus:before,
+.floatMenu-ng .search a:active:before {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .search a:hover:after,
+.floatMenu-ng .search a:focus:after,
+.floatMenu-ng .search a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* COMMENT
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .comment a:before {
+    width:16px;
+    height:10px;
+    margin-top:-8px;
+    /* css3 */
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+}
+
+.floatMenu-ng .comment a:after {
+    left:8px;
+    border:2px solid transparent;
+    border-top-color:#D5D5D5;
+    border-left-color:#D5D5D5;
+    margin-top:2px;
+    background:transparent;
+}
+
+.floatMenu-ng .comment a:hover:after,
+.floatMenu-ng .comment a:focus:after,
+.floatMenu-ng .comment a:active:after {
+    border-top-color:rgb(225, 112, 10);
+    border-left-color:rgb(225, 112, 10);
+}
+
+/* LIKE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .like a:before,
+.floatMenu-ng .like a:after {
+    width:14px;
+    height:9px;
+    margin-top:-6px;
+    background:#D5D5D5;
+    /* css3 */
+    -webkit-border-top-left-radius:8px;
+    -webkit-border-bottom-left-radius:8px;
+    -moz-border-radius:6px 0 0 6px;
+    border-radius:6px 0 0 6px;
+    -webkit-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .like a:after {
+    left:4px;
+    /* css3 */
+    -webkit-transform:rotate(135deg);
+    -moz-transform:rotate(135deg);
+    -ms-transform:rotate(135deg);
+    -o-transform:rotate(135deg);
+    transform:rotate(135deg);
+}
+
+.floatMenu-ng .like a:hover:after,
+.floatMenu-ng .like a:focus:after,
+.floatMenu-ng .like a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+
+/* ADD
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .add a:before {
+    width:16px;
+    height:16px;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .add a:after {
+    left:3px;
+    width:10px;
+    height:2px;
+    margin-top:-1px;
+    background:#fff;
+}
+
+.floatMenu-ng .add:before {
+    z-index:10;
+    left:7px;
+    width:2px;
+    height:10px;
+    margin-top:-5px;
+    background:#fff;
+}
+
+/* Alternative style */
+
+.floatMenu-ng .add-alt a:before {
+    left:6px;
+    width:5px;
+    height:15px;
+    margin-top:-7px;
+    background:#D5D5D5;
+}
+
+.floatMenu-ng .add-alt a:after {
+    left:1px;
+    width:15px;
+    height:5px;
+    margin-top:-2px;
+    background:#D5D5D5;
+}
+
+.floatMenu-ng .add-alt a:hover:after,
+.floatMenu-ng .add-alt a:focus:after,
+.floatMenu-ng .add-alt a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* REMOVE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .remove a:before {
+    width:16px;
+    height:16px;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .remove a:after {
+    left:3px;
+    width:10px;
+    height:2px;
+    margin-top:-1px;
+    background:#fff;
+}
+
+/* Alternative style */
+
+.floatMenu-ng .remove-alt a:before {
+    left:1px;
+    width:15px;
+    height:5px;
+    margin-top:-2px;
+    background:#D5D5D5;
+}
+
+/* DELETE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .delete a:before {
+    width:16px;
+    height:16px;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .delete a:after {
+    left:3px;
+    width:10px;
+    height:2px;
+    margin-top:-1px;
+    background:#fff;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .delete:before {
+    z-index:10;
+    left:7px;
+    width:2px;
+    height:10px;
+    margin-top:-5px;
+    background:#fff;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+/* Alternative style */
+
+.floatMenu-ng .delete-alt a:before,
+.floatMenu-ng .delete-alt a:after {
+    left:6px;
+    width:5px;
+    height:15px;
+    margin-top:-7px;
+    background:#D5D5D5;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .delete-alt a:after {
+    left:1px;
+    width:15px;
+    height:5px;
+    margin-top:-2px;
+}
+
+.floatMenu-ng .delete-alt a:hover:after,
+.floatMenu-ng .delete-alt a:focus:after,
+.floatMenu-ng .delete-alt a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* REPORT
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .report a:before {
+    left:3px;
+    width:7px;
+    height:7px;
+    margin-top:-5px;
+    border-width:7px 0 0 2px;
+    border-style:solid;
+    border-color:#D5D5D5;
+    background:transparent;
+    /* css3 */
+    -webkit-transform:skewY(-8deg);
+    -moz-transform:skewY(-8deg);
+    -ms-transform:skewY(-8deg);
+    -o-transform:skewY(-8deg);
+    transform:skewY(-8deg);
+}
+
+.floatMenu-ng .report a:after {
+    left:9px;
+    width:6px;
+    height:7px;
+    margin-top:-3px;
+    background:#D5D5D5;
+    /* css3 */
+    -webkit-transform:skewY(-6deg);
+    -moz-transform:skewY(-6deg);
+    -ms-transform:skewY(-6deg);
+    -o-transform:skewY(-6deg);
+    transform:skewY(-6deg);
+}
+
+.floatMenu-ng .report a:hover:before,
+.floatMenu-ng .report a:focus:before,
+.floatMenu-ng .report a:active:before {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .report a:hover:after,
+.floatMenu-ng .report a:focus:after,
+.floatMenu-ng .report a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* TRASH
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .trash:after {
+    left:6px;
+    width:1px;
+    height:7px;
+    border-right:3px double #D5D5D5;
+    border-left:1px solid #D5D5D5;
+    margin-top:-2px;
+}
+
+.floatMenu-ng .trash a:before {
+    left:2px;
+    width:9px;
+    height:11px;
+    margin-top:-6px;
+    border:2px solid #D5D5D5;
+    background:transparent;
+}
+
+.floatMenu-ng .trash a:after {
+    left:5px;
+    width:3px;
+    height:2px;
+    margin-top:-9px;
+    border:2px solid #D5D5D5;
+    border-bottom:0;
+    background:transparent;
+    /* css3 */
+    -webkit-border-top-left-radius:2px;
+    -webkit-border-top-right-radius:2px;
+    -moz-border-radius:2px 2px 0 0;
+    border-radius:2px 2px 0 0;
+}
+
+.floatMenu-ng .trash:hover:after,
+.floatMenu-ng .trash a:hover:before,
+.floatMenu-ng .trash a:focus:before,
+.floatMenu-ng .trash a:active:before,
+.floatMenu-ng .trash a:hover:after,
+.floatMenu-ng .trash a:focus:after,
+.floatMenu-ng .trash a:active:after {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+/* LOCK / UNLOCK
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .lock:before,
+.floatMenu-ng .lock:after,
+.floatMenu-ng .unlock:before,
+.floatMenu-ng .unlock:after {
+    z-index:10;
+    left:8px;
+    width:3px;
+    height:3px;
+    margin-top:-2px;
+    background:#fff;
+    /* css3 */
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+
+.floatMenu-ng .lock:before,
+.floatMenu-ng .unlock:before {
+    left:9px;
+    width:1px;
+    height:4px;
+    margin-top:0px;
+}
+
+.floatMenu-ng .lock a:before,
+.floatMenu-ng .unlock a:before {
+    left:3px;
+    width:13px;
+    height:10px;
+    margin-top:-4px;
+}
+
+.floatMenu-ng .lock a:after,
+.floatMenu-ng .unlock a:after {
+    left:5px;
+    width:5px;
+    height:5px;
+    border:2px solid #D5D5D5;
+    border-bottom:0;
+    margin-top:-11px;
+    background:transparent;
+    /* css3 */
+    -webkit-border-radius:5px 5px 0 0;
+    -moz-border-radius:5px 5px 0 0;
+    border-radius:5px 5px 0 0;
+}
+
+.floatMenu-ng .unlock a:after {
+    left:12px;
+}
+
+.floatMenu-ng .lock a:hover:after,
+.floatMenu-ng .lock a:focus:after,
+.floatMenu-ng .lock a:active:after,
+.floatMenu-ng .unlock a:hover:after,
+.floatMenu-ng .unlock a:focus:after,
+.floatMenu-ng .unlock a:active:after {
+    border-color:rgb(225, 112, 10);
+}
+
+/* UPDATE STATUS
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .update:before {
+    left:10px;
+    border-width:2px 0 2px 2px;
+    border-style:solid;
+    border-color:transparent #D5D5D5;
+    margin-top:-1px;
+}
+
+.floatMenu-ng .update a:before {
+    left:4px;
+    width:10px;
+    height:10px;
+    border:2px solid #D5D5D5;
+    margin-top:-6px;
+    background:transparent;
+    /* css3 */
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+
+.floatMenu-ng .update a:after {
+    left:10px;
+    width:10px;
+    height:3px;
+    border:1px solid #fff;
+    margin-top:-6px;
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .update:hover:before {
+    border-left-color:rgb(225, 112, 10);
+}
+
+.floatMenu-ng .update a:hover:before,
+.floatMenu-ng .update a:focus:before,
+.floatMenu-ng .update a:active:before {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .update a:hover:after,
+.floatMenu-ng .update a:focus:after,
+.floatMenu-ng .update a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* RETWEET
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .retweet:before,
+.floatMenu-ng .retweet a:before {
+    border-style:solid;
+    border-color:transparent;
+    background:transparent;
+}
+
+.floatMenu-ng .retweet:before {
+    z-index:-1;
+    left:12px;
+    margin-top:2px;
+    border-width:5px 5px 0;
+    border-left-color:#fff;
+    border-top-color:#D5D5D5;
+}
+
+.floatMenu-ng .retweet a:before {
+    left:-1px;
+    margin-top:-7px;
+    border-width:0 5px 5px;
+    border-right-color:#fff;
+    border-bottom-color:#D5D5D5;
+}
+
+.floatMenu-ng .retweet a:after {
+    z-index:-2;
+    left:3px;
+    width:10px;
+    height:6px;
+    margin-top:-6px;
+    border:3px solid #D5D5D5;
+    background:transparent;
+}
+
+.floatMenu-ng .retweet:hover:before {
+    border-top-color:rgb(225, 112, 10);
+}
+
+.floatMenu-ng .retweet a:hover:before,
+.floatMenu-ng .retweet a:focus:before,
+.floatMenu-ng .retweet a:active:before {
+    border-bottom-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .retweet a:hover:after,
+.floatMenu-ng .retweet a:focus:after,
+.floatMenu-ng .retweet a:active:after {
+    border-color:rgb(225, 112, 10);
+}
+
+/* SAVE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .save:before,
+.floatMenu-ng .save a:before {
+    left:6px;
+    border-width:10px 0 10px 8px;
+    border-style:solid;
+    border-color:transparent #D5D5D5;
+    margin-top:-9px;
+    background:transparent;
+    /* css3 */
+    -webkit-transform:rotate(22.5deg);
+    -moz-transform:rotate(22.5deg);
+    -ms-transform:rotate(22.5deg);
+    -o-transform:rotate(22.5deg);
+    transform:rotate(22.5deg);
+}
+
+.floatMenu-ng .save a:before {
+    left:6px;
+    /* css3 */
+    -webkit-transform:rotate(157.5deg);
+    -moz-transform:rotate(157.5deg);
+    -ms-transform:rotate(157.5deg);
+    -o-transform:rotate(157.5deg);
+    transform:rotate(157.5deg);
+}
+
+.floatMenu-ng .save a:after {
+    border-width:8px 10px 0;
+    border-style:solid;
+    border-color:#D5D5D5 transparent;
+    margin-top:-3px;
+    background:transparent;
+}
+
+.floatMenu-ng .save:hover:before,
+.floatMenu-ng .save:focus:before,
+.floatMenu-ng .save:active:before,
+.floatMenu-ng .save a:hover:before,
+.floatMenu-ng .save a:focus:before,
+.floatMenu-ng .save a:active:before {
+    border-left-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .save a:hover:after,
+.floatMenu-ng .save a:focus:after,
+.floatMenu-ng .save a:active:after {
+    border-top-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+/* EDIT
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .edit a:before {
+    left:3px;
+    width:5px;
+    height:5px;
+    margin-top:2px;
+    background:#D5D5D5;
+    -webkit-transform:skew(-10deg, -10deg);
+    -moz-transform:skew(-10deg, -10deg);
+    -ms-transform:skew(-10deg, -10deg);
+    -o-transform:skew(-10deg, -10deg);
+    transform:skew(-10deg, -10deg);
+}
+
+.floatMenu-ng .edit a:after {
+    left:3px;
+    width:13px;
+    height:6px;
+    border-left:1px solid #fff;
+    margin-top:-3px;
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .edit a:hover:before,
+.floatMenu-ng .edit a:focus:before,
+.floatMenu-ng .edit a:active:before,
+.floatMenu-ng .edit a:hover:after,
+.floatMenu-ng .edit a:focus:after,
+.floatMenu-ng .edit a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* DOWNLOAD
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .download a:before {
+    width:14px;
+    height:8px;
+    border:3px solid #D5D5D5;
+    border-top:0;
+    margin-top:-5px;
+    background:transparent;
+}
+
+.floatMenu-ng .download a:after {
+    left:5px;
+    border-width:5px 5px 0;
+    border-style:solid;
+    border-color:#D5D5D5 transparent;
+    margin-top:-5px;
+    background:transparent;
+}
+
+.floatMenu-ng .download a:hover:before,
+.floatMenu-ng .download a:focus:before,
+.floatMenu-ng .download a:active:before {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .download a:hover:after,
+.floatMenu-ng .download a:focus:after,
+.floatMenu-ng .download a:active:after {
+    border-color:rgb(225, 112, 10) transparent;
+}
+
+/* ARROWS (up/down/back/forward)
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .arrow a:before {
+    width:16px;
+    height:16px;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .arrow a:after {
+    left:8px;
+    border-width:5px 0 5px 6px;
+    border-style:solid;
+    border-color:transparent #fff;
+    margin-top:-5px;
+    background:transparent;
+}
+
+.floatMenu-ng .arrow:before {
+    z-index:10;
+    left:3px;
+    width:5px;
+    height:4px;
+    margin-top:-2px;
+    background:#fff;
+}
+
+.floatMenu-ng .arrow.back a:after {
+    left:2px;
+    border-width:5px 6px 5px 0;
+}
+
+.floatMenu-ng .arrow.back:before {
+    left:8px;
+}
+
+.floatMenu-ng .arrow.up a:after,
+.floatMenu-ng .arrow.down a:after {
+    left:3px;
+    border-width:0 5px 6px;
+    border-color:#fff transparent;
+    margin-top:-6px;
+}
+
+.floatMenu-ng .arrow.up:before,
+.floatMenu-ng .arrow.down:before {
+    left:6px;
+    width:4px;
+    height:5px;
+    margin-top:0;
+}
+
+.floatMenu-ng .arrow.down a:after {
+    border-width:6px 5px 0;
+    margin-top:0;
+}
+
+.floatMenu-ng .arrow.down:before {
+    margin-top:-5px;
+}
+
+/* Alternative style */
+
+.floatMenu-ng .arrow-alt a:before {
+    left:8px;
+    border-width:7px 0 7px 8px;
+    border-style:solid;
+    border-color:transparent #D5D5D5;
+    margin-top:-7px;
+    background:transparent;
+}
+
+.floatMenu-ng .arrow-alt a:after {
+    left:0;
+    width:8px;
+    height:6px;
+    margin-top:-3px;
+    background:#D5D5D5;
+}
+
+.floatMenu-ng .arrow-alt a:hover:before,
+.floatMenu-ng .arrow-alt a:focus:before,
+.floatMenu-ng .arrow-alt a:active:before {
+    border-color:transparent rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .arrow-alt a:hover:after,
+.floatMenu-ng .arrow-alt a:focus:after,
+.floatMenu-ng .arrow-alt a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+.floatMenu-ng .arrow-alt.back a:before {
+    left:0;
+    border-width:7px 8px 7px 0;
+}
+
+.floatMenu-ng .arrow-alt.back a:after {
+    left:8px;
+}
+
+.floatMenu-ng .arrow-alt.up a:before,
+.floatMenu-ng .arrow-alt.down a:before {
+    left:1px;
+    margin-top:-8px;
+    border-width:0 7px 8px;
+    border-color:#D5D5D5 transparent;
+}
+
+.floatMenu-ng .arrow-alt.up a:after,
+.floatMenu-ng .arrow-alt.down a:after {
+    left:5px;
+    width:6px;
+    height:8px;
+    margin-top:0;
+}
+
+.floatMenu-ng .arrow-alt.down a:before {
+    left:1px;
+    margin-top:0;
+    border-width:8px 7px 0;
+}
+
+.floatMenu-ng .arrow-alt.down a:after {
+    margin-top:-8px;
+}
+
+.floatMenu-ng .arrow-alt.up a:hover:before,
+.floatMenu-ng .arrow-alt.up a:focus:before,
+.floatMenu-ng .arrow-alt.up a:active:before,
+.floatMenu-ng .arrow-alt.down a:hover:before,
+.floatMenu-ng .arrow-alt.down a:focus:before,
+.floatMenu-ng .arrow-alt.down a:active:before {
+    border-color:rgb(225, 112, 10) transparent;
+}
+
+/* Alternative style 2 */
+
+.floatMenu-ng .arrow-alt2 a:before {
+    left:8px;
+    width:7px;
+    height:7px;
+    border-width:0 3px 3px 0;
+    border-style:solid;
+    border-color:#D5D5D5;
+    margin-top:-5px;
+    background:transparent;
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .arrow-alt2 a:after {
+    left:3px;
+    width:13px;
+    height:4px;
+    margin-top:-2px;
+    background:#D5D5D5;
+}
+
+.floatMenu-ng .arrow-alt2 a:hover:before,
+.floatMenu-ng .arrow-alt2 a:focus:before,
+.floatMenu-ng .arrow-alt2 a:active:before {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .arrow-alt2 a:hover:after,
+.floatMenu-ng .arrow-alt2 a:focus:after,
+.floatMenu-ng .arrow-alt2 a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+.floatMenu-ng .arrow-alt2.back a:before {
+    left:4px;
+    border-width:0 0 3px 3px;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .arrow-alt2.back a:after {
+    left:5px;
+}
+
+.floatMenu-ng .arrow-alt2.back a:hover:before,
+.floatMenu-ng .arrow-alt2.back a:focus:before,
+.floatMenu-ng .arrow-alt2.back a:active:before {
+    border-right-color:rgb(225, 112, 10);
+}
+
+.floatMenu-ng .arrow-alt2.up a:before {
+    left:4px;
+    border-width:3px 0 0 3px;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .arrow-alt2.up a:after,
+.floatMenu-ng .arrow-alt2.down a:after {
+    left:7px;
+    width:4px;
+    height:13px;
+    margin-top:-4px;
+}
+
+.floatMenu-ng .arrow-alt2.down a:before {
+    left:4px;
+    border-width:0 0 3px 3px;
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .arrow-alt2.down a:after {
+    margin-top:-8px;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== MISC
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+/* HOME
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .home a:before {
+    left:1px;
+    border-style:solid;
+    border-color:transparent;
+    border-width:8px 7px;
+    border-bottom-color:#D5D5D5;
+    margin-top:-16px;
+    background:transparent;
+}
+
+.floatMenu-ng .home a:after {
+    left:3px;
+    width:2px;
+    height:4px;
+    border-style:solid;
+    border-color:#D5D5D5 #D5D5D5 transparent;
+    border-width:3px 4px 0;
+    margin-top:0;
+    background:transparent;
+}
+
+.floatMenu-ng .home a:hover:before,
+.floatMenu-ng .home a:focus:before,
+.floatMenu-ng .home a:active:before {
+    border-bottom-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .home a:hover:after,
+.floatMenu-ng .home a:focus:after,
+.floatMenu-ng .home a:active:after {
+    border-color:rgb(225, 112, 10) rgb(225, 112, 10) transparent;
+}
+
+/* PHOTO
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .photo a:before {
+    left:2px;
+    width:16px;
+    height:12px;
+    margin-top:-6px;
+}
+
+.floatMenu-ng .photo a:after {
+    left:6px;
+    width:8px;
+    height:2px;
+    margin-top:-8px;
+}
+
+.floatMenu-ng .photo:after {
+    left:6px;
+    width:8px;
+    height:8px;
+    margin-top:-4px;
+    background:#fff;
+    /* css3 */
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+}
+
+.floatMenu-ng .photo a:hover:after,
+.floatMenu-ng .photo a:focus:after,
+.floatMenu-ng .photo a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* VIDEO
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .video a:before {
+    left:2px;
+    width:14px;
+    height:12px;
+    margin-top:-6px;
+    /* css3 */
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+}
+
+.floatMenu-ng .video a:after {
+    left:14px;
+    border-style:solid;
+    border-width:5px 6px 5px 0;
+    border-color:transparent;
+    border-right-color:#D5D5D5;
+    margin-top:-5px;
+    background:transparent;
+}
+
+.floatMenu-ng .video a:hover:after,
+.floatMenu-ng .video a:focus:after,
+.floatMenu-ng .video a:active:after {
+    border-right-color:rgb(225, 112, 10);
+}
+
+/* MUSIC
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .music a:before {
+    left:8px;
+    width:6px;
+    height:10px;
+    border-width:2px 1px 0 2px;
+    border-style:solid;
+    border-color:#D5D5D5 transparent transparent #D5D5D5;
+    background:transparent;
+    -webkit-border-radius:0 10px 0 0;
+    -moz-border-radius:0 10px 0 0;
+    border-radius:0 10px 0 0;
+}
+
+.floatMenu-ng .music a:after {
+    left:3px;
+    width:7px;
+    height:6px;
+    margin-top:0;
+    background:#D5D5D5;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+}
+
+.floatMenu-ng .music a:hover:before,
+.floatMenu-ng .music a:focus:before,
+.floatMenu-ng .music a:active:before {
+    border-color:rgb(225, 112, 10) transparent transparent rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .music a:hover:after,
+.floatMenu-ng .music a:focus:after,
+.floatMenu-ng .music a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* CALL
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .call a:before {
+    left:5px;
+    width:4px;
+    height:8px;
+    border-width:5px 0 5px 2px;
+    border-style:solid;
+    border-color:#D5D5D5;
+    background:transparent;
+    /* css3 */
+    -webkit-border-top-left-radius:3px 5px;
+    -webkit-border-bottom-left-radius:3px 5px;
+    -moz-border-radius-topleft:3px 5px;
+    -moz-border-radius-bottomleft:3px 5px;
+    border-top-left-radius:3px 5px;
+    border-bottom-left-radius:3px 5px;
+    -webkit-transform:rotate(-30deg);
+    -moz-transform:rotate(-30deg);
+    -ms-transform:rotate(-30deg);
+    -o-transform:rotate(-30deg);
+    transform:rotate(-30deg);
+}
+
+.floatMenu-ng .call-on a:after {
+    left:10px;
+    width:6px;
+    height:6px;
+    margin-top:-8px;
+    border:4px double #D5D5D5;
+    border-width:4px 4px 0 0;
+    background:transparent;
+    /* css3 */
+    -webkit-border-radius:0 15px 0 0;
+    -moz-border-radius:0 15px 0 0;
+    border-radius:0 15px 0 0;
+    -webkit-transform:rotate(15deg);
+    -moz-transform:rotate(15deg);
+    -ms-transform:rotate(15deg);
+    -o-transform:rotate(15deg);
+    transform:rotate(15deg);
+}
+
+.floatMenu-ng .call a:hover:before,
+.floatMenu-ng .call a:focus:before,
+.floatMenu-ng .call a:active:before,
+.floatMenu-ng .call a:hover:after,
+.floatMenu-ng .call a:focus:after,
+.floatMenu-ng .call a:active:after {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+/* TAGS
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .tags a:before {
+    left:6px;
+    width:9px;
+    height:15px;
+    margin-top:-8px;
+    background:#D5D5D5;
+    /* css3 */
+    -webkit-border-top-left-radius:3px;
+    -webkit-border-top-right-radius:3px;
+    -moz-border-radius:3px 3px 0 0;
+    border-radius:5px 5px 0 0;
+    -webkit-transform:rotate(-40deg);
+    -moz-transform:rotate(-40deg);
+    -ms-transform:rotate(-40deg);
+    -o-transform:rotate(-40deg);
+    transform:rotate(-40deg);
+}
+
+.floatMenu-ng .tags a:after {
+    left:7px;
+    width:3px;
+    height:3px;
+    margin-top:-4px;
+    background:#fff;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+
+/* RSS
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .rss a:before {
+    left:3px;
+    width:5px;
+    height:5px;
+    margin-top:0;
+    /* css3 */
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+
+.floatMenu-ng .rss a:after {
+    left:3px;
+    width:8px;
+    height:8px;
+    border-width:5px 5px 0 0;
+    border-style:double;
+    border-color:#D5D5D5;
+    background:transparent;
+    /* css3 */
+    -webkit-border-top-right-radius:25px;
+    -moz-border-radius:0 25px 0 0;
+    border-radius:0 25px 0 0;
+}
+
+.floatMenu-ng .rss a:hover:after,
+.floatMenu-ng .rss a:focus:after,
+.floatMenu-ng .rss a:active:after {
+    border-color:rgb(225, 112, 10);
+}
+
+/* EMAIL
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .email:before {
+    z-index:10;
+    left:6px;
+    width:12px;
+    height:12px;
+    border-width:0 1px 1px 0;
+    border-style:solid;
+    border-color:#fff;
+    margin-top:-13px;
+    background:transparent;
+    /* css3 */
+    -webkit-transform:rotate(39deg) skew(-12deg);
+    -moz-transform:rotate(39deg) skew(-12deg);
+    -ms-transform:rotate(39deg) skew(-12deg);
+    -o-transform:rotate(39deg) skew(-12deg);
+    transform:rotate(39deg) skew(-12deg);
+}
+
+.floatMenu-ng .email a:before {
+    left:3px;
+    width:6px;
+    border-width:6px;
+    border-style:solid;
+    border-color:#D5D5D5 #D5D5D5 transparent;
+    margin-top:-7px;
+    background:transparent;
+}
+
+.floatMenu-ng .email a:after {
+    left:4px;
+    border-width:0 8px 9px;
+    border-style:solid;
+    border-color:#D5D5D5 transparent;
+    margin-top:-3px;
+    background:transparent;
+}
+
+.floatMenu-ng .email a:hover:before,
+.floatMenu-ng .email a:focus:before,
+.floatMenu-ng .email a:active:before {
+    border-color:rgb(225, 112, 10) rgb(225, 112, 10) transparent;
+    background:transparent;
+}
+
+.floatMenu-ng .email a:hover:after,
+.floatMenu-ng .email a:focus:after,
+.floatMenu-ng .email a:active:after {
+    border-bottom-color:rgb(225, 112, 10);
+}
+
+/* PROFILE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .profile a:before {
+    left:4px;
+    width:16px;
+    height:5px;
+    margin-top:1px;
+    /* css3 */
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-top-left-radius:5px;
+    -moz-border-radius:5px 5px 0 0;
+    border-radius:5px 5px 0 0;
+}
+
+.floatMenu-ng .profile a:after {
+    left:9px;
+    width:6px;
+    height:10px;
+    margin-top:-7px;
+    /* css3 */
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-top-left-radius:5px;
+    -webkit-border-bottom-right-radius:5px 10px;
+    -webkit-border-bottom-left-radius:5px 10px;
+    -moz-border-radius:5px 5px 5px 5px / 5px 5px 10px 10px;
+    border-radius:5px 5px 5px 5px / 5px 5px 10px 10px;
+}
+
+.floatMenu-ng .profile a:hover:after,
+.floatMenu-ng .profile a:focus:after,
+.floatMenu-ng .profile a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* FILE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .file a:before {
+    left:5px;
+    width:8px;
+    height:12px;
+    border:2px solid #D5D5D5;
+    background:transparent;
+}
+
+.floatMenu-ng .file a:after {
+    left:4px;
+    border-width:3px;
+    border-style:solid;
+    border-color:#fff #D5D5D5 #D5D5D5 #fff;
+    margin-top:-9px;
+    background:transparent;
+}
+
+.floatMenu-ng .file a:hover:before,
+.floatMenu-ng .file a:focus:before,
+.floatMenu-ng .file a:active:before {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .file a:hover:after,
+.floatMenu-ng .file a:focus:after,
+.floatMenu-ng .file a:active:after {
+    border-color:#fff rgb(225, 112, 10) rgb(225, 112, 10) #fff;
+}
+
+/* FOLDER
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .folder a:before {
+    left:4px;
+    width:16px;
+    height:12px;
+    margin-top:-6px;
+    /* css3 */
+    -webkit-border-bottom-right-radius:1px;
+    -webkit-border-bottom-left-radius:1px;
+    -moz-border-radius:0 0 1px 1px;
+    border-radius:0 0 1px 1px;
+}
+
+.floatMenu-ng .folder a:after {
+    left:6px;
+    width:6px;
+    height:2px;
+    margin-top:-8px;
+    background:#D5D5D5;
+    /* css3 */
+    -webkit-border-top-right-radius:1px;
+    -webkit-border-top-left-radius:1px;
+    -moz-border-radius:1px 1px 0 0;
+    border-radius:1px 1px 0 0;
+}
+
+.floatMenu-ng .folder a:hover:after,
+.floatMenu-ng .folder a:focus:after,
+.floatMenu-ng .folder a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* LIST VIEW
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .list a:before,
+.floatMenu-ng .list a:after {
+    left:8px;
+    width:12px;
+    height:2px;
+    border-width:6px 0;
+    border-style:double;
+    border-color:#D5D5D5;
+    background:transparent;
+}
+
+.floatMenu-ng .list a:after {
+    left:4px;
+    width:2px;
+}
+
+.floatMenu-ng .list a:hover:before,
+.floatMenu-ng .list a:focus:before,
+.floatMenu-ng .list a:active:before,
+.floatMenu-ng .list a:hover:after,
+.floatMenu-ng .list a:focus:after,
+.floatMenu-ng .list a:active:after {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+/* PERMALINK
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .permalink a:before,
+.floatMenu-ng .permalink a:after,
+.floatMenu-ng .permalink:after {
+    left:4px;
+    width:6px;
+    height:4px;
+    border:2px solid #D5D5D5;
+    background:transparent;
+    /* css3 */
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .permalink a:after {
+    left:12px;
+    margin-top:-0px;
+}
+
+.floatMenu-ng .permalink:after {
+    left:7px;
+    width:10px;
+    height:2px;
+    border:1px solid #fff;
+    margin-top:-2px;
+    background:#D5D5D5;
+}
+
+.floatMenu-ng .permalink a:hover:before,
+.floatMenu-ng .permalink a:focus:before,
+.floatMenu-ng .permalink a:active:before,
+.floatMenu-ng .permalink a:hover:after,
+.floatMenu-ng .permalink a:focus:after,
+.floatMenu-ng .permalink a:active:after {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .permalink:hover:after {
+    background:rgb(225, 112, 10);
+}
+
+
+/* HISTORY
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .history a:before,
+.floatMenu-ng .history a:after {
+    left:2px;
+    width:13px;
+    height:13px;
+    border:2px solid #D5D5D5;
+    margin-top:-8px;
+    background:transparent;
+}
+
+.floatMenu-ng .history a:before {
+    /* css3 */
+    -webkit-border-radius:18px;
+    -moz-border-radius:18px;
+    border-radius:18px;
+}
+
+.floatMenu-ng .history a:after {
+    left:10px;
+    width:4px;
+    height:5px;
+    border-width:0 0 2px 2px;
+    margin-top:-5px;
+    background:transparent;
+}
+
+.floatMenu-ng .history a:hover:before,
+.floatMenu-ng .history a:focus:before,
+.floatMenu-ng .history a:active:before,
+.floatMenu-ng .history a:hover:after,
+.floatMenu-ng .history a:focus:after,
+.floatMenu-ng .history a:active:after {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+/* TOOLS
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .tools:after {
+    left:13px;
+    width:3px;
+    height:5px;
+    margin-top:-8px;
+    background:#fff;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .tools a:before {
+    left:6px;
+    width:4px;
+    height:15px;
+    margin-top:-7px;
+    background:#D5D5D5;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .tools a:after {
+    left:8px;
+    width:9px;
+    height:9px;
+    background:#D5D5D5;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+}
+
+.floatMenu-ng .tools a:hover:after,
+.floatMenu-ng .tools a:focus:after,
+.floatMenu-ng .tools a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* MP3 PLAYER
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .player:before {
+    left:3px;
+    width:9px;
+    height:6px;
+    border-width:2px 2px 11px;
+    border-style:solid;
+    border-color:#555;
+    margin-top:-10px;
+    /* css3 */
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
+}
+
+.floatMenu-ng .player:after {
+    left:6px;
+    width:3px;
+    height:3px;
+    border:2px solid #fff;
+    /* css3 */
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+}
+
+/* HEADPHONES
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .headphones:before {
+    left:2px;
+    width:12px;
+    height:10px;
+    border-width:2px 2px 0;
+    border-style:solid;
+    border-color:#555;
+    margin:-8px 0 0;
+    /* css3 */
+    -webkit-border-top-left-radius:20px;
+    -webkit-border-top-right-radius:20px;
+    -moz-border-radius:20px 20px 0 0;
+    border-radius:20px 20px 0 0;
+}
+
+.floatMenu-ng .headphones:after {
+    left:5px;
+    width:4px;
+    height:6px;
+    border-width:0 3px;
+    border-style:solid;
+    border-color:#555;
+}
+
+/* RIBBON
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .ribbon:before {
+    left:6px;
+    border-width:10px 5px 6px;
+    border-style:solid;
+    border-color:#F0A1D1 #F0A1D1 transparent;
+    margin:-8px 0 0;
+}
+
+/* VIEWS
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .views:before {
+    left:3px;
+    width:14px;
+    height:14px;
+    margin-top:-8px;
+    background:#555;
+    -webkit-border-top-left-radius:12px;
+    -webkit-border-bottom-right-radius:12px;
+    -moz-border-radius:12px 0 12px 0;
+    border-radius:12px 0 12px 0;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .views:after {
+    left:6px;
+    width:4px;
+    height:4px;
+    border:2px solid #fff;
+    margin-top:-5px;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border-radius:6px;
+}
+
+/* LOCATION
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .location:before {
+    left:6px;
+    width:2px;
+    height:2px;
+    border:3px solid #555;
+    border-bottom:0;
+    margin-top:-9px;
+    background:#fff;
+    -webkit-border-top-left-radius:8px;
+    -webkit-border-top-right-radius:8px;
+    -moz-border-radius:8px 8px 0 0;
+    border-radius:8px 8px 0 0;
+}
+
+.floatMenu-ng .location:after {
+    left:6px;
+    border-width:12px 4px 0;
+    border-style:solid;
+    border-color:#555 transparent;
+    margin-top:-4px;
+}
+
+/* INFO
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .info {
+    color:#2385BA;
+}
+
+.floatMenu-ng .info:before {
+    content:"i";
+    left:3px;
+    width:16px;
+    height:16px;
+    margin-top:-8px;
+    font-size:14px;
+    font-weight:bold;
+    font-style:italic;
+    line-height:15px;
+    text-align:center;
+    color:#fff;
+    background:#2385BA;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+/* HELP
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .help {
+    color:#2385BA;
+}
+
+.floatMenu-ng .help:before {
+    content:"?";
+    left:3px;
+    width:16px;
+    height:16px;
+    margin-top:-8px;
+    font-size:14px;
+    font-weight:bold;
+    line-height:15px;
+    text-align:center;
+    color:#fff;
+    background:#2385BA;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+/* PIE CHART
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .pie {
+    color:#9D2CA3;
+}
+
+.floatMenu-ng .pie:before {
+    left:3px;
+    border:8px solid #9D2CA3;
+    margin-top:-7px;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .pie:after {
+    left:11px;
+    width:8px;
+    height:8px;
+    border-width:0 0 2px 2px;
+    border-style:solid;
+    border-color:#fff;
+    margin-top:-8px;
+    background:#9D2CA3;
+    /* css3 */
+    -webkit-border-top-right-radius:16px;
+    -moz-border-radius:0 16px 0 0;
+    border-radius:0 16px 0 0;
+}
+
+/* SUCCESS
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .success {
+    color:#7F913C;
+}
+
+.floatMenu-ng .success:before {
+    left:3px;
+    width:16px;
+    height:16px;
+    margin-top:-8px;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+    background:#7F913C;
+}
+
+.floatMenu-ng .success:after {
+    left:8px;
+    width:3px;
+    height:8px;
+    border-width:0 2px 2px 0;
+    border-style:solid;
+    border-color:#fff;
+    margin-top:-6px;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+/* Alternative style */
+
+.floatMenu-ng .success-alt {
+    color:#7F913C;
+}
+
+.floatMenu-ng .success-alt:before {
+    left:6px;
+    width:5px;
+    height:12px;
+    border-width:0 5px 5px 0;
+    border-style:solid;
+    border-color:#7F913C;
+    margin-top:-11px;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+/* WARNING
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .warning:before {
+    content:"!";
+    z-index:2;
+    left:8px;
+    margin-top:-8px;
+    font-size:14px;
+    font-weight:bold;
+    color:#000;
+}
+
+.floatMenu-ng .warning:after {
+    z-index:1;
+    border-width:0 11px 18px;
+    border-style:solid;
+    border-color:#F8D201 transparent;
+    margin-top:-10px;
+    background:transparent;
+}
+
+/* DENIED
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .denied {
+    color:#C00000;
+}
+
+.floatMenu-ng .denied:before {
+    left:3px;
+    width:10px;
+    height:10px;
+    border:3px solid #C00000;
+    margin-top:-8px;
+    background:transparent;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .denied:after {
+    left:6px;
+    width:11px;
+    height:3px;
+    margin-top:-2px;
+    background:#C00000;
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------
+== MEDIA CONTROLS
+** ---------------------------------------------------------------------------------------------------------------------------- */
+
+/* POWER
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .power a:before {
+    left:1px;
+    width:10px;
+    height:10px;
+    border:2px solid #D5D5D5;
+    margin-top:-6px;
+    background:transparent;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .power a:after {
+    left:6px;
+    width:2px;
+    height:7px;
+    border:1px solid #fff;
+    margin:-8px 0 0;
+    background:#D5D5D5;
+}
+
+.floatMenu-ng .power a:hover:before,
+.floatMenu-ng .power a:focus:before,
+.floatMenu-ng .power a:active:before {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .power a:hover:after,
+.floatMenu-ng .power a:focus:after,
+.floatMenu-ng .power a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* PLAY
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .play a:before {
+    width:16px;
+    height:16px;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .play a:after {
+    left:7px;
+    border:4px solid transparent;
+    border-left-color:#fff;
+    margin-top:-4px;
+    background:transparent;
+}
+
+/* Alternative style */
+
+.floatMenu-ng .play-alt a:before {
+    left:2px;
+    border:8px solid transparent;
+    border-width:8px 12px;
+    border-left-color:#D5D5D5;
+    margin-top:-8px;
+    background:transparent;
+}
+
+.floatMenu-ng .play-alt a:hover:before,
+.floatMenu-ng .play-alt a:focus:before,
+.floatMenu-ng .play-alt a:active:before {
+    border-left-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+/* STOP
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .stop a:before {
+    width:16px;
+    height:16px;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .stop a:after {
+    left:5px;
+    width:6px;
+    height:6px;
+    margin-top:-3px;
+    background:#fff;
+}
+
+/* Alternative style */
+
+.floatMenu-ng .stop-alt a:before {
+    left:1px;
+    width:14px;
+    height:14px;
+    margin-top:-7px;
+}
+
+/* PAUSE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .pause a:before {
+    width:16px;
+    height:16px;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .pause a:after {
+    left:5px;
+    width:2px;
+    height:8px;
+    border:2px solid #fff;
+    border-width:0 2px;
+    margin-top:-4px;
+    background:transparent;
+}
+
+/* Alternative style */
+
+.floatMenu-ng .pause-alt a:before {
+    left:2px;
+    width:4px;
+    height:14px;
+    border:4px solid #D5D5D5;
+    border-width:0 4px;
+    margin-top:-7px;
+    background:transparent;
+}
+
+.floatMenu-ng .pause-alt a:hover:before,
+.floatMenu-ng .pause-alt a:focus:before,
+.floatMenu-ng .pause-alt a:active:before {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+/* VOLUME
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .volume a:before {
+    left:-2px;
+    border:7px solid transparent;
+    border-right-color:#D5D5D5;
+    margin-top:-7px;
+    background:transparent;
+}
+
+.floatMenu-ng .volume a:after {
+    left:4px;
+    width:4px;
+    height:6px;
+    margin-top:-3px;
+}
+
+.floatMenu-ng .volume a:hover:before,
+.floatMenu-ng .volume a:focus:before,
+.floatMenu-ng .volume a:active:before {
+    border-right-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .volume a:hover:after,
+.floatMenu-ng .volume a:focus:after,
+.floatMenu-ng .volume a:active:after {
+    background:rgb(225, 112, 10);
+}
+
+/* Volume on */
+
+.floatMenu-ng .volume-on:before {
+    left:12px;
+    width:6px;
+    height:6px;
+    margin-top:-5px;
+    border:4px double #D5D5D5;
+    border-width:4px 4px 0 0;
+    /* css3 */
+    -webkit-border-radius:0 15px 0 0;
+    -moz-border-radius:0 15px 0 0;
+    border-radius:0 15px 0 0;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .volume-on:hover:before {
+    border-color:rgb(225, 112, 10);
+}
+
+/* Mute */
+
+.floatMenu-ng .mute:before {
+    width:16px;
+    height:16px;
+    border:1px solid #D5D5D5;
+    margin-top:-9px;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .mute:after {
+    width:18px;
+    border-top:1px solid #D5D5D5;
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .mute:hover:before,
+.floatMenu-ng .mute:hover:after {
+    border-color:rgb(225, 112, 10);
+}
+
+/* Volume up/down */
+
+.floatMenu-ng .volume-up:before {
+    left:16px;
+    width:2px;
+    height:8px;
+    margin-top:-4px;
+    background:#D5D5D5;
+}
+
+.floatMenu-ng .volume-up:after,
+.floatMenu-ng .volume-down:after {
+    left:13px;
+    width:8px;
+    height:2px;
+    margin-top:-1px;
+    background:#D5D5D5;
+}
+
+.floatMenu-ng .volume-up:hover:before,
+.floatMenu-ng .volume-up:hover:after,
+.floatMenu-ng .volume-down:hover:after {
+    background:rgb(225, 112, 10);
+}
+
+/* MIC
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .mic a:before {
+    left:6px;
+    width:7px;
+    height:12px;
+    margin-top:-9px;
+    /* css3 */
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+
+.floatMenu-ng .mic a:after {
+    left:4px;
+    width:9px;
+    height:6px;
+    border-width:0 1px 1px 1px;
+    border-style:solid;
+    border-color:#D5D5D5;
+    margin-top:-2px;
+    background:transparent;
+    /* css3 */
+    -webkit-border-bottom-right-radius:11px;
+    -webkit-border-bottom-left-radius:11px;
+    -moz-border-radius:0 0 11px 11px;
+    border-radius:0 0 11px 11px;
+}
+
+.floatMenu-ng .mic:before,
+.floatMenu-ng .mic:after {
+    left:9px;
+    width:1px;
+    height:4px;
+    margin-top:4px;
+    background:#D5D5D5;
+}
+
+.floatMenu-ng .mic:after {
+    left:6px;
+    width:7px;
+    height:1px;
+    margin-top:7px;
+}
+
+.floatMenu-ng .mic a:hover:after,
+.floatMenu-ng .mic a:focus:after,
+.floatMenu-ng .mic a:active:after {
+    border-color:rgb(225, 112, 10);
+}
+
+.floatMenu-ng .mic:hover:before,
+.floatMenu-ng .mic:hover:after {
+    background:rgb(225, 112, 10);
+}
+
+/* FAST FORWARD
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .fforward a:before {
+    left:1px;
+    border:5px solid transparent;
+    border-width:5px 7px;
+    border-left-color:#D5D5D5;
+    margin-top:-4px;
+    background:transparent;
+}
+
+.floatMenu-ng .fforward a:after {
+    left:7px;
+    border:5px solid transparent;
+    border-width:5px 7px;
+    border-left-color:#D5D5D5;
+    margin-top:-4px;
+    background:transparent;
+}
+
+.floatMenu-ng .fforward a:hover:before,
+.floatMenu-ng .fforward a:focus:before,
+.floatMenu-ng .fforward a:active:before {
+    border-left-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .fforward a:hover:after,
+.floatMenu-ng .fforward a:focus:after,
+.floatMenu-ng .fforward a:active:after {
+    border-left-color:rgb(225, 112, 10);
+}
+
+/* FAST REWIND
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .frewind a:before {
+    left:-6px;
+    border:5px solid transparent;
+    border-width:5px 7px;
+    border-right-color:#D5D5D5;
+    margin-top:-4px;
+    background:transparent;
+}
+
+.floatMenu-ng .frewind a:after {
+    border:5px solid transparent;
+    border-width:5px 7px;
+    border-right-color:#D5D5D5;
+    margin-top:-4px;
+    background:transparent;
+}
+
+.floatMenu-ng .frewind a:hover:before,
+.floatMenu-ng .frewind a:focus:before,
+.floatMenu-ng .frewind a:active:before {
+    border-right-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .frewind a:hover:after,
+.floatMenu-ng .frewind a:focus:after,
+.floatMenu-ng .frewind a:active:after {
+    border-right-color:rgb(225, 112, 10);
+}
+
+/* JUMP FORWARD
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .next a:before {
+    left:9px;
+    width:2px;
+    height:10px;
+    margin-top:-4px;
+}
+
+.floatMenu-ng .next a:after {
+    left:2px;
+    border:5px solid transparent;
+    border-width:5px 7px;
+    border-left-color:#D5D5D5;
+    margin-top:-4px;
+    background:transparent;
+}
+
+.floatMenu-ng .next a:hover:after,
+.floatMenu-ng .next a:focus:after,
+.floatMenu-ng .next a:active:after {
+    border-left-color:rgb(225, 112, 10);
+}
+
+/* JUMP REWIND
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .prev a:before {
+    left:2px;
+    width:2px;
+    height:10px;
+    margin-top:-4px;
+}
+
+.floatMenu-ng .prev a:after {
+    left:-3px;
+    border:5px solid transparent;
+    border-width:5px 7px;
+    border-right-color:#D5D5D5;
+    margin-top:-4px;
+    background:transparent;
+}
+
+.floatMenu-ng .prev a:hover:after,
+.floatMenu-ng .prev a:focus:after,
+.floatMenu-ng .prev a:active:after {
+    border-right-color:rgb(225, 112, 10);
+}
+
+/* POP-OUT WINDOW
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .pop a:before,
+.floatMenu-ng .pop a:after {
+    width:12px;
+    height:8px;
+    border:1px solid #D5D5D5;
+    margin-top:-4px;
+    background:#fff;
+}
+
+.floatMenu-ng .pop a:after {
+    left:3px;
+    margin-top:-7px;
+}
+
+.floatMenu-ng .pop a:hover:before,
+.floatMenu-ng .pop a:focus:before,
+.floatMenu-ng .pop a:active:before,
+ .pop a:hover:after,
+ .pop a:focus:after,
+ .pop a:active:after {
+    border-color:rgb(225, 112, 10);
+    background:#fff;
+}
+
+/* ENLARGE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .enlarge a:before {
+    width:16px;
+    height:14px;
+    margin-top:-7px;
+}
+
+.floatMenu-ng .enlarge a:after {
+    left:1px;
+    width:7px;
+    height:6px;
+    margin-top:-6px;
+    background:#fff;
+}
+
+/* REPEAT
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .repeat a:before {
+    left:1px;
+    width:9px;
+    height:9px;
+    border:3px solid #D5D5D5;
+    margin-top:-6px;
+    background:transparent;
+    /* css3 */
+    -webkit-border-radius:16px;
+    -moz-border-radius:16px;
+    border-radius:16px;
+}
+
+.floatMenu-ng .repeat a:after {
+    left:9px;
+    border:4px solid #fff;
+    border-width:5px 2px 5px 5px;
+    border-left-color:#D5D5D5;
+    margin:-9px 0 0;
+    background:transparent;
+}
+
+.floatMenu-ng .repeat a:hover:before,
+.floatMenu-ng .repeat a:focus:before,
+.floatMenu-ng .repeat a:active:before {
+    border-color:rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .repeat a:hover:after,
+.floatMenu-ng .repeat a:focus:after,
+.floatMenu-ng .repeat a:active:after {
+    border-left-color:rgb(225, 112, 10);
+}
+
+/* EXPAND
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .expand a:before {
+    z-index:-2;
+    left:1px;
+    width:5px;
+    height:0;
+    border-width:7px 7px 0;
+    border-style:solid;
+    border-color:transparent #D5D5D5;
+    margin-top:-4px;
+    background:transparent;
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .expand a:after {
+    left:5px;
+    width:8px;
+    height:8px;
+    border:3px solid #D5D5D5;
+    border-width:3px 0 0 3px;
+    margin-top:-6px;
+    background:transparent;
+}
+
+.floatMenu-ng .expand a:hover:before,
+.floatMenu-ng .expand a:focus:before,
+.floatMenu-ng .expand a:active:before {
+    border-color:transparent rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .expand a:hover:after,
+.floatMenu-ng .expand a:focus:after,
+.floatMenu-ng .expand a:active:after {
+    border-color:rgb(225, 112, 10);
+}
+
+/* SHRINK
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .shrink a:before {
+    z-index:-2;
+    left:1px;
+    width:5px;
+    height:0;
+    border-width:0 7px 7px;
+    border-style:solid;
+    border-color:transparent #D5D5D5;
+    margin-top:-4px;
+    background:transparent;
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .shrink a:after {
+    left:5px;
+    width:8px;
+    height:8px;
+    border:3px solid #D5D5D5;
+    border-width:0 3px 3px 0;
+    margin-top:-6px;
+    background:transparent;
+}
+
+.floatMenu-ng .shrink a:hover:before,
+.floatMenu-ng .shrink a:focus:before,
+.floatMenu-ng .shrink a:active:before {
+    border-color:transparent rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .shrink a:hover:after,
+.floatMenu-ng .shrink a:focus:after,
+.floatMenu-ng .shrink a:active:after {
+    border-color:rgb(225, 112, 10);
+}
+
+/* TOGGLE SIZE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .toggle-size a:before {
+    left:2px;
+    border-width:6px;
+    border-style:solid;
+    border-color:#D5D5D5 transparent transparent #D5D5D5;
+    background:transparent;
+    margin-top:-7px;
+}
+
+.floatMenu-ng .toggle-size a:after {
+    left:7px;
+    border-width:4px;
+    border-style:solid;
+    border-color:transparent #D5D5D5 #D5D5D5 transparent;
+    margin-top:-2px;
+    background:transparent;
+}
+
+.floatMenu-ng .toggle-size a:hover:before,
+.floatMenu-ng .toggle-size a:focus:before,
+.floatMenu-ng .toggle-size a:active:before {
+    border-color:rgb(225, 112, 10) transparent transparent rgb(225, 112, 10);
+    background:transparent;
+}
+
+.floatMenu-ng .toggle-size a:hover:after,
+.floatMenu-ng .toggle-size a:focus:after,
+.floatMenu-ng .toggle-size a:active:after {
+    border-color:transparent rgb(225, 112, 10) rgb(225, 112, 10) transparent;
+}
+
+/* FULL SCREEN
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .full:before,
+.floatMenu-ng .full:after {
+    z-index:1;
+    left:8px;
+    width:3px;
+    height:8px;
+    border:5px solid #D5D5D5;
+    border-width:5px 0;
+    margin-top:-8px;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .full:after {
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .full:hover:before,
+.floatMenu-ng .full:hover:after {
+    border-color:rgb(225, 112, 10);
+}
+
+.floatMenu-ng .full a:before,
+.floatMenu-ng .full a:after {
+    z-index:10;
+    width:4px;
+    height:0;
+    border-width:0 7px 7px;
+    border-style:solid;
+    border-color:transparent #D5D5D5;
+    margin-top:-8px;
+    background:transparent;
+}
+
+.floatMenu-ng .full a:after {
+    border-width:7px 7px 0;
+    margin-top:3px;
+}
+
+.floatMenu-ng .full a:hover:before,
+.floatMenu-ng .full a:focus:before,
+.floatMenu-ng .full a:active:before,
+.floatMenu-ng .full a:hover:after,
+.floatMenu-ng .full a:focus:after,
+.floatMenu-ng .full a:active:after {
+    border-color:transparent rgb(225, 112, 10);
+    background:transparent;
+}
+
+/* SHRINK
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .exit:before,
+.floatMenu-ng .exit:after {
+    z-index:1;
+    top:50%;
+    left:8px;
+    width:3px;
+    height:14px;
+    border:5px solid #D5D5D5;
+    border-width:5px 0;
+    margin-top:-12px;
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .exit:after {
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .exit:hover:before,
+.floatMenu-ng .exit:hover:after {
+    border-color:rgb(225, 112, 10);
+}
+
+.floatMenu-ng .exit a:before,
+.floatMenu-ng .exit a:after {
+    z-index:10;
+    left:2px;
+    width:6px;
+    border-width:5px;
+    border-style:solid;
+    border-color:transparent #D5D5D5;
+    margin-top:-5px;
+    background:transparent;
+    /* css3 */
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+.floatMenu-ng .exit a:after {
+    /* css3 */
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.floatMenu-ng .exit a:hover:before,
+.floatMenu-ng .exit a:focus:before,
+.floatMenu-ng .exit a:active:before,
+.floatMenu-ng .exit a:hover:after,
+.floatMenu-ng .exit a:focus:after,
+.floatMenu-ng .exit a:active:after {
+    border-color:transparent rgb(225, 112, 10);
+    background:transparent;
+}
+
+/* EJECT
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.floatMenu-ng .eject a:before {
+    left:1px;
+    width:14px;
+    height:2px;
+    margin-top:4px;
+}
+
+.floatMenu-ng .eject a:after {
+    left:1px;
+    border:8px solid transparent;
+    border-width:8px 7px;
+    border-bottom-color:#D5D5D5;
+    margin-top:-13px;
+    background:transparent;
+}
+
+.floatMenu-ng .eject a:hover:after,
+.floatMenu-ng .eject a:focus:after,
+.floatMenu-ng .eject a:active:after {
+    border-bottom-color:rgb(225, 112, 10);
+}

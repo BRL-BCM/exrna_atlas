@@ -1,0 +1,64 @@
+div#footer {
+  clear: both ;
+  margin-top: 5px;
+  position: relative;
+  background-color: white;
+  border-top: 1px black solid;
+  height: 80px;
+  background: #ffffff none repeat scroll 0 0;
+}
+
+div#footerText {
+  background-color: white;
+  display: block;
+  font-size: 8pt;
+  font-weight: normal;
+  text-decoration: none;
+  float: left;
+  text-align: center;
+  padding: 6px;
+  margin-top: 5px;
+}
+
+/* Default footerLeft and footerRight for small screens */
+#footerLeft {
+  margin-top: 5px;
+}
+#footerRight {
+  margin-top: 5px;
+}
+
+/* Override footerLeft and footerRight for larger screens 
+ * using Bootstrap's @screen-md-min == 992px
+ */
+@media (min-width: 992px) {
+  #footerLeft {
+    margin-top: 5px;
+    text-align: left;
+  }
+
+  #footerRight {
+    margin-top: 5px;
+    text-align: right;
+  }
+}
+
+#footerText {
+  margin-top: 5px;
+}
+
+
+#footerLeftImage {
+  width: 40px;
+}
+
+#footerRightImage {
+  width: 320px;
+}
+
+div#fundingText{
+  margin-bottom: 2px;
+  font-size: 8pt;
+  font-weight: bold;
+  text-decoration: none;
+}

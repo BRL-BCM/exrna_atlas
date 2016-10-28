@@ -1,0 +1,262 @@
+{
+  "conceptOntology": "ERO",
+  "index": true,
+  "comments": "Assigned by server after validation.",
+  "editRoles": "administrator",
+  "name": "Job",
+  "identifier": true,
+  "properties": [
+    {
+      "conceptOntology": "SNOMEDCT",
+      "comments": "Assigned by server at different stages.",
+      "editRoles": "administrator",
+      "name": "Status",
+      "required": true,
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263490005",
+      "default": "Protect",
+      "domain": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)",
+      "description": "Status of the document"
+    },
+    {
+      "comments": "Assigned by server.",
+      "editRoles": "administrator",
+      "name": "Schema Version",
+      "default": 1.0,
+      "domain": "float",
+      "description": "Version of this data model schema"
+    },
+    {
+      "conceptOntology": "LOINC",
+      "index": true,
+      "editRoles": "administrator, author",
+      "name": "Related Run",
+      "properties": [
+        {
+          "conceptOntology": "SNOMEDCT",
+          "Object Type": "exmd:Runs",
+          "editRoles": "administrator, author",
+          "name": "DocURL",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+          "domain": "url",
+          "description": "Relative ID (accession) of doc, provide Document URL"
+        }
+      ],
+      "required": true,
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+      "category": true,
+      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-RU)",
+      "description": "ID of related Run document"
+    },
+    {
+      "conceptOntology": "LOINC",
+      "index": true,
+      "editRoles": "administrator, author",
+      "name": "Related Submission",
+      "properties": [
+        {
+          "conceptOntology": "SNOMEDCT",
+          "Object Type": "exmd:Submissions",
+          "editRoles": "administrator, author",
+          "name": "DocURL",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+          "domain": "url",
+          "description": "Relative ID (accession) of doc, provide Document URL"
+        }
+      ],
+      "required": true,
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+      "category": true,
+      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-SU)",
+      "description": "ID of related Submission document"
+    },
+    {
+      "conceptOntology": "LOINC",
+      "index": true,
+      "editRoles": "administrator, author",
+      "name": "Related Study",
+      "properties": [
+        {
+          "conceptOntology": "SNOMEDCT",
+          "Object Type": "exmd:Studies",
+          "editRoles": "administrator, author",
+          "name": "DocURL",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+          "domain": "url",
+          "description": "Relative ID (accession) of doc, provide Document URL"
+        }
+      ],
+      "required": true,
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+      "category": true,
+      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-ST)",
+      "description": "ID of related Study document"
+    },
+    {
+      "conceptOntology": "LOINC",
+      "index": true,
+      "editRoles": "administrator, author",
+      "name": "Related Analysis",
+      "properties": [
+        {
+          "conceptOntology": "SNOMEDCT",
+          "Object Type": "exmd:Analyses",
+          "editRoles": "administrator, author",
+          "name": "DocURL",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+          "domain": "url",
+          "description": "Relative ID (accession) of doc, provide Document URL"
+        }
+      ],
+      "required": true,
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+      "category": true,
+      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-AN)",
+      "description": "ID of related Analysis document"
+    },
+    {
+      "index": true,
+      "editRoles": "administrator, author",
+      "name": "Related Experiments",
+      "required": true,
+      "items": [
+        {
+          "conceptOntology": "LOINC",
+          "index": true,
+          "editRoles": "administrator, author",
+          "name": "Related Experiment",
+          "identifier": true,
+          "properties": [
+            {
+              "conceptOntology": "SNOMEDCT",
+              "Object Type": "exmd:Experiments",
+              "editRoles": "administrator, author",
+              "name": "DocURL",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "domain": "url",
+              "description": "Relative ID (accession) of doc, provide Document URL"
+            }
+          ],
+          "required": true,
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+          "category": true,
+          "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-EX)",
+          "description": "ID of related Experiment document"
+        }
+      ],
+      "category": true,
+      "domain": "numItems",
+      "description": "Items -- Related Experiment Documents"
+    },
+    {
+      "index": true,
+      "editRoles": "administrator, author",
+      "name": "Related Biosamples",
+      "required": true,
+      "items": [
+        {
+          "conceptOntology": "LOINC",
+          "index": true,
+          "editRoles": "administrator, author",
+          "name": "Related Biosample",
+          "identifier": true,
+          "properties": [
+            {
+              "conceptOntology": "SNOMEDCT",
+              "Object Type": "exmd:Biosamples",
+              "editRoles": "administrator, author",
+              "name": "DocURL",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "domain": "url",
+              "description": "Relative ID (accession) of doc, provide Document URL"
+            },
+            {
+              "conceptOntology": "LOINC",
+              "index": true,
+              "editRoles": "administrator, author",
+              "name": "Related Donor",
+              "properties": [
+                {
+                  "conceptOntology": "SNOMEDCT",
+                  "Object Type": "exmd:Donors",
+                  "editRoles": "administrator, author",
+                  "name": "DocURL",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+                  "domain": "url",
+                  "description": "Relative ID (accession) of doc, provide Document URL"
+                }
+              ],
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+              "category": true,
+              "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-DO)",
+              "description": "ID of related Donor document of this biosample"
+            },
+            {
+              "conceptOntology": "LOINC",
+              "index": true,
+              "editRoles": "administrator, author",
+              "name": "Related Result Files",
+              "properties": [
+                {
+                  "conceptOntology": "SNOMEDCT",
+                  "Object Type": "exmd:Result Files",
+                  "editRoles": "administrator, author",
+                  "name": "DocURL",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+                  "domain": "url",
+                  "description": "Relative ID (accession) of doc, provide Document URL"
+                }
+              ],
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+              "category": true,
+              "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-RF)",
+              "description": "ID of related Result Files document of this biosample"
+            },
+            {
+              "index": true,
+              "editRoles": "administrator, author",
+              "name": "Related Read Counts Docs",
+              "items": [
+                {
+                  "conceptOntology": "LOINC",
+                  "index": true,
+                  "editRoles": "administrator, author",
+                  "name": "Related Read Counts",
+                  "identifier": true,
+                  "properties": [
+                    {
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "name": "DocURL",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+                      "domain": "url",
+                      "description": "Relative ID (accession) of doc, provide Document URL"
+                    }
+                  ],
+                  "required": true,
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                  "category": true,
+                  "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-RC)",
+                  "description": "ID of related Read Counts document of this biosample"
+                }
+              ],
+              "category": true,
+              "domain": "numItems",
+              "description": "Items -- Related Read Counts Documents"
+            }
+          ],
+          "required": true,
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+          "category": true,
+          "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-BS)",
+          "description": "ID of related Biosample document"
+        }
+      ],
+      "category": true,
+      "domain": "numItems",
+      "description": "Items -- Related Biosample Documents"
+    }
+  ],
+  "conceptURL": "http://purl.obolibrary.org/obo/ERO_0000020",
+  "domain": "regexp(FTPJob-FTP(smRNA|exceRpt)Pipeline-[a-zA-z0-9]{6}-[0-9]{4})",
+  "description": "Document Describing Information About a Single FTP Data Submission Job; FTPJob ID"
+}

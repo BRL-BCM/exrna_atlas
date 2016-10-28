@@ -1,0 +1,65 @@
+
+.otherContent {
+  background-color: #F4FFF7 ;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.45);
+  margin: 15px ;
+  padding: 10px ;
+  max-width: 600px ;
+  font-size: 0.8em ;
+}
+
+#explanation {
+  z-index: 10 ;
+  pointer-events: none ;
+  color: #006ad1 ;
+  position: absolute ;
+  display: flex ;
+  justify-content: center ;
+  align-items: center ;
+  width: 100% ;
+  height: 100% ;
+  top: 0 ;
+  left: 0 ;
+  text-align: center ;
+}
+
+#percentage {
+  z-index: 10 ;
+  font-family : "Comic Sans MS",cursive,sans-serif ;
+  font-size: 1.1em ;
+  font-weight: bold ;
+}
+
+.sb.canvas {
+  position : relative ;
+}
+
+#detector {
+  opacity: 0 ;
+}
+
+svg path.path {
+  fill-rule: evenodd ;
+  stroke: white ;
+  stroke-width: 1px ;
+  opacity: 1 ;
+}
+
+#diseaseSB-title {
+  font-size: 1.2em ;
+  font-weight: bold ;
+  font-family: "Comic Sans MS", cursive, sans-serif ;
+  text-transform: capitalize ;
+  text-align: center ;
+  clear:  both ;
+  margin-bottom: 30px ;
+}
+
+#legend {
+  font-weight : bold ;
+  font-size: 0.56em ;
+}
+
+#trail text.crumb.label {
+  font-size : 0.52em ;
+}

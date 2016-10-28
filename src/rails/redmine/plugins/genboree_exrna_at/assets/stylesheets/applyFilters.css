@@ -1,0 +1,38 @@
+
+div#searchSummary {
+   float: left;
+   margin-left: 3%;
+   margin-right: 3%;
+   clear: both;
+   width: 94%;
+   margin-bottom: 3%; 
+}
+
+.searchResultsPageHelpText {
+   font-size: 1em ;
+   font-family: "Trebuchet MS", cursive, sans-serif ;
+   background-color: #fcfaf7 ;
+   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.45);
+   margin-left: 3%;
+   margin-bottom: 3%;
+   max-width: 70% ;
+   padding: 10px ;   
+   clear: both;
+}
+
+div.gb-wait {
+  cursor: wait;
+}
+
+span.gb-tip-footnote {
+  font-size: 88%;
+  font-style: italic;
+}
+/*Icons for the search grid tool bar*/
+.backSearch {
+  background-image: url('/images/silk/arrow_left.png') !important;
+}
+
+.downloadAll {
+  background-image: url('/images/download.png') !important;
+}

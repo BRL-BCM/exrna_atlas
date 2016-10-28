@@ -1,0 +1,11 @@
+.x-dropdown-menu {
+  min-width: 150px;
+  padding: 10px;
+  max-height: 250px;
+  overflow-y: scroll;
+}
+
+.month-list {
+  list-style-type: none;
+  padding-left: 15px;
+}

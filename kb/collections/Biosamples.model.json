@@ -1,0 +1,677 @@
+{
+  "properties": [
+    {
+      "comments": "Assigned by server at different stages.",
+      "domain": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)",
+      "conceptOntology": "SNOMEDCT",
+      "required": true,
+      "name": "Status",
+      "editRoles": "administrator",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263490005",
+      "default": "Add",
+      "description": "Status of the document"
+    },
+    {
+      "comments": "Assigned by server.",
+      "domain": "float",
+      "name": "Schema Version",
+      "editRoles": "administrator",
+      "default": 1.0,
+      "description": "Version of this data model schema"
+    },
+    {
+      "domain": "string",
+      "conceptOntology": "LOINC",
+      "required": true,
+      "name": "Name",
+      "index": true,
+      "editRoles": "administrator, author",
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72974-6",
+      "description": "Name of the sample"
+    },
+    {
+      "domain": "string",
+      "conceptOntology": "HL7",
+      "name": "Description",
+      "editRoles": "administrator, author",
+      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+      "description": "A plain text description of the biosample. Do not include experiment details, constructs or treatments."
+    },
+    {
+      "properties": [
+        {
+          "domain": "url",
+          "conceptOntology": "SNOMEDCT",
+          "name": "DocURL",
+          "Object Type": "exmd:Donors",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+          "description": "Relative ID (accession) of Donor ID doc, provide Document URL"
+        },
+        {
+          "comments": "days, weeks, months, years",
+          "domain": "measurement(years)",
+          "conceptOntology": "SNOMEDCT",
+          "name": "Age at Sampling",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/397669002",
+          "description": "The age or age-range of the donor at the time of collection (years for postnatal, gestational age in weeks for prenatal)"
+        },
+        {
+          "domain": "string",
+          "conceptOntology": "LOINC",
+          "name": "Notes",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+          "description": "Additional notes about donor"
+        }
+      ],
+      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-DO)",
+      "required": true,
+      "name": "Donor ID",
+      "category": true,
+      "index": true,
+      "editRoles": "administrator, author",
+      "description": "ID of related donor document"
+    },
+    {
+      "properties": [
+        {
+          "properties": [
+            {
+              "comments": "enum(Homo sapiens, Mus musculus, Rattus norvegicus)",
+              "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=NCBITAXON&subtree_root=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FNCBITAXON%2F40674)",
+              "conceptOntology": "MS",
+              "required": true,
+              "name": "Scientific Name",
+              "index": true,
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.obolibrary.org/obo/MS_1001469",
+              "default": "Homo sapiens",
+              "description": "Scientific name of sample that distinguishes its taxonomy. This field is a look-ahead search box that connects to BioPortal, so start typing the biological name of the organism (Example: Homo sapiens, Mus musculus)."
+            },
+            {
+              "comments": "Assign GenBank common name of the organism for selected species",
+              "domain": "enum(Human, Mouse, Rat)",
+              "conceptOntology": "MS",
+              "name": "Common Name",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.obolibrary.org/obo/MS_1001468",
+              "default": "Human",
+              "description": "GenBank common name of the organism"
+            },
+            {
+              "comments": "Assign NCBI Taxonomy ID for selected species",
+              "domain": "posInt",
+              "conceptOntology": "MS",
+              "name": "Taxon ID",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.obolibrary.org/obo/MS_1001467",
+              "default": 9606,
+              "description": "Taxonomy ID"
+            }
+          ],
+          "fixed": true,
+          "domain": "[valueless]",
+          "conceptOntology": "NCBITAXON",
+          "required": true,
+          "name": "Species",
+          "category": true,
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.obolibrary.org/obo/NCBITaxon_species",
+          "description": "Category -- Species"
+        },
+        {
+          "properties": [
+            {
+              "domain": "string",
+              "name": "Symptoms",
+              "editRoles": "administrator, author",
+              "description": "Symptoms of the disease"
+            },
+            {
+              "domain": "string",
+              "name": "Pathology",
+              "editRoles": "administrator, author",
+              "description": "Disease pathology"
+            },
+            {
+              "domain": "string",
+              "name": "Disease Duration",
+              "editRoles": "administrator, author",
+              "description": "Duration of the disease"
+            }
+          ],
+          "domain": "bioportalTerms((DOID,http://purl.obolibrary.org/obo/DOID_4),(NCIT,http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C7057),(NCIT,http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C94342))",
+          "conceptOntology": "SNOMEDCT",
+          "required": true,
+          "name": "Disease Type",
+          "category": true,
+          "index": true,
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/64572001",
+          "description": "Enter first few characters of disease name. This field is a look-ahead search box that connects to DOID Ontology and retrieves a list of all disease terms. User selects the appropriate ontology concept for the disease from that list. Type \"Healthy Subject\", if sample was taken from a healthy donor."
+        },
+        {
+          "domain": "bioportalTerms((SNOMEDCT,http://purl.bioontology.org/ontology/SNOMEDCT/91689009),(SNOMEDCT,http://purl.bioontology.org/ontology/SNOMEDCT/272524002),(SNOMEDCT,http://purl.bioontology.org/ontology/SNOMEDCT/410652009))",
+          "conceptOntology": "FMA",
+          "required": true,
+          "name": "Anatomical Location",
+          "index": true,
+          "editRoles": "administrator, author",
+          "conceptURL": "http://sig.uw.edu/fma#Anatomical_location",
+          "description": "Details about the anatomical location from which the fluid was collected. This field is a look-ahead search box that connects to SNOMEDCT Ontology and retrieves a list of correct ontology terms for all possible anatomical locations."
+        },
+        {
+          "properties": [
+            {
+              "comments": "enum(Serum, Plasma, Saliva, Sweat, Urine, Tears, Bile, Breast Milk, CSF, Cell Culture Supernatant, Other)",
+              "domain": "bioportalTerms((SNOMEDCT,http://purl.bioontology.org/ontology/SNOMEDCT/91720002),(MESH,http://purl.bioontology.org/ontology/MESH/D017077))",
+              "conceptOntology": "SNOMEDCT",
+              "required": true,
+              "name": "Biofluid Name",
+              "index": true,
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/32457005",
+              "description": "Source of body fluid of sample. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all possible biological fluids (Example: Serum, Plasma, Saliva, Sweat, Urine, Tears, Bile, Breast Milk, Cerebrospinal fluid)."
+            },
+            {
+              "properties": [
+                {
+                  "comments": "enum(peripheral venipuncture, clean catch urine, catheterized urine, other)",
+                  "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=SNOMEDCT&subtree_root=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F71388002)",
+                  "conceptOntology": "LOINC",
+                  "required": true,
+                  "name": "Sample Collection Method",
+                  "index": true,
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP32732-7",
+                  "description": "Description of sample collection method. This field is a look-ahead search box that retrieves a list of correct ontology terms from SNOMEDCT Ontology for all possible fluid collection methods (Example: Venipuncture, Urine specimen obtained by clean catch procedure, Catheter)."
+                },
+                {
+                  "domain": "string",
+                  "conceptOntology": "VIVO",
+                  "name": "Geographic Location",
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://vivoweb.org/ontology/core#GeographicLocation",
+                  "description": "Geographic location of the sample donor"
+                },
+                {
+                  "domain": "date",
+                  "name": "Collection Date",
+                  "editRoles": "administrator, author",
+                  "description": "Date of sample collection"
+                },
+                {
+                  "domain": "timestamp",
+                  "conceptOntology": "LOINC",
+                  "name": "Time of Collection",
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP29036-8",
+                  "description": "Time of day when the biofluid sample was collected"
+                },
+                {
+                  "properties": [
+                    {
+                      "domain": "string",
+                      "name": "Other Collection Tube Type",
+                      "editRoles": "administrator, author",
+                      "description": "Other type of collection tube, if not listed"
+                    }
+                  ],
+                  "domain": "enum(Red top tube (no additive), EDTA tube, Citrate tube, SST, Li-Heparin GST, Other)",
+                  "required": true,
+                  "name": "Collection Tube Type",
+                  "index": true,
+                  "editRoles": "administrator, author",
+                  "description": "Sample collection tube type: Red top tube (no additive), EDTA tube, Citrate tube, SST, Li-Heparin GST, Other"
+                },
+                {
+                  "domain": "measurement(minutes)",
+                  "conceptOntology": "SNOMEDCT",
+                  "name": "Holding Time",
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410669006",
+                  "description": "Storage time"
+                },
+                {
+                  "domain": "measurement(C)",
+                  "conceptOntology": "SNOMEDCT",
+                  "name": "Holding Temperature",
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246508008",
+                  "description": "Storage temperature"
+                },
+                {
+                  "domain": "string",
+                  "conceptOntology": "SNOMEDCT",
+                  "name": "Preservatives Used",
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0033086",
+                  "description": "Preservatives used for storing samples"
+                },
+                {
+                  "domain": "string",
+                  "name": "Freezing Method",
+                  "editRoles": "administrator, author",
+                  "description": "Method of freezing"
+                },
+                {
+                  "domain": "int",
+                  "conceptOntology": "SNOMEDCT",
+                  "name": "Number of Times Freeze Thawed",
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/252109000",
+                  "description": "The number of times the sample was freeze thawed"
+                },
+                {
+                  "domain": "string",
+                  "conceptOntology": "SNOMEDCT",
+                  "name": "Contamination Removal Method",
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246412000",
+                  "description": "Method used for removal of contaminating cells"
+                }
+              ],
+              "fixed": true,
+              "domain": "[valueless]",
+              "name": "Collection Details",
+              "category": true,
+              "editRoles": "administrator, author",
+              "description": "Category -- Collection Details"
+            },
+            {
+              "domain": "string",
+              "conceptOntology": "LOINC",
+              "name": "Notes",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+              "description": "Additional notes about sample's collection method from biological fluid"
+            }
+          ],
+          "fixed": true,
+          "domain": "[valueless]",
+          "name": "Biological Fluid",
+          "category": true,
+          "editRoles": "administrator, author",
+          "description": "Category -- Biological Fluid"
+        },
+        {
+          "properties": [
+            {
+              "properties": [
+                {
+                  "comments": "enum(Uncultured Primary Cell, Cultured Primary Cell, Embryonic Stem Cell (ESC), Induced Pluripotent Stem Cell (iPSC), Mesenchymal Stem Cell (MSC), Neural Stem Cell (NSC), Cancer cell line, In Vitro Differentiated Cells, Other)",
+                  "domain": "bioportalTerms((EFO,http://purl.obolibrary.org/obo/BTO_0000214),(EFO,http://www.ebi.ac.uk/efo/EFO_0000324),(CL,http://purl.obolibrary.org/obo/GO_0005623))",
+                  "conceptOntology": "SNOMEDCT",
+                  "required": true,
+                  "name": "Type",
+                  "index": true,
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+                  "description": "If source material is cell culture supernatant, describe the type of cell culture. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all possible types of cell cultures (Example: Embryonic stem cell, induced pluripotent stem cell, Mesenchymal stem cell, cancer cell line)."
+                },
+                {
+                  "domain": "bioportalTerms((CLO,http://purl.obolibrary.org/obo/CLO_0000001),(EFO,http://www.ebi.ac.uk/efo/EFO_0000322),(NCIT,http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16403))",
+                  "name": "Cell Line",
+                  "editRoles": "administrator, author",
+                  "description": "Name of cell line from Cell Line Ontology"
+                },
+                {
+                  "domain": "date",
+                  "conceptOntology": "LOINC",
+                  "name": "Start Date",
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU008298",
+                  "description": "Start date of cell culture"
+                },
+                {
+                  "domain": "date",
+                  "conceptOntology": "LOINC",
+                  "name": "Harvest Date",
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU021546",
+                  "description": "Date when the culture was harvested"
+                }
+              ],
+              "comments": "enum(Fetal tissue, Adult tissue, Tumor)",
+              "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=NCIT&subtree_root=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C19157)",
+              "conceptOntology": "SNOMEDCT",
+              "required": true,
+              "name": "Source",
+              "index": true,
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/260753009",
+              "description": "Source of cell culture. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all possible cell culture sources (Example: Fetal Tissue, Tumor Tissue)."
+            },
+            {
+              "properties": [
+                {
+                  "domain": "date",
+                  "conceptOntology": "LOINC",
+                  "name": "Date Obtained",
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU021546",
+                  "description": "Date when the tissue was obtained"
+                },
+                {
+                  "comments": "enum(Fresh, Frozen, FFPE)",
+                  "domain": "bioportalTerms((EFO,http://purl.obolibrary.org/obo/OBI_0100051),(SNOMEDCT,http://purl.bioontology.org/ontology/SNOMEDCT/119376003))",
+                  "conceptOntology": "LOINC",
+                  "required": true,
+                  "name": "Tissue Type",
+                  "index": true,
+                  "editRoles": "administrator, author",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU032335",
+                  "description": "Select type of tissue.  This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all possible types of tissues (Example: Fresh, frozen, formalin-fixed paraffin-embedded (FFPE))"
+                }
+              ],
+              "comments": "enum(Adipose, Adrenal, Aorta, Bladder, Blood, Brain, Breast, Cell Line Control, Cervix, Chondrocyte, Colon, Diaphragm, Duodenum, Endometrial, Fallopian Tube, Gall bladder, Heart, Kidney, Large Intestine, Liver, Lung, Lymph Node, Ovary, Pancreas, Placenta, Prostate, Rectal, Skeletal muscle, Skin, Small intestine, Smooth muscle, Spinal Cord, Spleen, Stomach, Testis, Thymus, Thyroid, Tongue, Umbilical cord, Ureter, Other)",
+              "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=UBERON&subtree_root=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FUBERON_0000061)",
+              "conceptOntology": "UBERON",
+              "required": true,
+              "name": "Tissue",
+              "index": true,
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.obolibrary.org/obo/UBERON_0000479",
+              "description": "Select source of tissue. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all possible tissues (Example: Adipose, Adrenal, Aorta, Bladder, Blood, Brain, Breast, Cell Line Control, Cervix, Chondrocyte, Colon, Diaphragm, Duodenum, Endometrial, Fallopian Tube, Gall bladder, Heart, Kidney, Large Intestine, Liver, Lung, Lymph Node, Ovary, Pancreas, Placenta, Prostate, Rectal, Skeletal muscle, Skin, Small intestine, Smooth muscle, Spinal Cord, Spleen, Stomach, Testis, Thymus, Thyroid, Tongue, Umbilical cord, Ureter)"
+            },
+            {
+              "domain": "string",
+              "conceptOntology": "LOINC",
+              "name": "Notes",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+              "description": "Additional notes about sample's collection method from cell culture supernatant"
+            }
+          ],
+          "fixed": true,
+          "domain": "[valueless]",
+          "conceptOntology": "OBI",
+          "name": "Cell Culture Supernatant",
+          "category": true,
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.obolibrary.org/obo/OBI_1000023",
+          "description": "Category – Cell Culture Supernatant"
+        },
+        {
+          "comments": "g, mg, cells/ml, cells, whole embryos, items, ug",
+          "domain": "string",
+          "conceptOntology": "SNOMEDCT",
+          "name": "Starting Amount",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246205007",
+          "description": "The initial quantity of cells or tissues obtained"
+        },
+        {
+          "properties": [
+            {
+              "domain": "int",
+              "name": "Biological Replicate Number",
+              "editRoles": "administrator, author",
+              "knownRange": 0,
+              "default": 0,
+              "description": "Data collection under the same methods using a different biological source, measuring the variability in the biological source."
+            },
+            {
+              "domain": "int",
+              "name": "Technical Replicate Number",
+              "editRoles": "administrator, author",
+              "knownRange": 0,
+              "default": 0,
+              "description": "Data collection under the same methods using the same biological source, measuring the variability in the method."
+            }
+          ],
+          "domain": "string",
+          "conceptOntology": "LOINC",
+          "name": "Replicate Information",
+          "category": true,
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU003138",
+          "description": "Category -- Replicate Information"
+        },
+        {
+          "properties": [
+            {
+              "domain": "string",
+              "conceptOntology": "LOINC",
+              "name": "Company Name",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU032343",
+              "description": "The name of the company that provided the biological material"
+            },
+            {
+              "domain": "string",
+              "name": "Lab Name",
+              "editRoles": "administrator, author",
+              "description": "The name of the laboratory that provided the biological material"
+            },
+            {
+              "domain": "string",
+              "conceptOntology": "NCIT",
+              "name": "Person Name",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25191",
+              "description": "The name of the person that provided the biological material"
+            }
+          ],
+          "domain": "string",
+          "conceptOntology": "LOINC",
+          "name": "Provider",
+          "category": true,
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU001352",
+          "description": "Category -- Provider of Biosample"
+        },
+        {
+          "domain": "string",
+          "conceptOntology": "LOINC",
+          "name": "Notes",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+          "description": "Additional notes about Biological Sample Elements"
+        }
+      ],
+      "fixed": true,
+      "domain": "[valueless]",
+      "required": true,
+      "name": "Biological Sample Elements",
+      "category": true,
+      "editRoles": "administrator, author",
+      "description": "Category -- Elements in Biological Sample"
+    },
+    {
+      "properties": [
+        {
+          "comments": "enum(Exosomes, Microvesicles, Endogenous Viruses) - not sure - depends  on ontology agreement for these terms, also not easy to distinguish  among exosomes, microvesicles or endogenous viruses",
+          "domain": "enum(extracellular exosome, extracellular vesicle, HDL-containing protein-lipid-RNA complex, total cell-free biofluid RNA, ribonucleoprotein complex, protein-lipid-RNA complex, LDL-containing protein-lipid-RNA complex, apoptotic body)",
+          "conceptOntology": "SNOMEDCT",
+          "required": true,
+          "name": "exRNA Source",
+          "index": true,
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/260753009",
+          "description": "Details of exRNA source material"
+        },
+        {
+          "domain": "enum(Yes, No)",
+          "conceptOntology": "CHMO",
+          "required": true,
+          "name": "Fractionation",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.obolibrary.org/obo/CHMO_0001625",
+          "description": "Fractionated - yes or no? No implies that total exRNA was used."
+        },
+        {
+          "domain": "string",
+          "conceptOntology": "LOINC",
+          "name": "Notes",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+          "description": "Additional Notes about Molecular Sample Elements"
+        }
+      ],
+      "fixed": true,
+      "domain": "[valueless]",
+      "required": true,
+      "name": "Molecular Sample Elements",
+      "category": true,
+      "editRoles": "administrator, author",
+      "description": "Category -- Molecular Sample Elements"
+    },
+    {
+      "domain": "numItems",
+      "required": true,
+      "name": "Related Experiments",
+      "category": true,
+      "editRoles": "administrator, author",
+      "description": "Items -- Related Experiment Documents",
+      "items": [
+        {
+          "properties": [
+            {
+              "domain": "url",
+              "conceptOntology": "SNOMEDCT",
+              "name": "DocURL",
+              "Object Type": "exmd:Experiments",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "description": "Relative ID (accession) of doc, provide Document URL"
+            }
+          ],
+          "identifier": true,
+          "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-EX)",
+          "conceptOntology": "LOINC",
+          "required": true,
+          "name": "Related Experiment",
+          "category": true,
+          "index": true,
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+          "description": "ID of related experiment document"
+        }
+      ]
+    },
+    {
+      "domain": "numItems",
+      "name": "Aliases",
+      "category": true,
+      "editRoles": "administrator, author",
+      "description": "Items -- Aliases",
+      "items": [
+        {
+          "properties": [
+            {
+              "domain": "enum(SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "conceptOntology": "EDAM",
+              "name": "dbName",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://edamontology.org/data_1056",
+              "description": "Database name of alias (SRA, GEO, DDBJ, ENCODE, dbGaP)"
+            },
+            {
+              "domain": "url",
+              "conceptOntology": "SNOMEDCT",
+              "name": "URL",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "description": "URL that points to this Biosample in alias database"
+            },
+            {
+              "domain": "date",
+              "conceptOntology": "EDAM",
+              "name": "Date Submitted to External Database",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://edamontology.org/data_1056",
+              "description": "Date submitted to external public domain database"
+            }
+          ],
+          "identifier": true,
+          "domain": "string",
+          "conceptOntology": "LOINC",
+          "required": true,
+          "name": "Accession",
+          "category": true,
+          "index": true,
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU034731",
+          "description": "Alias Accession ID of this Biosample in other databases (Example: SRA, GEO)"
+        }
+      ]
+    },
+    {
+      "domain": "numItems",
+      "name": "Pooled Biosamples",
+      "category": true,
+      "editRoles": "administrator, author",
+      "description": "Items -- Pooled Samples - Related documents – List of Related Samples",
+      "items": [
+        {
+          "properties": [
+            {
+              "domain": "url",
+              "conceptOntology": "SNOMEDCT",
+              "name": "DocURL",
+              "Object Type": "exmd:Biosamples",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "description": "Relative ID(accession) of pooled sample doc, provide Document URL"
+            }
+          ],
+          "identifier": true,
+          "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-[BS|DO])",
+          "conceptOntology": "NCIT",
+          "required": true,
+          "name": "Pooled Biosample",
+          "category": true,
+          "index": true,
+          "editRoles": "administrator, author",
+          "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45910",
+          "description": "ID of Biosample document from which this sample is pooled"
+        }
+      ]
+    },
+    {
+      "domain": "numItems",
+      "name": "Custom Metadata",
+      "category": true,
+      "editRoles": "administrator, author",
+      "description": "Custom metadata fiels defined by users",
+      "items": [
+        {
+          "properties": [
+            {
+              "domain": "string",
+              "name": "Value",
+              "editRoles": "administrator, author",
+              "description": "Value of this additonal metadata property"
+            },
+            {
+              "domain": "string",
+              "name": "Notes",
+              "editRoles": "administrator, author",
+              "description": "Additional notes about this metadata property and value"
+            }
+          ],
+          "identifier": true,
+          "domain": "string",
+          "required": true,
+          "name": "Property Name",
+          "category": true,
+          "index": true,
+          "editRoles": "administrator, author",
+          "description": "Name of the metadata property"
+        }
+      ]
+    }
+  ],
+  "identifier": true,
+  "comments": "Assigned by server after validation.",
+  "domain": "autoID(EXR, uniqAlphaNum, BS)",
+  "conceptOntology": "NCIT",
+  "name": "Biosample",
+  "index": true,
+  "editRoles": "administrator, author",
+  "conceptURL": "http://purl.obolibrary.org/ontology/NCIT/C43412",
+  "description": "Document Describing Information About the Biosamples; Biosample ID"
+}

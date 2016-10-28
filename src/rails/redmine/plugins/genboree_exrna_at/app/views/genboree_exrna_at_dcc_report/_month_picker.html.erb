@@ -1,0 +1,30 @@
+<% 
+  # Generate HTML for monthly checkboxes 
+  # Functionality comes in monthPicker.js
+  # @todo limit checkboxes for months after startDate and only until the current month
+%>
+<% # check for locals
+  if(startDate.nil? or !startDate.is_a?(DateTime))
+    startDate = DateTime.now()
+  end
+
+  years = (DateTime.now.year..startDate.year).to_a
+  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+%>
+
+<% years.each do |year| %>
+  <div id="months-<%=year%>" data-year="<%=year%>">
+    <li>
+      <input type="checkbox" id="check-<%=year%>" data-target="month-list-<%=year%>" data-year="<%=year%>" checked="true"></input>
+      <label for="check-<%=year%>"><%=year%></label>
+    </li>
+    <ul id="month-list-<%=year%>" class="month-list">
+      <% months.each do |month| %>
+      <li>
+        <input type="checkbox" id="<%="check-#{year}-#{month}"%>" data-target="<%="check-#{year}"%>" data-month="<%=month%>" checked="true"></input>
+        <label for="<%="check-#{year}-#{month}"%>"><%=month%></label>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

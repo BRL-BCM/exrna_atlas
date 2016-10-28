@@ -1,0 +1,660 @@
+/* ################################ */
+/* CSS for exRNA Atlas landing page */
+/* ################################ */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* width: 960px; */
+  /* height: 500px; */
+  position: relative;
+  background: #ffffff none repeat scroll 0 0;
+}
+
+/*body.x-body{
+  background-color: white !important
+}
+*/
+
+a.externalLink {
+  color: #E4700A !important;
+}
+
+sup.loginRequired {
+  color: red ;
+  font-size: 0.66em;
+}
+
+.hidden {
+  display: none; 
+}
+
+.visible {
+  display: inline;
+}
+
+/* ################################ */
+/* Header */
+div#header {
+  clear: both ;
+  margin: 5px ;
+/*  border-bottom: 1px solid black ;*/
+  background: #ffffff none repeat scroll 0 0;
+}
+
+div#header img {
+  height: 80px ;
+}
+
+div#pageContent {
+  margin: 0px ;
+  padding: 0px ;
+  width: 100% ;
+}
+
+
+/* ################################ */
+/* Welcome Title and Intro text */
+div#welcomeContent {
+  min-width: 600px ;
+  max-width: 900px ;
+  clear: both ;
+}
+
+div.welcomeText {
+  margin: 2px 6px 2px 6px ;
+  padding: 2px 6px 2px 6px ;
+  font-size: 1.7em ;
+  font-weight: bold ;
+  color: #00B5FE;
+  text-align: left ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+}
+
+div#introContent {
+/*  min-width: 500px ;*/
+  max-width: 950px ;
+  clear: both ;
+  width: 94%;
+  margin-left: 1%;
+  margin-right: 5%;
+  /*padding-left: 15px ;*/
+}
+
+div.introText {
+/*  min-height: 100px ; */
+  margin: 2px 6px 2px 6px ;
+  padding: 2px 6px 2px 6px ;
+  font-size: 0.8em ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+}
+
+/* Centered div for everything in the page below the donuts */
+.pageMain {
+  clear: both;
+  width: 90%;
+  margin-left: 1%;
+  margin-right: 9%;
+}
+
+/* ################################ */
+/* Faceted Search Panel */
+div#samplesSummary {
+  margin-left: 1%;
+}
+
+div#facetedSearch {
+  min-width: 500px ;
+  max-width: 900px ;
+  clear: both ;
+/*  box-shadow: 1px 1px 2px 1px rgba(0,0,0, 0.45) ;
+  background-color: #f4fff7;*/
+}
+
+div.facetedSearch {
+  margin: 20px 20px 1px ;
+  padding: 2px 6px 2px 6px ;
+  font-size: 0.7em ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+}
+
+h3.selectTitle {
+  color: #00B5FE;
+  text-align: left ;
+  padding-left: 8px ;
+  margin: 10px;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+}
+
+span#numSamplesSel {
+  color: red;
+}
+
+.menuIconsThumbnail {
+  width: 14px;
+  height: 14px;
+  vertical-align: bottom;
+}
+
+/* ################################ */
+/* Intro Text about faceted search */
+ul.unstyledList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.searchFacet {
+  background-image: url("/images/silk/magnifier.png");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 0 3px 20px;
+  margin: .4em 0;
+}
+
+li.viewResults {
+  background-image: url("/images/silk/table_multiple.png");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 0 3px 20px;
+  margin: .4em 0;
+}
+
+li.downloadResults {
+  background-image: url("/images/download.png");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 0 3px 20px;
+  margin: .4em 0;
+}
+
+li.tutorialVideo {
+  background-image: url("/images/silk/film.png");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 0 3px 20px;
+  margin: .4em 0;
+}
+
+li.tutorialWiki {
+  background-image: url("/images/silk/help.png");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 0 3px 20px;
+  margin: .4em 0;
+}
+
+/* ################################ */
+/* Second half of the page */
+div#restOfPage {
+  margin: 5px ;
+  /*padding: 16px 0px 0px 0px ;*/
+  clear: both ;
+  /* border-top:  1px solid black ;  */
+}
+
+/* ################################ */
+/* Data Summary panel on the left */
+div#dataSummary {
+ /* min-width: 900px ;
+  max-width: 900px ;
+  width: 900px ;*/
+  /*margin: 2px 6px 2px 6px ;*/
+  background-color: transparent ;
+  float: left ;
+/*  border-right:  1px solid black ;
+*/
+}
+
+p.secTitle{
+  font-size: 1.0em ;
+  font-weight: bold ;
+  color: #00B5FE;
+  text-align: left ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+}
+
+/* ################################ */
+/* Visualization Grids panel */
+div#visGrids {
+  min-width: 420px ;
+  min-height: 180px ;
+/*   max-width: 680px;*/
+  margin: 2px 6px 2px 6px ;
+  padding-left: 10px;
+  /* border-left: 1px solid black ; */
+}
+
+div#gridImgPanel {
+  margin: 2px;
+  background-color: #fcfaf7 ;
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0, 0.45) ;
+  float: left ;
+  padding-left: 6px;
+  max-width: 100%;
+  min-width: 800px;
+/*  min-height: 200px;
+*/
+}
+
+div#gridImgPanel1 {
+  /*margin: 2px 6px 2px 6px ;*/
+  /*background-color: #D9F4FC ;*/
+/*  box-shadow: 1px 1px 2px 1px rgba(0,0,0, 0.45) ;
+*/  float: left ;
+  width: 100%;
+/*  min-height: 200px;
+*/
+}
+
+h3.secTitle{
+  color: #00B5FE;
+  text-align: left ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+}
+
+div.visGrid {
+  float : left ;
+  max-height: 300px;
+  min-width: 180px;
+  padding: 7px;
+}
+
+div.drilldownGrid {
+  float : left ;
+  max-height: 300px;
+  width: 100%;
+  padding: 7px;
+}
+
+div.gridTitle{
+  text-align: left ;
+  font-weight: bold ;
+  font-size: 0.8em;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+}
+
+div.gridThumbnail {
+  float : left ;
+  margin: 15px ;
+  max-height: 120px;
+  max-width: 120px;
+}
+
+div.gridInfoText {
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0, 0.45) ;
+  background-color: #f4fff7;
+  float : left ;
+  max-height: 300px;
+  max-width: 130px;
+  margin: 2px 6px 2px 6px ;
+  padding: 6px ;
+  font-size: 0.7em ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+}
+
+div#sunburst1text {
+  max-width: 250px !important ;
+}
+
+div#linearTree1text {
+  max-width: 250px !important ;
+}
+
+div.drilldownGrid.drillDownsText {
+  max-width: 260px !important ;
+  width: 260px !important ;
+  margin-top: 10px; 
+}
+
+div.linearTree {
+  float: left;
+}
+
+div.thumbnailRow {
+  min-height: 310px;
+  float: left;
+  width: 100%;
+  margin: 2px 6px 2px 6px ;
+}
+
+div.biofluidGrid {
+  float : left ;
+  margin: 2px;
+  padding: 2px;
+  max-height: 350px;
+  width: 500px;
+}
+
+div#gridHelp{
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0, 0.45) ;
+  background-color: #f4fff7;
+  float : left ;
+  max-height: 300px;
+  width: 380px;
+  margin: 2px 6px 2px 6px ;
+  padding: 6px ;
+}
+div.gridHelpText {
+  font-size: 0.7em ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+}
+
+
+/* ################################ */
+/* DCC Summary Report Panel */
+div#dccSummary {
+  padding-left: 10px ;
+  float: left ;
+  clear: both;
+  margin: 2px 6px;
+  min-width: 800px;
+}
+
+div#dccSummaryPanel {
+  margin: 2px;
+  background-color: #fcfaf7 ;
+  float: left ;
+  padding-left: 6px;
+  max-width: 100%;
+  min-width: 800px;
+  border: 1px solid;
+}
+
+div.dccRepThumbnail {
+  float : left ;
+  /*border : 1px solid red ;*/
+  margin: 12px ;
+  max-height: 300px;
+  max-width: 220px;
+}
+
+/* ################################ */
+/* List of Useful Links */
+div#usefulLinks {
+  width: 100% ;
+  clear: both ;
+  margin: 2px 6px 2px 6px ;
+  background-color: transparent ;
+  padding: 6px ;
+  float: left ;
+}
+
+li.linkRes {
+  background-image: url("/images/silk/link.png");
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  padding: 3px 0 3px 20px;
+  font-size: 0.8em ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+}
+
+/* ################################ */
+/* From home.exRNA.css for all charts */
+div.pie {
+  margin: 2px ;
+  float : left ;
+  position : relative ;
+}
+
+div.titledPie div.title {
+  font-size: 1.2em ;
+  font-weight: bold ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+  text-transform: capitalize ;
+  text-align: center ;
+}
+
+div.filterMenu {
+  /* opacity : 0.5 ; */
+  padding: 5px ;
+  margin-left: 8px ;
+  width: 30px;
+  /* background-color: #333333; */
+  /* color: #ffffff; */
+  /* font-size: 2em; */
+  /* Sticky */
+  position: fixed;
+  z-index: 10000;
+  border-radius: 0.35em 0.35em 0.35em 0.35em;
+  box-shadow: 0px 0px 4px 3px rgba(0,0,0, 0.25) ;
+}
+
+div.filterMenu:hover {
+  box-shadow: 0px 0px 5px 5px rgba(255, 112, 10, 0.5) ;
+}
+
+div.filterMenu li {
+  cursor: pointer ;
+  margin-left: 6px ;
+}
+
+div.titledBar {
+  float: left;
+  padding: 7px;
+}
+
+div.titledBar div.title {
+  font-size: 0.8em ;
+  font-weight: bold ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+  text-transform: capitalize ;
+  text-align: left ;
+  clear:  both ;
+}
+
+div.titledBar div.bar {
+  /* border : 1px solid orange ; */
+  margin: 2px ;
+  clear:  both ;
+}
+
+/* Plus/Minus Pie Slice toggle */
+span.pieToggleBtn {
+  font-size: 10pt ;
+  color: steelblue ;
+  margin-left: 3px ;
+  vertical-align: super ;
+  cursor: pointer ;
+}
+
+div.bar svg {
+  padding: 5px ;
+}
+
+div.titledPie {
+  float : left ;
+  /*border : 1px solid red ;*/
+  margin: 4px ;
+  max-width: 300px ;
+}
+
+div.pie {
+  /*border : 1px solid orange ;*/
+  margin: 2px ;
+  float : left ;
+  position : relative ;
+}
+
+div.titledPie div.title {
+  font-size: 1em ;
+  font-weight: bold ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+  text-transform: capitalize ;
+  text-align: center ;
+}
+
+div.selections {
+  font-size: 0.72em ;
+  border : 1px solid #d3d3d3 ;
+  padding: 6px ;
+  min-height: 60px ;
+  max-height: 60px ;
+  overflow-y: visible ;
+  overflow-x: auto ;
+}
+
+div.selections.hidden {
+  display: none ;
+}
+
+div.selections div.label {
+  text-indent: -23px ;
+  padding-left: 23px ;
+}
+
+div.selections div.label.odd {
+  background-color: #f4f4f4 ;
+  max-width: 360px ;
+}
+
+div.selections div.value {
+  margin: 0 ;
+  padding: 0 ;
+  float: right ;
+}
+
+div.selections div.colorSquare {
+  display: inline-block ;
+  min-width: 10px ;
+  min-height:10px ;
+  max-width: 10px ;
+  max-height:10px ;
+  margin-right: 3px ;
+  margin-left: 3px ;
+  vertical-align: middle ;
+  margin-bottom: 1px ;
+}
+
+svg {
+  position: absolute ;
+}
+
+path.slice {
+  stroke-width:2px;
+}
+
+polyline {
+  opacity: 0.3;
+  stroke: black ;
+  stroke-width: 2px ;
+  fill: none ;
+}
+
+.label-text {
+  alignment-baseline: middle;
+  font-size : 0.66em ;
+  font-family: arial,helvetica,"sans-serif";
+  fill: #393939;
+}
+
+.label-text.select {
+  font-weight: bold ;
+}
+
+.label-line {
+  stroke-width: 1;
+  stroke: #393939;
+}
+
+.label-line.select {
+  stroke-width: 2 ;
+  stroke: #1565c0 ;
+}
+
+.label-end {
+}
+
+text.summary tspan {
+  text-anchor : middle ;
+  font-weight : bold ;
+  color : #1565c0 ;
+  fill: #1565C0 ;
+}
+
+.label-end.select
+{
+  fill : #1565c0 ;
+}
+
+svg .bar {
+}
+
+svg rect.bar.hover {
+  stroke : #1565c0 ;
+  stroke-width : 2 ;
+}
+
+svg text.label {
+  font-family: sans-serif ;
+  font-size: 11px ;
+  font-weight: bold ;
+  fill: #1565c0 ;
+  text-anchor: middle ;
+}
+
+svg text.label.hidden {
+  display: none ;
+}
+
+
+svg g.axis text.title {
+  font: 18px "Lucida Sans Unicode", "Lucida Grande", sans-serif ;
+}
+
+svg .axis {
+  font-size: 11px ;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif ;
+}
+
+svg .axis path,.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+svg .x.axis path {
+  display: none;
+}
+
+svg g.tick text.hover {
+  fill: #1565c0 ;
+  font-weight: bold ;
+}
+
+/* #################################### */
+/* requiresAccess.rhtml - specific or overrides */
+div#message1 {
+  font-size: 0.9em ;
+  margin: 20px 10px 20px 10px ;
+  box-shadow: 0px 0px 3px 3px rgba(0,0,0, 0.25) ;
+  width: 500px ;
+  overflow-y: hidden ;
+  overflow-x: hidden ;
+}
+
+div#message1.floatMenu-ng a:link,a:visited {
+  border: 0 !important ;
+  /* border-bottom:1px solid rgb(225, 112, 10) ; */
+  color: rgb(225, 112, 10) !important ;
+}
+
+div#message1.floatMenu-ng a:hover, a:focus, a:active {
+  border: 0 !important ;
+  color: rgb(225, 112, 10) !important ;
+}
+
+ul.inlineList.centered {
+  text-align: center;
+  margin-top: 25px ;
+  list-style-type: none ;
+}
+ul.inlineList li {
+  display: inline-block ;
+  padding-right: 20px ;
+  list-style-type: none ;
+}
+ul.inlineList a:hover {
+ font-weight: 600 ;
+}
+
+/* ###### END OF exRNA Atlas CSS ###### */
+/* #################################### */

@@ -1,0 +1,7 @@
+{
+    "id": "totalreads",
+    "path" : "totalInputReadsForBiofluidTransformed.flat.d3.json",
+    "transformation" : "totalInputReadsForBiofluid",
+    "transformColl": "analysesColl",
+    "modifyd3": "sumOfAllSubjects"
+}

@@ -1,0 +1,1292 @@
+{
+  "properties": [
+    {
+      "editRoles": "administrator",
+      "domain": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)",
+      "required": true,
+      "name": "Status",
+      "comments": "Assigned by server at different stages.",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263490005",
+      "default": "Add",
+      "description": "Status of the document",
+      "conceptOntology": "SNOMEDCT"
+    },
+    {
+      "editRoles": "administrator",
+      "domain": "float",
+      "name": "Schema Version",
+      "comments": "Assigned by server.",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/22303008",
+      "default": 1.0,
+      "description": "Version of this data model schema",
+      "conceptOntology": "SNOMEDCT"
+    },
+    {
+      "properties": [
+        {
+          "properties": [
+            {
+              "properties": [
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Alignment Method",
+                  "description": "Description of how the analysis was performed"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "enum(hg19, hg38, mm9, rn4, rn5, mm10)",
+                  "required": true,
+                  "name": "Genome Version",
+                  "conceptURL": "http://edamontology.org/data_2041",
+                  "default": "hg19",
+                  "description": "Genome assembly version",
+                  "conceptOntology": "EDAM"
+                },
+                {
+                  "properties": [
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "int",
+                      "name": "Maximum Alignment Length",
+                      "description": "The maximum read alignment length supported by the software. If the software aligns the entire read, use read length."
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "int",
+                      "name": "Mismatches Allowed",
+                      "description": "The number of mismatches allowed in an alignment"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "int",
+                      "name": "Alignments Allowed",
+                      "description": "The number of locations to which a read is allowed to align"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Treatment of Multiple Alignments",
+                      "description": "How reads aligning to multiple locations are treated"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Alignment Post-processing",
+                      "description": "Any post-processing applied to the alignments"
+                    }
+                  ],
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "[valueless]",
+                  "name": "Alignment Details",
+                  "fixed": true,
+                  "description": "Category -- Details of Alignment"
+                },
+                {
+                  "category": true,
+                  "items": [
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "Other Molecular Identifier",
+                          "description": "Other type of molecular identifier"
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "Source DB Name",
+                          "description": "Data source name (Example: miRBase)"
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "Source DB Version",
+                          "description": "Version of data source (Example: Release 19)"
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "name": "Source DB URL",
+                          "description": "URL of data source"
+                        }
+                      ],
+                      "editRoles": "administrator, author",
+                      "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=SO&subtree_root=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FSO_0000831)",
+                      "required": true,
+                      "name": "Molecular Identifier",
+                      "comments": "enum(miRNA, piRNA, snoRNA, tRNA, rRNA, Other)",
+                      "description": "Name of molecular identifier. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all possible molecular identifiers (Example: miRNA, piRNA, snRNA, snoRNA, tRNA, rRNA).",
+                      "index": true,
+                      "identifier": true
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "name": "Molecular Identifiers",
+                  "description": "Items -- Molecular Identifiers"
+                },
+                {
+                  "category": true,
+                  "items": [
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "name": "DocURL",
+                          "Object Type": "exmd:Biosamples",
+                          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+                          "description": "Relative ID (accession) of doc - provide Document URL",
+                          "conceptOntology": "SNOMEDCT"
+                        },
+                        {
+                          "properties": [
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Input Reads",
+                              "description": "Total number of reads in this Biosample",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "After Clipping",
+                              "description": "Total number of reads in this Biosample after clipping the 3' adapter sequence",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Total Mapped Reads",
+                              "description": "Total number of mapped reads in this Biosample",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Failed Quality Filter",
+                              "description": "Total number of reads that failed the quality filter",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Failed Homopolymer Filter",
+                              "description": "Total number of reads that failed the homopolymer filter",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Calibrator",
+                              "description": "Number of reads that mapped to calibrator sequences",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "UniVec Contaminants",
+                              "description": "Number of reads that mapped to UniVec contaminants",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "rRNAs",
+                              "description": "Number of reads that mapped to rRNAs",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Reads Used for Alignment",
+                              "description": "Number of reads that were used for alignment",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Genome",
+                              "description": "Number of reads that mapped to reference genome",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Reads Mapped to Reference Genome",
+                              "description": "Number of reads that mapped to reference genome",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "miRNAs Sense",
+                              "description": "Number of reads that mapped to miRNAs",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "miRNAs Antisense",
+                              "description": "Number of reads that mapped to miRNAs in the antisense direction",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "miRNAs Precursor Sense",
+                              "description": "Number of reads that mapped to miRNA precursors",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "miRNAs Precursor Antisense",
+                              "description": "Number of reads that mapped to miRNA precursors in the antisense direction",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "piRNAs Sense",
+                              "description": "Number of reads that mapped to piRNAs",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "piRNAs Antisense",
+                              "description": "Number of reads that mapped to piRNAs in the antisense direction",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "tRNAs Sense",
+                              "description": "Number of reads that mapped to tRNAs",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "tRNAs Antisense",
+                              "description": "Number of reads that mapped to tRNAs in the antisense direction",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Gencode Annotations Sense",
+                              "description": "Number of reads that mapped to Gencode annotations",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Gencode Annotations Antisense",
+                              "description": "Number of reads that mapped to Gencode annotations in the antisense direction",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Repetitive Elements Sense",
+                              "description": "Number of reads that mapped to repetitive elements",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Repetitive Elements Antisense",
+                              "description": "Number of reads that mapped to repetitive elements in the antisense direction",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Circular RNAs Sense",
+                              "description": "Number of reads that mapped to circular RNAs",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Circular RNAs Antisense",
+                              "description": "Number of reads that mapped to circular RNAs in the antisense direction",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Reads Not Mapped to Reference Genome or Endogenous Libraries",
+                              "description": "Number of reads not mapped to the genome or endogenous libraries",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Input to Repetitive Element Alignment",
+                              "description": "Number of reads used as input for repetitive element alignment",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Repetitive Elements",
+                              "description": "Number of reads mapped to repetitive elements",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Endogenous Gapped",
+                              "description": "Number of remaining reads that mapped to reference genome (allowing for gaps)",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Reads Used for Exogenous Alignments",
+                              "description": "Number of reads used for exogenous miRNA alignment",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Input to Exogenous miRNAs",
+                              "description": "Number of reads used as input for exogenous miRNA alignment",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Exogenous miRNAs",
+                              "description": "Number of reads that mapped to exogenous miRNAs",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Exogenous miRNAs Antisense",
+                              "description": "Number of reads that mapped to exogenous miRNAs in the antisense direction",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Input to Exogenous rRNAs",
+                              "description": "Number of reads used as input for exogenous rRNA alignment",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Exogenous rRNAs",
+                              "description": "Number of reads that mapped to exogenous rRNAs",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Reads Used for Exogenous Genome Alignments",
+                              "description": "Number of reads used for exogenous genome alignment",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Input to Exogenous Genomes",
+                              "description": "Number of reads used as input for exogenous genome alignment",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Exogenous Genomes",
+                              "description": "Number of reads that mapped to exogenous genomes",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Reads Mapped to Exogenous Genomes",
+                              "description": "Number of reads that mapped to exogenous genomes",
+                              "index": true
+                            }
+                          ],
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "[valueless]",
+                          "name": "Read Counts at Various Stages",
+                          "fixed": true,
+                          "description": "Category -- Read Counts at Various Stages of Analysis"
+                        },
+                        {
+                          "properties": [
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "enum(PASS, FAIL)",
+                              "name": "Result",
+                              "description": "Quality Result - Tells us whether this sample passed or failed the quality metric thresholds.",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Reference Genome Reads",
+                              "description": "Total number of reads mapped to reference genome",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "name": "Transcriptome Reads",
+                              "description": "Total number of reads mapped to transcriptome (require 100,000 to pass)",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "float",
+                              "name": "Transcriptome Genome Ratio",
+                              "description": "Fraction of genomic reads also mapping to the transcriptome (require 0.50 to pass)",
+                              "index": true
+                            },
+                            {
+                              "category": true,
+                              "items": [
+                                {
+                                  "properties": [
+                                    {
+                                      "editRoles": "administrator, author",
+                                      "domain": "string",
+                                      "name": "File Name",
+                                      "description": "Name of the result file",
+                                      "index": true
+                                    },
+                                    {
+                                      "editRoles": "administrator, author",
+                                      "domain": "fileUrl",
+                                      "required": true,
+                                      "name": "Genboree URL",
+                                      "description": "URL of result file's location on Genboree",
+                                      "index": true
+                                    },
+                                    {
+                                      "editRoles": "administrator, author",
+                                      "domain": "string",
+                                      "name": "Description",
+                                      "description": "Description of results file",
+                                      "index": true
+                                    },
+                                    {
+                                      "properties": [
+                                        {
+                                          "editRoles": "administrator, author",
+                                          "domain": "string",
+                                          "name": "Other File Type",
+                                          "description": "Specify alignment file type, if not listed"
+                                        }
+                                      ],
+                                      "editRoles": "administrator, author",
+                                      "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=EDAM&subtree_root=http%3A%2F%2Fedamontology.org%2Fformat_1915)",
+                                      "name": "Type",
+                                      "comments": "enum(BAM, SAM, BAI, WIG, BED, Other)",
+                                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+                                      "description": "File type. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all possible alignment file types (Example: BAM, SAM, BAI, WIG).",
+                                      "conceptOntology": "SNOMEDCT"
+                                    },
+                                    {
+                                      "editRoles": "administrator, author",
+                                      "domain": "string",
+                                      "name": "MD5 Checksum",
+                                      "description": "MD5 checksum of file"
+                                    }
+                                  ],
+                                  "editRoles": "administrator, author",
+                                  "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                                  "required": true,
+                                  "name": "File ID",
+                                  "description": "File ID - auto generated",
+                                  "index": true,
+                                  "identifier": true
+                                }
+                              ],
+                              "editRoles": "administrator, author",
+                              "domain": "numItems",
+                              "name": "Pipeline Result Files",
+                              "description": "Items -- Result Files from the Data Processing Pipeline"
+                            }
+                          ],
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "[valueless]",
+                          "name": "QC Metrics",
+                          "fixed": true,
+                          "description": "Data Quality Metrics for small exRNA-seq reads - Various indicators of data quality calculated by computer programs. They are dependent on the type of experiment (mRNA-seq, smRNA-seq, etc.) and will be agreed upon by the ERCP consortium."
+                        }
+                      ],
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-BS)",
+                      "required": true,
+                      "name": "Biosample ID",
+                      "description": "Biosample ID associated with this alignment file",
+                      "index": true,
+                      "identifier": true
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "name": "Biosamples",
+                  "description": "Items -- Enter Number of Biosamples That Are Part of This Analysis"
+                },
+                {
+                  "category": true,
+                  "items": [
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "required": true,
+                          "name": "URL",
+                          "description": "Track URL (Genboree URL for Track)"
+                        }
+                      ],
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "required": true,
+                      "name": "Track Name",
+                      "description": "Track name",
+                      "index": true,
+                      "identifier": true
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "name": "Tracks",
+                  "description": "Category -- Alignment Tracks - Number"
+                },
+                {
+                  "category": true,
+                  "items": [
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "required": true,
+                          "name": "Version",
+                          "conceptURL": "http://usefulinc.com/ns/doap#Version",
+                          "description": "Version of software used for reference alignment",
+                          "conceptOntology": "OBI"
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "name": "URL",
+                          "description": "URL of software"
+                        }
+                      ],
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "required": true,
+                      "name": "Tool Name",
+                      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72974-6",
+                      "description": "Name of software used for reference alignment",
+                      "index": true,
+                      "conceptOntology": "LOINC",
+                      "identifier": true
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "name": "Alignment Tools",
+                  "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0002029",
+                  "description": "Category -- Alignment Tools",
+                  "conceptOntology": "EFO"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Notes",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+                  "description": "Additional notes about Level 1 Reference Alignment",
+                  "conceptOntology": "LOINC"
+                },
+                {
+                  "category": true,
+                  "items": [
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "posInt",
+                      "required": true,
+                      "name": "PubMed ID",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "PubMed ID of reference",
+                      "index": true,
+                      "conceptOntology": "OBI",
+                      "identifier": true
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "name": "References",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                  "description": "Items -- Protocol References",
+                  "conceptOntology": "HL7"
+                },
+                {
+                  "category": true,
+                  "items": [
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "File Name",
+                          "description": "Name of the result file",
+                          "index": true
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "fileUrl",
+                          "required": true,
+                          "name": "Genboree URL",
+                          "description": "URL of result file's location on Genboree",
+                          "index": true
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "Description",
+                          "description": "Description of results file"
+                        }
+                      ],
+                      "editRoles": "administrator, author",
+                      "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                      "required": true,
+                      "name": "File ID",
+                      "description": "File ID (auto generated)",
+                      "index": true,
+                      "identifier": true
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "name": "Post-processing Result Files",
+                  "description": "Items -- Post-processing Result Files"
+                }
+              ],
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "[valueless]",
+              "name": "Level 1 Reference Alignment",
+              "fixed": true,
+              "description": "Category -- Level 1 Reference Alignment"
+            },
+            {
+              "properties": [
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Abundance Measurement Method",
+                  "description": "Description of how the analysis was performed"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "int",
+                  "name": "Genomic Window Size",
+                  "description": "The basepair size of the window in which the signal (read density) is calculated"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "QC Data Fields",
+                  "description": "Various indicators of data quality calculated by computer programs. They are dependent on the type of experiment (mRNA-seq, smRNA-seq, etc.) and will be agreed upon by the ERCP consortium."
+                },
+                {
+                  "category": true,
+                  "items": [
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "name": "DocURL",
+                          "Object Type": "exmd:Biosamples",
+                          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+                          "description": "Relative ID (accession) of doc - provide Document URL",
+                          "conceptOntology": "SNOMEDCT"
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "Name",
+                          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72974-6",
+                          "description": "File name",
+                          "conceptOntology": "LOINC"
+                        },
+                        {
+                          "properties": [
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "name": "Other",
+                              "description": "Specify file type, if not listed"
+                            }
+                          ],
+                          "editRoles": "administrator, author",
+                          "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=EDAM&subtree_root=http%3A%2F%2Fedamontology.org%2Fformat_1915)",
+                          "name": "Type",
+                          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+                          "description": "Type of abundance measurement file. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all possible abundance file types (Example: VCF).",
+                          "conceptOntology": "SNOMEDCT"
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "fileUrl",
+                          "name": "Genboree URL",
+                          "description": "File location URL (in Genboree/FTP)"
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "MD5 Checksum",
+                          "description": "MD5 checksum of file"
+                        }
+                      ],
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "required": true,
+                      "name": "Biosample ID",
+                      "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0004095",
+                      "description": "Biosample ID associated with this data file",
+                      "index": true,
+                      "conceptOntology": "EFO",
+                      "identifier": true
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "name": "Data Files",
+                  "description": "Items -- Data Files"
+                },
+                {
+                  "category": true,
+                  "items": [
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "required": true,
+                          "name": "Version",
+                          "conceptURL": "http://usefulinc.com/ns/doap#Version",
+                          "description": "Version of software used for abundance measurement",
+                          "conceptOntology": "OBI"
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "name": "URL",
+                          "description": "URL of software"
+                        }
+                      ],
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "required": true,
+                      "name": "Tool Name",
+                      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72974-6",
+                      "description": "Name of software used for abundance measurement",
+                      "index": true,
+                      "conceptOntology": "LOINC",
+                      "identifier": true
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "name": "Abundance Measurement Tools",
+                  "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0002029",
+                  "description": "Category -- Abundance Measurement Tool",
+                  "conceptOntology": "EFO"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Notes",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+                  "description": "Additional notes about Level 2 Abundance Measurement",
+                  "conceptOntology": "LOINC"
+                },
+                {
+                  "category": true,
+                  "items": [
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "posInt",
+                      "required": true,
+                      "name": "PubMed ID",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "PubMed ID of reference",
+                      "index": true,
+                      "conceptOntology": "OBI",
+                      "identifier": true
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "name": "References",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                  "description": "Items -- Protocol References",
+                  "conceptOntology": "HL7"
+                }
+              ],
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "[valueless]",
+              "name": "Level 2 Abundance Measurement",
+              "fixed": true,
+              "description": "Category -- Level 2 Abundance Measurement"
+            },
+            {
+              "properties": [
+                {
+                  "properties": [
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Source",
+                      "description": "Software source"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Version",
+                      "description": "Software version"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Cq Method Determination",
+                      "description": "Cq method determination"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Outlier Identification and Disposition",
+                      "description": "Outlier identification and disposition"
+                    }
+                  ],
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "qPCR Analysis Program",
+                  "description": "Software program used for analyzing qPCR data"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Results of NTCs",
+                  "description": "Results of NTCs"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Justification of Number and Choice of Reference Genes",
+                  "description": "Justification of number and choice of reference genes"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Description of Normalisation Method",
+                  "description": "Description of normalisation method"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Number of Biological Replicates",
+                  "description": "Number of biological replicates"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Concordance of Biological Replicates",
+                  "description": "Concordance of biological replicates"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Number of Technical Replicates",
+                  "description": "Number of technical replicates"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Reverse Transcription, qPCR)",
+                  "name": "Stage of Technical Replicates",
+                  "description": "Stage of technical replicates"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Repeatability (Intra-assay Variation)",
+                  "description": "Repeatability (intra-assay variation)"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Reproducibility (Inter-assay Variation)",
+                  "description": "Reproducibility (inter-assay variation)"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Reproducibility (%CV)",
+                  "description": "Reproducibility (%CV)"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Power Analysis",
+                  "description": "Power analysis"
+                },
+                {
+                  "properties": [
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Source",
+                      "description": "Software Source"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Version",
+                      "description": "Version"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "url",
+                      "name": "URL",
+                      "description": "URL"
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Statistical Methods for Result Significance",
+                  "description": "Statistical methods for result significance"
+                },
+                {
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Cq or Raw Data Submission Using RDML",
+                  "description": "Cq or raw data submission using RDML"
+                },
+                {
+                  "properties": [
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "Source",
+                          "description": "Source"
+                        },
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "Version",
+                          "description": "Version"
+                        }
+                      ],
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Software Used",
+                      "description": "Software Used"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "enum(Automatic, Manual)",
+                      "name": "Baseline Calculation",
+                      "description": "Note: This can be custom by target... In that case, maybe it would be tracked separately?? There could be up to 2 values per target for the baseline, and another for the threshold..."
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "enum(Automatic, Manual)",
+                      "name": "Threshold Calculation",
+                      "description": "See the baseline note..."
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Other Software",
+                      "description": "Other Software Used"
+                    }
+                  ],
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "[valueless]",
+                  "name": "Cq Quantification",
+                  "fixed": true,
+                  "description": "Cq Quantification"
+                },
+                {
+                  "properties": [
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "Censor Value",
+                          "description": "Value assigned to amplifications that were Censored"
+                        }
+                      ],
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Censoring Criteria",
+                      "description": "If any of these criteria are met, data is censored for the assay; indicates miRNA expression at a level below detection threshold. Expression Suite reports undetermined for assays with no amplification. If Ampscore and CqConf are both zero, no amplification; some are not caught by Expression Suite. Cq values > 36 represent low expression miRNA (or noise) and below our detection threshold."
+                    },
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "name": "Exclude Value",
+                          "description": "Value assigned to Cq for amplifications that were excluded based on the AmpScore or CqConf values."
+                        }
+                      ],
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Exclusion Criteria",
+                      "description": "If any of these criteria are met, data is excluded from the analysis. Reflects technical error in the PCR."
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Other",
+                      "description": "Other Value assigned to Cq for amplifications that were excluded based on the AmpScore or CqConf values."
+                    }
+                  ],
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "[valueless]",
+                  "name": "Cq Filter",
+                  "fixed": true,
+                  "description": "Specify data analysis type (Reference Alignment, Abundance Measurement, qPCR Data Analysis)"
+                },
+                {
+                  "properties": [
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Number of Biological Replicates",
+                      "description": "Number of biological replicates"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Number of Technical Replicates",
+                      "description": "Number of technical replicates"
+                    }
+                  ],
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "[valueless]",
+                  "name": "Statistical Analysis",
+                  "fixed": true,
+                  "description": "Statistical Analysis"
+                },
+                {
+                  "properties": [
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Other Submission Method",
+                      "description": "Other Submission Method"
+                    },
+                    {
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "name": "Statistical Methods for Result Significance",
+                      "description": "Statistical methods for result significance"
+                    },
+                    {
+                      "category": true,
+                      "items": [
+                        {
+                          "properties": [
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "name": "Source",
+                              "description": "Source"
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "name": "Version",
+                              "description": "Version"
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "name": "URL",
+                              "description": "URL"
+                            }
+                          ],
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "required": true,
+                          "name": "Software",
+                          "description": "Software",
+                          "index": true,
+                          "identifier": true
+                        }
+                      ],
+                      "editRoles": "administrator, author",
+                      "domain": "numItems",
+                      "name": "Analysis Software Details",
+                      "description": "Analysis Software Details"
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "name": "Submission Method",
+                  "description": "Cq or raw data submission using RDML"
+                },
+                {
+                  "category": true,
+                  "items": [
+                    {
+                      "properties": [
+                        {
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "name": "DocURL",
+                          "Object Type": "exmd:Biosamples",
+                          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+                          "description": "Relative ID (accession) of doc - provide Document URL",
+                          "conceptOntology": "SNOMEDCT"
+                        },
+                        {
+                          "properties": [
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "url",
+                              "name": "DocURL",
+                              "Object Type": "exmd:qPCR Targets",
+                              "description": "Relative ID (accession) of doc - provide Document URL",
+                              "index": true
+                            },
+                            {
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "name": "Description",
+                              "description": "Description of the qPCR Targets"
+                            }
+                          ],
+                          "editRoles": "administrator, author",
+                          "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-QT)",
+                          "required": true,
+                          "name": "qPCR Target Doc ID",
+                          "description": "qPCR Target Document ID - list of qPCR targets for this Biosample"
+                        }
+                      ],
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-BS)",
+                      "required": true,
+                      "name": "Biosample ID",
+                      "description": "Biosample ID associated with this qPCR assay",
+                      "index": true,
+                      "identifier": true
+                    }
+                  ],
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "name": "Biosamples",
+                  "description": "Items -- Enter Number of Biosamples That Are Part of This Analysis"
+                }
+              ],
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "[valueless]",
+              "name": "qPCR Data Analysis Level",
+              "fixed": true,
+              "description": "Category -- qPCR Data Analysis Level"
+            }
+          ],
+          "editRoles": "administrator, author",
+          "domain": "enum(Reference Alignment, Abundance Measurement, qPCR Data Analysis)",
+          "name": "Type",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+          "description": "Specify data analysis type (Reference Alignment, Abundance Measurement, qPCR Data Analysis)",
+          "conceptOntology": "SNOMEDCT"
+        }
+      ],
+      "category": true,
+      "editRoles": "administrator, author",
+      "domain": "[valueless]",
+      "name": "Data Analysis Level",
+      "fixed": true,
+      "description": "Category -- Data Analysis Level"
+    },
+    {
+      "category": true,
+      "items": [
+        {
+          "properties": [
+            {
+              "editRoles": "administrator, author",
+              "domain": "enum(SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "name": "dbName",
+              "conceptURL": "http://edamontology.org/data_1056",
+              "description": "Database name of alias (SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "index": true,
+              "conceptOntology": "EDAM"
+            },
+            {
+              "editRoles": "administrator, author",
+              "domain": "url",
+              "name": "URL",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "description": "URL that points to this Analysis in alias database",
+              "conceptOntology": "SNOMEDCT"
+            }
+          ],
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "required": true,
+          "name": "Accession",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU034731",
+          "description": "Alias Accession ID of this Analysis in other databases (Example: SRA, GEO)",
+          "index": true,
+          "conceptOntology": "LOINC",
+          "identifier": true
+        }
+      ],
+      "editRoles": "administrator, author",
+      "domain": "numItems",
+      "name": "Aliases",
+      "description": "Items -- Aliases"
+    }
+  ],
+  "editRoles": "administrator, author",
+  "domain": "autoID(EXR, uniqAlphaNum, AN)",
+  "name": "Analysis",
+  "comments": "Assigned after validation.",
+  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/272389005",
+  "description": "Document Describing Information About the Analysis; Analysis ID",
+  "index": true,
+  "conceptOntology": "SNOMEDCT",
+  "identifier": true
+}

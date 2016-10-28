@@ -1,0 +1,54 @@
+# ----------------------------------------------------
+# Localization Strings for GenboreeExrnaAt plugin
+# - only English (en) to start
+# - put other languages in their own files (e.g. fr.yml) like Redmine does
+#   used in Rails and [most] standard plugins.
+# ----------------------------------------------------
+# English strings go here for Rails i18n
+en:
+  # my_label: "My label"
+  gbexat_label_project_settings_tab: ExRNA Atlas
+
+  # project plugin settings
+  gbexat_label_edit_settings: ExRNA Atlas Settings
+  gbexat_gb_host: Genboree Host
+  gbexat_gb_group: Genboree Group
+  gbexat_gb_kb: Kb Name
+  gbexat_gb_analyses_coll: ExRNA Atlas Analyses Collection
+  gbexat_gb_biosamples_coll: ExRNA Atlas Biosamples Collection
+  gbexat_gb_donors_coll: ExRNA Atlas Donors Collection
+  gbexat_gb_experiments_coll: ExRNA Atlas Experiments Collection
+  gbexat_gb_jobs_coll: ExRNA Atlas Jobs Collection
+  gbexat_gb_result_files_coll: ExRNA Atlas Result Files Collection
+  gbexat_gb_runs_coll: ExRNA Atlas Runs Collection
+  gbexat_gb_studies_coll: ExRNA Atlas Studies Collection
+  gbexat_gb_submissions_coll: ExRNA Atlas Submissions Collection
+  gbexat_job_host: Genboree Tool Job Host
+  gbexat_use_redmine_layout: Use Redmine Layout
+  gbexat_gb_data_update: Update Data
+  gbexat_news_file: News File
+  gbexat_contact_to: Contact Us To Address
+  gbexat_contact_bccs: Contact Us Bcc Addresses
+  gbexat_label_description: Description
+  gbexat_button_edit: Update
+  gbexat_tool_usage_host: Tool Usage Host
+  gbexat_tool_usage_grp: Tool Usage Group
+  gbexat_tool_usage_kb: Tool Usage Kb
+  gbexat_tool_usage_coll: Tool Usage Coll
+  gbexat_tool_usage_view: Tool Usage View
+  gbexat_settings_label_caption: Menu Name
+  gbexat_private_submitters: Tool Usage Private Submitters
+
+  gbexat_home_page_url: Home Page URL
+  gbexat_info_flash_html: Info Flash HTML
+  gbexat_prev_versions: Previous Versions
+  gbexat_kb_settings_header: KB Location Settings
+  gbexat_coll_names_settings_header: Collection Name Settings
+  gbexat_tool_job_settings_header: Tool Job Submission Settings
+  gbexat_contact_settings_header: Contact Us Settings
+  gbexat_page_content_settings_header: Page Content Settings
+  gbexat_misc_settings_header: Misc Settings
+
+  # permissions
+  permission_gbexat_view_entry: View ExRNA Atlas Entry
+  permission_gbexat_public_tool_job: Public Tool Job Submission

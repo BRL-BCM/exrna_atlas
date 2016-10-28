@@ -1,0 +1,130 @@
+<%# This is just a placeholder that renders appropriate HTML copied directly from actual page %>
+<%# * Generally, this is not how this kind of content is put on page. Often dynamic. %>
+<%# * Although, it's an interesting lesson on how to both (a) isolate/encapsulate static bits of content HTML an (b) combine together via :locals %>
+
+<% if(key == :fluidVsDis) %> <%# CHANGED - Uses Bootstrap button classes for button rather than "roll your own" %>
+   Each cell in this grid indicates the total number of biosamples collected and profiled for exRNAs from a biofluid-condition combination.
+   <br> <b>Click the number in a given cell</b> to view key metadata about the relevant biosamples: <br> 
+   <ul>
+     <li>The biosample metadata document can be viewed in the GenboreeKB UI by clicking the <b>Biosample Accession ID</b> in the last column.</li>
+     <li>Quality control metrics are displayed for each sample. You can learn more about the QC metrics by visiting the <a class="externalLink" href="http://exrna.org/resources/data/data-quality-control-standards/" target="_blank">ERC Consortium QC Standards</a> page.
+     <li>You can either download result files from one sample at a time or in bulk. Use the icons in the Download Data column to download files associated with an individual sample. Use the "Download Samples" button at the top of the grid to download files in bulk. You can find more information about the available files below as well as on our <a class="externalLink" href="http://genboree.org/theCommons/projects/exrna-mads/wiki/Downloading_Datasets_from_the_exRNA_Atlas" target="_blank">Batch Download</a> tutorial. You can also view the <a href="http://genboree.org/theCommons/projects/exrna-tools-may2014/wiki/ExRNA_Data_Analysis" target="_blank">Understanding exceRpt RNA-seq Analysis Results</a> tutorial to better understand the various result files and their contents.<br></li>
+       <li>You can download metadata files by using the icons in the Download Metadata column. You can download Biosample, Experiment, or Donor metadata documents. You can also download all three metadata documents at the same time. See more information below.</li>
+     <li>You can process selected samples through comparative and downstream analysis tools by clicking the "Analyze Selected Samples" button at the top of the grid. View the <a class="externalLink" href="http://genboree.org/theCommons/projects/exrna-mads/wiki/Comparative_and_Downstream_Analysis_of_Samples_Using_the_Genboree_Workbench" target="_blank">Comparative and Downstream Analysis</a> tutorial for more information.</li>
+   </ul>
+   <h4>Legend of icons, listed in the order in which they appear in the grid columns: (Mouse over each icon in the grid for more information)</h4>
+   <b>Download Data</b> <br>
+   <img src="/images/download.png" alt="Download Icon"> Download the processed core results archive associated with this biosample. This archive will contain read counts from all three stages of exceRpt (endogenous, exogenous miRNA and rRNA, and exogenous genomes). <br>
+   <img src="/images/silk/chart_organisation.png" alt="Download Taxonomy"> Download the taxonomy tree (either exogenous ribosomal RNA or exogenous genomic reads) created by exceRpt. <br>
+   <img src="/images/silk/application_view_tile.png" alt="Download Exo and Endo"> Download the full results (alignments) for the first two stages of exceRpt (endogenous alignment and exogenous miRNA and rRNA alignment). <br>
+   <img src="/images/silk/application_view_list.png" alt="Download Exo"> Download the full results (alignments) for the third stage of exceRpt (exogenous genomic alignment). <br>
+   <img src="/images/silk/text_align_justify.png" alt="Download FASTQ"> Download the FASTQ file (if the dataset is already available in a public domain archive like SRA or GEO). <br>
+   <img src="/images/silk/lock.png" alt="Embargoed Data"> This data is under restricted access and is protected for some time period (embargo). The embargo on a given dataset ends 12 months after the data was submitted to the DCC. View the <a class="externalLink" href="http://exrna.org/resources/data/data-access-policy" target="_blank">ERC Consortium Data Access Policy</a> for more details. <br>
+   <img src="/images/silk/lock_go.png" alt="Controlled Access Data"> This data is deposited in the controlled access dbGaP archive. Click the <img src="/images/silk/application_link.png" alt="Links to External Databases"> icon under the External References column to view the dbGaP Study Id. You can then contact the PI through dbGaP to get access to any protected files. <br>
+   <img src="/images/silk/chart_bar.png" alt="Bar Chart Icon"> View a histogram of reads mapped to various libraries. <br>
+   <br><b>Download Metadata</b> <br>
+   <%= image_tag "science-chemistry-icon.png", :border => "0", :alt => "Download Biosample Metadata Document", :plugin => "genboree_exrna_at" %> Download the Biosample metadata document. <br>
+   <%= image_tag "Body-DNA-icon.png", :border => "0", :alt => "Download Experiment Metadata Document", :plugin => "genboree_exrna_at" %> Download the Experiment metadata document. <br>
+   <img src="/images/silk/user.png" alt="Download Donor Metadata Document">  Download the Donor metadata document. <br>
+   <img src="/images/download.png" alt="Download Icon"> Download all three metadata documents (Biosample, Experiment, and Donor) as a single file. <br> 
+   <br><b>External References</b> <br>
+   <img src="/images/silk/application_link.png" alt="Links to External Databases">  View links to external databases like SRA, dbGaP, GEO, etc. if the data is available in a public domain archive or controlled access archive. Otherwise, view the data access policy if the data is currently protected via embargo. <br>
+   <img src="/images/silk/book_open.png" alt="Links to PubMed References"> View links to PubMed references, if available.
+<% elsif(key == :fluidVsExp)%>
+     Each cell in this grid indicates the total number of biosamples collected and profiled for exRNAs from a biofluid-assay type combination.
+     <br> <b>Click the number in a given cell</b> to view key metadata about the relevant biosamples: <br>
+     <ul>
+       <li>The biosample metadata document can be viewed in the GenboreeKB UI by clicking the <b>Biosample Accession ID</b> in the last column.</li>
+       <li>Quality control metrics are displayed for each sample. You can learn more about the QC metrics by visiting the <a class="externalLink" href="http://exrna.org/resources/data/data-quality-control-standards/" target="_blank">ERC Consortium QC Standards</a> page.
+       <li>You can either download result files from one sample at a time or in bulk. Use the icons in the Download Data column to download files associated with an individual sample. Use the "Download Samples" button at the top of the grid to download files in bulk. You can find more information about the available files below as well as on our <a class="externalLink" href="http://genboree.org/theCommons/projects/exrna-mads/wiki/Downloading_Datasets_from_the_exRNA_Atlas" target="_blank">Batch Download</a> tutorial. You can also view the <a href="http://genboree.org/theCommons/projects/exrna-tools-may2014/wiki/ExRNA_Data_Analysis" target="_blank">Understanding exceRpt RNA-seq Analysis Results</a> tutorial to better understand the various result files and their contents.<br></li>
+       <li>You can download metadata files by using the icons in the Download Metadata column. You can download Biosample, Experiment, or Donor metadata documents. You can also download all three metadata documents at the same time. See more information below.</li>
+       <li>You can process selected samples through comparative and downstream analysis tools by clicking the "Analyze Selected Samples" button at the top of the grid. View the <a class="externalLink" href="http://genboree.org/theCommons/projects/exrna-mads/wiki/Comparative_and_Downstream_Analysis_of_Samples_Using_the_Genboree_Workbench" target="_blank">Comparative and Downstream Analysis</a> tutorial for more information.</li>
+     </ul>
+     <h4>Legend of icons, listed in the order in which they appear in the grid columns: (Mouse over each icon in the grid for more information)</h4>
+     <b>Download Data</b> <br>
+     <img src="/images/download.png" alt="Download Icon"> Download the processed core results archive associated with this biosample. This archive will contain read counts from all three stages of exceRpt (endogenous, exogenous miRNA and rRNA, and exogenous genomes). <br>
+     <img src="/images/silk/chart_organisation.png" alt="Download Taxonomy"> Download the taxonomy tree (either exogenous ribosomal RNA or exogenous genomic reads) created by exceRpt. <br>
+     <img src="/images/silk/application_view_tile.png" alt="Download Exo and Endo"> Download the full results (alignments) for the first two stages of exceRpt (endogenous alignment and exogenous miRNA and rRNA alignment). <br>
+     <img src="/images/silk/application_view_list.png" alt="Download Exo"> Download the full results (alignments) for the third stage of exceRpt (exogenous genomic alignment). <br>
+     <img src="/images/silk/text_align_justify.png" alt="Download FASTQ"> Download the FASTQ file (if the dataset is already available in a public domain archive like SRA or GEO). <br>
+     <img src="/images/silk/lock.png" alt="Embargoed Data"> This data is under restricted access and is protected for some time period (embargo). The embargo on a given dataset ends 12 months after the data was submitted to the DCC. View the <a class="externalLink" href="http://exrna.org/resources/data/data-access-policy" target="_blank">ERC Consortium Data Access Policy</a> for more details. <br>
+     <img src="/images/silk/lock_go.png" alt="Controlled Access Data"> This data is deposited in the controlled access dbGaP archive. Click the <img src="/images/silk/application_link.png" alt="Links to External Databases"> icon under the External References column to view the dbGaP Study Id. You can then contact the PI through dbGaP to get access to any protected files. <br>
+     <img src="/images/silk/chart_bar.png" alt="Bar Chart Icon"> View a histogram of reads mapped to various libraries. <br>
+     <br><b>Download Metadata</b> <br>
+     <%= image_tag "science-chemistry-icon.png", :border => "0", :alt => "Download Biosample Metadata Document", :plugin => "genboree_exrna_at" %> Download the Biosample metadata document. <br>
+     <%= image_tag "Body-DNA-icon.png", :border => "0", :alt => "Download Experiment Metadata Document", :plugin => "genboree_exrna_at" %> Download the Experiment metadata document. <br>
+     <img src="/images/silk/user.png" alt="Download Donor Metadata Document">  Download the Donor metadata document. <br>
+     <img src="/images/download.png" alt="Download Icon"> Download all three metadata documents (Biosample, Experiment, and Donor) as a single file. <br> 
+     <br><b>External References</b> <br>
+     <img src="/images/silk/application_link.png" alt="Links to External Databases">  View links to external databases like SRA, dbGaP, GEO, etc. if the data is available in a public domain archive or controlled access archive. Otherwise, view the data access policy if the data is currently protected via embargo. <br>
+     <img src="/images/silk/book_open.png" alt="Links to PubMed References"> View links to PubMed references, if available.
+  <% elsif(key == :analysesTable)%>
+     The exRNA profiling datasets grid contains a summary of various datasets deposited to the Data Coordination Center (DCC), with submission details.
+     <ul>
+       <li>Click the <b>Analysis Accession ID</b> to view some basic information about the Dataset, including the reference genome, tool name and version used for the analysis.</li>
+       <li>If you then click the <b>Grid View</b> icon, the RNA profile summary for the Dataset will open in a new window.</li>
+       <li>You can view PubMed or external database (GEO, dbGaP, etc.) references for a given dataset by clicking on its respective ID(s) in the PubMed ID or External Database References column.</li>
+     </ul>
+     You can download various summary files associated with a dataset by clicking the icons in the Download Dataset Files column.
+     <ul>
+       <li><b>Diagnostic Plots PDF</b>: Download a PDF file containing diagnostic plots for the dataset.</li>
+       <li><b>Raw miRNA Read Counts</b>: Download a text file containing raw (not normalized) read counts for endogenous miRNAs found in the dataset.</li>
+       <li><b>Exogenous Genome Taxonomy Cumulative Read Counts</b>: Download a text file containing exogenous genome taxonomy cumulative read counts for the dataset.</li>
+       <li><b>Exogenous rRNA Taxonomy Cumulative Read Counts</b>: Download text file containing exogenous ribosomal RNA taxonomy cumulative read counts for this dataset.</li>
+       <li><b>All Post&ndash;processing Files for Dataset</b>: Download archive containing post-processing files for this dataset.</li>
+      </ul>
+<% elsif(key == :selectionGrid)%>
+     The search summary results grid displays key metadata about the biosamples.
+     <ul>
+       <li>The biosample metadata document can be viewed in the GenboreeKB UI by clicking the <b>Biosample Accession ID</b> in the last column.</li>
+       <li>Quality control metrics are displayed for each sample. You can learn more about the QC metrics by visiting the <a class="externalLink" href="http://exrna.org/resources/data/data-quality-control-standards/" target="_blank">ERC Consortium QC Standards</a> page.
+       <li>You can either download result files from one sample at a time or in bulk. Use the icons in the Download Data column to download files associated with an individual sample. Use the "Download Samples" button at the top of the grid to download files in bulk. You can find more information about the available files below as well as on our <a class="externalLink" href="http://genboree.org/theCommons/projects/exrna-mads/wiki/Downloading_Datasets_from_the_exRNA_Atlas" target="_blank">Batch Download</a> tutorial. You can also view the <a href="http://genboree.org/theCommons/projects/exrna-tools-may2014/wiki/ExRNA_Data_Analysis" target="_blank">Understanding exceRpt RNA-seq Analysis Results</a> tutorial to better understand the various result files and their contents.<br></li>
+       <li>You can download metadata files by using the icons in the Download Metadata column. You can download Biosample, Experiment, or Donor metadata documents. You can also download all three metadata documents at the same time. See more information below.</li>
+       <li>You can process selected samples through comparative and downstream analysis tools by clicking the "Analyze Selected Samples" button at the top of the grid. View the <a class="externalLink" href="http://genboree.org/theCommons/projects/exrna-mads/wiki/Comparative_and_Downstream_Analysis_of_Samples_Using_the_Genboree_Workbench" target="_blank">Comparative and Downstream Analysis</a> tutorial for more information.</li>
+     </ul>
+     <h4>Legend of icons, listed in the order in which they appear in the grid columns: (Mouse over each icon in the grid for more information)</h4>
+     <b>Download Data</b> <br>
+     <img src="/images/download.png" alt="Download Icon"> Download the processed core results archive associated with this biosample. This archive will contain read counts from all three stages of exceRpt (endogenous, exogenous miRNA and rRNA, and exogenous genomes). <br>
+     <img src="/images/silk/chart_organisation.png" alt="Download Taxonomy"> Download the taxonomy tree (either exogenous ribosomal RNA or exogenous genomic reads) created by exceRpt. <br>
+     <img src="/images/silk/application_view_tile.png" alt="Download Exo and Endo"> Download the full results (alignments) for the first two stages of exceRpt (endogenous alignment and exogenous miRNA and rRNA alignment). <br>
+     <img src="/images/silk/application_view_list.png" alt="Download Exo"> Download the full results (alignments) for the third stage of exceRpt (exogenous genomic alignment). <br>
+     <img src="/images/silk/text_align_justify.png" alt="Download FASTQ"> Download the FASTQ file (if the dataset is already available in a public domain archive like SRA or GEO). <br>
+     <img src="/images/silk/lock.png" alt="Embargoed Data"> This data is under restricted access and is protected for some time period (embargo). The embargo on a given dataset ends 12 months after the data was submitted to the DCC. View the <a class="externalLink" href="http://exrna.org/resources/data/data-access-policy" target="_blank">ERC Consortium Data Access Policy</a> for more details. <br>
+     <img src="/images/silk/lock_go.png" alt="Controlled Access Data"> This data is deposited in the controlled access dbGaP archive. Click the <img src="/images/silk/application_link.png" alt="Links to External Databases"> icon under the External References column to view the dbGaP Study Id. You can then contact the PI through dbGaP to get access to any protected files. <br>
+     <img src="/images/silk/chart_bar.png" alt="Bar Chart Icon"> View a histogram of reads mapped to various libraries. <br>
+     <br><b>Download Metadata</b> <br>
+     <%= image_tag "science-chemistry-icon.png", :border => "0", :alt => "Download Biosample Metadata Document", :plugin => "genboree_exrna_at" %> Download the Biosample metadata document. <br>
+     <%= image_tag "Body-DNA-icon.png", :border => "0", :alt => "Download Experiment Metadata Document", :plugin => "genboree_exrna_at" %> Download the Experiment metadata document. <br>
+     <img src="/images/silk/user.png" alt="Download Donor Metadata Document">  Download the Donor metadata document. <br>
+     <img src="/images/download.png" alt="Download Icon"> Download all three metadata documents (Biosample, Experiment, and Donor) as a single file. <br> 
+     <br><b>External References</b> <br>
+     <img src="/images/silk/application_link.png" alt="Links to External Databases">  View links to external databases like SRA, dbGaP, GEO, etc. if the data is available in a public domain archive or controlled access archive. Otherwise, view the data access policy if the data is currently protected via embargo. <br>
+     <img src="/images/silk/book_open.png" alt="Links to PubMed References"> View links to PubMed references, if available.
+<% elsif(key == :anDoc)%>
+  The RNA profile grid contains a summary of reads for each biosample at various stages of mapping.
+   <ul>
+     <li>The biosample metadata document can be viewed in the GenboreeKB UI by clicking the <b>Biosample Accession ID</b> in the last column.</li>
+     <li>Quality control metrics are displayed for each sample. You can learn more about the QC metrics by visiting the <a class="externalLink" href="http://exrna.org/resources/data/data-quality-control-standards/" target="_blank">ERC Consortium QC Standards</a> page.
+     <li>You can either download result files from one sample at a time or in bulk. Use the icons in the Download Data column to download files associated with an individual sample. Use the "Download Samples" button at the top of the grid to download files in bulk. You can find more information about the available files below as well as on our <a class="externalLink" href="http://genboree.org/theCommons/projects/exrna-mads/wiki/Downloading_Datasets_from_the_exRNA_Atlas" target="_blank">Batch Download</a> tutorial. You can also view the <a href="http://genboree.org/theCommons/projects/exrna-tools-may2014/wiki/ExRNA_Data_Analysis" target="_blank">Understanding exceRpt RNA-seq Analysis Results</a> tutorial to better understand the various result files and their contents.<br></li>
+     <li>You can download metadata files by using the icons in the Download Metadata column. You can download Biosample, Experiment, or Donor metadata documents. You can also download all three metadata documents at the same time. See more information below.</li>
+     <li>You can process selected samples through comparative and downstream analysis tools by clicking the "Analyze Selected Samples" button at the top of the grid. View the <a class="externalLink" href="http://genboree.org/theCommons/projects/exrna-mads/wiki/Comparative_and_Downstream_Analysis_of_Samples_Using_the_Genboree_Workbench" target="_blank">Comparative and Downstream Analysis</a> tutorial for more information.</li>
+   </ul>
+   <h4>Legend of icons, listed in the order in which they appear in the grid columns: (Mouse over each icon in the grid for more information)</h4>
+   <b>Download Data</b> <br>
+   <img src="/images/download.png" alt="Download Icon"> Download the processed core results archive associated with this biosample. This archive will contain read counts from all three stages of exceRpt (endogenous, exogenous miRNA and rRNA, and exogenous genomes). <br>
+   <img src="/images/silk/chart_organisation.png" alt="Download Taxonomy"> Download the taxonomy tree (either exogenous ribosomal RNA or exogenous genomic reads) created by exceRpt. <br>
+   <img src="/images/silk/application_view_tile.png" alt="Download Exo and Endo"> Download the full results (alignments) for the first two stages of exceRpt (endogenous alignment and exogenous miRNA and rRNA alignment). <br>
+   <img src="/images/silk/application_view_list.png" alt="Download Exo"> Download the full results (alignments) for the third stage of exceRpt (exogenous genomic alignment). <br>
+   <img src="/images/silk/text_align_justify.png" alt="Download FASTQ"> Download the FASTQ file (if the dataset is already available in a public domain archive like SRA or GEO). <br>
+   <img src="/images/silk/lock.png" alt="Embargoed Data"> This data is under restricted access and is protected for some time period (embargo). The embargo on a given dataset ends 12 months after the data was submitted to the DCC. View the <a class="externalLink" href="http://exrna.org/resources/data/data-access-policy" target="_blank">ERC Consortium Data Access Policy</a> for more details. <br>
+   <img src="/images/silk/lock_go.png" alt="Controlled Access Data"> This data is deposited in the controlled access dbGaP archive. Click the <img src="/images/silk/application_link.png" alt="Links to External Databases"> icon under the External References column to view the dbGaP Study Id. You can then contact the PI through dbGaP to get access to any protected files. <br>
+   <img src="/images/silk/chart_bar.png" alt="Bar Chart Icon"> View a histogram of reads mapped to various libraries. <br>
+   <br><b>Download Metadata</b> <br>
+   <%= image_tag "science-chemistry-icon.png", :border => "0", :alt => "Download Biosample Metadata Document", :plugin => "genboree_exrna_at" %> Download the Biosample metadata document. <br>
+   <%= image_tag "Body-DNA-icon.png", :border => "0", :alt => "Download Experiment Metadata Document", :plugin => "genboree_exrna_at" %> Download the Experiment metadata document. <br>
+   <img src="/images/silk/user.png" alt="Download Donor Metadata Document">  Download the Donor metadata document. <br>
+   <img src="/images/download.png" alt="Download Icon"> Download all three metadata documents (Biosample, Experiment, and Donor) as a single file. <br> 
+   <br><b>External References</b> <br>
+   <img src="/images/silk/application_link.png" alt="Links to External Databases">  View links to external databases like SRA, dbGaP, GEO, etc. if the data is available in a public domain archive or controlled access archive. Otherwise, view the data access policy if the data is currently protected via embargo. <br>
+   <img src="/images/silk/book_open.png" alt="Links to PubMed References"> View links to PubMed references, if available.
+<% end %>

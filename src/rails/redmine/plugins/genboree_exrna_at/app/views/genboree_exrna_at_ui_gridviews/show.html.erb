@@ -1,0 +1,73 @@
+<!-- Content specific for exrna atlas entry. Uses the base layout for shared contents. Check gbexat_base layout-->
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag "exRNA-Grids.css", :plugin => 'genboree_exrna_at', :media => 'all' %>
+  <%= stylesheet_link_tag "applyFilters.css", :plugin => 'genboree_exrna_at', :media => 'all' %>
+  <%= stylesheet_link_tag "ext-theme-neptune-all.css", :plugin => 'genboree_exrna_at', :media => 'all' %>
+  
+  <%= javascript_include_tag 'highcharts.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'highcharts-3d.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'exporting.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'ajax.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'gridViews.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'gridsInit.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'commonHelper.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'tooljobs.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'ext-all.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'ext-theme-neptune.js', :plugin => 'genboree_exrna_at' %>
+<% end %>
+
+<% content_for :body do %>
+  <div id="pageContent">
+    <div id="searchSummary" ></div>
+    <div id="gridPageHelp1" class="gridPageHelpText">
+       <%# Get the helptext specific for each grids%>
+       <% if(@gridName.nil?)  
+            key = 'selectionGrid'
+          elsif(@gridName =~ /^EXR/)
+            if(@assay =~ /qpcr/i)
+              key = 'selectionGrid'
+            else
+              key = 'anDoc'
+            end
+          else
+            key = @gridName.strip
+          end
+       %> 
+       <%= render(:partial => "helptext", :locals => { :key => key.to_sym} ) %> 
+    </div>
+  </div>
+<% end %>
+
+<% content_for :end do %>
+  <!-- Late script area for browsers (IE8...yeah, really?) that don't support the "DOMContentLoaded" event and other correct techniques -->
+  <script type="text/javascript">
+    var dataSetsConf;
+    var gbKey ;
+    var postedParams = '<%=@postedParams%>' ;
+    var donutSelections = '<%=CGI.escape(@postedParams["json"])%>' ;
+    var donutSelectionsObj = null ;
+    var reSelectRowsObj = null ;
+    var treeSelections = '<%=CGI.escape(@postedParams["hierTransform"])%>' ;
+    var treeSelectionsObj = null ;
+    var gridName = '<%=@gridName%>' ;
+    var assay = '<%=@assay%>' ;
+    // TODO must come from config
+    // declare globals
+    var askDataAccess = false ;
+    var transformtracker = 0 ;
+    var searchData = new Object() ;
+    var biosCount = new Object() ;
+    var gridConfig = new Object() ;
+    var subjectsinStore = [] ; // number of biosamples from the selection/grid
+    var dseqFileLineList = new Object() ;
+    var toolSelected = null ;
+    var toolSelected = '<%=CGI.escape(@postedParams["toolSelected"])%>' ;
+    var reSelectRows = '<%=@postedParams["reSelectRows"]%>' ;
+    reSelectRowsObj = reSelectRows.split(",") ;
+    var toolSettings = new Object() ;
+    // datasets related
+    var postProcessFiles = new Object() ;
+    // initialize grid view
+    gridInit() ;
+  </script>
+<% end %>

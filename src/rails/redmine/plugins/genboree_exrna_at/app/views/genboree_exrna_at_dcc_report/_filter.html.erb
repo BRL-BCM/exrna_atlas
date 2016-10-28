@@ -1,0 +1,19 @@
+<% # check required locals
+  id = name.downcase.gsub(" ", "-")
+%>
+<div class="filter-header">
+  <%= name %>
+</div>
+<div id="<%=id%>-selections" class="filter-selections">
+  <ul>
+  </ul>
+</div>
+<div id="<%=id%>-selector" class="filter-selector">
+  <div class="filter-select-group">
+  <%= select("report", name, values, {}, {:id => "#{id}-select", :selected => values.first, :class => "form-control x-form-control"}) %>
+  </div>
+  <div class="filter-button-group">
+    <button id="add-<%=id%>" class="btn btn-default" data-id="<%=id%>" type="button">Add</button>
+    <button id="clear-<%=id%>" class="btn btn-default" data-id="<%=id%>" type="button">Clear</button>
+  </div>
+</div>

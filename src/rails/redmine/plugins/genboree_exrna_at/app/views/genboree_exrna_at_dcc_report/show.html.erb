@@ -1,0 +1,95 @@
+<% content_for :header_tags do %>
+  <%= javascript_include_tag "datatables-responsive-buttons.js", :plugin => 'genboree_exrna_at' %>
+  <%= stylesheet_link_tag "datatables-responsive-buttons.css", :plugin => 'genboree_exrna_at',  :media => 'all' %>
+
+  <script type="application/javascript">
+    var GenboreeExrnaAt = {};
+    GenboreeExrnaAt["header"] = <%= JSON.generate(@header).html_safe %> ;
+    GenboreeExrnaAt["filters"] = <%= JSON.generate(@filters).html_safe %> ;
+  </script>
+  <%= javascript_include_tag 'dccReport.js', :plugin => 'genboree_exrna_at' %>
+  <%= stylesheet_link_tag "erccDccRep2.css", :plugin => 'genboree_exrna_at',  :media => 'all' %>
+<% end %>
+
+<% content_for :body do %>
+  <% # filters panel %>
+  <div class="container-fluid">
+    <div class="row row-pad">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div id="filter-heading" class="panel-heading">
+            Filters
+            <button id="clear-all-filters" class="btn btn-default filter-button" type="button">Clear All</button>
+          </div>
+          <div id="filter-body" class="panel-body">
+            <div class="row">
+              <% # columns for various filter categories %>
+              <div class="filter-container col-xs-6 col-md-4 col-lg-2">
+                <div class="filter-header">
+                  Job Date
+                </div>
+                <div id="date-selections" class="filter-selections">
+                  <ul>
+                  </ul>
+                </div>
+                <div id="date-selector" class="filter-selector">
+                  <div class="filter-select-group">
+                    <%= select_year(Date.today, {:start_year => 2015, :end_year => Date.today.year}, {:id => :"select-year", :class => "form-control x-form-control"}) %>
+                    <%= select_month(Date.today, {}, {:id => :"select-month", :class => "form-control x-form-control"}) %>
+                  </div>
+                  <div class="filter-button-group">
+                    <button id="add-month" class="btn btn-default" type="button">Add</button>
+                    <button id="clear-all-month" class="btn btn-default" type="button">Clear</button>
+                  </div>
+                </div>
+              </div>
+              <div class="filter-container col-xs-6 col-md-4 col-lg-2">
+                <%= render(:partial => "filter", :locals => { :name => "RFA Title", :values => @filterValues[:"RFA Title"]}) %>
+              </div>
+              <div class="clearfix visible-xs-block visible-sm-block"></div>
+              <div class="filter-container col-xs-6 col-md-4 col-lg-2">
+                <%= render(:partial => "filter", :locals => { :name => "PI Name", :values => @filterValues[:"PI Name"]}) %>
+              </div>
+              <div class="clearfix visible-md-block"></div>
+              <div class="filter-container col-xs-6 col-md-4 col-lg-2">
+                <%= render(:partial => "filter", :locals => { :name => "Processing Pipeline", :values => @filterValues[:"Processing Pipeline"]}) %>
+              </div>
+              <div class="clearfix visible-xs-block visible-sm-block"></div>
+              <div class="filter-container col-xs-6 col-md-4 col-lg-2">
+                <%= render(:partial => "filter", :locals => { :name => "Mode of Submission", :values => @filterValues[:"Mode of Submission"]}) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% # main table display %>
+  <div class="container-fluid">
+    <div class="row row-pad">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">Report</div>
+          <div class="panel-body">
+            <div id="report-container">
+              <table id="report-table" class="table table-striped">
+                <thead>
+                  <tr>
+                    <% @header.each do |colHeader| %>
+                    <th><%=colHeader%></th>
+                    <% end %>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% # loaded by ajax requests from dccReport.js %>
+                </tbody>
+                <tfoot></tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

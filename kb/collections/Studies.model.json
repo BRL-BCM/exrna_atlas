@@ -1,0 +1,343 @@
+{
+  "editRoles": "administrator, author",
+  "identifier": true,
+  "comments": "Assigned after validation.",
+  "conceptOntology": "SNOMEDCT",
+  "name": "Study",
+  "properties": [
+    {
+      "editRoles": "administrator",
+      "comments": "Assigned by server at different stages.",
+      "conceptOntology": "SNOMEDCT",
+      "name": "Status",
+      "required": true,
+      "default": "Add",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263490005",
+      "description": "Status of the document",
+      "domain": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)"
+    },
+    {
+      "editRoles": "administrator",
+      "comments": "Assigned by server.",
+      "conceptOntology": "SNOMEDCT",
+      "name": "Schema Version",
+      "default": 1.0,
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/22303008",
+      "description": "Version of this data model schema",
+      "domain": "float"
+    },
+    {
+      "index": true,
+      "editRoles": "administrator, author",
+      "unique": true,
+      "conceptOntology": "HL7",
+      "name": "Title",
+      "required": true,
+      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1704446",
+      "description": "A short, unique title of this analysis set",
+      "domain": "string"
+    },
+    {
+      "editRoles": "administrator, author",
+      "conceptOntology": "SNOMEDCT",
+      "name": "Type",
+      "required": true,
+      "properties": [
+        {
+          "editRoles": "administrator, author",
+          "name": "Other Type",
+          "description": "Put Type of Study here if you chose Other above",
+          "domain": "string"
+        }
+      ],
+      "default": "Small RNA-seq",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+      "description": "The Type presents a controlled vocabulary for expressing the overall purpose of the Study: Transcriptome Analysis, Whole Genome sequencing, Metagenomics, Epigenetics, etc.",
+      "domain": "enum(Whole Genome Sequencing, Metagenomics, Transcriptome Analysis, Resequencing, Epigenetics, Synthetic Genomics, Forensic or Pale-genomics, Gene Regulation Study, Cancer Genomics, Population Genomics, RNA-seq, Exome Sequencing, Small RNA-seq, Pooled Clone Sequencing, Other)"
+    },
+    {
+      "editRoles": "administrator, author",
+      "conceptOntology": "HL7",
+      "name": "Abstract",
+      "required": true,
+      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1552863",
+      "description": "Briefly describes the goals, purpose, and scope of the Study",
+      "domain": "string"
+    },
+    {
+      "editRoles": "administrator, author",
+      "items": [
+        {
+          "index": true,
+          "editRoles": "administrator, author",
+          "identifier": true,
+          "conceptOntology": "LOINC",
+          "name": "Author Name",
+          "required": true,
+          "properties": [
+            {
+              "index": true,
+              "editRoles": "administrator, author",
+              "comments": "administrator, author",
+              "conceptOntology": true,
+              "name": "Role",
+              "knownRange": "Role of the person involved in this study",
+              "description": "Role of the person in this Study",
+              "domain": "enum(PI, Co-PI, Submitter, Member)"
+            }
+          ],
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU008292",
+          "description": "Author name",
+          "category": true,
+          "domain": "string"
+        }
+      ],
+      "name": "Authors",
+      "required": true,
+      "description": "Items -- List of Authors Who Contributed to This Study - PI should be listed here along with other contributors",
+      "category": true,
+      "domain": "numItems"
+    },
+    {
+      "editRoles": "administrator, author",
+      "conceptOntology": "CRISP",
+      "name": "Overall Design",
+      "conceptURL": "http://purl.bioontology.org/ontology/CSP/4009-0020",
+      "description": "Description of the Study including (but not limited to) number of samples, if reference and/or control samples are included, if replicates are included in this study, etc.",
+      "domain": "string"
+    },
+    {
+      "editRoles": "administrator, author",
+      "conceptOntology": "LOINC",
+      "name": "Notes",
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+      "description": "Additional Notes about this Study",
+      "domain": "string"
+    },
+    {
+      "editRoles": "administrator, author",
+      "name": "IRB Consent Process",
+      "properties": [
+        {
+          "editRoles": "administrator, author",
+          "name": "Is Form Valid",
+          "description": "Is Form Valid",
+          "domain": "enum(Yes, No, Unknown)"
+        },
+        {
+          "editRoles": "administrator, author",
+          "name": "Is Consent Obtained",
+          "description": "Is Consent Obtained",
+          "domain": "enum(Yes, No, Unknown)"
+        },
+        {
+          "editRoles": "administrator, author",
+          "name": "Consent Date",
+          "description": "Consent Date",
+          "domain": "date"
+        },
+        {
+          "editRoles": "administrator, author",
+          "name": "Consent Form Attachment",
+          "description": "Upload Encrypted Consent Forms",
+          "domain": "fileUrl"
+        }
+      ],
+      "description": "Category -- IRB Consent Process Checklist",
+      "category": true,
+      "fixed": true,
+      "domain": "[valueless]"
+    },
+    {
+      "editRoles": "administrator, author",
+      "name": "Anticipated Data Repository",
+      "properties": [
+        {
+          "editRoles": "administrator, author",
+          "name": "Other Data Repository",
+          "description": "Specify Other data repository",
+          "domain": "string"
+        },
+        {
+          "editRoles": "administrator, author",
+          "name": "Project registered by PI with dbGaP?",
+          "description": "Project registered by PI with dbGap (Yes or No?)",
+          "domain": "enum(Yes, No)"
+        }
+      ],
+      "description": "Anticipated Data Repository - like dbGaP, GEO, both dbGaP and GEO or other",
+      "category": true,
+      "domain": "enum(GEO, dbGaP, Both GEO & dbGaP, Other)"
+    },
+    {
+      "editRoles": "administrator, author",
+      "conceptOntology": "HL7",
+      "items": [
+        {
+          "index": true,
+          "editRoles": "administrator, author",
+          "identifier": true,
+          "name": "PubMed ID",
+          "required": true,
+          "properties": [
+            {
+              "editRoles": "administrator, author",
+              "name": "Authors",
+              "description": "Author List",
+              "domain": "string"
+            },
+            {
+              "editRoles": "administrator, author",
+              "name": "Title",
+              "description": "Title of the article",
+              "domain": "string"
+            },
+            {
+              "editRoles": "administrator, author",
+              "name": "Journal Name",
+              "description": "Name of the journal",
+              "domain": "string"
+            },
+            {
+              "editRoles": "administrator, author",
+              "name": "Publication Date",
+              "description": "Publication Date",
+              "domain": "string"
+            },
+            {
+              "editRoles": "administrator, author",
+              "name": "Volume",
+              "description": "Volume",
+              "domain": "string"
+            },
+            {
+              "editRoles": "administrator, author",
+              "name": "Issue",
+              "description": "Issue Number",
+              "domain": "string"
+            },
+            {
+              "editRoles": "administrator, author",
+              "name": "Pages",
+              "description": "Pages",
+              "domain": "string"
+            },
+            {
+              "editRoles": "administrator, author",
+              "name": "Abstract",
+              "description": "Abstract of the article",
+              "domain": "string"
+            },
+            {
+              "editRoles": "administrator, author",
+              "name": "DOI",
+              "description": "Digitial Object Identifier of the reference",
+              "domain": "url"
+            }
+          ],
+          "description": "PubMed ID of reference",
+          "category": true,
+          "domain": "pmid"
+        }
+      ],
+      "name": "References",
+      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+      "description": "Items -- Reference Publications",
+      "category": true,
+      "domain": "numItems"
+    },
+    {
+      "editRoles": "administrator, author",
+      "items": [
+        {
+          "index": true,
+          "editRoles": "administrator, author",
+          "identifier": true,
+          "name": "Reference",
+          "required": true,
+          "description": "Describe the reference",
+          "domain": "labelUrl"
+        }
+      ],
+      "name": "Other References",
+      "description": "Items -- Other Reference not archived in PubMed",
+      "category": true,
+      "domain": "numItems"
+    },
+    {
+      "editRoles": "administrator, author",
+      "items": [
+        {
+          "index": true,
+          "editRoles": "administrator, author",
+          "identifier": true,
+          "conceptOntology": "LOINC",
+          "name": "Related Submission",
+          "required": true,
+          "properties": [
+            {
+              "editRoles": "administrator, author",
+              "conceptOntology": "SNOMEDCT",
+              "name": "DocURL",
+              "Object Type": "exmd:Submissions",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "description": "Relative ID (accession) of doc, provide Document URL",
+              "domain": "url"
+            }
+          ],
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+          "description": "ID of related Submission document",
+          "category": true,
+          "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-SU)"
+        }
+      ],
+      "name": "Related Submissions",
+      "required": true,
+      "description": "Items -- Related Submission Documents",
+      "category": true,
+      "domain": "numItems"
+    },
+    {
+      "editRoles": "administrator, author",
+      "items": [
+        {
+          "index": true,
+          "editRoles": "administrator, author",
+          "identifier": true,
+          "conceptOntology": "LOINC",
+          "name": "Accession",
+          "required": true,
+          "properties": [
+            {
+              "editRoles": "administrator, author",
+              "conceptOntology": "EDAM",
+              "name": "dbName",
+              "conceptURL": "http://edamontology.org/data_1056",
+              "description": "Database name of alias (SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "domain": "enum(SRA, GEO, DDBJ, ENCODE, dbGaP, EBI)"
+            },
+            {
+              "editRoles": "administrator, author",
+              "conceptOntology": "SNOMEDCT",
+              "name": "URL",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "description": "URL that points to this Study in alias database",
+              "domain": "url"
+            }
+          ],
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU034731",
+          "description": "Alias Accession ID of this Study in other databases (Example: SRA, GEO)",
+          "category": true,
+          "domain": "string"
+        }
+      ],
+      "name": "Aliases",
+      "description": "Items -- Aliases",
+      "category": true,
+      "domain": "numItems"
+    }
+  ],
+  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/224699009",
+  "description": "Document Describing Information About This Sequencing Study; Study ID",
+  "domain": "autoID(EXR, uniqAlphaNum, ST)"
+}

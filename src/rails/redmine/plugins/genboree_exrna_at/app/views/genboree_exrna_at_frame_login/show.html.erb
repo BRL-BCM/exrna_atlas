@@ -1,0 +1,33 @@
+<% content_for :end do %>
+  <script type="text/javascript">
+    parent.pluginUserPerms.gbexat_public_tool_job = pluginUserPerms.gbexat_public_tool_job;
+    parent.atlasSettings.gbLogin = atlasSettings.gbLogin ;
+    var token = $('meta[name="csrf-token"]').attr('content');
+    
+    parent.csrf_token = token ;
+   
+    // get the data to resubmit, data from the slice or tree selections
+    var data = null;
+    var name = null ;
+    if(parent.treeSelectionsObj){ data = parent.treeSelectionsObj; name = "hierTransform" ;}
+    else if(parent.donutSelectionsObj){data = parent.donutSelectionsObj; name = "json" ;} 
+    // get the selections of the parent window grid
+    var selections = parent.Ext.getCmp('searchGrid').getSelectionModel().getSelection() ;
+    var rowIndices = [] ;
+    for(var ii=0; ii<selections.length; ii++)
+    {
+      rowIndices.push(parent.Ext.getCmp('searchGrid').store.indexOf(selections[ii])) ;
+    }
+    if(rowIndices.length > 0)
+    {
+      parent.postToSelf(data, name, parent.toolSelected, rowIndices.join(",")) ;
+    }
+    else
+    {
+      parent.postToSelf(data, name, parent.toolSelected) ;
+    }
+    // close the log in window
+    parent.Ext.getCmp('userLoginWin').close() ; 
+  </script>
+<% end %>
+

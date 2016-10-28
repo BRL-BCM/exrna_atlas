@@ -1,0 +1,100 @@
+#contact-success {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#contact-fail {
+  padding: 10px;
+  text-align: center;
+}
+
+.x-input-group {
+  margin-bottom: 15px;
+}
+
+.x-input-group-addon {
+  background-color: #ffffff;
+}
+
+.double-row-pad {
+  padding-left: 30px ;
+  padding-right: 30px ;
+}
+
+/* Banner */
+.top-most.container, .top-most.container-fluid {
+  margin-top: 8px ;
+}
+
+.row div.banner {
+  /* This cannot be here because it would be static path that doesn't work elsewhere */
+  /* The layout View file has this and makes the path dynamically, appropriately for the installation */
+  /* background-image: url('/genboreeKB_dev/plugin_assets/genboree_exrna_at/images/exRNA-Atlas-Small-Banner.png') ; */
+  background-repeat: no-repeat ;
+  background-position: center ;
+  text-align: center ;
+}
+/* Full-height inline pseudo-element (center child div trick (.title.text is div with wrappable text to center) */
+.row div.banner:before {
+  content: ' ' ;
+  display: inline-block ;
+  vertical-align: middle ;
+  height: 100% ;
+}
+
+.row div.banner div.title {
+  display: inline-block ;
+  vertical-align: middle ;
+}
+
+.row div.banner .title.text {
+  font-family : sans-serif, arial, helvetica ;
+  letter-spacing: 0.05em ;
+  color: white !important ;
+  text-shadow: 3px 3px 2px #000000 ;
+  font-size: 3.4vw ;
+  width: 100% ;
+  /* Undo bootstrap grid margin else will do funny wrapping when small */
+  margin-left: -15px ;
+  margin-right: -15px ;
+}
+
+.row div.banner .title.text a, .row div.banner .title.text a:link, .row div.banner .title.text a:visited, .row div.banner .title.text a:hover, .row div.banner .title.text a:active {
+  color: white !important ;
+}
+
+/* Navbar rules */
+.navbar li.top-separator-line {
+  border-top: 1px solid orange ;
+}
+
+/* Media-Conditional Rules */
+/* - NOTE!! LAST matching rule will be applied by browser! */
+/* - THUS: Put @media blocks in ASCENDING order of size conditional / greater capability! */
+
+/* Banner div height related rules */
+@media (min-height: 600px) { /* >>>> use @media like bootstrap does to get some particular styling alternatives <<<< */
+  .row div.banner {
+    height: 72px ;
+    /*line-height : 72px;*/
+  }
+}
+@media (min-height: 720px) { /* >>>> use @media like bootstrap does to get some particular styling alternatives <<<< */
+  .row div.banner {
+    height: 110px ;
+    /* line-height : 110px; */
+  }
+}
+@media (min-height: 920px) {
+  .row div.banner {
+    height      : 150px;
+    /* line-height : 150px; */
+  }
+}
+
+/* Banner div width related rules */
+@media (min-width: 768px) {
+  .row div.banner .title.text {
+    font-size: 29px ;
+  }
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "date": "2016-10-25",
+    "type": "atlas-changes",
+    "title": "v4 Atlas released (over 1000 samples!)",
+    "content": "The v4 Atlas has been released and now stores over 1000 RNA-seq samples! 623 new RNA-seq profiles were added to the Atlas, and vast majority of v3 Atlas RNA-seq samples were reprocessed with the newest version of exceRpt. In addition, exogenous genomic mapping data now available for all RNA-seq profiles."
+  },
+  {
+    "date": "2016-07-07",
+    "type": "new-samples",
+    "title": "New data added: 99 exRNA profiles - First qPCR dataset",
+    "content": "First qPCR dataset in the exRNA Atlas released. 99 exRNA profiles from the lab of Julie Saugstad was added to the Atlas. The qPCR array data is from CSF-derived RNA from individuals suffering from Alzheimer's Disease."
+  },
+  {
+    "date": "2016-04-06",
+    "type": "new-samples",
+    "title": "New data added: 40 exRNA profiles",
+    "content": "40 new exRNA profiles from the lab of Jane Freedman was added to the Atlas. The sequencing data is from plasma-derived RNA from 40 individuals involved in the Framingham Heart Study.",
+    "pmid": "27112789"
+  },
+  {
+    "date": "2016-03-03",
+    "type": "atlas-changes",
+    "title": "Public FTP data download",
+    "content": "Launched public FTP site for data downloads. Issues with data downloads were also fixed and large sequencing datasets and result files can be downloaded reliably."
+  },
+  {
+    "date": "2016-03-01",
+    "type": "new-samples",
+    "title": "New data added: 192 exRNA profiles",
+    "content": "Added 192 exRNA profiles from the labs of Tushar Patel (Mayo Clinic) and Liang Wang (University of Wisconsin). This includes plasma extracellular RNA profiles in healthy and cancer patients.",
+    "pmid": "26786760"
+  },
+  {
+    "date": "2016-01-11",
+    "type": "atlas-changes",
+    "title": "Public launch of exRNA Atlas",
+    "content": "Launched exRNA Atlas with 519 exRNA profiles from various biofluids and health conditions. The data is processed uniformly using the exceRpt small RNA-seq pipeline and uniform data quality metrics have been applied on all datasets."
+  }
+]

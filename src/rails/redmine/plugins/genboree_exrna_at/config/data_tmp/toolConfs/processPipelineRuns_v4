@@ -1,0 +1,31 @@
+{
+  "settings": {
+    "anticipatedDataRepo": "None",
+    "toolVersionPPR": "4.6.3",
+    "toolVersion": "4.6.3",
+    "grantNumbers": [
+      "Non-ERCC Funded Study"
+    ],
+    "otherDataRepo": null,
+    "remoteStorageArea": null,
+    "dbGaP": "Not Applicable",
+    "exceRptResultsVersion": "4.6.2",
+    "grantNumber": "Non-ERCC Funded Study",
+    "toggleMultiSelectListButton": "Clear All",
+    "inputsVersion": "4.6.2",
+    "remoteStorageAreas": [
+
+    ],
+    "dataRepoSubmissionCategory": "Samples Not Meant for Submission to DCC",
+    "piName": "Non-ERCC PI",
+    "analysisName": "",
+    "anticipatedDataRepos": [
+      "None"
+    ]
+  },
+  "context": {
+    "jobType": "gbToolJob",
+    "gbLockFileKey": "toolJob",
+    "toolIdStr": "processPipelineRuns"
+  }
+}

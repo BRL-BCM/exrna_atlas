@@ -1,0 +1,37 @@
+{
+  "settings": {
+    "anticipatedDataRepo": "0_None",
+    "toolVersion": "1.0.0",
+    "otherDataRepo": "",
+    "exRNAInternalKBGroup": "exRNA Metadata Standards",
+    "exRNAInternalKBHost": "genboree.org",
+    "grantNumbers": [
+      "Non-ERCC Funded Study"
+    ],
+    "runPostProcessingTool": true,
+    "remoteStorageArea": null,
+    "exRNAInternalKBToolUsageColl": "ERCC Tool Usage",
+    "dbGaP": "Not Applicable",
+    "grantNumber": "Non-ERCC Funded Study",
+    "factorName1": "",
+    "exRNAInternalKBName": "exRNA Internal",
+    "dataRepoSubmissionCategory": "DCC Submission",
+    "remoteStorageAreas": [
+
+    ],
+    "factorLevel1": "",
+    "piName": "Non-ERCC PI",
+    "anticipatedDataRepos": [
+      "None"
+    ],
+    "analysisName": "DESeq2-2016-7-20-11:48:04",
+    "factorLevel2": "",
+    "exRNAInternalKBPICodesColl": "ERCC PI Codes",
+    "atlasVersion": "v4"
+  },
+  "context": {
+    "jobType": "gbToolJob",
+    "gbLockFileKey": "toolJob",
+    "toolIdStr": "DESeq2"
+  }
+}

@@ -1,0 +1,32 @@
+<!-- Content specific for linear tree view. Uses the base layout for shared contents. Check gbexat_base layout-->
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'd3.js', :plugin => 'genboree_exrna_at' %>
+  <%= stylesheet_link_tag "linearTree.css", :plugin => 'genboree_exrna_at', :media => 'all' %>
+  <%= javascript_include_tag 'linearTree.js', :plugin => 'genboree_exrna_at' %>
+<% end %>
+
+<% content_for :body do %>
+  <div id="pageContent" class="page-container">
+    <div id="restOfPage"></div>
+    <div id="otherContent2" class="otherContent">
+      <ul>
+        <li><b>Expand nodes:</b> Click a collapsed node to &quot;drill down&quot; along its path in the <i>Anatomical Locations</i> &raquo; <i>Biofluids</i> &raquo; <i>Conditions</i> facet sequence.</li>
+        <li><b>Collapse nodes:</b> Click an expanded node to collapse it.</li>
+        <li><b>Select node / filter path:</b> Hover over nodes to &quot;select&quot; that &quot;drill down&quot; path. Your selected path is always clearly highlighted.</li>
+        <li><b>Reset/clear:</b> Reset/clear the active filter path using the <code>X</code> icon on the right.</li>
+        <li><b>Filter/search samples:</b> The search icon on the right will use your selected path to open a tabular view of that biosample subset.</li>
+      </ul>
+    </div>
+  </div>
+<% end %>
+
+<% content_for :end do %>
+  <!-- Late script area for browsers (IE8...yeah, really?) that don't support the "DOMContentLoaded" event and other correct techniques -->
+  <script type="text/javascript">
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+      linearTree() ;
+    }) ;
+
+  </script>
+<% end %>

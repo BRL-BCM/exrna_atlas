@@ -1,0 +1,116 @@
+circle {
+  outline : 1px solid transparent ; 
+}
+
+path {
+  outline : 1px solid transparent ;
+}
+
+text {
+  outline : 1px solid transparent ;
+}
+
+tspan {
+  outline : 1px solid transparent ;
+}
+
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  /* stroke-width: 1.5px; */
+}
+
+.node text.label {
+  /*font: 0.54em "Trebuchet MS",cursive,sans-serif;*/
+  font-weight: bold ;
+  fill: black ;
+  text-anchor: start ;
+  dominant-baseline: central ;
+}
+
+.link {
+  fill: none;
+  /*stroke: #ccc;*/
+  /*stroke-width: 1.5px;*/
+}
+
+.tier text.title {
+  font-size: 0.78em ;
+  font-weight: 700;
+  text-anchor: middle ;
+}
+
+.otherContent {
+  font-family: "Trebuchet MS",cursive,sans-serif;
+  background-color: #FCFAF7 ;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.45);
+  margin: 15px ;
+  padding: 10px ;
+  max-width: 720px ;
+  font-size: 0.7em ;
+}
+
+.otherContent code {
+  font-size: 1.7em ;
+}
+
+.otherContent ul {
+  padding-left: 20px ;
+}
+
+text.explanation {
+  fill: #006ad1 ;
+  text-anchor : middle ;
+  font-family: "Trebuchet MS",cursive,sans-serif ;
+  font-size: 0.68em ;
+  font-weight: bold ;
+}
+
+#percentage {
+  z-index: 10 ;
+  font-family : "Trebuchet MS",cursive,sans-serif ;
+  font-size: 1.1em ;
+  font-weight: bold ;
+}
+
+.sb.canvas {
+  position : relative ;
+}
+
+/*
+#detector {
+  fill-opacity: 0 ;
+}
+*/
+
+/*
+svg path.path {
+  fill-rule: evenodd ;
+  stroke: white ;
+  stroke-width: 1px ;
+  fill-opacity: 1 ;
+}
+*/
+
+#diseaseSB-title {
+  font-size: 1.2em ;
+  font-weight: bold ;
+  font-family: "Trebuchet MS",cursive,sans-serif ;
+  text-transform: capitalize ;
+  text-align: center ;
+  clear:  both ;
+  margin-bottom: 0px ;
+  height: 30px ;
+  max-height: 30px ;
+}
+
+#legend {
+  font-weight : bold ;
+  font-size: 0.56em ;
+}
+
+#trail text.crumb.label {
+  font-size : 0.52em ;
+}

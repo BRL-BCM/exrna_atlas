@@ -1,0 +1,310 @@
+{
+  "properties": [
+    {
+      "conceptOntology": "SNOMEDCT",
+      "comments": "Assigned by server at different stages.",
+      "name": "Status",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263490005",
+      "required": true,
+      "domain": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)",
+      "default": "Add",
+      "description": "Status of the document",
+      "editRoles": "administrator"
+    },
+    {
+      "conceptOntology": "SNOMEDCT",
+      "comments": "Assigned by server.",
+      "name": "Schema Version",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/22303008",
+      "domain": "float",
+      "default": 1.0,
+      "description": "Version of this data model schema",
+      "editRoles": "administrator"
+    },
+    {
+      "properties": [
+        {
+          "conceptOntology": "LOINC",
+          "name": "First Name",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU020551",
+          "index": true,
+          "required": true,
+          "domain": "string",
+          "description": "Submitter's first name",
+          "editRoles": "administrator, author"
+        },
+        {
+          "conceptOntology": "LOINC",
+          "name": "Last Name",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU020554",
+          "index": true,
+          "required": true,
+          "domain": "string",
+          "description": "Submitter's last name",
+          "editRoles": "administrator, author"
+        },
+        {
+          "conceptOntology": "OBI",
+          "name": "Email",
+          "conceptURL": "http://purl.obolibrary.org/obo/IAO_0000429",
+          "required": true,
+          "domain": "regexp(^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$)",
+          "description": "Email address of Submitter",
+          "editRoles": "administrator, author"
+        }
+      ],
+      "conceptOntology": "EFO",
+      "name": "Submitter",
+      "category": true,
+      "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0001741",
+      "required": true,
+      "domain": "regexp(EXR-[A-Z0-9]{6}-SUB)",
+      "description": "Category -- Submitter",
+      "editRoles": "administrator, author"
+    },
+    {
+      "conceptOntology": "SNOMEDCT",
+      "comments": "Assigned by server.",
+      "name": "Date",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410671006",
+      "domain": "date",
+      "description": "Date of submission",
+      "editRoles": "administrator, author"
+    },
+    {
+      "name": "Last Update Date",
+      "required": true,
+      "domain": "date",
+      "description": "Date of last update",
+      "editRoles": "administrator, author"
+    },
+    {
+      "conceptOntology": "LOINC",
+      "name": "Comment",
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP20987-1",
+      "domain": "string",
+      "description": "Any comments relevant to this submission",
+      "editRoles": "administrator, author"
+    },
+    {
+      "properties": [
+        {
+          "conceptOntology": "LOINC",
+          "name": "First Name",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU020551",
+          "index": true,
+          "required": true,
+          "domain": "string",
+          "description": "First Name of the Primary Investigator",
+          "editRoles": "administrator, author"
+        },
+        {
+          "conceptOntology": "LOINC",
+          "name": "Last Name",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU020554",
+          "index": true,
+          "required": true,
+          "domain": "string",
+          "description": "Last Name of the Primary Investigator",
+          "editRoles": "administrator, author"
+        },
+        {
+          "conceptOntology": "OBI",
+          "name": "Email",
+          "conceptURL": "http://purl.obolibrary.org/obo/IAO_0000429",
+          "required": true,
+          "domain": "regexp(^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$)",
+          "description": "Email address of the Primary Investigator",
+          "editRoles": "administrator, author"
+        }
+      ],
+      "conceptOntology": "NCIT",
+      "name": "Principal Investigator",
+      "category": true,
+      "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19924",
+      "required": true,
+      "domain": "regexp(EXR-[A-Z0-9]{6}-PI)",
+      "description": "Category -- Principal Investigator",
+      "editRoles": "administrator, author"
+    },
+    {
+      "properties": [
+        {
+          "conceptOntology": "OBI",
+          "name": "Grant Details",
+          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001636",
+          "index": true,
+          "required": true,
+          "domain": "enum(1U01HL126493-01,1U01HL126494-01,1U01HL126495-01,1U01HL126496-01,1U01HL126497-01,1U01HL126499-01,1U19CA179512-01,1U19CA179513-01,1U19CA179514-01,1U19CA179563-01,1U19CA179564-01,1U54DA036134-01,1UH2TR000875-01,1UH2TR000880-01,1UH2TR000884-01,1UH2TR000888-01,1UH2TR000890-01,1UH2TR000891-01,1UH2TR000901-01,1UH2TR000902-01,1UH2TR000903-01,1UH2TR000906-01,1UH2TR000914-01,1UH2TR000918-01,1UH2TR000921-01,1UH2TR000923-01,1UH2TR000928-01,1UH2TR000931-01,1UH2TR000933-01,1UH2TR000943-01,3U01HL126493-02S1,3U01HL126494-01S1,3U01HL126494-02S1,3U01HL126496-02S1,3U01HL126499-02S1,3U19CA179512-02S1,3U19CA179514-02S1,3U19CA179563-02S1,3U19CA179563-02S2,3U54DA036134-03S1,3UH2TR000914-02S1,3UH2TR000914-03S1,4UH3TR000875-03,4UH3TR000880-03,4UH3TR000884-03,4UH3TR000888-03,4UH3TR000890-03,4UH3TR000891-03,4UH3TR000901-03,4UH3TR000903-03,4UH3TR000906-03,4UH3TR000918-03,4UH3TR000921-03,4UH3TR000923-03,4UH3TR000931-03,4UH3TR000933-03,4UH3TR000943-03,5U01HL126493-02,5U01HL126494-02,5U01HL126495-02,5U01HL126496-02,5U01HL126497-02,5U01HL126499-02,5U19CA179512-02,5U19CA179512-03,5U19CA179513-02,5U19CA179513-03,5U19CA179514-02,5U19CA179514-03,5U19CA179563-02,5U19CA179563-03,5U19CA179564-02,5U19CA179564-03,5U54DA036134-02,5U54DA036134-03,5UH2TR000875-02,5UH2TR000880-02,5UH2TR000884-02,5UH2TR000888-02,5UH2TR000890-02,5UH2TR000891-02,5UH2TR000901-02,5UH2TR000902-02,5UH2TR000902-03,5UH2TR000903-02,5UH2TR000906-02,5UH2TR000914-02,5UH2TR000918-02,5UH2TR000921-02,5UH2TR000923-02,5UH2TR000928-02,5UH2TR000928-03,5UH2TR000931-02,5UH2TR000933-02,5UH2TR000943-02,7UH2TR000914-03,Non-ERCC Funded Study)",
+          "description": "List of exRNA grants; Choose Non-ERCC Funded Study if your grant does not fall under the list of Common Fund ERCC Grants. Provide more information in the Notes.",
+          "editRoles": "administrator, author"
+        }
+      ],
+      "conceptOntology": "SNOMEDCT",
+      "name": "Funding Source",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/260753009",
+      "required": true,
+      "domain": "string",
+      "default": "NIH Common Fund",
+      "description": "List of funding source(s)",
+      "editRoles": "administrator, author"
+    },
+    {
+      "conceptOntology": "OBI",
+      "name": "Organization",
+      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000245",
+      "required": true,
+      "domain": "string",
+      "description": "Name of organization/institute",
+      "editRoles": "administrator, author"
+    },
+    {
+      "conceptOntology": "LOINC",
+      "name": "Lab Name",
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72974-6",
+      "domain": "string",
+      "description": "Name of lab",
+      "editRoles": "administrator, author"
+    },
+    {
+      "properties": [
+        {
+          "conceptOntology": "SNOMEDCT",
+          "name": "Street Address",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/398099009",
+          "domain": "string",
+          "description": "Lab address",
+          "editRoles": "administrator, author"
+        },
+        {
+          "conceptOntology": "LOINC",
+          "name": "City",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU039005",
+          "domain": "string",
+          "description": "City",
+          "editRoles": "administrator, author"
+        },
+        {
+          "properties": [
+            {
+              "name": "Other State",
+              "domain": "string",
+              "description": "Name of foreign state if state cannot be found",
+              "editRoles": "administrator, author"
+            }
+          ],
+          "conceptOntology": "LOINC",
+          "name": "State",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU042161",
+          "domain": "bioportalTerms((SNOMEDCT,http://purl.bioontology.org/ontology/SNOMEDCT/224037005),(NCIT,http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C30010))",
+          "description": "State - type the full name or 2-letter code of a US State. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all states in the USA. For non-US states, leave this field blank and enter state name in the sub-property \"Other State\"",
+          "editRoles": "administrator, author"
+        },
+        {
+          "conceptOntology": "LOINC",
+          "name": "Zip",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU020563",
+          "domain": "int",
+          "description": "Zip code",
+          "editRoles": "administrator, author"
+        },
+        {
+          "conceptOntology": "LOINC",
+          "name": "Country",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP120625-1",
+          "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=SNOMEDCT&subtree_root=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F223496003)",
+          "default": "United States of America",
+          "description": "Country - type the full name of the country. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all countries in the world.",
+          "editRoles": "administrator, author"
+        },
+        {
+          "conceptOntology": "LOINC",
+          "name": "Phone",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP120627-7",
+          "domain": "string",
+          "description": "Contact phone number (with country code)",
+          "editRoles": "administrator, author"
+        },
+        {
+          "conceptOntology": "LOINC",
+          "name": "Fax",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP149862-7",
+          "domain": "string",
+          "description": "Fax number (with country code)",
+          "editRoles": "administrator, author"
+        },
+        {
+          "conceptOntology": "SNOMEDCT",
+          "name": "Website",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+          "domain": "url",
+          "description": "Lab website URL",
+          "editRoles": "administrator, author"
+        }
+      ],
+      "conceptOntology": "LOINC",
+      "name": "Address",
+      "category": true,
+      "fixed": true,
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU034732",
+      "domain": "[valueless]",
+      "description": "Lab Address",
+      "editRoles": "administrator, author"
+    },
+    {
+      "conceptOntology": "LOINC",
+      "name": "Notes",
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+      "domain": "string",
+      "description": "Additional notes about this Submission",
+      "editRoles": "administrator, author"
+    },
+    {
+      "items": [
+        {
+          "properties": [
+            {
+              "conceptOntology": "EDAM",
+              "name": "dbName",
+              "conceptURL": "http://edamontology.org/data_1056",
+              "domain": "enum(SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "description": "Database name of alias (SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "editRoles": "administrator, author"
+            },
+            {
+              "conceptOntology": "SNOMEDCT",
+              "name": "URL",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "domain": "url",
+              "description": "URL that points to this Submission in alias database",
+              "editRoles": "administrator, author"
+            }
+          ],
+          "conceptOntology": "LOINC",
+          "identifier": true,
+          "name": "Accession",
+          "category": true,
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU034731",
+          "index": true,
+          "required": true,
+          "domain": "string",
+          "description": "Alias Accession ID of this Submission in other databases (Example: SRA, GEO)",
+          "editRoles": "administrator, author"
+        }
+      ],
+      "name": "Aliases",
+      "category": true,
+      "fixed": true,
+      "domain": "[valueless]",
+      "description": "Items -- Aliases",
+      "editRoles": "administrator, author"
+    }
+  ],
+  "identifier": true,
+  "comments": "Assigned after validation.",
+  "name": "Submission",
+  "index": true,
+  "domain": "autoID(EXR, uniqAlphaNum, SU)",
+  "description": "Document Describing Information About the Submission; Submission ID",
+  "editRoles": "administrator, author"
+}

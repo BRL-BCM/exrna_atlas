@@ -1,0 +1,28 @@
+[
+    {
+        "label": "Carcinoma",
+        "originalLabel": [
+            "Colon Carcinoma",
+            "Prostate Carcinoma",
+            "Pancreatic Carcinoma",
+            "colorectal cancer",
+            "Gastric Cancer Pathologic TNM Finding v7"
+        ]
+    },
+    {
+        "label": "Preeclampsia",
+        "originalLabel": [
+            "severe pre-eclampsia",
+            "Chronic Maternal Hypertension with Superimposed Preeclampsia",
+            "pre-eclampsia",
+            "HELLP Syndrome"
+        ]
+    },
+    {
+        "label": "Hemorrhage",
+        "originalLabel": [
+            "Intraventricular Brain Hemorrhage",
+            "Subarachnoid Hemorrhage"
+        ]
+    }
+]

@@ -1,0 +1,150 @@
+  <% 
+    # @note controller/views using this partial must also load the javascript exat_header.js
+
+    # Find any previous version labeled links in settings
+    prevVersions = []
+    prevVersStr = @settingsRec.prevVersions
+    if(prevVersStr and prevVersStr =~ /\S/)
+      pvLabelUrls = prevVersStr.split(/,/)
+      pvLabelUrls.each { |pvLabelUrl|
+        pvLabelUrl.strip =~ /^"([^"]+)":(\S+)$/
+        if($1 and $2)
+          prevVersions << { :label => $1, :url => $2 }
+        else
+          # Log problem and move on
+          $stderr.debugPuts(__FILE__, __method__, 'ERROR', "Bad previous version labeled-url record found in settings:\n\n    #{pvLabelUrl.inspect}\n\n")
+        end
+      }
+
+    end
+  %>
+  <% # logo %>
+  <div class="top-most container-fluid">
+    <div class="row double-row-pad">
+      <div class="banner text-center col-xs-12">
+        <div class="title text">
+          <a href="<%= @homePageUrl %>">exRNA Atlas: Data, Tools & Computable Knowledge</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% # toolbar %>
+  <div class="navbar-container container-fluid">
+    <div class="row row-pad">
+      <div class="col-xs-12">
+        <div class="navbar navbar-x navbar-default navbar-default-x row-pad">
+          <ul class="nav navbar-nav navbar-nav-x navbar-right">
+            <li>
+              <a href=<%="#{@relLinkBase}datasets"%>>
+                <i class="fa fa-tasks"></i>
+                Datasets
+              </a>
+            </li>
+            <li>
+              <a href="http://genboree.org/theCommons/projects/exrna-tools-may2014/wiki">
+                <i class="fa fa-bar-chart"></i>
+                Analysis Tools
+              </a>
+            </li>
+            <li>
+              <a href="http://genboree.org/theCommons/projects/exrna-mads/wiki/exRNA%20Atlas">
+                <i class="fa fa-question-circle"></i>
+                Help
+              </a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a target="_blank" href="http://exrna.org">exRNA Portal</a></li>
+                <li><a target="_blank" href="http://exrna.org/resources/data/data-access-policy">Data Access Policy</a></li>
+                <li><a target="_blank" href="http://exrna.org/resources/data/data-quality-control-standards">Data Quality Standards</a></li>
+                <li><a target="_blank" href="http://genboree.org/site/exrna_publications">Publications</a></li>
+                <%
+                  unless(prevVersions.empty?)
+                    isFirst = true
+                    prevVersions.each { |prevVersion|
+                %>
+                      <li class="<%= 'top-separator-line' if(isFirst) %>"><a target="_blank" href="<%= prevVersion[:url] %>"><%= prevVersion[:label] %></a></li>
+                <%
+                      isFirst = false
+                    }
+                  end
+                %>
+              </ul>
+            </li>
+            <li>
+              <a target="_blank" href="http://www.ncbi.nlm.nih.gov/pubmed/?term=26320941">
+                <i class="fa fa-book"></i> 
+                Cite Us
+              </a>
+            </li>
+            <li>
+              <a id="contact_link" data-toggle="modal" href="#" data-target="#contactUsModal">
+                <i class="fa fa-envelope"></i>
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% # alerts %>
+  <% # - standard disclaimer (e.g. for older release versions) %>
+  <%= render( :partial => "shared/genboree_exrna_at_disclaimer_info_alert" ) %>
+
+  <% # - contact success %>
+  <div id="contact-success" style="display: none;">
+    <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <p class="introTextParagraph">Thanks for using the exRNA Atlas. Your email was sent to the exRNA Admins. You will receive a response shortly.</p>
+    </div>
+  </div>
+
+  <%# contact us %>
+  <div id="contactUsModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <%# Header with close button and a title %>
+        <div class="modal-header">
+          <button type="button" class="exrna close btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Contact Us</h4>
+        </div>
+        <div id="contact-fail" class="alert alert-danger" role="alert" style="display: none;">
+          There was an error sending your message. Please try again later.
+        </div>
+        <%# Body with form (but not Send/Cancel) %>
+        <div class="modal-body">
+          <%= form_tag("#{@relLinkBase}contact", :id => "contact-us-form") do %>
+            <div class="input-group x-input-group">
+              <%= text_field_tag(:userName, nil, :placeholder => "Name...", :"aria-describedby" => "required-addon1", :class => "form-control", :required => true) %>
+              <span class="input-group-addon x-input-group-addon" id="required-addon1" style="color: red;">*</span> 
+            </div>
+            <div class="input-group x-input-group">
+              <%= text_field_tag(:userEmail, nil, :placeholder => "Email...", :"aria-describedby" => "required-addon2", :class => "form-control", :required => true) %>
+              <span class="input-group-addon x-input-group-addon" id="required-addon2" style="color: red;">*</span> 
+            </div>
+            <div class="input-group x-input-group">
+              <%= text_field_tag(:userInstitution, nil, :placeholder => "Institution...", :class => "form-control", :":aria-describedby" => "required-addon3") %>
+              <span class="input-group-addon x-input-group-addon" id="required-addon3">&nbsp;&nbsp;</span> 
+            </div>
+            <div class="input-group x-input-group">
+              <%= text_field_tag(:emailSubject, nil, :placeholder => "Subject...", :"aria-describedby" => "required-addon4", :class => "form-control", :required => true) %>
+              <span class="input-group-addon x-input-group-addon" id="required-addon4" style="color: red;">*</span> 
+            </div>
+            <div class="input-group x-input-group">
+              <%= text_area_tag(:emailBody, nil, :placeholder => "Message...", :"aria-describedby" => "required-addon5", :class => "form-control", :required => true, :rows => 6, :style => "resize: vertical;") %>
+              <span class="input-group-addon x-input-group-addon" id="required-addon5" style="color: red;">*</span> 
+            </div>
+          <% end %>
+        </div>
+        <%# Footer with Send/Cancel %>
+        <div class="modal-footer">
+          <button form="contact-us-form" type="submit" class="exrna btn btn-primary">Send</button>
+          <button type="button" class="exrna btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

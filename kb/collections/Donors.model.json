@@ -1,0 +1,317 @@
+{
+  "NEWdomains": "autoID(EXR, uniqAlphaNum, BS)",
+  "identifier": true,
+  "index": true,
+  "conceptOntology": "ERO",
+  "editRoles": "administrator, author",
+  "conceptURL": "http://purl.obolibrary.org/obo/ERO_0000020",
+  "domain": "autoID(EXR, uniqAlphaNum, DO)",
+  "description": "Document Describing Information About the Donors; Donor ID",
+  "name": "Donor",
+  "properties": [
+    {
+      "NEWdomains": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)",
+      "default": "Add",
+      "conceptOntology": "SNOMEDCT",
+      "editRoles": "administrator",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263490005",
+      "domain": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)",
+      "description": "Status of the document",
+      "name": "Status",
+      "comments": "Assigned by server at different stages.",
+      "required": true
+    },
+    {
+      "NEWdomains": "float",
+      "default": 1.0,
+      "editRoles": "administrator",
+      "domain": "float",
+      "description": "Version of this data model schema",
+      "name": "Schema Version",
+      "comments": "Assigned by server."
+    },
+    {
+      "NEWdomains": "ontURL(http://purl.bioontology.org/ontology/SNOMEDCT/429019009, http://purl.bioontology.org/ontology/SNOMEDCT/365873007)",
+      "index": true,
+      "conceptOntology": "EFO",
+      "editRoles": "administrator, author",
+      "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000695",
+      "domain": "bioportalTerms((SNOMEDCT,http://purl.bioontology.org/ontology/SNOMEDCT/429019009),(SNOMEDCT,http://purl.bioontology.org/ontology/SNOMEDCT/365873007))",
+      "description": "Gender of sample donor (Example: Male, Female, Gender unknown). This field is a look-ahead search box that connects to BioPortal and provides the correct ontology term for gender.",
+      "name": "Sex",
+      "comments": "enum(Male, Female, Unknown)",
+      "required": true
+    },
+    {
+      "NEWdomains": "ontURL(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16564)",
+      "conceptOntology": "SNOMEDCT",
+      "editRoles": "administrator, author",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/364699009",
+      "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=NCIT&subtree_root=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C16564)",
+      "description": "The ethnicity of the donor",
+      "name": "Ethnic Group"
+    },
+    {
+      "NEWdomains": "ontURL(http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17049)",
+      "conceptOntology": "NCIT",
+      "editRoles": "administrator, author",
+      "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17049",
+      "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=NCIT&subtree_root=http%3A%2F%2Fncicb.nci.nih.gov%2Fxml%2Fowl%2FEVS%2FThesaurus.owl%23C17049)",
+      "description": "The racial category of the donor",
+      "name": "Racial Category"
+    },
+    {
+      "NEWdomains": "enum(Experimental, Control)",
+      "index": true,
+      "editRoles": "administrator, author",
+      "domain": "enum(Experimental, Control)",
+      "description": "Sample type (experimental sample or control sample)",
+      "name": "Donor Type",
+      "required": true
+    },
+    {
+      "NEWdomains": "[valueless]",
+      "fixed": true,
+      "conceptOntology": "SNOMEDCT",
+      "editRoles": "administrator, author",
+      "category": true,
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/406221003",
+      "domain": "[valueless]",
+      "description": "Category -- Health Status",
+      "name": "Health Status",
+      "properties": [
+        {
+          "NEWdomains": "string",
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "description": "Current health status of the donor at the time of collection",
+          "name": "Current Health Status"
+        },
+        {
+          "NEWdomains": "string",
+          "conceptOntology": "LOINC",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU040244",
+          "domain": "string",
+          "description": "Prior malignancies, heart diseases, any other related disease conditions",
+          "name": "Medical History"
+        },
+        {
+          "NEWdomains": "string",
+          "conceptOntology": "SNOMEDCT",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/443877004",
+          "domain": "string",
+          "description": "Smoking history, if available",
+          "name": "Smoking History"
+        },
+        {
+          "NEWdomains": "string",
+          "conceptOntology": "LOINC",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP100609-9",
+          "domain": "string",
+          "description": "Medications used, if available",
+          "name": "Medications"
+        },
+        {
+          "NEWdomains": "string",
+          "conceptOntology": "ICD10",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://purl.bioontology.org/ontology/ICD10/Z92",
+          "domain": "string",
+          "description": "Treatment history of patient",
+          "name": "Treatment History"
+        },
+        {
+          "NEWdomains": "string",
+          "conceptOntology": "EFO",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000493",
+          "domain": "string",
+          "description": "Family history - Details of family members with related health/disease conditions",
+          "name": "Family History"
+        }
+      ]
+    },
+    {
+      "NEWdomains": "measurement(days)",
+      "conceptOntology": "SNOMEDCT",
+      "editRoles": "administrator, author",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/397669002",
+      "domain": "measurement(years)",
+      "description": "The age of the donor at the time of entry into this database.",
+      "name": "Age",
+      "properties": [
+        {
+          "NEWdomains": "ontURL(http://www.ebi.ac.uk/efo/EFO_0000399)",
+          "conceptOntology": "EFO",
+          "editRoles": "administrator, author",
+          "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000399",
+          "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=EFO&subtree_root=http%3A%2F%2Fwww.ebi.ac.uk%2Fefo%2FEFO_0000399)",
+          "description": "Life stage of the sample donor (Example: fetus, neonate, adult, embryo stage, postnatal). This field is a look-ahead search box that connects to BioPortal and retrieves a list with correct ontology terms for various developmental stages.",
+          "name": "Developmental Stage",
+          "comments": "enum(Fetal, Newborn, Child, Adult, Embryonic, Postnatal, Other, Unknown)"
+        }
+      ],
+      "comments": "days, weeks, months, years",
+      "required": true
+    },
+    {
+      "NEWdomains": "enum(Yes, No)",
+      "editRoles": "administrator, author",
+      "domain": "enum(Yes, No)",
+      "description": "Is the patient alive or dead?",
+      "name": "Has Expired?",
+      "properties": [
+        {
+          "NEWdomains": "date",
+          "editRoles": "administrator, author",
+          "domain": "date",
+          "description": "If the patient donor has expired, provide estimated date of death",
+          "name": "Estimated Date"
+        },
+        {
+          "NEWdomains": "string",
+          "editRoles": "administrator, author",
+          "domain": "measurement(hours)",
+          "description": "Time elapsed since the donor's death",
+          "name": "Post-mortem Interval"
+        }
+      ]
+    },
+    {
+      "NEWdomains": "string",
+      "conceptOntology": "LOINC",
+      "editRoles": "administrator, author",
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+      "domain": "string",
+      "description": "Additional notes about donor",
+      "name": "Notes"
+    },
+    {
+      "NEWdomains": "[valueless]",
+      "conceptOntology": "PMA",
+      "items": [
+        {
+          "NEWdomains": "regexp(EXR-[a-zA-Z0-9]{6,}-BS)",
+          "identifier": true,
+          "index": true,
+          "conceptOntology": "NCIT",
+          "editRoles": "administrator, author",
+          "category": true,
+          "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41256",
+          "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-DO)",
+          "description": "ID of Sample document of biological parents or sibling donor that has at lease one parent in common or identical twin donor who shares same genetic material, if known",
+          "name": "Family Member",
+          "properties": [
+            {
+              "NEWdomains": "ontURL(http://purl.bioontology.org/ontology/SNOMEDCT/125677006)",
+              "conceptOntology": "SNOMEDCT",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263498003",
+              "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=SNOMEDCT&subtree_root=http%3A%2F%2Fpurl.bioontology.org%2Fontology%2FSNOMEDCT%2F125677006)",
+              "description": "Relation type (Example: Mother, Father, Brother, Sister, Identical twin). This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all possible relation types.",
+              "name": "Relationship",
+              "comments": "enum(Mother, Father, Brother, Sister, Identical Twin, Other)"
+            },
+            {
+              "NEWdomains": "url",
+              "Object Type": "exmd:Donors",
+              "conceptOntology": "SNOMEDCT",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "domain": "url",
+              "description": "Relative ID (accession) of doc - provide Document URL",
+              "name": "DocURL"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "editRoles": "administrator, author",
+      "category": true,
+      "conceptURL": "http://www.bioontology.org/pma.owl#PMA_619",
+      "domain": "numItems",
+      "description": "Items -- Family Members - Related Documents – List of Related Samples",
+      "name": "Family Members"
+    },
+    {
+      "NEWdomains": "[valueless]",
+      "items": [
+        {
+          "NEWdomains": "string",
+          "identifier": true,
+          "index": true,
+          "conceptOntology": "LOINC",
+          "editRoles": "administrator, author",
+          "category": true,
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU034731",
+          "domain": "string",
+          "description": "Alias Accession ID of this Biosample in other databases (Example: SRA, GEO)",
+          "name": "Accession",
+          "properties": [
+            {
+              "NEWdomains": "enum(SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "conceptOntology": "EDAM",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://edamontology.org/data_1056",
+              "domain": "enum(SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "description": "Database name of alias (SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "name": "dbName"
+            },
+            {
+              "NEWdomains": "url",
+              "conceptOntology": "SNOMEDCT",
+              "editRoles": "administrator, author",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "domain": "url",
+              "description": "URL that points to this Biosample in alias database",
+              "name": "URL"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "editRoles": "administrator, author",
+      "category": true,
+      "domain": "numItems",
+      "description": "Items -- Aliases",
+      "name": "Aliases"
+    },
+    {
+      "items": [
+        {
+          "identifier": true,
+          "index": true,
+          "editRoles": "administrator, author",
+          "category": true,
+          "domain": "string",
+          "description": "Name of the metadata property",
+          "name": "Property Name",
+          "properties": [
+            {
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Value of this additonal metadata property",
+              "name": "Value"
+            },
+            {
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Additional notes about this metadata property and value",
+              "name": "Notes"
+            }
+          ],
+          "required": true
+        }
+      ],
+      "editRoles": "administrator, author",
+      "category": true,
+      "domain": "numItems",
+      "description": "Custom metadata fiels defined by users",
+      "name": "Custom Metadata"
+    }
+  ],
+  "comments": "Assigned by server after validation."
+}

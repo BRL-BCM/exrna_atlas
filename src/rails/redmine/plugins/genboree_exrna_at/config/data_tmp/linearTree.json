@@ -1,0 +1,28 @@
+  {
+    "id" : "diseaseSB",
+    "title" : "Samples by Anatomical Location, Biofluid, and Condition",
+    "path" : "anatomicalLocationVsBiofluidVsDiseaseTransformed.hier.withSums.json",
+    "colors" : [ "#FDAE6B", "#74C476", "#6BAED6" ],
+    "labelMap" : {
+      "Culture Media, Conditioned" : "Conditioned Media",
+      "Alzheimer's disease" : "Alzheimer's",
+      "Chronic Maternal Hypertension with Superimposed Preeclampsia" : "Chronic Hypertension w/ Preeclampsia",
+      "Fetus Small for Gestational Age" : "Gestationally Small Fetus",
+      "HELLP syndrome" : "HELLP Syndrome",
+      "Healthy Control" : "Healthy Control",
+      "Parkinson's Disease" : "Parkinson's",
+      "colorectal cancer" : "Colorectal Cancer",
+      "pre-eclampsia" : "Preeclampsia",
+      "severe pre-eclampsia" : "Severe Preeclampsia",
+      "systemic lupus erythematosus" : "Lupus Erythematosus",
+      "ulcerative colitis" : "Ulcerative Colitis",
+      "glioblastoma multiforme" : "Glioblastoma multiforme",
+      "liver disease" : "Liver Disease",
+      "Gastric Cancer Pathologic TNM Finding v7" : "Gastric Cancer",
+      "Subarachnoid Hemorrhage" : "Subarachnoid Hemorrhage"
+    },
+    "facets" : [ "Anatomical Locations", "Biofluids", "Conditions" ],
+    "search" : "gridview",
+    "transformColl": "analysesColl",
+    "transformation" : "anatomicalLocationVsBiofluidVsDisease"
+  }

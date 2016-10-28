@@ -1,0 +1,201 @@
+
+body.x-body{
+  background-color: white !important
+}
+
+div#gridsContainer {
+  float: left;
+/*   margin: 15px;*/
+  clear: both;   
+}
+.gridPageHelpText {
+  font-size: 1em ;
+  font-family: "Trebuchet MS", cursive, sans-serif ;
+  background-color: #fcfaf7 ;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.45);
+  margin-left: 3%;
+  margin-bottom: 3%;
+  max-width: 70% ;
+  padding: 10px ;
+  clear: both;
+}
+
+#gridPageHelp1 h4 {
+  font-size: 16px;
+}
+
+/* ######################## */
+
+.showHigh::before {
+  content:url('/images/silk/application_view_tile.png');
+  padding-left: 2px;
+  height: 1px;
+  width: 1px ;
+  cursor: pointer ;
+}
+.fastq_embargo_down {
+  background-image: url("/images/silk/lock.png");
+  margin-top: 18px;
+  cursor: default ;
+
+}
+.fastq_embargo {
+  background-image: url("/images/silk/lock.png");
+  cursor: default ;
+}
+
+.fastq_dbGaP {
+  background-image: url("/images/silk/lock_go.png");
+  cursor: default ;
+}
+
+.fastq_dbGap_down {
+  background-image: url("/images/silk/lock_go.png");
+  cursor: default ;
+  margin-top: 18px ;
+}
+
+.fastq {
+  background-image: url("/images/silk/text_align_justify.png");
+}
+
+.taxonomytree {
+  background-image: url("/images/silk/chart_organisation.png");
+}
+
+.exogenous {
+  background-image: url("/images/silk/application_view_list.png");
+}
+.exoandendo {
+  background-image: url("/images/silk/application_view_tile.png");
+}
+.fastq_down {
+  background-image: url("/images/silk/text_align_justify.png");
+  margin-top: 18px;
+}
+
+/* Wrap the column headers for grids*/
+.x-column-header-inner .x-column-header-text {
+  white-space: normal;
+}
+
+.x-column-header-inner {
+  line-height: normal;
+  padding-top:3px!important;
+  padding-bottom:3px!important;
+  text-align: center;
+  top:20%;
+}
+/*Style for cells for the cross coll transformed grid*/
+div.popWindow {
+  cursor: pointer;
+}
+
+div.fluidVsExp {
+  width: 50% !important ;
+  margin-left: 3%;
+  margin-bottom: 3%;
+  clear: both;  
+}
+
+div.fluidVsDis {
+  width: 94% !important ;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  clear: both;   
+}
+
+div.studiestable {
+  width: 94% !important ;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  clear: both;
+}
+
+div.readCounts {
+  width: 94% !important ;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-bottom: 3%;
+}
+
+div.gb-wait {
+  cursor: wait ;
+}
+
+span.gb-tip-footnote {
+  font-size: 88%;
+  font-style: italic;
+}
+
+td.wrap-text div {
+  white-space: normal;
+}
+
+div.popWindow:hover {
+  color: #3a9ee0;
+  font-weight: 900;
+}
+
+div.popWindow {
+  text-decoration: underline;
+  color: orange;
+}
+
+.x-action-col-icon {
+  margin-right: 8px;
+  /*margin-top: 18px;*/
+}
+
+.fail_ercc {
+  background-image: url("/images/silk/cross.png");  
+}
+
+.pass_ercc {
+  background-image: url("/images/silk/accept.png");
+}
+.icon_down {
+  margin-top: 18px;
+}
+
+div.embargo{
+  padding: 2px;
+}
+
+div.policy{
+  font-size: 85%
+}
+
+.myWindowCls .x-window-body > .x-box-inner {
+  overflow: scroll;
+}
+
+.metrics-header {
+  color: white ;
+}
+
+.goToWbClass
+{
+  background-image: url("/images/genbLetter13x13.png") !important;
+}
+
+span.ercc_subheader{
+  font-size: 10px ;
+}
+
+span.gridcol-header{
+  padding-top: 10px ;
+}
+
+a.postProcess {
+ color: #e1700a ;
+ padding: 5px 5px 5px 5px;
+ cursor: pointer;
+ font-size: 150%;
+}
+
+a.postProcess:hover {
+  background-color: #f0ead2;
+}

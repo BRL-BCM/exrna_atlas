@@ -1,0 +1,73 @@
+{
+ "INIT" : {},
+  "canvas" : {
+    "title" : {
+        "height" : 30
+    },
+    "width" : 740,
+    "height" : 600,
+    "vbWidth" : 0.82,
+    "vbHeight" : 0.82,
+    "margin" : {
+      "top" : 20,
+      "right" : 60,
+      "bottom" : 20,
+      "left" : 54
+    },
+    "nodes" : {
+      "depth" : 140,
+      "radius" : 4.5,
+      "radiusZero" : 1e-6,
+      "radiusPlus" : 9,
+      "radiusMax" : 30,
+      "radiusMin" : 2,
+      "stroke" : 1.5,
+      "strokePlus" : 6
+    },
+    "links" : {
+      "strokeRadiusRatio" : 1.15,
+      "strokeRadiusRatioPlus" : 1.50,
+      "opacity" : 0.30,
+      "opacityPlus" : 1.00,
+      "stroke" : 1.5,
+      "strokePlus" : 7
+    }
+  },
+  "animation" : {
+    "duration" : 500
+  },
+  "explanation" : {
+    "topOffset" : 5,
+    "leftOffset" : 0,
+    "width" : "86px",
+    "height" : "50px",
+    "spanTextTmpl" : [ "{sel} / {tot}", "Samples Selected", "({perc}%)" ]
+  },
+  "crumbs" : {
+    "areaHeight" : 0,
+    "width" : 85,
+    "height" : 14,
+    "spacing" : 30,
+    "t" : 10,
+    "labels" : {
+      "alpha" : 1.0,
+      "maxChrs" : 20,
+      "maxChrsRootNode" : 13,
+      "minChrs" : 3,
+      "spacing" : 14
+    }
+  },
+  "legend" : {
+    "top" : 0,
+    "width": 100,
+    "height": 20,
+    "spacing": 3,
+    "rounded": 4
+  },
+  "menu" : {
+    "offsetTop" : 50,
+    "offsetBodyTop" : 6,
+    "minBottomDelta" : 6,
+    "offsetRight" : 0
+  }
+}

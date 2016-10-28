@@ -1,0 +1,44 @@
+{
+  "INIT" : { },
+  "canvas" :
+  {
+    "width" : 320,
+    "height" : 280,
+    "vbWidth" : 1.0,
+    "vbHeight" : 1.0,
+    "yNudge" : 20
+  },
+  "arc" : {
+    "outer" : 0.8,
+    "inner" : 0.5
+  },
+  "labelArc" : {
+    "outer" : 0.92,
+    "inner" : 0.92
+  },
+  "grow" : {
+    "hoverOuter" : 1.025,
+    "hoverInner" : 0.975,
+    "selOuter" : 1.125,
+    "selInner" : 0.625
+  },
+  "color" : {
+    "hover" : "#1565c0",
+    "select" : "#1565c0"
+  },
+  "strokeWidth" : {
+    "none" : "0px",
+    "hover" : "3px",
+    "select" : "3px"
+  },
+  "labels" : {
+    "maxChrs" : 15,
+    "minChrs" : 3,
+    "alpha" : 1.0,
+    "spacing" : 14
+  },
+  "menu" : {
+    "offsetTop" : 5,
+    "minBottomDelta" : 30
+  }
+}

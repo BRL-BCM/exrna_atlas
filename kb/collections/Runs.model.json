@@ -1,0 +1,443 @@
+{
+  "identifier": true,
+  "conceptOntology": "CCO",
+  "name": "Run",
+  "comments": "Assigned after validation.",
+  "editRoles": "administrator, author",
+  "domain": "autoID(EXR, uniqAlphaNum, RU)",
+  "conceptURL": "http://purl.obolibrary.org/obo/NCBIGene_33059",
+  "description": "Document Describing Information About the Sequencing Run, Including Raw Data Files; Run ID",
+  "index": true,
+  "properties": [
+    {
+      "conceptOntology": "SNOMEDCT",
+      "name": "Status",
+      "default": "Add",
+      "comments": "Assigned by server at different stages.",
+      "required": true,
+      "editRoles": "administrator",
+      "domain": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263490005",
+      "description": "Status of the document"
+    },
+    {
+      "conceptOntology": "SNOMEDCT",
+      "name": "Schema Version",
+      "default": 1.0,
+      "comments": "Assigned by server.",
+      "editRoles": "administrator",
+      "domain": "float",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/22303008",
+      "description": "Version of this data model schema"
+    },
+    {
+      "conceptOntology": "OBI",
+      "name": "Experimental Design",
+      "required": true,
+      "editRoles": "administrator, author",
+      "domain": "string",
+      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0500000",
+      "description": "Description of experimental design"
+    },
+    {
+      "name": "Type",
+      "editRoles": "administrator, author",
+      "domain": "enum(small RNA-Seq, qPCR)",
+      "description": "Type of experiment - Small RNA-seq or qPCR",
+      "properties": [
+        {
+          "name": "small RNA-Seq",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "[valueless]",
+          "description": "Category -- small RNA-seq",
+          "properties": [
+            {
+              "conceptOntology": "SNOMEDCT",
+              "name": "Sequencing Instrument",
+              "comments": "enum(Illumina2500, Illumina2000, IonTorrent, IonProton, MiSeq, Solid, 454, other)",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "bioportalTerms((EFO,http://www.ebi.ac.uk/efo/EFO_0000001),(OBI,http://purl.obolibrary.org/obo/OBI_0000832))",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/57134006",
+              "description": "Name and model of the sequencing instrument. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all types of sequencing instruments (Example: Illumina2500, Illumina2000, IonTorrent, IonProton, MiSeq, Solid, 454).",
+              "properties": [
+                {
+                  "name": "Other",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "If 'other', can provide name of instrument here."
+                },
+                {
+                  "conceptOntology": "SNOMEDCT",
+                  "name": "Instrument Description URL",
+                  "editRoles": "administrator, author",
+                  "domain": "url",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+                  "description": "URL related to description of the sequencing instrument"
+                },
+                {
+                  "name": "Flowcells",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "description": "Items -- Flowcell Details",
+                  "items": [
+                    {
+                      "identifier": true,
+                      "conceptOntology": "LOINC",
+                      "name": "Flowcell ID",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP31795-5",
+                      "description": "Flowcell ID",
+                      "index": true,
+                      "properties": [
+                        {
+                          "conceptOntology": "LOINC",
+                          "name": "Machine Name",
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72974-6",
+                          "description": "Lab specific name of the sequencing instrument"
+                        },
+                        {
+                          "name": "Lane",
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "Lanes used for sequencing the run"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Experiment Details",
+              "category": true,
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "[valueless]",
+              "description": "Category -- Experiment Details",
+              "properties": [
+                {
+                  "conceptOntology": "LOINC",
+                  "name": "Directionality",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Strand-specific, Non-strand-specific)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU027859",
+                  "description": "Strand specificity of the run",
+                  "index": true
+                },
+                {
+                  "conceptOntology": "LOINC",
+                  "name": "Run Type",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Single-end, Paired-end)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU013727",
+                  "description": "Type of run, single end or paired end",
+                  "index": true
+                },
+                {
+                  "conceptOntology": "LOINC",
+                  "name": "Maximum Read length",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(nt)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU003498",
+                  "description": "Length of reads in base pairs or nt",
+                  "index": true
+                }
+              ],
+              "fixed": true
+            },
+            {
+              "name": "Raw Data Files",
+              "category": true,
+              "required": true,
+              "editRoles": "administrator, author",
+              "knownRange": 0,
+              "domain": "numItems",
+              "description": "Items -- Raw data files",
+              "items": [
+                {
+                  "identifier": true,
+                  "name": "Biosample ID",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "regexp(EXR-[A-Za-z0-9]{6,}-BS)",
+                  "description": "Associated Biosample ID",
+                  "index": true,
+                  "properties": [
+                    {
+                      "conceptOntology": "EDAM",
+                      "name": "File Name",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://edamontology.org/data_1050",
+                      "description": "File name",
+                      "index": true
+                    },
+                    {
+                      "name": "File URL",
+                      "editRoles": "administrator, author",
+                      "domain": "fileUrl",
+                      "description": "Biosample Raw data File URL"
+                    },
+                    {
+                      "Object Type": "exmd:Biosamples",
+                      "name": "DocURL",
+                      "editRoles": "administrator, author",
+                      "domain": "url",
+                      "description": "Biosample Doc URL"
+                    },
+                    {
+                      "conceptOntology": "LOINC",
+                      "name": "Type",
+                      "default": "FASTQ",
+                      "comments": "enum(FASTQ, SRA, SRF, SFF, FASTA, TAB, Other)",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=EDAM&subtree_root=http%3A%2F%2Fedamontology.org%2Fformat_1915)",
+                      "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU013727",
+                      "description": "File type of read data. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all read data file types (Example: FASTQ, SFF).",
+                      "properties": [
+                        {
+                          "name": "Other",
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "Other file type"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "MD5 Checksum",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "MD5 checksum value of file"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fixed": true
+        },
+        {
+          "name": "qPCR",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "[valueless]",
+          "description": "Category -- qPCR",
+          "properties": [
+            {
+              "name": "Format",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Category -- qPCR Format"
+            },
+            {
+              "name": "qPCR Instrument",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "[valueless]",
+              "description": "Category -- qPCR Instrument Details",
+              "properties": [
+                {
+                  "name": "Model",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Model"
+                },
+                {
+                  "name": "Manufacturer",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Manufacturer"
+                },
+                {
+                  "name": "Software",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Software"
+                },
+                {
+                  "name": "Vendor",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Vendor"
+                },
+                {
+                  "name": "Version",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Version"
+                }
+              ],
+              "fixed": true
+            },
+            {
+              "name": "Raw Data Files",
+              "category": true,
+              "required": true,
+              "editRoles": "administrator, author",
+              "knownRange": 0,
+              "domain": "numItems",
+              "description": "Items -- Raw data files",
+              "items": [
+                {
+                  "identifier": true,
+                  "name": "Biosample ID",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "regexp(EXR-[A-Za-z0-9]{6,}-BS)",
+                  "description": "Associated Biosample ID",
+                  "index": true,
+                  "properties": [
+                    {
+                      "Object Type": "exmd:Biosamples",
+                      "name": "DocURL",
+                      "editRoles": "administrator, author",
+                      "domain": "url",
+                      "description": "Biosample Doc URL"
+                    },
+                    {
+                      "name": "Number of Cards",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Specify the number of cards"
+                    },
+                    {
+                      "name": "Files",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "numItems",
+                      "description": "Items -- Raw data files - One or more files associated with this Biosample",
+                      "items": [
+                        {
+                          "identifier": true,
+                          "name": "File Name",
+                          "required": true,
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "File name",
+                          "index": true,
+                          "properties": [
+                            {
+                              "name": "Card Lot Number",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "description": "TLDA A Card Lot Number"
+                            },
+                            {
+                              "name": "File URL",
+                              "editRoles": "administrator, author",
+                              "domain": "fileUrl",
+                              "description": "Biosample Raw data File URL"
+                            },
+                            {
+                              "name": "MD5 Checksum",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "description": "MD5 checksum value of file"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fixed": true
+        }
+      ]
+    },
+    {
+      "conceptOntology": "LOINC",
+      "name": "Notes",
+      "editRoles": "administrator, author",
+      "domain": "string",
+      "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+      "description": "Additional Notes about this Run"
+    },
+    {
+      "name": "Related Studies",
+      "category": true,
+      "required": true,
+      "editRoles": "administrator, author",
+      "domain": "numItems",
+      "description": "Items -- Related Study Documents",
+      "items": [
+        {
+          "identifier": true,
+          "conceptOntology": "LOINC",
+          "name": "Related Study",
+          "category": true,
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-ST)",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+          "description": "ID of related Study document",
+          "index": true,
+          "properties": [
+            {
+              "Object Type": "exmd:Studies",
+              "conceptOntology": "SNOMEDCT",
+              "name": "DocURL",
+              "editRoles": "administrator, author",
+              "domain": "url",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "description": "Relative ID (accession) of doc, provide Document URL"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Aliases",
+      "category": true,
+      "editRoles": "administrator, author",
+      "domain": "numItems",
+      "description": "Items -- Aliases",
+      "items": [
+        {
+          "identifier": true,
+          "conceptOntology": "LOINC",
+          "name": "Accession",
+          "category": true,
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU034731",
+          "description": "Alias Accession ID of this run in other databases (Example: SRA, GEO)",
+          "index": true,
+          "properties": [
+            {
+              "conceptOntology": "EDAM",
+              "name": "dbName",
+              "editRoles": "administrator, author",
+              "domain": "enum(SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "conceptURL": "http://edamontology.org/data_1056",
+              "description": "Database name of alias (SRA, GEO, DDBJ, ENCODE, dbGaP)"
+            },
+            {
+              "conceptOntology": "SNOMEDCT",
+              "name": "URL",
+              "editRoles": "administrator, author",
+              "domain": "url",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "description": "URL that points to this run in alias database"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

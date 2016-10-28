@@ -1,0 +1,1962 @@
+{
+  "Biosample Report": {
+    "value": "EXR-DGALA1022163PF-BS",
+    "properties": {
+      "Attribution": {
+        "value": "Attribution",
+        "properties": {
+          "Submission": {
+            "value": "EXR-DGALA1GUTPLASM-SU",
+            "properties": {
+              "Submitter": {
+                "value": "EXR-OFONG1-SUB",
+                "properties": {
+                  "Last Name": {
+                    "value": "Fong"
+                  },
+                  "Email": {
+                    "value": "ofong@pnri.org"
+                  },
+                  "First Name": {
+                    "value": "Olivia"
+                  }
+                }
+              },
+              "Status": {
+                "value": "Add"
+              },
+              "Last Update Date": {
+                "value": "2015-04-02"
+              },
+              "Date": {
+                "value": "2015-04-02"
+              },
+              "Address": {
+                "value": null,
+                "properties": {
+                  "Zip": {
+                    "value": 98122
+                  },
+                  "City": {
+                    "value": "Seattle"
+                  },
+                  "Street Address": {
+                    "value": "720 Broadway"
+                  },
+                  "Country": {
+                    "value": "United States of America"
+                  },
+                  "State": {
+                    "value": "Washington"
+                  }
+                }
+              },
+              "Schema Version": {
+                "value": 1.0
+              },
+              "Principal Investigator": {
+                "value": "EXR-DGALA1-PI",
+                "properties": {
+                  "Last Name": {
+                    "value": "Galas"
+                  },
+                  "Email": {
+                    "value": "dgalas@pnri.org"
+                  },
+                  "First Name": {
+                    "value": "David"
+                  }
+                }
+              },
+              "Organization": {
+                "value": "Pacific Northwest Diabetes Research Institute"
+              },
+              "Funding Source": {
+                "value": "Luxembourg National Research Fund",
+                "properties": {
+                  "Grant Details": {
+                    "value": "Non-ERCC Funded Study"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Study": {
+        "value": "Study Information",
+        "properties": {
+          "Study": {
+            "value": "EXR-DGALA1GUTPLASM-ST",
+            "properties": {
+              "Status": {
+                "value": "Add"
+              },
+              "Abstract": {
+                "value": "Human plasma has long been a rich source for biomarker discovery. It has recently become clear that plasma RNA molecules, such as microRNA, in addition to proteins are common and can serve as biomarkers. Surveying human plasma for microRNA biomarkers using next generation sequencing technology, we observed that a significant fraction of the circulating RNA appear to originate from exogenous species. With careful analysis of sequence error statistics and other controls, we demonstrated that there is a wide range of RNA from many different organisms, including bacteria and fungi as well as from other species. These RNAs may be associated with protein, lipid or other molecules protecting them from RNase activity in plasma. Some of these RNAs are detected in intracellular complexes and may be able to influence cellular activities under in vitro conditions. These findings raise the possibility that plasma RNAs of exogenous origin may serve as signaling molecules mediating for example the human-microbiome interaction and may affect and/or indicate the state of human health."
+              },
+              "Title": {
+                "value": "The Complex Exogenous RNA Spectra in Human Plasma: An Interface with Human Gut Biota?"
+              },
+              "Related Submissions": {
+                "items": [
+                  {
+                    "Related Submission": {
+                      "value": "EXR-DGALA1GUTPLASM-SU",
+                      "properties": {
+                        "DocURL": {
+                          "value": "coll/Submissions/doc/EXR-DGALA1GUTPLASM-SU"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "value": 1
+              },
+              "Schema Version": {
+                "value": 1.0
+              },
+              "Aliases": {
+                "items": [
+                  {
+                    "Accession": {
+                      "value": "PRJEB1712",
+                      "properties": {
+                        "URL": {
+                          "value": "http://www.ncbi.nlm.nih.gov/bioproject/PRJEB1712"
+                        },
+                        "dbName": {
+                          "value": "SRA"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "Accession": {
+                      "value": "E-MTAB-1568",
+                      "properties": {
+                        "URL": {
+                          "value": "http://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-1568/"
+                        },
+                        "dbName": {
+                          "value": "EBI"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "value": 2
+              },
+              "References": {
+                "items": [
+                  {
+                    "PubMed ID": {
+                      "value": "23251414",
+                      "properties": {
+                        "Journal Name": {
+                          "value": "PloS one"
+                        },
+                        "Issue": {
+                          "value": "12"
+                        },
+                        "Abstract": {
+                          "value": "Human plasma has long been a rich source for biomarker discovery. It has recently become clear that plasma RNA molecules, such as microRNA, in addition to proteins are common and can serve as biomarkers. Surveying human plasma for microRNA biomarkers using next generation sequencing technology, we observed that a significant fraction of the circulating RNA appear to originate from exogenous species. With careful analysis of sequence error statistics and other controls, we demonstrated that there is a wide range of RNA from many different organisms, including bacteria and fungi as well as from other species. These RNAs may be associated with protein, lipid or other molecules protecting them from RNase activity in plasma. Some of these RNAs are detected in intracellular complexes and may be able to influence cellular activities under in vitro conditions. These findings raise the possibility that plasma RNAs of exogenous origin may serve as signaling molecules mediating for example the human-microbiome interaction and may affect and/or indicate the state of human health."
+                        },
+                        "Pages": {
+                          "value": "e51009"
+                        },
+                        "Title": {
+                          "value": "The complex exogenous RNA spectra in human plasma: an interface with human gut biota?"
+                        },
+                        "Volume": {
+                          "value": "7"
+                        },
+                        "DOI": {
+                          "value": "10.1371/journal.pone.0051009"
+                        },
+                        "Publication Date": {
+                          "value": "2012"
+                        },
+                        "Authors": {
+                          "value": "Wang K, Li H, Yuan Y, Etheridge A, Zhou Y, Huang D, Wilmes P, Galas D"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "value": 1
+              },
+              "Authors": {
+                "items": [
+                  {
+                    "Author Name": {
+                      "value": "Kai Wang"
+                    }
+                  },
+                  {
+                    "Author Name": {
+                      "value": "Hong Li"
+                    }
+                  },
+                  {
+                    "Author Name": {
+                      "value": "Yue Yuan"
+                    }
+                  },
+                  {
+                    "Author Name": {
+                      "value": "Alton Etheridge"
+                    }
+                  },
+                  {
+                    "Author Name": {
+                      "value": "Yong Zhou"
+                    }
+                  },
+                  {
+                    "Author Name": {
+                      "value": "David Huang"
+                    }
+                  },
+                  {
+                    "Author Name": {
+                      "value": "Paul Wilmes"
+                    }
+                  },
+                  {
+                    "Author Name": {
+                      "value": "David Galas"
+                    }
+                  }
+                ],
+                "value": 8
+              },
+              "Type": {
+                "value": "Small RNA-seq"
+              }
+            }
+          }
+        }
+      },
+      "Run": {
+        "value": "Runs using this Biosample",
+        "properties": {
+          "Run": {
+            "value": "EXR-DGALA1GUTPLASM-RU",
+            "properties": {
+              "Status": {
+                "value": "Add"
+              },
+              "Related Studies": {
+                "items": [
+                  {
+                    "Related Study": {
+                      "value": "EXR-DGALA1GUTPLASM-ST",
+                      "properties": {
+                        "DocURL": {
+                          "value": "coll/Studies/doc/EXR-DGALA1GUTPLASM-ST"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "value": 1
+              },
+              "Experimental Design": {
+                "value": "We conducted NextGen sequencing on 9 plasma samples: 3 samples from healthy individuals, 3 from patients with colorectal cancer prior to any treatment and 3 from individuals suffering from ulcerative colitis (Mayo Score between 10 and 11). Sequence reads were preprocessed and then aligned to known human miRNAs, human transcripts and human genome sequence. The concentration of several miRNAs in plasma showed differences among normal and patients with either colorectal cancer or ulcerative colitis. We conducted quantitative polymerase chain reaction (QPCR) measurements to validate some of these miRNAs."
+              },
+              "Type": {
+                "value": "small RNA-Seq",
+                "properties": {
+                  "small RNA-Seq": {
+                    "value": null,
+                    "properties": {
+                      "Sequencing Instrument": {
+                        "value": "Illumina Genome Analyzer IIx"
+                      },
+                      "Experiment Details": {
+                        "value": null,
+                        "properties": {
+                          "Run Type": {
+                            "value": "Single-end"
+                          },
+                          "Directionality": {
+                            "value": "Strand-specific"
+                          },
+                          "Maximum Read length": {
+                            "value": "40 nt"
+                          }
+                        }
+                      },
+                      "Raw Data Files": {
+                        "items": [
+                          {
+                            "Biosample ID": {
+                              "value": "EXR-DGALA1D3176PFN-BS",
+                              "properties": {
+                                "File URL": {
+                                  "value": "ftp://ftp.genboree.org/exRNA-atlas/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/sample_SM12_norm2_sequence_fastq/rawInput/SM12_norm2_sequence.fastq.zip"
+                                },
+                                "File Name": {
+                                  "value": "SM12_norm2_sequence.fastq"
+                                },
+                                "MD5 Checksum": {
+                                  "value": "6c96ffcabf4e292e08ddac8773ccc315"
+                                },
+                                "Type": {
+                                  "value": "FASTQ"
+                                },
+                                "DocURL": {
+                                  "value": "coll/Biosamples/doc/EXR-DGALA1D3176PFN-BS"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Biosample ID": {
+                              "value": "EXR-DGALA1022273PF-BS",
+                              "properties": {
+                                "File URL": {
+                                  "value": "ftp://ftp.genboree.org/exRNA-atlas/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/sample_SM2_crc2_sequence_fastq/rawInput/SM2_crc2_sequence.fastq.zip"
+                                },
+                                "File Name": {
+                                  "value": "SM2_crc2_sequence.fastq"
+                                },
+                                "MD5 Checksum": {
+                                  "value": "50eb524211a9a3a3c3a761eff363aab6"
+                                },
+                                "Type": {
+                                  "value": "FASTQ"
+                                },
+                                "DocURL": {
+                                  "value": "coll/Biosamples/doc/EXR-DGALA1022273PF-BS"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Biosample ID": {
+                              "value": "EXR-DGALA1022299PM-BS",
+                              "properties": {
+                                "File URL": {
+                                  "value": "ftp://ftp.genboree.org/exRNA-atlas/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/sample_SM3_crc3_sequence_fastq/rawInput/SM3_crc3_sequence.fastq.zip"
+                                },
+                                "File Name": {
+                                  "value": "SM3_crc3_sequence.fastq"
+                                },
+                                "MD5 Checksum": {
+                                  "value": "a835b468d5e7e74926ed46a4a3f421fc"
+                                },
+                                "Type": {
+                                  "value": "FASTQ"
+                                },
+                                "DocURL": {
+                                  "value": "coll/Biosamples/doc/EXR-DGALA1022299PM-BS"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Biosample ID": {
+                              "value": "EXR-DGALA193166PFC-BS",
+                              "properties": {
+                                "File URL": {
+                                  "value": "ftp://ftp.genboree.org/exRNA-atlas/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/sample_SM8_uc3_sequence_fastq/rawInput/SM8_uc3_sequence.fastq.zip"
+                                },
+                                "File Name": {
+                                  "value": "SM8_uc3_sequence.fastq"
+                                },
+                                "MD5 Checksum": {
+                                  "value": "160430c7bfcc9e0314c024d94c374abf"
+                                },
+                                "Type": {
+                                  "value": "FASTQ"
+                                },
+                                "DocURL": {
+                                  "value": "coll/Biosamples/doc/EXR-DGALA193166PFC-BS"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Biosample ID": {
+                              "value": "EXR-DGALA1D3142PFN-BS",
+                              "properties": {
+                                "File URL": {
+                                  "value": "ftp://ftp.genboree.org/exRNA-atlas/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/sample_SM11_norm1_sequence_fastq/rawInput/SM11_norm1_sequence.fastq.zip"
+                                },
+                                "File Name": {
+                                  "value": "SM11_norm1_sequence.fastq"
+                                },
+                                "MD5 Checksum": {
+                                  "value": "fa6194e0f453c373710c2fe0539f9d5f"
+                                },
+                                "Type": {
+                                  "value": "FASTQ"
+                                },
+                                "DocURL": {
+                                  "value": "coll/Biosamples/doc/EXR-DGALA1D3142PFN-BS"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Biosample ID": {
+                              "value": "EXR-DGALA193163PMC-BS",
+                              "properties": {
+                                "File URL": {
+                                  "value": "ftp://ftp.genboree.org/exRNA-atlas/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/sample_SM6_uc1_sequence_fastq/rawInput/SM6_uc1_sequence.fastq.zip"
+                                },
+                                "File Name": {
+                                  "value": "SM6_uc1_sequence.fastq"
+                                },
+                                "MD5 Checksum": {
+                                  "value": "fcea46ad498e655fd01d66196cb9b357"
+                                },
+                                "Type": {
+                                  "value": "FASTQ"
+                                },
+                                "DocURL": {
+                                  "value": "coll/Biosamples/doc/EXR-DGALA193163PMC-BS"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Biosample ID": {
+                              "value": "EXR-DGALA1D3340PMN-BS",
+                              "properties": {
+                                "File URL": {
+                                  "value": "ftp://ftp.genboree.org/exRNA-atlas/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/sample_SM13_norm3_sequence_fastq/rawInput/SM13_norm3_sequence.fastq.zip"
+                                },
+                                "File Name": {
+                                  "value": "SM13_norm3_sequence.fastq"
+                                },
+                                "MD5 Checksum": {
+                                  "value": "b56c30dfe66896fd7e320a1aa30134b4"
+                                },
+                                "Type": {
+                                  "value": "FASTQ"
+                                },
+                                "DocURL": {
+                                  "value": "coll/Biosamples/doc/EXR-DGALA1D3340PMN-BS"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Biosample ID": {
+                              "value": "EXR-DGALA193164PMC-BS",
+                              "properties": {
+                                "File URL": {
+                                  "value": "ftp://ftp.genboree.org/exRNA-atlas/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/sample_SM7_uc2_sequence_fastq/rawInput/SM7_uc2_sequence.fastq.zip"
+                                },
+                                "File Name": {
+                                  "value": "SM7_uc2_sequence.fastq"
+                                },
+                                "MD5 Checksum": {
+                                  "value": "cbaef1cfe645ed80429900b659bf8b61"
+                                },
+                                "Type": {
+                                  "value": "FASTQ"
+                                },
+                                "DocURL": {
+                                  "value": "coll/Biosamples/doc/EXR-DGALA193164PMC-BS"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "Biosample ID": {
+                              "value": "EXR-DGALA1022163PF-BS",
+                              "properties": {
+                                "File URL": {
+                                  "value": "ftp://ftp.genboree.org/exRNA-atlas/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/sample_SM1_crc1_sequence_fastq/rawInput/SM1_crc1_sequence.fastq.zip"
+                                },
+                                "File Name": {
+                                  "value": "SM1_crc1_sequence.fastq"
+                                },
+                                "MD5 Checksum": {
+                                  "value": "ba9836e29afe056450461674932ca360"
+                                },
+                                "Type": {
+                                  "value": "FASTQ"
+                                },
+                                "DocURL": {
+                                  "value": "coll/Biosamples/doc/EXR-DGALA1022163PF-BS"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "value": 9
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Biosample": {
+        "value": "Biosample Information",
+        "properties": {
+          "Biosample": {
+            "value": "EXR-DGALA1022163PF-BS",
+            "properties": {
+              "Status": {
+                "value": "Protect"
+              },
+              "Name": {
+                "value": "022163P"
+              },
+              "Related Experiments": {
+                "items": [
+                  {
+                    "Related Experiment": {
+                      "value": "EXR-DGALA1GUTPLASM-EX",
+                      "properties": {
+                        "DocURL": {
+                          "value": "coll/Experiments/doc/EXR-DGALA1GUTPLASM-EX"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "value": 1
+              },
+              "Donor ID": {
+                "value": "EXR-DGALA1022163PF-DO",
+                "properties": {
+                  "Age at Sampling": {
+                    "value": "56 y"
+                  },
+                  "DocURL": {
+                    "value": "coll/Donors/doc/EXR-DGALA1022163PF-DO"
+                  }
+                }
+              },
+              "Biological Sample Elements": {
+                "value": null,
+                "properties": {
+                  "Biological Fluid": {
+                    "value": null,
+                    "properties": {
+                      "Biofluid Name": {
+                        "value": "Plasma"
+                      }
+                    }
+                  },
+                  "Species": {
+                    "value": null,
+                    "properties": {
+                      "Scientific Name": {
+                        "value": "Homo sapiens"
+                      }
+                    }
+                  },
+                  "Anatomical Location": {
+                    "value": "Entire cardiovascular system"
+                  },
+                  "Disease Type": {
+                    "value": "colorectal cancer",
+                    "properties": {
+                      "Pathology": {
+                        "value": "Stage 3"
+                      }
+                    }
+                  }
+                }
+              },
+              "Molecular Sample Elements": {
+                "value": null,
+                "properties": {
+                  "exRNA Source": {
+                    "value": "total cell-free biofluid RNA"
+                  },
+                  "Fractionation": {
+                    "value": "Yes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Analysis": {
+        "value": "exRNA Profiling Data Analysis of this Biosample",
+        "properties": {
+          "Analysis": {
+            "value": "EXR-DGALA1V5h5va-AN",
+            "properties": {
+              "Status": {
+                "value": "Add"
+              },
+              "Data Analysis Level": {
+                "value": null,
+                "properties": {
+                  "Type": {
+                    "value": "Reference Alignment",
+                    "properties": {
+                      "Level 1 Reference Alignment": {
+                        "value": null,
+                        "properties": {
+                          "Post-processing Result Files": {
+                            "items": [
+                              {
+                                "File ID": {
+                                  "value": "EXR-RCPYCF-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_ReadLengths.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_ReadLengths.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-LtNwC5-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_readMappingSummary.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_readMappingSummary.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-WJDBpw-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_smallRNAQuants_ReadCounts.RData"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_smallRNAQuants_ReadCounts.RData"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-QDC7qc-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_miRNA_ReadCounts.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_miRNA_ReadCounts.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-pBXytG-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_tRNA_ReadCounts.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_tRNA_ReadCounts.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-BQBH8w-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_piRNA_ReadCounts.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_piRNA_ReadCounts.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-J6F7Xa-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_gencode_ReadCounts.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_gencode_ReadCounts.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-RCtndK-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_circularRNA_ReadCounts.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_circularRNA_ReadCounts.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-CUDfS0-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_exogenousGenomes_speciesSpecific_ReadCounts.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_exogenousGenomes_speciesSpecific_ReadCounts.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-UEqEpK-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_exogenousGenomes_kingdomSpecific_ReadCounts.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_exogenousGenomes_kingdomSpecific_ReadCounts.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-zdBEEs-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_DiagnosticPlots.pdf"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_DiagnosticPlots.pdf"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-FuVwCV-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_smallRNAQuants_ReadsPerMillion.RData"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_smallRNAQuants_ReadsPerMillion.RData"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-ztHDz8-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_miRNA_ReadsPerMillion.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_miRNA_ReadsPerMillion.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-C3Kzof-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_tRNA_ReadsPerMillion.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_tRNA_ReadsPerMillion.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-6AV7HA-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_piRNA_ReadsPerMillion.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_piRNA_ReadsPerMillion.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-faS3IB-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_gencode_ReadsPerMillion.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_gencode_ReadsPerMillion.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-bvbZfX-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_exogenousGenomes_speciesSpecific_ReadsPerMillion.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_exogenousGenomes_speciesSpecific_ReadsPerMillion.txt"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "File ID": {
+                                  "value": "EXR-xUYdGd-FL",
+                                  "properties": {
+                                    "Genboree URL": {
+                                      "value": "http://genboree.org/REST/v1/grp/Extracellular%20RNA%20Atlas/db/exRNA%20Repository%20-%20hg19/file/exRNA-atlas/exceRptPipeline_v3.3.0/DGALA1-gut-plasma-2015-12-29/postProcessedResults_v3.1.0/DGALA1-gut-plasma-2015-12-29_exceRpt_exogenousGenomes_kingdomSpecific_ReadsPerMillion.txt"
+                                    },
+                                    "File Name": {
+                                      "value": "DGALA1-gut-plasma-2015-12-29_exceRpt_exogenousGenomes_kingdomSpecific_ReadsPerMillion.txt"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "value": 18
+                          },
+                          "Biosamples": {
+                            "items": [
+                              {
+                                "Biosample ID": {
+                                  "value": "EXR-DGALA1022163PF-BS",
+                                  "properties": {
+                                    "QC Metrics": {
+                                      "value": null,
+                                      "properties": {
+                                        "Transcriptome Reads": {
+                                          "value": 281803
+                                        },
+                                        "Result": {
+                                          "value": "FAIL"
+                                        },
+                                        "Reference Genome Reads": {
+                                          "value": 772163
+                                        },
+                                        "Transcriptome Genome Ratio": {
+                                          "value": 0.364953
+                                        }
+                                      }
+                                    },
+                                    "Read Counts at Various Stages": {
+                                      "value": null,
+                                      "properties": {
+                                        "Circular RNAs Sense": {
+                                          "value": 0
+                                        },
+                                        "Endogenous Gapped": {
+                                          "value": 53849
+                                        },
+                                        "Input to Exogenous miRNAs": {
+                                          "value": 422711
+                                        },
+                                        "Gencode Annotations Antisense": {
+                                          "value": 66954
+                                        },
+                                        "rRNAs": {
+                                          "value": 216540
+                                        },
+                                        "UniVec Contaminants": {
+                                          "value": 6545
+                                        },
+                                        "Failed Homopolymer Filter": {
+                                          "value": 4971
+                                        },
+                                        "Reads Not Mapped to Reference Genome or Endogenous Libraries": {
+                                          "value": 528531
+                                        },
+                                        "tRNAs Antisense": {
+                                          "value": 7
+                                        },
+                                        "piRNAs Sense": {
+                                          "value": 750
+                                        },
+                                        "Repetitive Elements": {
+                                          "value": 51971
+                                        },
+                                        "Gencode Annotations Sense": {
+                                          "value": 197673
+                                        },
+                                        "miRNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "Reads Used for Alignment": {
+                                          "value": 1300829
+                                        },
+                                        "miRNAs Precursor Antisense": {
+                                          "value": 85
+                                        },
+                                        "miRNAs Precursor Sense": {
+                                          "value": 876
+                                        },
+                                        "miRNAs Sense": {
+                                          "value": 13063
+                                        },
+                                        "Circular RNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "tRNAs Sense": {
+                                          "value": 2144
+                                        },
+                                        "Reads Mapped to Reference Genome": {
+                                          "value": 772163
+                                        },
+                                        "Failed Quality Filter": {
+                                          "value": 82645
+                                        },
+                                        "After Clipping": {
+                                          "value": 1611530
+                                        },
+                                        "Input Reads": {
+                                          "value": 22729858
+                                        },
+                                        "Exogenous miRNAs": {
+                                          "value": 179
+                                        },
+                                        "piRNAs Antisense": {
+                                          "value": 251
+                                        }
+                                      }
+                                    },
+                                    "DocURL": {
+                                      "value": "coll/Biosamples/doc/EXR-DGALA1022163PF-BS"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "Biosample ID": {
+                                  "value": "EXR-DGALA1022299PM-BS",
+                                  "properties": {
+                                    "QC Metrics": {
+                                      "value": null,
+                                      "properties": {
+                                        "Transcriptome Reads": {
+                                          "value": 636929
+                                        },
+                                        "Result": {
+                                          "value": "FAIL"
+                                        },
+                                        "Reference Genome Reads": {
+                                          "value": 1693650
+                                        },
+                                        "Transcriptome Genome Ratio": {
+                                          "value": 0.376069
+                                        }
+                                      }
+                                    },
+                                    "Read Counts at Various Stages": {
+                                      "value": null,
+                                      "properties": {
+                                        "Circular RNAs Sense": {
+                                          "value": 0
+                                        },
+                                        "Endogenous Gapped": {
+                                          "value": 111981
+                                        },
+                                        "Input to Exogenous miRNAs": {
+                                          "value": 826304
+                                        },
+                                        "Gencode Annotations Antisense": {
+                                          "value": 135506
+                                        },
+                                        "rRNAs": {
+                                          "value": 431684
+                                        },
+                                        "UniVec Contaminants": {
+                                          "value": 16154
+                                        },
+                                        "Failed Homopolymer Filter": {
+                                          "value": 2494
+                                        },
+                                        "Reads Not Mapped to Reference Genome or Endogenous Libraries": {
+                                          "value": 1052871
+                                        },
+                                        "tRNAs Antisense": {
+                                          "value": 16
+                                        },
+                                        "piRNAs Sense": {
+                                          "value": 1973
+                                        },
+                                        "Repetitive Elements": {
+                                          "value": 114586
+                                        },
+                                        "Gencode Annotations Sense": {
+                                          "value": 436548
+                                        },
+                                        "miRNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "Reads Used for Alignment": {
+                                          "value": 2746907
+                                        },
+                                        "miRNAs Precursor Antisense": {
+                                          "value": 321
+                                        },
+                                        "miRNAs Precursor Sense": {
+                                          "value": 1982
+                                        },
+                                        "miRNAs Sense": {
+                                          "value": 51184
+                                        },
+                                        "Circular RNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "tRNAs Sense": {
+                                          "value": 9228
+                                        },
+                                        "Reads Mapped to Reference Genome": {
+                                          "value": 1693650
+                                        },
+                                        "Failed Quality Filter": {
+                                          "value": 228937
+                                        },
+                                        "After Clipping": {
+                                          "value": 3426176
+                                        },
+                                        "Input Reads": {
+                                          "value": 23547368
+                                        },
+                                        "Exogenous miRNAs": {
+                                          "value": 371
+                                        },
+                                        "piRNAs Antisense": {
+                                          "value": 171
+                                        }
+                                      }
+                                    },
+                                    "DocURL": {
+                                      "value": "coll/Biosamples/doc/EXR-DGALA1022299PM-BS"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "Biosample ID": {
+                                  "value": "EXR-DGALA193166PFC-BS",
+                                  "properties": {
+                                    "QC Metrics": {
+                                      "value": null,
+                                      "properties": {
+                                        "Transcriptome Reads": {
+                                          "value": 933510
+                                        },
+                                        "Result": {
+                                          "value": "FAIL"
+                                        },
+                                        "Reference Genome Reads": {
+                                          "value": 2159870
+                                        },
+                                        "Transcriptome Genome Ratio": {
+                                          "value": 0.432207
+                                        }
+                                      }
+                                    },
+                                    "Read Counts at Various Stages": {
+                                      "value": null,
+                                      "properties": {
+                                        "Circular RNAs Sense": {
+                                          "value": 0
+                                        },
+                                        "Endogenous Gapped": {
+                                          "value": 110748
+                                        },
+                                        "Input to Exogenous miRNAs": {
+                                          "value": 986514
+                                        },
+                                        "Gencode Annotations Antisense": {
+                                          "value": 181849
+                                        },
+                                        "rRNAs": {
+                                          "value": 543053
+                                        },
+                                        "UniVec Contaminants": {
+                                          "value": 21364
+                                        },
+                                        "Failed Homopolymer Filter": {
+                                          "value": 6757
+                                        },
+                                        "Reads Not Mapped to Reference Genome or Endogenous Libraries": {
+                                          "value": 1206063
+                                        },
+                                        "tRNAs Antisense": {
+                                          "value": 22
+                                        },
+                                        "piRNAs Sense": {
+                                          "value": 2672
+                                        },
+                                        "Repetitive Elements": {
+                                          "value": 108801
+                                        },
+                                        "Gencode Annotations Sense": {
+                                          "value": 585299
+                                        },
+                                        "miRNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "Reads Used for Alignment": {
+                                          "value": 3366464
+                                        },
+                                        "miRNAs Precursor Antisense": {
+                                          "value": 320
+                                        },
+                                        "miRNAs Precursor Sense": {
+                                          "value": 3229
+                                        },
+                                        "miRNAs Sense": {
+                                          "value": 147432
+                                        },
+                                        "Circular RNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "tRNAs Sense": {
+                                          "value": 12468
+                                        },
+                                        "Reads Mapped to Reference Genome": {
+                                          "value": 2159870
+                                        },
+                                        "Failed Quality Filter": {
+                                          "value": 136090
+                                        },
+                                        "After Clipping": {
+                                          "value": 4073728
+                                        },
+                                        "Input Reads": {
+                                          "value": 28426819
+                                        },
+                                        "Exogenous miRNAs": {
+                                          "value": 462
+                                        },
+                                        "piRNAs Antisense": {
+                                          "value": 219
+                                        }
+                                      }
+                                    },
+                                    "DocURL": {
+                                      "value": "coll/Biosamples/doc/EXR-DGALA193166PFC-BS"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "Biosample ID": {
+                                  "value": "EXR-DGALA1D3176PFN-BS",
+                                  "properties": {
+                                    "QC Metrics": {
+                                      "value": null,
+                                      "properties": {
+                                        "Transcriptome Reads": {
+                                          "value": 1142975
+                                        },
+                                        "Result": {
+                                          "value": "FAIL"
+                                        },
+                                        "Reference Genome Reads": {
+                                          "value": 3070491
+                                        },
+                                        "Transcriptome Genome Ratio": {
+                                          "value": 0.372245
+                                        }
+                                      }
+                                    },
+                                    "Read Counts at Various Stages": {
+                                      "value": null,
+                                      "properties": {
+                                        "Circular RNAs Sense": {
+                                          "value": 0
+                                        },
+                                        "Endogenous Gapped": {
+                                          "value": 200247
+                                        },
+                                        "Input to Exogenous miRNAs": {
+                                          "value": 1453005
+                                        },
+                                        "Gencode Annotations Antisense": {
+                                          "value": 248302
+                                        },
+                                        "rRNAs": {
+                                          "value": 833518
+                                        },
+                                        "UniVec Contaminants": {
+                                          "value": 38549
+                                        },
+                                        "Failed Homopolymer Filter": {
+                                          "value": 4087
+                                        },
+                                        "Reads Not Mapped to Reference Genome or Endogenous Libraries": {
+                                          "value": 1852626
+                                        },
+                                        "tRNAs Antisense": {
+                                          "value": 27
+                                        },
+                                        "piRNAs Sense": {
+                                          "value": 3518
+                                        },
+                                        "Repetitive Elements": {
+                                          "value": 199374
+                                        },
+                                        "Gencode Annotations Sense": {
+                                          "value": 805024
+                                        },
+                                        "miRNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "Reads Used for Alignment": {
+                                          "value": 4923743
+                                        },
+                                        "miRNAs Precursor Antisense": {
+                                          "value": 392
+                                        },
+                                        "miRNAs Precursor Sense": {
+                                          "value": 3088
+                                        },
+                                        "miRNAs Sense": {
+                                          "value": 68148
+                                        },
+                                        "Circular RNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "tRNAs Sense": {
+                                          "value": 14128
+                                        },
+                                        "Reads Mapped to Reference Genome": {
+                                          "value": 3070491
+                                        },
+                                        "Failed Quality Filter": {
+                                          "value": 134162
+                                        },
+                                        "After Clipping": {
+                                          "value": 5934059
+                                        },
+                                        "Input Reads": {
+                                          "value": 27957185
+                                        },
+                                        "Exogenous miRNAs": {
+                                          "value": 532
+                                        },
+                                        "piRNAs Antisense": {
+                                          "value": 348
+                                        }
+                                      }
+                                    },
+                                    "DocURL": {
+                                      "value": "coll/Biosamples/doc/EXR-DGALA1D3176PFN-BS"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "Biosample ID": {
+                                  "value": "EXR-DGALA1022273PF-BS",
+                                  "properties": {
+                                    "QC Metrics": {
+                                      "value": null,
+                                      "properties": {
+                                        "Transcriptome Reads": {
+                                          "value": 507964
+                                        },
+                                        "Result": {
+                                          "value": "FAIL"
+                                        },
+                                        "Reference Genome Reads": {
+                                          "value": 1311568
+                                        },
+                                        "Transcriptome Genome Ratio": {
+                                          "value": 0.387295
+                                        }
+                                      }
+                                    },
+                                    "Read Counts at Various Stages": {
+                                      "value": null,
+                                      "properties": {
+                                        "Circular RNAs Sense": {
+                                          "value": 0
+                                        },
+                                        "Endogenous Gapped": {
+                                          "value": 86197
+                                        },
+                                        "Input to Exogenous miRNAs": {
+                                          "value": 644429
+                                        },
+                                        "Gencode Annotations Antisense": {
+                                          "value": 107279
+                                        },
+                                        "rRNAs": {
+                                          "value": 316025
+                                        },
+                                        "UniVec Contaminants": {
+                                          "value": 15909
+                                        },
+                                        "Failed Homopolymer Filter": {
+                                          "value": 2215
+                                        },
+                                        "Reads Not Mapped to Reference Genome or Endogenous Libraries": {
+                                          "value": 813809
+                                        },
+                                        "tRNAs Antisense": {
+                                          "value": 8
+                                        },
+                                        "piRNAs Sense": {
+                                          "value": 1633
+                                        },
+                                        "Repetitive Elements": {
+                                          "value": 83183
+                                        },
+                                        "Gencode Annotations Sense": {
+                                          "value": 346379
+                                        },
+                                        "miRNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "Reads Used for Alignment": {
+                                          "value": 2125685
+                                        },
+                                        "miRNAs Precursor Antisense": {
+                                          "value": 207
+                                        },
+                                        "miRNAs Precursor Sense": {
+                                          "value": 1777
+                                        },
+                                        "miRNAs Sense": {
+                                          "value": 43788
+                                        },
+                                        "Circular RNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "tRNAs Sense": {
+                                          "value": 6728
+                                        },
+                                        "Reads Mapped to Reference Genome": {
+                                          "value": 1311568
+                                        },
+                                        "Failed Quality Filter": {
+                                          "value": 136422
+                                        },
+                                        "After Clipping": {
+                                          "value": 2596256
+                                        },
+                                        "Input Reads": {
+                                          "value": 21132674
+                                        },
+                                        "Exogenous miRNAs": {
+                                          "value": 245
+                                        },
+                                        "piRNAs Antisense": {
+                                          "value": 165
+                                        }
+                                      }
+                                    },
+                                    "DocURL": {
+                                      "value": "coll/Biosamples/doc/EXR-DGALA1022273PF-BS"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "Biosample ID": {
+                                  "value": "EXR-DGALA1D3142PFN-BS",
+                                  "properties": {
+                                    "QC Metrics": {
+                                      "value": null,
+                                      "properties": {
+                                        "Transcriptome Reads": {
+                                          "value": 1304187
+                                        },
+                                        "Result": {
+                                          "value": "FAIL"
+                                        },
+                                        "Reference Genome Reads": {
+                                          "value": 3254061
+                                        },
+                                        "Transcriptome Genome Ratio": {
+                                          "value": 0.400788
+                                        }
+                                      }
+                                    },
+                                    "Read Counts at Various Stages": {
+                                      "value": null,
+                                      "properties": {
+                                        "Circular RNAs Sense": {
+                                          "value": 0
+                                        },
+                                        "Endogenous Gapped": {
+                                          "value": 174917
+                                        },
+                                        "Input to Exogenous miRNAs": {
+                                          "value": 1429406
+                                        },
+                                        "Gencode Annotations Antisense": {
+                                          "value": 263332
+                                        },
+                                        "rRNAs": {
+                                          "value": 909105
+                                        },
+                                        "UniVec Contaminants": {
+                                          "value": 39978
+                                        },
+                                        "Failed Homopolymer Filter": {
+                                          "value": 4303
+                                        },
+                                        "Reads Not Mapped to Reference Genome or Endogenous Libraries": {
+                                          "value": 1788660
+                                        },
+                                        "tRNAs Antisense": {
+                                          "value": 24
+                                        },
+                                        "piRNAs Sense": {
+                                          "value": 3515
+                                        },
+                                        "Repetitive Elements": {
+                                          "value": 184337
+                                        },
+                                        "Gencode Annotations Sense": {
+                                          "value": 877292
+                                        },
+                                        "miRNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "Reads Used for Alignment": {
+                                          "value": 5043274
+                                        },
+                                        "miRNAs Precursor Antisense": {
+                                          "value": 345
+                                        },
+                                        "miRNAs Precursor Sense": {
+                                          "value": 3972
+                                        },
+                                        "miRNAs Sense": {
+                                          "value": 138011
+                                        },
+                                        "Circular RNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "tRNAs Sense": {
+                                          "value": 17397
+                                        },
+                                        "Reads Mapped to Reference Genome": {
+                                          "value": 3254061
+                                        },
+                                        "Failed Quality Filter": {
+                                          "value": 164190
+                                        },
+                                        "After Clipping": {
+                                          "value": 6160850
+                                        },
+                                        "Input Reads": {
+                                          "value": 27002901
+                                        },
+                                        "Exogenous miRNAs": {
+                                          "value": 899
+                                        },
+                                        "piRNAs Antisense": {
+                                          "value": 299
+                                        }
+                                      }
+                                    },
+                                    "DocURL": {
+                                      "value": "coll/Biosamples/doc/EXR-DGALA1D3142PFN-BS"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "Biosample ID": {
+                                  "value": "EXR-DGALA193164PMC-BS",
+                                  "properties": {
+                                    "QC Metrics": {
+                                      "value": null,
+                                      "properties": {
+                                        "Transcriptome Reads": {
+                                          "value": 650252
+                                        },
+                                        "Result": {
+                                          "value": "FAIL"
+                                        },
+                                        "Reference Genome Reads": {
+                                          "value": 1611525
+                                        },
+                                        "Transcriptome Genome Ratio": {
+                                          "value": 0.403501
+                                        }
+                                      }
+                                    },
+                                    "Read Counts at Various Stages": {
+                                      "value": null,
+                                      "properties": {
+                                        "Circular RNAs Sense": {
+                                          "value": 0
+                                        },
+                                        "Endogenous Gapped": {
+                                          "value": 88075
+                                        },
+                                        "Input to Exogenous miRNAs": {
+                                          "value": 810275
+                                        },
+                                        "Gencode Annotations Antisense": {
+                                          "value": 147245
+                                        },
+                                        "rRNAs": {
+                                          "value": 435117
+                                        },
+                                        "UniVec Contaminants": {
+                                          "value": 15623
+                                        },
+                                        "Failed Homopolymer Filter": {
+                                          "value": 2580
+                                        },
+                                        "Reads Not Mapped to Reference Genome or Endogenous Libraries": {
+                                          "value": 980897
+                                        },
+                                        "tRNAs Antisense": {
+                                          "value": 12
+                                        },
+                                        "piRNAs Sense": {
+                                          "value": 2075
+                                        },
+                                        "Repetitive Elements": {
+                                          "value": 82547
+                                        },
+                                        "Gencode Annotations Sense": {
+                                          "value": 471480
+                                        },
+                                        "miRNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "Reads Used for Alignment": {
+                                          "value": 2592833
+                                        },
+                                        "miRNAs Precursor Antisense": {
+                                          "value": 218
+                                        },
+                                        "miRNAs Precursor Sense": {
+                                          "value": 1585
+                                        },
+                                        "miRNAs Sense": {
+                                          "value": 18552
+                                        },
+                                        "Circular RNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "tRNAs Sense": {
+                                          "value": 8926
+                                        },
+                                        "Reads Mapped to Reference Genome": {
+                                          "value": 1611525
+                                        },
+                                        "Failed Quality Filter": {
+                                          "value": 306743
+                                        },
+                                        "After Clipping": {
+                                          "value": 3352896
+                                        },
+                                        "Input Reads": {
+                                          "value": 18186259
+                                        },
+                                        "Exogenous miRNAs": {
+                                          "value": 313
+                                        },
+                                        "piRNAs Antisense": {
+                                          "value": 159
+                                        }
+                                      }
+                                    },
+                                    "DocURL": {
+                                      "value": "coll/Biosamples/doc/EXR-DGALA193164PMC-BS"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "Biosample ID": {
+                                  "value": "EXR-DGALA193163PMC-BS",
+                                  "properties": {
+                                    "QC Metrics": {
+                                      "value": null,
+                                      "properties": {
+                                        "Transcriptome Reads": {
+                                          "value": 539970
+                                        },
+                                        "Result": {
+                                          "value": "FAIL"
+                                        },
+                                        "Reference Genome Reads": {
+                                          "value": 1489965
+                                        },
+                                        "Transcriptome Genome Ratio": {
+                                          "value": 0.362404
+                                        }
+                                      }
+                                    },
+                                    "Read Counts at Various Stages": {
+                                      "value": null,
+                                      "properties": {
+                                        "Circular RNAs Sense": {
+                                          "value": 0
+                                        },
+                                        "Endogenous Gapped": {
+                                          "value": 99141
+                                        },
+                                        "Input to Exogenous miRNAs": {
+                                          "value": 759280
+                                        },
+                                        "Gencode Annotations Antisense": {
+                                          "value": 121304
+                                        },
+                                        "rRNAs": {
+                                          "value": 355041
+                                        },
+                                        "UniVec Contaminants": {
+                                          "value": 15396
+                                        },
+                                        "Failed Homopolymer Filter": {
+                                          "value": 2023
+                                        },
+                                        "Reads Not Mapped to Reference Genome or Endogenous Libraries": {
+                                          "value": 965493
+                                        },
+                                        "tRNAs Antisense": {
+                                          "value": 18
+                                        },
+                                        "piRNAs Sense": {
+                                          "value": 1820
+                                        },
+                                        "Repetitive Elements": {
+                                          "value": 107072
+                                        },
+                                        "Gencode Annotations Sense": {
+                                          "value": 384749
+                                        },
+                                        "miRNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "Reads Used for Alignment": {
+                                          "value": 2455872
+                                        },
+                                        "miRNAs Precursor Antisense": {
+                                          "value": 197
+                                        },
+                                        "miRNAs Precursor Sense": {
+                                          "value": 1585
+                                        },
+                                        "miRNAs Sense": {
+                                          "value": 17772
+                                        },
+                                        "Circular RNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "tRNAs Sense": {
+                                          "value": 12392
+                                        },
+                                        "Reads Mapped to Reference Genome": {
+                                          "value": 1489965
+                                        },
+                                        "Failed Quality Filter": {
+                                          "value": 295267
+                                        },
+                                        "After Clipping": {
+                                          "value": 3123599
+                                        },
+                                        "Input Reads": {
+                                          "value": 20626993
+                                        },
+                                        "Exogenous miRNAs": {
+                                          "value": 379
+                                        },
+                                        "piRNAs Antisense": {
+                                          "value": 133
+                                        }
+                                      }
+                                    },
+                                    "DocURL": {
+                                      "value": "coll/Biosamples/doc/EXR-DGALA193163PMC-BS"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "Biosample ID": {
+                                  "value": "EXR-DGALA1D3340PMN-BS",
+                                  "properties": {
+                                    "QC Metrics": {
+                                      "value": null,
+                                      "properties": {
+                                        "Transcriptome Reads": {
+                                          "value": 1097575
+                                        },
+                                        "Result": {
+                                          "value": "FAIL"
+                                        },
+                                        "Reference Genome Reads": {
+                                          "value": 2993707
+                                        },
+                                        "Transcriptome Genome Ratio": {
+                                          "value": 0.366627
+                                        }
+                                      }
+                                    },
+                                    "Read Counts at Various Stages": {
+                                      "value": null,
+                                      "properties": {
+                                        "Circular RNAs Sense": {
+                                          "value": 0
+                                        },
+                                        "Endogenous Gapped": {
+                                          "value": 200701
+                                        },
+                                        "Input to Exogenous miRNAs": {
+                                          "value": 1446182
+                                        },
+                                        "Gencode Annotations Antisense": {
+                                          "value": 231657
+                                        },
+                                        "rRNAs": {
+                                          "value": 761577
+                                        },
+                                        "UniVec Contaminants": {
+                                          "value": 28356
+                                        },
+                                        "Failed Homopolymer Filter": {
+                                          "value": 3785
+                                        },
+                                        "Reads Not Mapped to Reference Genome or Endogenous Libraries": {
+                                          "value": 1851358
+                                        },
+                                        "tRNAs Antisense": {
+                                          "value": 17
+                                        },
+                                        "piRNAs Sense": {
+                                          "value": 3485
+                                        },
+                                        "Repetitive Elements": {
+                                          "value": 204475
+                                        },
+                                        "Gencode Annotations Sense": {
+                                          "value": 755512
+                                        },
+                                        "miRNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "Reads Used for Alignment": {
+                                          "value": 4845673
+                                        },
+                                        "miRNAs Precursor Antisense": {
+                                          "value": 413
+                                        },
+                                        "miRNAs Precursor Sense": {
+                                          "value": 3310
+                                        },
+                                        "miRNAs Sense": {
+                                          "value": 88094
+                                        },
+                                        "Circular RNAs Antisense": {
+                                          "value": 0
+                                        },
+                                        "tRNAs Sense": {
+                                          "value": 14809
+                                        },
+                                        "Reads Mapped to Reference Genome": {
+                                          "value": 2993707
+                                        },
+                                        "Failed Quality Filter": {
+                                          "value": 143734
+                                        },
+                                        "After Clipping": {
+                                          "value": 5783125
+                                        },
+                                        "Input Reads": {
+                                          "value": 28214261
+                                        },
+                                        "Exogenous miRNAs": {
+                                          "value": 605
+                                        },
+                                        "piRNAs Antisense": {
+                                          "value": 278
+                                        }
+                                      }
+                                    },
+                                    "DocURL": {
+                                      "value": "coll/Biosamples/doc/EXR-DGALA1D3340PMN-BS"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "value": 9
+                          },
+                          "Genome Version": {
+                            "value": "hg19"
+                          },
+                          "Alignment Method": {
+                            "value": "exceRpt smallRNA-seq Pipeline Version 3.3.0"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Donor": {
+        "value": "Donor Demographics",
+        "properties": {
+          "Donor": {
+            "value": "EXR-DGALA1022163PF-DO",
+            "properties": {
+              "Donor Type": {
+                "value": "Experimental"
+              },
+              "Status": {
+                "value": "Add"
+              },
+              "Sex": {
+                "value": "Female"
+              },
+              "Age": {
+                "value": "56.0001 y"
+              },
+              "Racial Category": {
+                "value": "White"
+              }
+            }
+          }
+        }
+      },
+      "Experiment": {
+        "value": "Experiments and Protocols performed on this Biosample",
+        "properties": {
+          "Experiment": {
+            "value": "EXR-DGALA1GUTPLASM-EX",
+            "properties": {
+              "Experiment Type": {
+                "value": "smRNA-Seq",
+                "properties": {
+                  "smRNA-Seq": {
+                    "value": null,
+                    "properties": {
+                      "Amplified": {
+                        "value": "No",
+                        "properties": {
+                          "DNA Quantification Method": {
+                            "value": "Other"
+                          }
+                        }
+                      },
+                      "smRNA Extraction Protocol": {
+                        "value": null,
+                        "properties": {
+                          "Protocol Description": {
+                            "value": "The plasma was prepared from EDTA blood by centrifugation at 1,0006g for 15 minutes to separate the plasma and blood cells. Total RNA from plasma was extracted from 100 ml of the sample using the miRNeasy kit (Qiagen, Valencia, CA). The quality and quantity of the RNA were evaluated with Agilent 2100 Bioanalyzer (Santa Clara, CA) and NanoDrop 1000 spectrophotometer (Thermo Scientific, Wilmington, DE). In average, we obtained about 100 ng of RNA per ml of plasma. As a control we also obtained total RNA from Ambion (Life Technologies, Carlsbad, CA).\tNextGen sequencing libraries were prepared with small RNA sample preparation kits from Illumina (Illumina, San Diego, CA). The prepared library was then run on Illumina GenomeAnalyzer IIx at the genomic facility at the Institute for Systems Biology. The processed sequences were first screened against endogenous (human) sequence databases including known human miRNA, human transcripts, followed by human genomic sequence. To get complementary and efficient mapping results, the alignment tool Blast was used to search miRNA, and Bowtie was used to search other large databases. The remaining unmapped sequences were then compared to sequences from the known human microbiome, miRNA sequences from other species, and the non-redundant nucleic acid sequence collection from NCBI."
+                          }
+                        }
+                      },
+                      "Library Generation": {
+                        "value": "",
+                        "properties": {
+                          "Library Construction Kit": {
+                            "value": "TruSeq Small RNA library prep kit (Illumina)"
+                          },
+                          "Multiplexed Samples": {
+                            "value": "Yes"
+                          },
+                          "Total Quantity of RNA Starting Material": {
+                            "value": "100 ng"
+                          },
+                          "Strand Specificity": {
+                            "value": "stranded"
+                          },
+                          "Type of Starting Material": {
+                            "value": "total RNA"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Status": {
+                "value": "Add"
+              },
+              "exRNA Sample Preparation Protocol": {
+                "value": null,
+                "properties": {
+                  "exRNA Quantification Method": {
+                    "value": "Bioanalyzer",
+                    "properties": {
+                      "Other exRNA Quantification Method": {
+                        "value": "Nanodrop"
+                      }
+                    }
+                  },
+                  "RNA Isolation Method": {
+                    "value": null,
+                    "properties": {
+                      "RNA Isolation Kit": {
+                        "value": "miRNeasy (Qiagen)",
+                        "properties": {
+                        }
+                      }
+                    }
+                  },
+                  "Pre-purification of Extracellular Vesicles": {
+                    "value": "No"
+                  },
+                  "Protocol Description": {
+                    "value": "The plasma was prepared from EDTA blood by centrifugation at 1,0006g for 15 minutes to separate the plasma and blood cells. Total RNA from plasma was extracted from 100 ml of the sample using the miRNeasy kit (Qiagen, Valencia, CA). The quality and quantity of the RNA were evaluated with Agilent 2100 Bioanalyzer (Santa Clara, CA) and NanoDrop 1000 spectrophotometer (Thermo Scientific, Wilmington, DE). In average, we obtained about 100 ng of RNA per ml of plasma. As a control we also obtained total RNA from Ambion (Life Technologies, Carlsbad, CA).\tNextGen sequencing libraries were prepared with small RNA sample preparation kits from Illumina (Illumina, San Diego, CA). The prepared library was then run on Illumina GenomeAnalyzer IIx at the genomic facility at the Institute for Systems Biology. The processed sequences were first screened against endogenous (human) sequence databases including known human miRNA, human transcripts, followed by human genomic sequence. To get complementary and efficient mapping results, the alignment tool Blast was used to search miRNA, and Bowtie was used to search other large databases. The remaining unmapped sequences were then compared to sequences from the known human microbiome, miRNA sequences from other species, and the non-redundant nucleic acid sequence collection from NCBI."
+                  }
+                }
+              },
+              "exRNA Source Isolation Protocol": {
+                "value": null,
+                "properties": {
+                  "Biofluid": {
+                    "value": null,
+                    "properties": {
+                      "Cell Removal Step Done": {
+                        "value": "Yes"
+                      }
+                    }
+                  },
+                  "Protocol Description": {
+                    "value": "The plasma was prepared from EDTA blood by centrifugation at 1,0006g for 15 minutes to separate the plasma and blood cells. Total RNA from plasma was extracted from 100 ml of the sample using the miRNeasy kit (Qiagen, Valencia, CA). The quality and quantity of the RNA were evaluated with Agilent 2100 Bioanalyzer (Santa Clara, CA) and NanoDrop 1000 spectrophotometer (Thermo Scientific, Wilmington, DE). In average, we obtained about 100 ng of RNA per ml of plasma. As a control we also obtained total RNA from Ambion (Life Technologies, Carlsbad, CA).\tNextGen sequencing libraries were prepared with small RNA sample preparation kits from Illumina (Illumina, San Diego, CA). The prepared library was then run on Illumina GenomeAnalyzer IIx at the genomic facility at the Institute for Systems Biology. The processed sequences were first screened against endogenous (human) sequence databases including known human miRNA, human transcripts, followed by human genomic sequence. To get complementary and efficient mapping results, the alignment tool Blast was used to search miRNA, and Bowtie was used to search other large databases. The remaining unmapped sequences were then compared to sequences from the known human microbiome, miRNA sequences from other species, and the non-redundant nucleic acid sequence collection from NCBI."
+                  }
+                }
+              },
+              "Schema Version": {
+                "value": 1.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+module GenboreeExrnaAtUiEntryHelper
+end

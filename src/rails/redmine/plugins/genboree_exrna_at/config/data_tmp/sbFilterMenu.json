@@ -1,0 +1,10 @@
+[
+  {
+    "name" : "search",
+    "title" : "Search (apply filters)"
+  },
+  {
+    "name" : "delete",
+    "title" : "Clear Selections"
+  }
+]

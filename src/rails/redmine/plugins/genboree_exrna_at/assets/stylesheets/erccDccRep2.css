@@ -1,0 +1,49 @@
+ul .date-selections {
+  list-style-type: none;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.filter-selector div {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.filter-selector button {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.filter-selector select {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.filter-container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.x-form-control {
+}
+
+.filter-button {
+  padding: 0px 4px;
+}
+
+.filter-button-group {
+  padding-top: 5px;
+}
+
+/* override dataTables_filter align right with a more specific css selector */
+div.dataTables_wrapper 
+.text-center
+div.dataTables_filter {
+  text-align: center;
+}
+
+.dataTables_scrollFoot {
+  background-color: #f4f9fd;
+  padding: 12px;
+  border: 1px solid !important;
+}

@@ -1,0 +1,123 @@
+{
+  "properties": [
+    {
+      "domain": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)",
+      "required": true,
+      "name": "Status",
+      "editRoles": "administrator",
+      "default": "Add",
+      "description": "Status of this document"
+    },
+    {
+      "domain": "float",
+      "name": "Schema Version",
+      "editRoles": "administrator",
+      "default": 1.0,
+      "description": "Schema Version number"
+    },
+    {
+      "properties": [
+        {
+          "domain": "url",
+          "name": "DocURL",
+          "Object Type": "exmd:Biosamples",
+          "index": true,
+          "editRoles": "administrator, author",
+          "description": "Relative ID (accession) of doc - provide Document URL"
+        }
+      ],
+      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-BS)",
+      "required": true,
+      "name": "Biosample ID",
+      "index": true,
+      "editRoles": "administrator, author",
+      "description": "Related Biosample"
+    },
+    {
+      "properties": [
+        {
+          "domain": "url",
+          "name": "DocURL",
+          "Object Type": "exmd:Runs",
+          "index": true,
+          "editRoles": "administrator, author",
+          "description": "Relative ID (accession) of doc - provide Document URL"
+        }
+      ],
+      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-RU)",
+      "required": true,
+      "name": "Related Run ID",
+      "index": true,
+      "editRoles": "administrator, author",
+      "description": "Related Run"
+    },
+    {
+      "domain": "numItems",
+      "name": "Target",
+      "category": true,
+      "editRoles": "administrator, author",
+      "description": "Items -- Target Details",
+      "items": [
+        {
+          "properties": [
+            {
+              "domain": "float",
+              "name": "Ct Value",
+              "index": true,
+              "editRoles": "administrator, author",
+              "description": "Ct Value"
+            },
+            {
+              "properties": [
+                {
+                  "domain": "url",
+                  "name": "DocURL",
+                  "index": true,
+                  "editRoles": "administrator, author",
+                  "description": "Molecular Identifier document URL"
+                }
+              ],
+              "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-MI)",
+              "name": "Molecular Identifier",
+              "index": true,
+              "editRoles": "administrator, author",
+              "description": "Identifier - same as the one in the Molecular Identifier collection"
+            },
+            {
+              "domain": "string",
+              "name": "Ct Threshold",
+              "editRoles": "administrator, author",
+              "description": "Ct Threshold"
+            },
+            {
+              "domain": "string",
+              "name": "Baseline Start",
+              "editRoles": "administrator, author",
+              "description": "Baseline Start"
+            },
+            {
+              "domain": "string",
+              "name": "Baseline Stop",
+              "editRoles": "administrator, author",
+              "description": "Baseline Stop"
+            }
+          ],
+          "identifier": true,
+          "domain": "string",
+          "required": true,
+          "name": "Target Name",
+          "category": true,
+          "index": true,
+          "editRoles": "administrator, author",
+          "description": "Target Name"
+        }
+      ]
+    }
+  ],
+  "identifier": true,
+  "domain": "autoID(EXR, uniqAlphaNum, QT)",
+  "name": "qPCR Targets",
+  "index": true,
+  "editRoles": "administrator, author",
+  "description": "Document describing qPCR Targets"
+}

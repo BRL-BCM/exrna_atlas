@@ -1,0 +1,4127 @@
+{
+  "name": "Experiment",
+  "identifier": true,
+  "comments": "Assigned after validation.",
+  "editRoles": "administrator, author",
+  "domain": "autoID(EXR, uniqAlphaNum, EX)",
+  "index": true,
+  "description": "Document Describing Information About the Experiment; Experiment ID",
+  "properties": [
+    {
+      "name": "Status",
+      "conceptOntology": "SNOMEDCT",
+      "comments": "Assigned by server at different stages.",
+      "default": "Add",
+      "required": true,
+      "editRoles": "administrator",
+      "domain": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263490005",
+      "description": "Status of the document"
+    },
+    {
+      "name": "Schema Version",
+      "conceptOntology": "SNOMEDCT",
+      "comments": "Assigned by server.",
+      "default": 1.0,
+      "editRoles": "administrator",
+      "domain": "float",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/22303008",
+      "description": "Version of this data model schema"
+    },
+    {
+      "name": "exRNA Source Isolation Protocol",
+      "conceptOntology": "OBI",
+      "category": true,
+      "editRoles": "administrator, author",
+      "domain": "[valueless]",
+      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+      "description": "Category -- exRNA Source Isolation Protocol",
+      "properties": [
+        {
+          "name": "Protocol Description",
+          "conceptOntology": "HL7",
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+          "description": "Description of exRNA source isolation Protocol",
+          "properties": [
+            {
+              "name": "Protocol Documents",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "numItems",
+              "description": "Items -- Protocol Documents",
+              "items": [
+                {
+                  "name": "Protocol File ID",
+                  "identifier": true,
+                  "conceptOntology": "SNOMEDCT",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                  "index": true,
+                  "description": "File ID - to be assigned by server",
+                  "properties": [
+                    {
+                      "name": "Protocol File",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "fileUrl",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                      "description": "URL to protocol document file"
+                    },
+                    {
+                      "name": "File Description",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                      "description": "Protocol document file description"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "References",
+          "conceptOntology": "HL7",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "numItems",
+          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+          "description": "Items -- Protocol references",
+          "items": [
+            {
+              "name": "Reference ID",
+              "identifier": true,
+              "conceptOntology": "OBI",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "autoID(EXR, uniqAlphaNum, REF)",
+              "index": true,
+              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+              "description": "Reference ID",
+              "properties": [
+                {
+                  "name": "PubMed ID",
+                  "conceptOntology": "OBI",
+                  "editRoles": "administrator, author",
+                  "domain": "posInt",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                  "description": "PubMed ID of reference"
+                },
+                {
+                  "name": "DOI",
+                  "conceptOntology": "OBI",
+                  "editRoles": "administrator, author",
+                  "domain": "url",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                  "description": "Digitial Object Identifier of the protocol reference"
+                },
+                {
+                  "name": "Other URL",
+                  "conceptOntology": "OBI",
+                  "editRoles": "administrator, author",
+                  "domain": "url",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                  "description": "Other URL of the protocol reference"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cell Culture Supernatant",
+          "conceptOntology": "OBI",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "[valueless]",
+          "conceptURL": "http://purl.obolibrary.org/obo/OBI_1000023",
+          "description": "Category -- Cell Culture Supernatant",
+          "properties": [
+            {
+              "name": "Passage Details",
+              "conceptOntology": "LOINC",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU027859",
+              "description": "Category -- Cell Culture Passage Details",
+              "properties": [
+                {
+                  "name": "Karyotype Done",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Yes, No)",
+                  "description": "If karyotype was done",
+                  "properties": [
+                    {
+                      "name": "Karyotype",
+                      "conceptOntology": "EFO",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0004426",
+                      "description": "Specify karyotype"
+                    }
+                  ]
+                },
+                {
+                  "name": "Passage Number",
+                  "editRoles": "administrator, author",
+                  "domain": "int",
+                  "description": "In calculating passage number, include passages from the source"
+                },
+                {
+                  "name": "Passaging Method",
+                  "conceptOntology": "LOINC",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Trypsin, Collagenase, EDTA, Mechanical, Other)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP32732-7",
+                  "description": "Passaging method",
+                  "properties": [
+                    {
+                      "name": "Other Passaging Method",
+                      "conceptOntology": "LOINC",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP32732-7",
+                      "description": "Other passaging method, if not found in list"
+                    }
+                  ]
+                },
+                {
+                  "name": "Basal Media",
+                  "conceptOntology": "EFO",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000579",
+                  "description": "Type of basal media used"
+                },
+                {
+                  "name": "Media Additives",
+                  "conceptOntology": "SNOMEDCT",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/260364009",
+                  "description": "Type of media additive"
+                },
+                {
+                  "name": "Substrate",
+                  "conceptOntology": "EFO",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Mouse embryonic feeder layer, Gelatin, Matrigel, Geltrex, Poly-D-lysine, Other)",
+                  "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0005061",
+                  "description": "Type of cell culture substrate",
+                  "properties": [
+                    {
+                      "name": "Other Substrate",
+                      "conceptOntology": "EFO",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0005061",
+                      "description": "Other substrate, if not found in list"
+                    }
+                  ]
+                },
+                {
+                  "name": "Temperature",
+                  "conceptOntology": "EFO",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0001702",
+                  "description": "Temperature at which the cell culture was passaged"
+                },
+                {
+                  "name": "Oxygen Tension",
+                  "conceptOntology": "CRISP",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(0.5%, 2%, 5%, 8%, 21%)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/CSP/2604-7364",
+                  "description": "Oxygen tension"
+                },
+                {
+                  "name": "Cell Type Marker",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Cell type marker"
+                }
+              ]
+            },
+            {
+              "name": "Differentiation",
+              "conceptOntology": "SWEET",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://sweet.jpl.nasa.gov/2.3/phenGeol.owl#Differentiation",
+              "description": "Category -- Differentiation",
+              "properties": [
+                {
+                  "name": "Total Duration",
+                  "conceptOntology": "EFO",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(days)",
+                  "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000433",
+                  "description": "Total duration of differentiation, in days"
+                },
+                {
+                  "name": "Stages",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "description": "Items -- Stages of differentiation",
+                  "items": [
+                    {
+                      "name": "Stage",
+                      "identifier": true,
+                      "conceptOntology": "LOINC",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "int",
+                      "index": true,
+                      "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU007593",
+                      "description": "Differentiation stage number",
+                      "properties": [
+                        {
+                          "name": "Basal Media",
+                          "conceptOntology": "EFO",
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000579",
+                          "description": "Basal media used in this differentiation stage"
+                        },
+                        {
+                          "name": "Media Additives",
+                          "conceptOntology": "SNOMEDCT",
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/260364009",
+                          "description": "Media additives used in this differentiation stage"
+                        },
+                        {
+                          "name": "Substrate",
+                          "conceptOntology": "EFO",
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0005061",
+                          "description": "Substrate used in this differentiation stage"
+                        },
+                        {
+                          "name": "Duration",
+                          "conceptOntology": "EFO",
+                          "editRoles": "administrator, author",
+                          "domain": "measurement(minutes)",
+                          "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000433",
+                          "description": "Duration of this differentiation stage"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Confluency",
+              "editRoles": "administrator, author",
+              "knownRange": "< 80%",
+              "domain": "measurement(%)",
+              "description": "Confluency of cell culture - proportion of surface in a culture dish or a flask which is covered by cells"
+            },
+            {
+              "name": "Serum Used",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "enum(Yes, No)",
+              "description": "Was serum used?",
+              "properties": [
+                {
+                  "name": "Type",
+                  "conceptOntology": "LOINC",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Not vesicle depleted, Vesicle depleted in-house, Purchased vesicle depleted)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU013727",
+                  "description": "Type of serum (Not vesicle depleted, Vesicle depleted in-house, Purchased vesicle depleted)",
+                  "properties": [
+                    {
+                      "name": "Vesicle Depleted In-house",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Category -- Vesicle depleted in-house",
+                      "properties": [
+                        {
+                          "name": "Centrifugation Parameters",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "Category -- Centrifugation Parameters",
+                          "properties": [
+                            {
+                              "name": "Temperature",
+                              "conceptOntology": "EFO",
+                              "editRoles": "administrator, author",
+                              "knownRange": "4 C",
+                              "domain": "measurement(C)",
+                              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0001702",
+                              "description": "Centrifugation temperature"
+                            },
+                            {
+                              "name": "Speed",
+                              "conceptOntology": "NCIT",
+                              "editRoles": "administrator, author",
+                              "knownRange": "100000 xg",
+                              "domain": "measurement(xg)",
+                              "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41146",
+                              "description": "Centrifugation speed"
+                            },
+                            {
+                              "name": "Duration",
+                              "conceptOntology": "EFO",
+                              "editRoles": "administrator, author",
+                              "domain": "measurement(hours)",
+                              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000433",
+                              "description": "Time taken for centrifugation"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Purchased Vesicle Depleted",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Category -- Purchased Vesicle Depleted",
+                      "properties": [
+                        {
+                          "name": "Product Details",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "Category -- Product Details",
+                          "properties": [
+                            {
+                              "name": "Vendor",
+                              "conceptOntology": "LOINC",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP100837-6",
+                              "description": "Vendor name"
+                            },
+                            {
+                              "name": "Product Name",
+                              "conceptOntology": "LOINC",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP91039-5",
+                              "description": "Product name"
+                            },
+                            {
+                              "name": "Catalog Number",
+                              "conceptOntology": "LOINC",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP18011-4",
+                              "description": "Catalog Number"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Mycoplasma Test",
+              "conceptOntology": "MEDDRA",
+              "editRoles": "administrator, author",
+              "domain": "enum(Yes, No)",
+              "conceptURL": "http://purl.bioontology.org/ontology/MEDDRA/10070411",
+              "description": "If mycoplasma test was done",
+              "properties": [
+                {
+                  "name": "Details of Mycoplasma Test",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Details about mycoplasma test"
+                },
+                {
+                  "name": "Weeks from Sample Collection",
+                  "conceptOntology": "SNOMEDCT",
+                  "editRoles": "administrator, author",
+                  "knownRange": "6 weeks",
+                  "domain": "measurement(weeks)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/258705008",
+                  "description": "Within how many weeks of sample collection was the last mycoplasma test taken?"
+                }
+              ]
+            },
+            {
+              "name": "Cell Viability",
+              "conceptOntology": "MESH",
+              "editRoles": "administrator, author",
+              "knownRange": "> 80%",
+              "domain": "measurement(%)",
+              "conceptURL": "http://purl.bioontology.org/ontology/MESH/D002470",
+              "description": "Cell viability"
+            },
+            {
+              "name": "Cell Removal Step Done",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "enum(Yes, No)",
+              "description": "Was a specific cell removal step performed for cell culture supernatant - Yes or No?",
+              "properties": [
+                {
+                  "name": "Cell Removal Method",
+                  "conceptOntology": "SNOMEDCT",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Low speed centrifugation, High speed centrifugation, Filtration)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246412000",
+                  "description": "Method used for cell removal (Low speed centrifugation, High speed centrifugation, Filtration)",
+                  "properties": [
+                    {
+                      "name": "Low Speed Centrifugation",
+                      "conceptOntology": "CHMO",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.obolibrary.org/obo/CHMO_0002012",
+                      "description": "Category -- Low Speed Centrifugation",
+                      "properties": [
+                        {
+                          "name": "Centrifugation Parameters",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "Category -- Centrifugation Parameters",
+                          "properties": [
+                            {
+                              "name": "Temperature",
+                              "conceptOntology": "SNOMEDCT",
+                              "editRoles": "administrator, author",
+                              "knownRange": "25 C",
+                              "domain": "measurement(C)",
+                              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246508008",
+                              "description": "Centrifugation temperature"
+                            },
+                            {
+                              "name": "Speed",
+                              "conceptOntology": "NCIT",
+                              "editRoles": "administrator, author",
+                              "knownRange": "1000-2000xg",
+                              "domain": "measurement(xg)",
+                              "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41146",
+                              "description": "Centrifugation speed"
+                            },
+                            {
+                              "name": "Duration",
+                              "conceptOntology": "EFO",
+                              "editRoles": "administrator, author",
+                              "knownRange": "10 minutes",
+                              "domain": "measurement(hours)",
+                              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000433",
+                              "description": "Time taken for centrifugation"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "High Speed Centrifugation",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Category -- High Speed Centrifugation",
+                      "properties": [
+                        {
+                          "name": "Time Performed",
+                          "conceptOntology": "EFO",
+                          "editRoles": "administrator, author",
+                          "domain": "enum(Pre-freeze, Post-freeze)",
+                          "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000721",
+                          "description": "Was centrifugation performed pre-freeze or post-freeze?"
+                        },
+                        {
+                          "name": "Centrifugation Parameters",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "Category -- Centrifugation Parameters",
+                          "properties": [
+                            {
+                              "name": "Temperature",
+                              "conceptOntology": "EFO",
+                              "editRoles": "administrator, author",
+                              "knownRange": "4 C",
+                              "domain": "measurement(C)",
+                              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0001702",
+                              "description": "Centrifugation temperature"
+                            },
+                            {
+                              "name": "Speed",
+                              "conceptOntology": "NCIT",
+                              "editRoles": "administrator, author",
+                              "knownRange": "15000-20000xg",
+                              "domain": "measurement(xg)",
+                              "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41146",
+                              "description": "Centrifugation speed"
+                            },
+                            {
+                              "name": "Duration",
+                              "conceptOntology": "EFO",
+                              "editRoles": "administrator, author",
+                              "knownRange": "20 minutes",
+                              "domain": "measurement(hours)",
+                              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000433",
+                              "description": "Time taken for centrifugation"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Filtration",
+                      "conceptOntology": "OBI",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0302885",
+                      "description": "Category -- Filtration",
+                      "properties": [
+                        {
+                          "name": "Time Performed",
+                          "conceptOntology": "EFO",
+                          "editRoles": "administrator, author",
+                          "domain": "enum(Pre-freeze, Post-freeze)",
+                          "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000721",
+                          "description": "Was filtration performed pre-freeze or post-freeze?"
+                        },
+                        {
+                          "name": "Pore Size",
+                          "editRoles": "administrator, author",
+                          "knownRange": "0.8 um",
+                          "domain": "measurement(um)",
+                          "description": "Size of filtration pore"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fixed": true
+        },
+        {
+          "name": "Biofluid",
+          "conceptOntology": "SNOMEDCT",
+          "category": true,
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "[valueless]",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/32457005",
+          "description": "Category -- Biofluid",
+          "properties": [
+            {
+              "name": "Cell Removal Step Done",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "enum(Yes, No)",
+              "description": "Was a specific cell removal step performed for Biofluid - Yes or No?",
+              "properties": [
+                {
+                  "name": "Cell Removal Method",
+                  "conceptOntology": "SNOMEDCT",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Low speed centrifugation, High speed centrifugation, Filtration)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246412000",
+                  "description": "Method used for cell removal (Low speed centrifugation, High speed centrifugation, Filtration)",
+                  "properties": [
+                    {
+                      "name": "Low Speed Centrifugation",
+                      "conceptOntology": "CHMO",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.obolibrary.org/obo/CHMO_0002012",
+                      "description": "Category -- Low Speed Centrifugation",
+                      "properties": [
+                        {
+                          "name": "Centrifugation Parameters",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "Category -- Centrifugation Parameters",
+                          "properties": [
+                            {
+                              "name": "Temperature",
+                              "conceptOntology": "EFO",
+                              "editRoles": "administrator, author",
+                              "knownRange": "25 C",
+                              "domain": "measurement(C)",
+                              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0001702",
+                              "description": "Centrifugation temperature"
+                            },
+                            {
+                              "name": "Speed",
+                              "conceptOntology": "NCIT",
+                              "editRoles": "administrator, author",
+                              "knownRange": "1000-2000xg",
+                              "domain": "measurement(xg)",
+                              "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41146",
+                              "description": "Centrifugation speed"
+                            },
+                            {
+                              "name": "Duration",
+                              "conceptOntology": "EFO",
+                              "editRoles": "administrator, author",
+                              "knownRange": "10 minutes",
+                              "domain": "measurement(hours)",
+                              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000433",
+                              "description": "Time taken for centrifugation"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "High Speed Centrifugation",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Category -- High Speed Centrifugation",
+                      "properties": [
+                        {
+                          "name": "Time Performed",
+                          "conceptOntology": "EFO",
+                          "editRoles": "administrator, author",
+                          "domain": "enum(Pre-freeze, Post-freeze)",
+                          "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000721",
+                          "description": "Was centrifugation performed pre-freeze or post-freeze?"
+                        },
+                        {
+                          "name": "Centrifugation Parameters",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "Category -- Centrifugation Parameters",
+                          "properties": [
+                            {
+                              "name": "Temperature",
+                              "conceptOntology": "SNOMEDCT",
+                              "editRoles": "administrator, author",
+                              "knownRange": "4 C",
+                              "domain": "measurement(C)",
+                              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246508008",
+                              "description": "Centrifugation temperature"
+                            },
+                            {
+                              "name": "Speed",
+                              "conceptOntology": "NCIT",
+                              "editRoles": "administrator, author",
+                              "knownRange": "15000-20000xg",
+                              "domain": "measurement(xg)",
+                              "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41146",
+                              "description": "Centrifugation speed"
+                            },
+                            {
+                              "name": "Duration",
+                              "conceptOntology": "EFO",
+                              "editRoles": "administrator, author",
+                              "knownRange": "20 minutes",
+                              "domain": "measurement(hours)",
+                              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000433",
+                              "description": "Time taken for centrifugation"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Filtration",
+                      "conceptOntology": "OBI",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0302885",
+                      "description": "Category -- Filtration",
+                      "properties": [
+                        {
+                          "name": "Time Performed",
+                          "conceptOntology": "EFO",
+                          "editRoles": "administrator, author",
+                          "domain": "enum(Pre-freeze, Post-freeze)",
+                          "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000721",
+                          "description": "Was filtration performed pre-freeze or post-freeze?"
+                        },
+                        {
+                          "name": "Pore Size",
+                          "editRoles": "administrator, author",
+                          "knownRange": "0.8 um",
+                          "domain": "measurement(um)",
+                          "description": "Size of filtration pore"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fixed": true
+        }
+      ],
+      "fixed": true
+    },
+    {
+      "name": "Extracellular Vesicle Isolation Protocol",
+      "category": true,
+      "editRoles": "administrator, author",
+      "domain": "[valueless]",
+      "description": "Category -- Extracellular Vesicle Isolation Protocol",
+      "properties": [
+        {
+          "name": "Protocol Description",
+          "conceptOntology": "HL7",
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+          "description": "Description of extracellular vesicle isolation protocol",
+          "properties": [
+            {
+              "name": "Protocol Documents",
+              "conceptOntology": "LOINC",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "numItems",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+              "description": "Items -- Protocol Documents",
+              "items": [
+                {
+                  "name": "Protocol File ID",
+                  "identifier": true,
+                  "conceptOntology": "SNOMEDCT",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                  "index": true,
+                  "description": "File ID - to be assigned by server",
+                  "properties": [
+                    {
+                      "name": "Protocol File",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "fileUrl",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                      "description": "URL to protocol document file"
+                    },
+                    {
+                      "name": "File Description",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                      "description": "Protocol document file description"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "References",
+          "conceptOntology": "HL7",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "numItems",
+          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+          "description": "Items -- Protocol References",
+          "items": [
+            {
+              "name": "Reference ID",
+              "identifier": true,
+              "conceptOntology": "OBI",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "autoID(EXR, uniqAlphaNum, REF)",
+              "index": true,
+              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+              "description": "Reference ID",
+              "properties": [
+                {
+                  "name": "PubMed ID",
+                  "conceptOntology": "OBI",
+                  "editRoles": "administrator, author",
+                  "domain": "posInt",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                  "description": "PubMed ID of reference"
+                },
+                {
+                  "name": "DOI",
+                  "conceptOntology": "OBI",
+                  "editRoles": "administrator, author",
+                  "domain": "url",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                  "description": "Digitial Object Identifier of the protocol reference"
+                },
+                {
+                  "name": "Other URL",
+                  "conceptOntology": "OBI",
+                  "editRoles": "administrator, author",
+                  "domain": "url",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                  "description": "Other URL of the protocol reference"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Differential Centrifugation Stages",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "description": "Items --  Differential Centrifugation Stages",
+          "items": [
+            {
+              "name": "Differential Centrifugation Stage",
+              "identifier": true,
+              "category": true,
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "int",
+              "index": true,
+              "description": "Stage of differential centrifugation",
+              "properties": [
+                {
+                  "name": "Centrifugation Parameters",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Category -- Centrifugation Parameters",
+                  "properties": [
+                    {
+                      "name": "Temperature",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(C)",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246508008",
+                      "description": "Centrifugation temperature"
+                    },
+                    {
+                      "name": "Speed",
+                      "conceptOntology": "NCIT",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(xg)",
+                      "conceptURL": "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41146",
+                      "description": "Centrifugation speed"
+                    },
+                    {
+                      "name": "Duration",
+                      "conceptOntology": "EFO",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(hours)",
+                      "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000433",
+                      "description": "Time taken for centrifugation"
+                    },
+                    {
+                      "name": "Sample Source",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "enum(Pellet, Supernatant)",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/260753009",
+                      "description": "Source from which the sample was prepared (Pellet or Supernatant)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Serial Filtration Stages",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "description": "Items --  Serial Filtration Stages",
+          "items": [
+            {
+              "name": "Serial Filtration Stage",
+              "identifier": true,
+              "category": true,
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "int",
+              "index": true,
+              "description": "Stage of Serial Filtration",
+              "properties": [
+                {
+                  "name": "Filtration Parameters",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Category -- Filtration Parameters",
+                  "properties": [
+                    {
+                      "name": "Pore Size",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(um)",
+                      "description": "Pore size"
+                    },
+                    {
+                      "name": "Sample Source",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "enum(Pellet, Supernatant)",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/260753009",
+                      "description": "Source from which the sample was prepared (Pellet or Supernatant)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Density Gradient Centrifugation",
+          "conceptOntology": "CHMO",
+          "editRoles": "administrator, author",
+          "domain": "enum(Yes, No)",
+          "conceptURL": "http://purl.obolibrary.org/obo/CHMO_0002017",
+          "description": "Was density gradient centrifugation performed - Yes or No?",
+          "properties": [
+            {
+              "name": "Notes",
+              "conceptOntology": "LOINC",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72988-6",
+              "description": "Details of density gradient centrifugation"
+            }
+          ]
+        },
+        {
+          "name": "Gel Filtration",
+          "editRoles": "administrator, author",
+          "domain": "enum(Yes, No)",
+          "description": "Was gel filtration performed - Yes or No?",
+          "properties": [
+            {
+              "name": "Notes",
+              "conceptOntology": "LOINC",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72988-6",
+              "description": "Details of gel filtration"
+            }
+          ]
+        },
+        {
+          "name": "Commercially Available Kits",
+          "conceptOntology": "SNOMEDCT",
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "enum(Exoquick (System Biosciences), Nexosome (NX Pharmagen), ME (New England Peptide), Other)",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/419179001",
+          "description": "Select the commercially available kit that was used for extracellular vesicle isolation (or choose Other if the kit you used is not listed)",
+          "properties": [
+            {
+              "name": "Other Kits",
+              "conceptOntology": "SNOMEDCT",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/419179001",
+              "description": "Other commercial kit, if not available in the list"
+            }
+          ]
+        }
+      ],
+      "fixed": true
+    },
+    {
+      "name": "exRNA Sample Preparation Protocol",
+      "category": true,
+      "editRoles": "administrator, author",
+      "domain": "[valueless]",
+      "description": "Category -- exRNA Sample Preparation Protocol",
+      "properties": [
+        {
+          "name": "Protocol Description",
+          "conceptOntology": "HL7",
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+          "description": "Description of exRNA sample preparation protocol",
+          "properties": [
+            {
+              "name": "Protocol Documents",
+              "conceptOntology": "LOINC",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "numItems",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+              "description": "Items -- exRNA Sample Preparation Protocol Documents",
+              "items": [
+                {
+                  "name": "Protocol File ID",
+                  "identifier": true,
+                  "conceptOntology": "SNOMEDCT",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                  "index": true,
+                  "description": "File ID - to be assigned by server",
+                  "properties": [
+                    {
+                      "name": "Protocol File",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "fileUrl",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                      "description": "URL to protocol document file"
+                    },
+                    {
+                      "name": "File Description",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                      "description": "Protocol document file description"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "References",
+          "conceptOntology": "HL7",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "numItems",
+          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+          "description": "Items -- Protocol References",
+          "items": [
+            {
+              "name": "Reference ID",
+              "identifier": true,
+              "conceptOntology": "OBI",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "autoID(EXR, uniqAlphaNum, REF)",
+              "index": true,
+              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+              "description": "Reference ID",
+              "properties": [
+                {
+                  "name": "PubMed ID",
+                  "conceptOntology": "OBI",
+                  "editRoles": "administrator, author",
+                  "domain": "posInt",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                  "description": "PubMed ID of reference"
+                },
+                {
+                  "name": "DOI",
+                  "conceptOntology": "OBI",
+                  "editRoles": "administrator, author",
+                  "domain": "url",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                  "description": "Digitial Object Identifier of the protocol reference"
+                },
+                {
+                  "name": "Other URL",
+                  "conceptOntology": "OBI",
+                  "editRoles": "administrator, author",
+                  "domain": "url",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                  "description": "Other URL of the protocol reference"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Pre-purification of Extracellular Vesicles",
+          "category": true,
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "enum(Yes, No)",
+          "description": "Were any steps done to pre-purify extracellular vesicles – Yes or No?",
+          "properties": [
+            {
+              "name": "RNase Treatment of EV",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "enum(Yes, No)",
+              "description": "Was EV treated with RNase?",
+              "properties": [
+                {
+                  "name": "RNase Concentration",
+                  "conceptOntology": "SNOMEDCT",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(ng/ml)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/82742001",
+                  "description": "Concentration of RNase"
+                },
+                {
+                  "name": "Incubation Temperature",
+                  "conceptOntology": "SNOMEDCT",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(C)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246508008",
+                  "description": "Incubation temperature"
+                },
+                {
+                  "name": "Incubation Time",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(minutes)",
+                  "description": "Incubation time"
+                },
+                {
+                  "name": "RNase Inactivation Method",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Method used for RNase inactivation"
+                }
+              ]
+            },
+            {
+              "name": "DNase Treatment of EV",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "enum(Yes, No)",
+              "description": "Was EV treated with DNase?",
+              "properties": [
+                {
+                  "name": "DNase Concentration",
+                  "conceptOntology": "SNOMEDCT",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(ng/ml)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/82742001",
+                  "description": "Concentration of DNase"
+                },
+                {
+                  "name": "Incubation Temperature",
+                  "conceptOntology": "SNOMEDCT",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(C)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246508008",
+                  "description": "Incubation temperature"
+                },
+                {
+                  "name": "Incubation Time",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(minutes)",
+                  "description": "Incubation time"
+                },
+                {
+                  "name": "DNase inactivation Method",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Method used for DNase inactivation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Spike-in RNAs",
+          "editRoles": "administrator, author",
+          "domain": "enum(Yes, No)",
+          "description": "Were spike-in RNAs used?",
+          "properties": [
+            {
+              "name": "Type",
+              "conceptOntology": "SNOMEDCT",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+              "description": "Type of spike-in RNA used"
+            },
+            {
+              "name": "Concentration",
+              "conceptOntology": "SNOMEDCT",
+              "editRoles": "administrator, author",
+              "domain": "measurement(nM)",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/82742001",
+              "description": "Concentration of spike-in RNA used"
+            }
+          ]
+        },
+        {
+          "name": "RNA Isolation Method",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "[valueless]",
+          "description": "Category -- RNA Isolation Method",
+          "properties": [
+            {
+              "name": "Description",
+              "conceptOntology": "HL7",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+              "description": "Description of RNA isolation method"
+            },
+            {
+              "name": "RNA Isolation Kit",
+              "conceptOntology": "SNOMEDCT",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "enum(miRNeasy (Qiagen), Serum and Plasma kit (Qiagen), miRVana (Ambion), MiRVana Paris (Ambion), Trizol + alcohol precipitation, Trizol + spin column, miRcury biofluids (Exiqon), miRCURY RNA isolation kit - Cell & Plant (Exiqon), Plasma/Serum Circulating and Exosomal RNA Purification Kit(Norgen Biotek), Exo50 (Exosome Diagnostics), Total Exosome Isolation Kit and Total Exosome RNA and Protein Isolation Kit (Invitrogen), Nexosome (NX Pharmagen, size exclusion column), PureExo (101Bio), ExoMir (Nordic Biosite), Taqman miRNA ABC, SeraMir Kit (System Biosciences), Other)",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/419179001",
+              "description": "Type of RNA isolation kit used",
+              "properties": [
+                {
+                  "name": "Other Kits",
+                  "conceptOntology": "SNOMEDCT",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/419179001",
+                  "description": "Other type of RNA isolation kit, if not available in the list"
+                },
+                {
+                  "name": "Proteinase K Treatment",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Yes, No)",
+                  "description": "Was the EV treated with ProteinaseK - Yes or No?",
+                  "properties": [
+                    {
+                      "name": "Proteinase K Concentration",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(mg/ml)",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/82742001",
+                      "description": "Concentration of Proteinase K used"
+                    },
+                    {
+                      "name": "SDS Concentration",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(%)",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246508008",
+                      "description": "Concentration of SDS used"
+                    },
+                    {
+                      "name": "Incubation Temperature",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(C)",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246508008",
+                      "description": "Incubation temperature"
+                    },
+                    {
+                      "name": "Incubation Time",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(minutes)",
+                      "description": "Incubation time"
+                    }
+                  ]
+                },
+                {
+                  "name": "DNase Treatment",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Yes, No)",
+                  "description": "Was the EV treated with DNase - Yes or No?",
+                  "properties": [
+                    {
+                      "name": "DNase Concentration",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(ng/ml)",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/82742001",
+                      "description": "Concentration of DNase used"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fixed": true
+        },
+        {
+          "name": "exRNA Quantification Method",
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "enum(Ribogreen, Bioanalyzer, Nanodrop, Other)",
+          "description": "Method used for RNA quantification",
+          "properties": [
+            {
+              "name": "Other exRNA Quantification Method",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Other method for RNA quantification, if not listed"
+            },
+            {
+              "name": "Bioanalyzer Profile Images",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "numItems",
+              "description": "Items -- Bioanalyzer Profiles",
+              "items": [
+                {
+                  "name": "Bioanalyzer File ID",
+                  "identifier": true,
+                  "conceptOntology": "SNOMEDCT",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                  "index": true,
+                  "description": "File ID - to be assigned by server",
+                  "properties": [
+                    {
+                      "name": "Bioanalyzer File",
+                      "editRoles": "administrator, author",
+                      "domain": "fileUrl",
+                      "description": "URL to Bioanalyzer profile of exRNA (uploaded image)"
+                    },
+                    {
+                      "name": "File Description",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Description of the Bioanalyzer image"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Enzymatic Treatment of Purified exRNA",
+          "editRoles": "administrator, author",
+          "domain": "enum(Yes, No)",
+          "description": "Was the purified exRNA treated with any enzymes like kinase?",
+          "properties": [
+            {
+              "name": "Notes",
+              "conceptOntology": "LOINC",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72988-6",
+              "description": "Details about enzymatic treatment of purified exRNA"
+            }
+          ]
+        },
+        {
+          "name": "Method for Assessment of Purity",
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "description": "Analysis method used for finding purity of exRNA"
+        },
+        {
+          "name": "Yield",
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "description": "Yield of purified exRNA"
+        },
+        {
+          "name": "RNA Integrity Method",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "description": "Category - RNA Integrity Method",
+          "properties": [
+            {
+              "name": "Instrument",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "RNA integrity testing instrument"
+            },
+            {
+              "name": "RIN/RQI",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "RIN score"
+            },
+            {
+              "name": "Cq of 3' and 5' Transcripts",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Cq of 3' and 5' transcripts"
+            },
+            {
+              "name": "Electrophoresis Traces",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Electrophoresis Traces"
+            }
+          ]
+        },
+        {
+          "name": "Inhibition Testing",
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "description": "Inhibition testing (Cq dilutions, spike, or other)"
+        }
+      ],
+      "fixed": true
+    },
+    {
+      "name": "Experiment Type",
+      "conceptOntology": "SNOMEDCT",
+      "category": true,
+      "required": true,
+      "editRoles": "administrator, author",
+      "domain": "enum(mRNA-Seq, smRNA-Seq, qPCR Assay, Other)",
+      "index": true,
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+      "description": "Experiment Type - mRNA-Seq, smRNA-Seq, TLDA Assay, or Other",
+      "properties": [
+        {
+          "name": "Other Experiment Type",
+          "conceptOntology": "SNOMEDCT",
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+          "description": "Other experiment type"
+        },
+        {
+          "name": "mRNA-Seq",
+          "conceptOntology": "SNOMEDCT",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "[valueless]",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+          "description": "Category -- mRNA-Seq",
+          "properties": [
+            {
+              "name": "Time Course",
+              "conceptOntology": "SNOMEDCT",
+              "editRoles": "administrator, author",
+              "domain": "enum(Short series, Periodic, Developmental)",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263510006",
+              "description": "Description of time points used in the experiment, like short series, periodic, developmental time courses, etc."
+            },
+            {
+              "name": "mRNA Extraction Protocol",
+              "conceptOntology": "EFO",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "[valueless]",
+              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000490",
+              "description": "Category -- mRNA Extraction Protocol",
+              "properties": [
+                {
+                  "name": "Protocol Description",
+                  "conceptOntology": "HL7",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+                  "description": "Description of mRNA extraction protocol",
+                  "properties": [
+                    {
+                      "name": "Protocol Documents",
+                      "conceptOntology": "LOINC",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "numItems",
+                      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                      "description": "Items -- mRNA Extraction Protocol Documents",
+                      "items": [
+                        {
+                          "name": "Protocol File ID",
+                          "identifier": true,
+                          "conceptOntology": "SNOMEDCT",
+                          "required": true,
+                          "editRoles": "administrator, author",
+                          "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                          "index": true,
+                          "description": "File ID - to be assigned by server",
+                          "properties": [
+                            {
+                              "name": "Protocol File",
+                              "conceptOntology": "SNOMEDCT",
+                              "editRoles": "administrator, author",
+                              "domain": "fileUrl",
+                              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                              "description": "URL to protocol document file"
+                            },
+                            {
+                              "name": "File Description",
+                              "conceptOntology": "SNOMEDCT",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                              "description": "Protocol document file description"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "References",
+                  "conceptOntology": "HL7",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                  "description": "Items -- Protocol References",
+                  "items": [
+                    {
+                      "name": "Reference ID",
+                      "identifier": true,
+                      "conceptOntology": "OBI",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                      "index": true,
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "Reference ID",
+                      "properties": [
+                        {
+                          "name": "PubMed ID",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "posInt",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "PubMed ID of reference"
+                        },
+                        {
+                          "name": "DOI",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Digitial Object Identifier of the protocol reference"
+                        },
+                        {
+                          "name": "Other URL",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Other URL of the protocol reference"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "mRNA Enrichment",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "The mRNA enrichment method used in the extraction protocol"
+                },
+                {
+                  "name": "Initial mRNA Yield",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(ng)",
+                  "description": "Initial mRNA yield from extraction procedure"
+                },
+                {
+                  "name": "Method for Assessment of Purity",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Analysis method used for finding purity of extracted mRNA"
+                }
+              ],
+              "fixed": true
+            },
+            {
+              "name": "Library Generation",
+              "category": true,
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Category -- Library Generation",
+              "properties": [
+                {
+                  "name": "Type of Starting Material",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(total RNA, small RNA, Other)",
+                  "description": "Type of starting material used in library generation (total RNA, small RNA, or Other)",
+                  "properties": [
+                    {
+                      "name": "Other Type of Starting Material",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Other type of starting material, if not available in the list"
+                    }
+                  ]
+                },
+                {
+                  "name": "Total Quantity of RNA Starting Material",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(ng)",
+                  "description": "Quantity of RNA starting material used in library generation"
+                },
+                {
+                  "name": "Library Construction Kit",
+                  "conceptOntology": "HL7",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(NEBNext small RNA library prep (NEB), Nextera DNA library prep kit (Illumina), NEXTflex (Bioo), TruSeq Small RNA library prep kit (Illumina), Homebrew)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1553450",
+                  "description": "Kit used for library construction"
+                },
+                {
+                  "name": "RNA Quantification Protocol",
+                  "conceptOntology": "OBI",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "[valueless]",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+                  "description": "Category -- RNA Quantification Protocol",
+                  "properties": [
+                    {
+                      "name": "Protocol Description",
+                      "conceptOntology": "HL7",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+                      "description": "Protocol used for RNA Quantification",
+                      "properties": [
+                        {
+                          "name": "Protocol Documents",
+                          "conceptOntology": "LOINC",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "numItems",
+                          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                          "description": "Items -- RNA Quantification Protocol Documents",
+                          "items": [
+                            {
+                              "name": "Protocol File ID",
+                              "identifier": true,
+                              "conceptOntology": "SNOMEDCT",
+                              "required": true,
+                              "editRoles": "administrator, author",
+                              "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                              "index": true,
+                              "description": "File ID - to be assigned by server",
+                              "properties": [
+                                {
+                                  "name": "Protocol File",
+                                  "conceptOntology": "SNOMEDCT",
+                                  "editRoles": "administrator, author",
+                                  "domain": "fileUrl",
+                                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                                  "description": "URL to protocol document file"
+                                },
+                                {
+                                  "name": "File Description",
+                                  "conceptOntology": "SNOMEDCT",
+                                  "editRoles": "administrator, author",
+                                  "domain": "string",
+                                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                                  "description": "Protocol document file description"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "References",
+                      "conceptOntology": "HL7",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "numItems",
+                      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                      "description": "Items -- Protocol References",
+                      "items": [
+                        {
+                          "name": "Reference ID",
+                          "identifier": true,
+                          "conceptOntology": "OBI",
+                          "required": true,
+                          "editRoles": "administrator, author",
+                          "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                          "index": true,
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Reference ID",
+                          "properties": [
+                            {
+                              "name": "PubMed ID",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "PubMed ID of reference"
+                            },
+                            {
+                              "name": "DOI",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "url",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "Digitial Object Identifier of the protocol reference"
+                            },
+                            {
+                              "name": "Other URL",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "url",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "Other URL of the protocol reference"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "fixed": true
+                },
+                {
+                  "name": "Purification Method",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Method used for purification of RNA"
+                },
+                {
+                  "name": "Fragmentation",
+                  "conceptOntology": "SNOMEDCT",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Sonication, Base Hydrolysis, Other)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/112624007",
+                  "description": "Method used for fragmentation of RNA",
+                  "properties": [
+                    {
+                      "name": "Other Fragmentation",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/112624007",
+                      "description": "Other method used for fragmentation of RNA, if not listed"
+                    },
+                    {
+                      "name": "Fragment Size Range",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(um)",
+                      "description": "Size range of fragmented RNA"
+                    },
+                    {
+                      "name": "Type",
+                      "conceptOntology": "SNOMEDCT",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+                      "description": "Category -- Fragmentation Type",
+                      "properties": [
+                        {
+                          "name": "Sonication",
+                          "conceptOntology": "MESH",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "conceptURL": "http://purl.bioontology.org/ontology/MESH/D013010",
+                          "description": "Category -- If Selected “Sonication” in “Fragmentation” Method, Provide Details",
+                          "properties": [
+                            {
+                              "name": "Device",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000968",
+                              "description": "Sonication device"
+                            },
+                            {
+                              "name": "Settings",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "description": "Sonication settings"
+                            },
+                            {
+                              "name": "Time",
+                              "conceptOntology": "EFO",
+                              "editRoles": "administrator, author",
+                              "domain": "measurement(seconds)",
+                              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000721",
+                              "description": "Time in seconds for sonication"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Base Hydrolysis",
+                          "conceptOntology": "MESH",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "conceptURL": "http://purl.bioontology.org/ontology/MESH/D006868",
+                          "description": "Category -- If Selected “Base Hydrolysis” in “Fragmentation” Method, Provide Details",
+                          "properties": [
+                            {
+                              "name": "NaOH Concentration",
+                              "editRoles": "administrator, author",
+                              "domain": "measurement(mM)",
+                              "description": "Concentration of NaOH"
+                            },
+                            {
+                              "name": "Temperature",
+                              "conceptOntology": "SNOMEDCT",
+                              "editRoles": "administrator, author",
+                              "domain": "measurement(C)",
+                              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/246508008",
+                              "description": "Temperature (in Celsius) used in base hydrolysis method"
+                            },
+                            {
+                              "name": "Time",
+                              "conceptOntology": "EFO",
+                              "editRoles": "administrator, author",
+                              "domain": "measurement(minutes)",
+                              "conceptURL": "http://www.ebi.ac.uk/efo/EFO_0000721",
+                              "description": "Time in minutes"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Multiplexed Samples",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Yes, No)",
+                  "description": "Description of multiplexing of samples",
+                  "properties": [
+                    {
+                      "name": "Sample Name",
+                      "conceptOntology": "LOINC",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72974-6",
+                      "description": "Name of sample"
+                    },
+                    {
+                      "name": "Index Barcodes",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Barcodes used for multiplexed samples"
+                    }
+                  ]
+                },
+                {
+                  "name": "References",
+                  "conceptOntology": "HL7",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                  "description": "Items -- Library Generation Protocol References",
+                  "items": [
+                    {
+                      "name": "Reference ID",
+                      "identifier": true,
+                      "conceptOntology": "OBI",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                      "index": true,
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "Reference ID",
+                      "properties": [
+                        {
+                          "name": "PubMed ID",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "posInt",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "PubMed ID of reference"
+                        },
+                        {
+                          "name": "DOI",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Digitial Object Identifier of the protocol reference"
+                        },
+                        {
+                          "name": "Other URL",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Other URL of the protocol reference"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Reverse Transcription",
+              "conceptOntology": "GO",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.obolibrary.org/obo/GO_0001171",
+              "description": "Category -- Reverse Transcription",
+              "properties": [
+                {
+                  "name": "Kit",
+                  "conceptOntology": "HL7",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(SMARTer Stranded RNA kit (Clontech), Other)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1553450",
+                  "description": "Reverse transcription kit",
+                  "properties": [
+                    {
+                      "name": "Other Kit",
+                      "conceptOntology": "HL7",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1553450",
+                      "description": "Other reverse transcription kit, if not listed"
+                    }
+                  ]
+                },
+                {
+                  "name": "Primer Type",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(poly-dT, Random, Targeted, Universal, Other)",
+                  "description": "Type of reverse transcription primer (poly-dT, Random, Targeted, Universal (used after RNA ligation of adapter sequences), or Other)",
+                  "properties": [
+                    {
+                      "name": "Other Primer Type",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Other type of primer, if not listed"
+                    }
+                  ]
+                },
+                {
+                  "name": "Primer Sequence",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Sequence of reverse transcription primer"
+                },
+                {
+                  "name": "Reverse Transcription Protocol",
+                  "conceptOntology": "OBI",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "[valueless]",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+                  "description": "Category -- Reverse Transcription Protocol",
+                  "properties": [
+                    {
+                      "name": "Protocol Description",
+                      "conceptOntology": "HL7",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+                      "description": "Protocol used for reverse transcription",
+                      "properties": [
+                        {
+                          "name": "Protocol Documents",
+                          "conceptOntology": "LOINC",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "numItems",
+                          "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                          "description": "Items -- Reverse Transcription Protocol Documents",
+                          "items": [
+                            {
+                              "name": "Protocol File ID",
+                              "identifier": true,
+                              "conceptOntology": "SNOMEDCT",
+                              "required": true,
+                              "editRoles": "administrator, author",
+                              "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                              "index": true,
+                              "description": "File ID - to be assigned by server",
+                              "properties": [
+                                {
+                                  "name": "Protocol File",
+                                  "conceptOntology": "SNOMEDCT",
+                                  "editRoles": "administrator, author",
+                                  "domain": "fileUrl",
+                                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                                  "description": "URL to protocol document file"
+                                },
+                                {
+                                  "name": "File Description",
+                                  "conceptOntology": "SNOMEDCT",
+                                  "editRoles": "administrator, author",
+                                  "domain": "string",
+                                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                                  "description": "Protocol document file description"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "References",
+                      "conceptOntology": "HL7",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "numItems",
+                      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                      "description": "Items -- Protocol References",
+                      "items": [
+                        {
+                          "name": "Reference ID",
+                          "identifier": true,
+                          "conceptOntology": "OBI",
+                          "required": true,
+                          "editRoles": "administrator, author",
+                          "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                          "index": true,
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Reference ID",
+                          "properties": [
+                            {
+                              "name": "PubMed ID",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "PubMed ID of reference"
+                            },
+                            {
+                              "name": "DOI",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "url",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "Digitial Object Identifier of the protocol reference"
+                            },
+                            {
+                              "name": "Other URL",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "url",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "Other URL of the protocol reference"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "fixed": true
+                }
+              ]
+            },
+            {
+              "name": "Post cDNA Steps",
+              "conceptOntology": "LOINC",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "[valueless]",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU040401",
+              "description": "Category -- Post cDNA Steps",
+              "properties": [
+                {
+                  "name": "Steps",
+                  "conceptOntology": "LOINC",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU040401",
+                  "description": "Steps used after cDNA synthesis"
+                },
+                {
+                  "name": "5' Dephosphorylation Protocol",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Protocol for 5' dephosphorylation used in preparation"
+                },
+                {
+                  "name": "5' Phosphorylation Protocol",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Protocol for 5' phosphorylation used in preparation"
+                }
+              ],
+              "fixed": true
+            },
+            {
+              "name": "Adapter Ligation",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Category -- Adapter Ligation",
+              "properties": [
+                {
+                  "name": "Kit",
+                  "conceptOntology": "HL7",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1553450",
+                  "description": "Kit used for adapter ligation"
+                },
+                {
+                  "name": "3' RNA Adapter Ligation Protocol",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Protocol used for 3' RNA adapter ligation"
+                },
+                {
+                  "name": "5' RNA Adapter Ligation Protocol",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Protocol used for 5 RNA adapter ligation"
+                },
+                {
+                  "name": "3' Adapter Sequence",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Sequence of 3' adapter"
+                },
+                {
+                  "name": "5' Adapter Sequence",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Sequence of 5' adapter"
+                },
+                {
+                  "name": "References",
+                  "conceptOntology": "HL7",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                  "description": "Items -- Protocol References",
+                  "items": [
+                    {
+                      "name": "Reference ID",
+                      "identifier": true,
+                      "conceptOntology": "OBI",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                      "index": true,
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "Reference ID",
+                      "properties": [
+                        {
+                          "name": "PubMed ID",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "posInt",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "PubMed ID of reference"
+                        },
+                        {
+                          "name": "DOI",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Digitial Object Identifier of the protocol reference"
+                        },
+                        {
+                          "name": "Other URL",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Other URL of the protocol reference"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Amplified",
+              "conceptOntology": "OBI",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "enum(Yes, No)",
+              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000809",
+              "description": "Is the sample amplified – Yes or No?",
+              "properties": [
+                {
+                  "name": "Amplification",
+                  "conceptOntology": "LOINC",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP6125-1",
+                  "description": "Category -- PCR Amplification",
+                  "properties": [
+                    {
+                      "name": "Template Concentration",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(mM)",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/82742001",
+                      "description": "Concentration of PCR template"
+                    },
+                    {
+                      "name": "Polymerase Type",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Type of polymerase"
+                    },
+                    {
+                      "name": "Thermocycling Program",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Thermocycling program used in PCR"
+                    },
+                    {
+                      "name": "Number of Cycles",
+                      "conceptOntology": "UO",
+                      "editRoles": "administrator, author",
+                      "domain": "posInt",
+                      "conceptURL": "http://purl.obolibrary.org/obo/UO_0000189",
+                      "description": "PCR number of cycles"
+                    },
+                    {
+                      "name": "Forward Primer Sequence",
+                      "conceptOntology": "OBI",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001946",
+                      "description": "Sequence of forward primer"
+                    },
+                    {
+                      "name": "Reverse Primer Sequence",
+                      "conceptOntology": "OBI",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001951",
+                      "description": "Sequence of reverse primer"
+                    },
+                    {
+                      "name": "Primer Concentration",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(ng)",
+                      "description": "Concentration of primer"
+                    },
+                    {
+                      "name": "Product Isolation Protocol",
+                      "conceptOntology": "OBI",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "[valueless]",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+                      "description": "Category -- Product Isolation Protocol",
+                      "properties": [
+                        {
+                          "name": "Protocol Description",
+                          "conceptOntology": "HL7",
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+                          "description": "Protocol used for product isolation",
+                          "properties": [
+                            {
+                              "name": "Protocol Documents",
+                              "conceptOntology": "LOINC",
+                              "category": true,
+                              "editRoles": "administrator, author",
+                              "domain": "numItems",
+                              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                              "description": "Items -- Product Isolation Protocol Documents",
+                              "items": [
+                                {
+                                  "name": "Protocol File ID",
+                                  "identifier": true,
+                                  "conceptOntology": "SNOMEDCT",
+                                  "required": true,
+                                  "editRoles": "administrator, author",
+                                  "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                                  "index": true,
+                                  "description": "File ID - to be assigned by server",
+                                  "properties": [
+                                    {
+                                      "name": "Protocol File",
+                                      "conceptOntology": "SNOMEDCT",
+                                      "editRoles": "administrator, author",
+                                      "domain": "fileUrl",
+                                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                                      "description": "URL to protocol document file"
+                                    },
+                                    {
+                                      "name": "File Description",
+                                      "conceptOntology": "SNOMEDCT",
+                                      "editRoles": "administrator, author",
+                                      "domain": "string",
+                                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                                      "description": "Protocol document file description"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "References",
+                          "conceptOntology": "HL7",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "numItems",
+                          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                          "description": "Items -- Protocol References",
+                          "items": [
+                            {
+                              "name": "Reference ID",
+                              "identifier": true,
+                              "conceptOntology": "OBI",
+                              "required": true,
+                              "editRoles": "administrator, author",
+                              "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                              "index": true,
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "Reference ID",
+                              "properties": [
+                                {
+                                  "name": "PubMed ID",
+                                  "conceptOntology": "OBI",
+                                  "editRoles": "administrator, author",
+                                  "domain": "posInt",
+                                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                                  "description": "PubMed ID of reference"
+                                },
+                                {
+                                  "name": "DOI",
+                                  "conceptOntology": "OBI",
+                                  "editRoles": "administrator, author",
+                                  "domain": "url",
+                                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                                  "description": "Digitial Object Identifier of the protocol reference"
+                                },
+                                {
+                                  "name": "Other URL",
+                                  "conceptOntology": "OBI",
+                                  "editRoles": "administrator, author",
+                                  "domain": "url",
+                                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                                  "description": "Other URL of the protocol reference"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "fixed": true
+                    }
+                  ]
+                },
+                {
+                  "name": "DNA Quantification Method",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Picogreen, Bioanalyzer, Nanodrop, Qubit, Other)",
+                  "description": "Method used for quantification of DNA (Picoogreen, Bioanalyzer, Nanodrop, Qubit, or Other)",
+                  "properties": [
+                    {
+                      "name": "Other DNA Quantification Method",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Other method used for quantification of DNA, if not listed"
+                    },
+                    {
+                      "name": "Bioanalyzer Profile Images",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "numItems",
+                      "description": "Items -- Bioanalyzer Profiles",
+                      "items": [
+                        {
+                          "name": "Bioanalyzer File ID",
+                          "identifier": true,
+                          "conceptOntology": "SNOMEDCT",
+                          "required": true,
+                          "editRoles": "administrator, author",
+                          "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                          "index": true,
+                          "description": "File ID - to be assigned by server",
+                          "properties": [
+                            {
+                              "name": "Bioanalyzer File",
+                              "editRoles": "administrator, author",
+                              "domain": "fileUrl",
+                              "description": "URL to Bioanalyzer profile of library (uploaded image)"
+                            },
+                            {
+                              "name": "File Description",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "description": "Description of the Bioanalyzer image"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Notes",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Notes on mRNA-seq protocol"
+            }
+          ],
+          "fixed": true
+        },
+        {
+          "name": "smRNA-Seq",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "[valueless]",
+          "description": "Category -- smRNA-Seq",
+          "properties": [
+            {
+              "name": "smRNA Extraction Protocol",
+              "conceptOntology": "OBI",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "[valueless]",
+              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+              "description": "Category -- smRNA Extraction Protocol",
+              "properties": [
+                {
+                  "name": "Protocol Description",
+                  "conceptOntology": "OBI",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+                  "description": "Description of smRNA extraction protocol",
+                  "properties": [
+                    {
+                      "name": "Protocol Documents",
+                      "conceptOntology": "HL7",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "numItems",
+                      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+                      "description": "Items -- smRNA Extraction Protocol Documents",
+                      "items": [
+                        {
+                          "name": "Protocol File ID",
+                          "identifier": true,
+                          "conceptOntology": "SNOMEDCT",
+                          "required": true,
+                          "editRoles": "administrator, author",
+                          "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                          "index": true,
+                          "description": "File ID - to be assigned by server",
+                          "properties": [
+                            {
+                              "name": "Protocol File",
+                              "conceptOntology": "LOINC",
+                              "editRoles": "administrator, author",
+                              "domain": "fileUrl",
+                              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                              "description": "URL to protocol document file"
+                            },
+                            {
+                              "name": "File Description",
+                              "conceptOntology": "LOINC",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                              "description": "Protocol document file description"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "References",
+                  "conceptOntology": "SNOMEDCT",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                  "description": "Items -- Protocol references",
+                  "items": [
+                    {
+                      "name": "Reference ID",
+                      "identifier": true,
+                      "conceptOntology": "OBI",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                      "index": true,
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "Reference ID",
+                      "properties": [
+                        {
+                          "name": "PubMed ID",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "posInt",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "PubMed ID of reference"
+                        },
+                        {
+                          "name": "DOI",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Digitial Object Identifier of the protocol reference"
+                        },
+                        {
+                          "name": "Other URL",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Other URL of the protocol reference"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Size Selection Method",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Gel purification, Pippen prep, Other)",
+                  "description": "Method used for size selection of small RNAs",
+                  "properties": [
+                    {
+                      "name": "Other Size Selection Method",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Other method for size selection of small RNAs, if not listed"
+                    }
+                  ]
+                },
+                {
+                  "name": "smRNA Enrichment",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "The smRNA enrichment method used in the extraction protocol"
+                },
+                {
+                  "name": "Initial smRNA Yield",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(ng)",
+                  "description": "Initial smRNA yield from extraction procedure"
+                },
+                {
+                  "name": "Method for Assessment of Purity",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Analysis method used for finding purity of extracted mRNA"
+                }
+              ],
+              "fixed": true
+            },
+            {
+              "name": "Library Generation",
+              "category": true,
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Category -- Library Generation",
+              "properties": [
+                {
+                  "name": "Type of Starting Material",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(total RNA, small RNA, Other)",
+                  "description": "Type of starting material used in library generation (total RNA, small RNA, or Other)",
+                  "properties": [
+                    {
+                      "name": "Other Type of Starting Material",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Other type of starting material, if not available in the list"
+                    }
+                  ]
+                },
+                {
+                  "name": "Strand Specificity",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(stranded, non-stranded)",
+                  "description": "Strand specificity of library construction method"
+                },
+                {
+                  "name": "Total Quantity of RNA Starting Material",
+                  "editRoles": "administrator, author",
+                  "domain": "measurement(ng)",
+                  "description": "Quantity of RNA starting material used in library generation"
+                },
+                {
+                  "name": "Library Construction Kit",
+                  "conceptOntology": "HL7",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(NEBNext small RNA library prep (NEB), Nextera DNA library prep kit (Illumina), NEXTflex (Bioo), TruSeq Small RNA library prep kit (Illumina), BioO NEXTFlex kit (V2), Homebrew Kit, Other)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1553450",
+                  "description": "Kit used for library construction",
+                  "properties": [
+                    {
+                      "name": "Other Library Construction Kit",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Other kit used for library prep, if not listed"
+                    }
+                  ]
+                },
+                {
+                  "name": "RNA Quantification Protocol",
+                  "conceptOntology": "OBI",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "[valueless]",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+                  "description": "Category -- RNA Quantification Protocol",
+                  "properties": [
+                    {
+                      "name": "Protocol Description",
+                      "conceptOntology": "OBI",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+                      "description": "Protocol used for RNA Quantification",
+                      "properties": [
+                        {
+                          "name": "Protocol Documents",
+                          "conceptOntology": "HL7",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "numItems",
+                          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+                          "description": "Items -- RNA Quantification Protocol Documents",
+                          "items": [
+                            {
+                              "name": "Protocol File ID",
+                              "identifier": true,
+                              "conceptOntology": "SNOMEDCT",
+                              "required": true,
+                              "editRoles": "administrator, author",
+                              "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                              "index": true,
+                              "description": "File ID - to be assigned by server",
+                              "properties": [
+                                {
+                                  "name": "Protocol File",
+                                  "conceptOntology": "SNOMEDCT",
+                                  "editRoles": "administrator, author",
+                                  "domain": "fileUrl",
+                                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                                  "description": "URL to protocol document file"
+                                },
+                                {
+                                  "name": "File Description",
+                                  "conceptOntology": "LOINC",
+                                  "editRoles": "administrator, author",
+                                  "domain": "string",
+                                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                                  "description": "Protocol document file description"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "References",
+                      "conceptOntology": "HL7",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "numItems",
+                      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                      "description": "Items -- Protocol References",
+                      "items": [
+                        {
+                          "name": "Reference ID",
+                          "identifier": true,
+                          "conceptOntology": "OBI",
+                          "required": true,
+                          "editRoles": "administrator, author",
+                          "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                          "index": true,
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Reference ID",
+                          "properties": [
+                            {
+                              "name": "PubMed ID",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "PubMed ID of reference"
+                            },
+                            {
+                              "name": "DOI",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "url",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "Digitial Object Identifier of the protocol reference"
+                            },
+                            {
+                              "name": "Other URL",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "url",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "Other URL of the protocol reference"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "fixed": true
+                },
+                {
+                  "name": "Purification Method",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Method used for purification of RNA"
+                },
+                {
+                  "name": "Multiplexed Samples",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Yes, No)",
+                  "description": "Description of multiplexing of samples",
+                  "properties": [
+                    {
+                      "name": "Sample Name",
+                      "conceptOntology": "LOINC",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP72974-6",
+                      "description": "Name of sample"
+                    },
+                    {
+                      "name": "Index Barcodes",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Barcodes used for multiplexed samples"
+                    }
+                  ]
+                },
+                {
+                  "name": "References",
+                  "conceptOntology": "HL7",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                  "description": "Items -- Protocol References",
+                  "items": [
+                    {
+                      "name": "Reference ID",
+                      "identifier": true,
+                      "conceptOntology": "OBI",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                      "index": true,
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "Reference ID",
+                      "properties": [
+                        {
+                          "name": "PubMed ID",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "posInt",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "PubMed ID of reference"
+                        },
+                        {
+                          "name": "DOI",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Digitial Object Identifier of the protocol reference"
+                        },
+                        {
+                          "name": "Other URL",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Other URL of the protocol reference"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Reverse Transcription",
+              "conceptOntology": "GO",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.obolibrary.org/obo/GO_0001171",
+              "description": "Category -- Reverse Transcription",
+              "properties": [
+                {
+                  "name": "Kit",
+                  "conceptOntology": "HL7",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(SMARTer Stranded RNA kit (Clontech), Other)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1553450",
+                  "description": "Reverse transcription kit",
+                  "properties": [
+                    {
+                      "name": "Other Kit",
+                      "conceptOntology": "HL7",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1553450",
+                      "description": "Other reverse transcription kit, if not listed"
+                    }
+                  ]
+                },
+                {
+                  "name": "Primer Type",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(poly-dT, Random, Targeted, Universal, Other)",
+                  "description": "Type of reverse transcription primer (poly-dT, Random, Targeted, Universal (used after RNA ligation of adapter sequences), or Other)",
+                  "properties": [
+                    {
+                      "name": "Other Primer Type",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Other type of primer, if not listed"
+                    }
+                  ]
+                },
+                {
+                  "name": "Primer Sequence",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Sequence of reverse transcription primer"
+                }
+              ]
+            },
+            {
+              "name": "Adapter Ligation",
+              "conceptOntology": "OBI",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+              "description": "Category -- Adapter Ligation",
+              "properties": [
+                {
+                  "name": "Kit",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Kit used for adapter ligation"
+                },
+                {
+                  "name": "3' RNA Adapter Ligation Protocol",
+                  "conceptOntology": "LOINC",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                  "description": "Protocol used for 3' RNA adapter ligation"
+                },
+                {
+                  "name": "5' RNA Adapter Ligation Protocol",
+                  "conceptOntology": "LOINC",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                  "description": "Protocol used for 5 RNA adapter ligation"
+                },
+                {
+                  "name": "3' Adapter Sequence",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Sequence of 3' adapter",
+                  "properties": [
+                    {
+                      "name": "3' Adapter Concentration",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(uM)",
+                      "description": "Concentration of 3' adapter"
+                    }
+                  ]
+                },
+                {
+                  "name": "5' Adapter Sequence",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Sequence of 5' adapter",
+                  "properties": [
+                    {
+                      "name": "5' Adapter Concentration",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(uM)",
+                      "description": "Concentration of 5' adapter"
+                    }
+                  ]
+                },
+                {
+                  "name": "3' Ligase",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(T4 RNA ligase 1, T4 RNA ligase 2, T4 RNA ligase 2 truncated, T4 RNA ligase 2 truncated K227Q, T4 RNA ligase 2 truncated R55K/K227Q,  Mth ligase, Other)",
+                  "description": "Ligase used for 3' ligation",
+                  "properties": [
+                    {
+                      "name": "Other 3' ligase",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Other 3' ligase not in list"
+                    }
+                  ]
+                },
+                {
+                  "name": "5' Ligase",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(T4 RNA ligase 1, Other)",
+                  "description": "Ligase used for 5' ligation",
+                  "properties": [
+                    {
+                      "name": "Other 5' ligase",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Other 5' ligase not in list"
+                    }
+                  ]
+                },
+                {
+                  "name": "References",
+                  "conceptOntology": "HL7",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                  "description": "Items -- Protocol References",
+                  "items": [
+                    {
+                      "name": "Reference ID",
+                      "identifier": true,
+                      "conceptOntology": "OBI",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                      "index": true,
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "Reference ID",
+                      "properties": [
+                        {
+                          "name": "PubMed ID",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "posInt",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "PubMed ID of reference"
+                        },
+                        {
+                          "name": "DOI",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Digitial Object Identifier of the protocol reference"
+                        },
+                        {
+                          "name": "Other URL",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Other URL of the protocol reference"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Reverse Transcription Protocol",
+                  "conceptOntology": "OBI",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "[valueless]",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+                  "description": "Category -- Reverse Transcription Protocol",
+                  "properties": [
+                    {
+                      "name": "Protocol Description",
+                      "conceptOntology": "OBI",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+                      "description": "Protocol used for reverse transcription",
+                      "properties": [
+                        {
+                          "name": "Protocol Documents",
+                          "conceptOntology": "HL7",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "numItems",
+                          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+                          "description": "Items -- Protocol Documents",
+                          "items": [
+                            {
+                              "name": "Protocol File ID",
+                              "identifier": true,
+                              "conceptOntology": "SNOMEDCT",
+                              "required": true,
+                              "editRoles": "administrator, author",
+                              "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                              "index": true,
+                              "description": "File ID - to be assigned by server",
+                              "properties": [
+                                {
+                                  "name": "Protocol File",
+                                  "conceptOntology": "LOINC",
+                                  "editRoles": "administrator, author",
+                                  "domain": "fileUrl",
+                                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                                  "description": "URL to protocol document file"
+                                },
+                                {
+                                  "name": "File Description",
+                                  "conceptOntology": "LOINC",
+                                  "editRoles": "administrator, author",
+                                  "domain": "string",
+                                  "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                                  "description": "Protocol document file description"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "References",
+                      "conceptOntology": "SNOMEDCT",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "numItems",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                      "description": "Items -- Protocol References",
+                      "items": [
+                        {
+                          "name": "Reference ID",
+                          "identifier": true,
+                          "conceptOntology": "OBI",
+                          "required": true,
+                          "editRoles": "administrator, author",
+                          "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                          "index": true,
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Reference ID",
+                          "properties": [
+                            {
+                              "name": "PubMed ID",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "posInt",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "PubMed ID of reference"
+                            },
+                            {
+                              "name": "DOI",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "url",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "Digitial Object Identifier of the protocol reference"
+                            },
+                            {
+                              "name": "Other URL",
+                              "conceptOntology": "OBI",
+                              "editRoles": "administrator, author",
+                              "domain": "url",
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "Other URL of the protocol reference"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "fixed": true
+                }
+              ]
+            },
+            {
+              "name": "Amplified",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "enum(Yes, No)",
+              "description": "Is the sample amplified – Yes or No?",
+              "properties": [
+                {
+                  "name": "Amplification",
+                  "conceptOntology": "OBI",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000809",
+                  "description": "Category -- PCR Amplification",
+                  "properties": [
+                    {
+                      "name": "Template Concentration",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(mM)",
+                      "description": "Concentration of PCR template"
+                    },
+                    {
+                      "name": "Polymerase Type",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Type of polymerase"
+                    },
+                    {
+                      "name": "Thermocycling Program",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Thermocycling program used in PCR"
+                    },
+                    {
+                      "name": "Number of Cycles",
+                      "editRoles": "administrator, author",
+                      "domain": "posInt",
+                      "description": "PCR number of cycles"
+                    },
+                    {
+                      "name": "Forward Primer Sequence",
+                      "conceptOntology": "OBI",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001946",
+                      "description": "Sequence of forward primer"
+                    },
+                    {
+                      "name": "Reverse Primer Sequence",
+                      "conceptOntology": "OBI",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001951",
+                      "description": "Sequence of reverse primer"
+                    },
+                    {
+                      "name": "Primer Concentration",
+                      "conceptOntology": "SNOMEDCT",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(ng)",
+                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/82742001",
+                      "description": "Concentration of primer"
+                    },
+                    {
+                      "name": "Product Isolation Protocol",
+                      "conceptOntology": "OBI",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "[valueless]",
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0000272",
+                      "description": "Category -- Product Isolation Protocol",
+                      "properties": [
+                        {
+                          "name": "Protocol Description",
+                          "conceptOntology": "HL7",
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C0678257",
+                          "description": "Protocol used for product isolation"
+                        },
+                        {
+                          "name": "Post PCR Size Selection",
+                          "editRoles": "administrator, author",
+                          "domain": "enum(Gel Purification, Pippin prep, SPRI bead)",
+                          "description": "Size selection after the PCR",
+                          "properties": [
+                            {
+                              "name": "Protocol Documents",
+                              "conceptOntology": "LOINC",
+                              "category": true,
+                              "editRoles": "administrator, author",
+                              "domain": "numItems",
+                              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                              "description": "Items -- Product Isolation Protocol Documents",
+                              "items": [
+                                {
+                                  "name": "Protocol File ID",
+                                  "identifier": true,
+                                  "conceptOntology": "SNOMEDCT",
+                                  "required": true,
+                                  "editRoles": "administrator, author",
+                                  "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                                  "index": true,
+                                  "description": "File ID - to be assigned by server",
+                                  "properties": [
+                                    {
+                                      "name": "Protocol File",
+                                      "conceptOntology": "SNOMEDCT",
+                                      "editRoles": "administrator, author",
+                                      "domain": "fileUrl",
+                                      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/12953007",
+                                      "description": "URL to protocol document file"
+                                    },
+                                    {
+                                      "name": "File Description",
+                                      "conceptOntology": "LOINC",
+                                      "editRoles": "administrator, author",
+                                      "domain": "string",
+                                      "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                                      "description": "Protocol document file description"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": "References",
+                          "conceptOntology": "HL7",
+                          "category": true,
+                          "editRoles": "administrator, author",
+                          "domain": "numItems",
+                          "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                          "description": "Items -- Protocol References",
+                          "items": [
+                            {
+                              "name": "Reference ID",
+                              "identifier": true,
+                              "conceptOntology": "OBI",
+                              "required": true,
+                              "editRoles": "administrator, author",
+                              "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                              "index": true,
+                              "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                              "description": "Reference ID",
+                              "properties": [
+                                {
+                                  "name": "PubMed ID",
+                                  "conceptOntology": "OBI",
+                                  "editRoles": "administrator, author",
+                                  "domain": "posInt",
+                                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                                  "description": "PubMed ID of reference"
+                                },
+                                {
+                                  "name": "DOI",
+                                  "conceptOntology": "OBI",
+                                  "editRoles": "administrator, author",
+                                  "domain": "url",
+                                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                                  "description": "Digitial Object Identifier of the protocol reference"
+                                },
+                                {
+                                  "name": "Other URL",
+                                  "conceptOntology": "OBI",
+                                  "editRoles": "administrator, author",
+                                  "domain": "url",
+                                  "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                                  "description": "Other URL of the protocol reference"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "fixed": true
+                    }
+                  ]
+                },
+                {
+                  "name": "DNA Quantification Method",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Picogreen, Bioanalyzer, Nanodrop, Qubit, Other)",
+                  "description": "Method Used for Quantification of DNA (Picoogreen, Bioanalyzer, Nanodrop, Qubit, or Other)",
+                  "properties": [
+                    {
+                      "name": "Other DNA Quantification Method",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Other method used for quantification of DNA, if not listed"
+                    },
+                    {
+                      "name": "Bioanalyzer Profile Images",
+                      "category": true,
+                      "editRoles": "administrator, author",
+                      "domain": "numItems",
+                      "description": "Items -- Bioanalyzer Profiles",
+                      "items": [
+                        {
+                          "name": "Bioanalyzer File ID",
+                          "identifier": true,
+                          "conceptOntology": "SNOMEDCT",
+                          "required": true,
+                          "editRoles": "administrator, author",
+                          "domain": "autoID(EXR, uniqAlphaNum, FL)",
+                          "index": true,
+                          "description": "File ID - to be assigned by server",
+                          "properties": [
+                            {
+                              "name": "Bioanalyzer File",
+                              "editRoles": "administrator, author",
+                              "domain": "fileUrl",
+                              "description": "URL to Bioanalyzer profile of library (uploaded image)"
+                            },
+                            {
+                              "name": "File Description",
+                              "conceptOntology": "LOINC",
+                              "editRoles": "administrator, author",
+                              "domain": "string",
+                              "conceptURL": "http://purl.bioontology.org/ontology/LNC/LP174424-4",
+                              "description": "Bioanalyzer image file description"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Notes",
+              "conceptOntology": "LOINC",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU002749",
+              "description": "Additional notes about this smRNA-seq protocol"
+            }
+          ],
+          "fixed": true
+        },
+        {
+          "name": "qPCR Assay",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "[valueless]",
+          "description": "Category -- TLDA Assay",
+          "properties": [
+            {
+              "name": "Reverse Transcription",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "[valueless]",
+              "description": "Category -- Reverse Transcription Protocol",
+              "properties": [
+                {
+                  "name": "Complete Reaction Conditions",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Complete Reaction Conditions",
+                  "properties": [
+                    {
+                      "name": "Amount of RNA",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Amount of RNA material"
+                    },
+                    {
+                      "name": "Reaction Volume",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(ml)",
+                      "description": "Reaction volume"
+                    },
+                    {
+                      "name": "Primary Oligonucleotide (If Using GSP)",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Primary oligonucletodide if using GSP (Gene Specific Priming)"
+                    },
+                    {
+                      "name": "Primary Oligonucleotide Concentration",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(mg)",
+                      "description": "Concentration of primary oligonucleotide"
+                    },
+                    {
+                      "name": "Reverse Transcriptase",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Reverse transcriptase",
+                      "properties": [
+                        {
+                          "name": "Concentration",
+                          "editRoles": "administrator, author",
+                          "domain": "measurement(U)",
+                          "description": "Concentration of reverse transcriptase"
+                        },
+                        {
+                          "name": "Temperature",
+                          "editRoles": "administrator, author",
+                          "domain": "measurementApprox(degC)",
+                          "description": "Temperature of the RT reaction"
+                        },
+                        {
+                          "name": "Time",
+                          "editRoles": "administrator, author",
+                          "domain": "measurementApprox(seconds)",
+                          "description": "Time taken for the RT reaction"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Manufacturer of Reagents",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Info about reagent manufacturers",
+                      "properties": [
+                        {
+                          "name": "Catalogue Numbers",
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "Catalogue numbers of the reagents"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "fixed": true
+            },
+            {
+              "name": "Cqs with RT",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Quantification cycles or threshold cycles with reverse transcription"
+            },
+            {
+              "name": "Cqs Without RT",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Quantification cycles or threshold cycles without reverse transcription"
+            },
+            {
+              "name": "Storage Conditions of cDNA",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Conditions at which cDNA is stored",
+              "properties": [
+                {
+                  "name": "References",
+                  "conceptOntology": "HL7",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                  "description": "Items -- Protocol References",
+                  "items": [
+                    {
+                      "name": "Reference ID",
+                      "identifier": true,
+                      "conceptOntology": "OBI",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                      "index": true,
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "Reference ID",
+                      "properties": [
+                        {
+                          "name": "PubMed ID",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "posInt",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "PubMed ID of reference"
+                        },
+                        {
+                          "name": "DOI",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Digitial Object Identifier of the protocol reference"
+                        },
+                        {
+                          "name": "Other URL",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Other URL of the protocol reference"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "qPCR Target Information",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Category -- qPCR Target Info",
+              "properties": [
+                {
+                  "name": "Multiplexed?",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Yes, No)",
+                  "description": "Are the samples multiplexed?"
+                },
+                {
+                  "name": "Efficiency",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Efficiency of qPCR target"
+                },
+                {
+                  "name": "LOD of Each Assay",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "LOD (Limit of Detection) of each assay"
+                },
+                {
+                  "name": "Sequence Accession Number",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Sequence accession number"
+                },
+                {
+                  "name": "Amplicon Details",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Details of the amplicon",
+                  "properties": [
+                    {
+                      "name": "Location of Amplicon",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Location of the amplicon"
+                    },
+                    {
+                      "name": "Amplicon Length",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(nt)",
+                      "description": "Length of the amplicon"
+                    },
+                    {
+                      "name": "In Silico Specificity Screen",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "In silico specificity screen (BLAST, etc.)"
+                    },
+                    {
+                      "name": "Pseudogenes, Retropseudogenes or Other Homologs?",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Pseudogenes, retropseudogenes, or other homologs?"
+                    },
+                    {
+                      "name": "Sequence Alignment",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Sequence alignment details"
+                    },
+                    {
+                      "name": "Secondary Structure Analysis of Amplicon",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Secondary structure analysis of amplicon"
+                    }
+                  ]
+                },
+                {
+                  "name": "Primer Location",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Primer Location",
+                  "properties": [
+                    {
+                      "name": "Location of Each Primer by Exon or Intron (If Applicable)",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Location of each primer by exon or intron (if applicable)"
+                    },
+                    {
+                      "name": "Targeted Splice Variants",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Targeted Splice Variants"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "qPCR Oligonucleotides",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Category -- qPCR Oligonucleotides",
+              "properties": [
+                {
+                  "name": "Primer Sequences",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Primer Sequences"
+                },
+                {
+                  "name": "RTPrimerDB Identification Number",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "RTPrimerDB identification number",
+                  "properties": [
+                    {
+                      "name": "Probe Sequences",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Probe sequences"
+                    },
+                    {
+                      "name": "Location of Any Modifications",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Location of any modifications"
+                    },
+                    {
+                      "name": "Identity of Any Modifications",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Identity of any modifications"
+                    },
+                    {
+                      "name": "Manufacturer of Oligonucleotides",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Manufacturer of oligonucleotides"
+                    },
+                    {
+                      "name": "Purification Method",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Purification method"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "qPCR Protocol",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Category -- qPCR Protocol",
+              "properties": [
+                {
+                  "name": "Complete Reaction Conditions",
+                  "category": true,
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Category -- Complete Reaction Conditions",
+                  "properties": [
+                    {
+                      "name": "Reaction Volume",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(ml)",
+                      "description": "Reaction volume"
+                    },
+                    {
+                      "name": "Amount of cDNA/DNA",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(mg)",
+                      "description": "Amount of cDNA/DNA"
+                    },
+                    {
+                      "name": "Primer Concentration",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(mg)",
+                      "description": "Primer concentration"
+                    },
+                    {
+                      "name": "Probe Concentration",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(mg)",
+                      "description": "Probe concentration"
+                    },
+                    {
+                      "name": "Mg++ Concentration",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(mg)",
+                      "description": "Mg++ concentration"
+                    },
+                    {
+                      "name": "dNTP Concentration",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(mg)",
+                      "description": "dNTP concentration"
+                    },
+                    {
+                      "name": "Polymerase Identity",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Polymerase identity"
+                    },
+                    {
+                      "name": "Polymerase Concentration",
+                      "editRoles": "administrator, author",
+                      "domain": "measurement(mg)",
+                      "description": "Polymerase concentration"
+                    },
+                    {
+                      "name": "Buffer/Kit Identity",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Buffer/kit identity"
+                    },
+                    {
+                      "name": "Buffer/Kit Manufacturer",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Buffer/kit manufacturer"
+                    },
+                    {
+                      "name": "Exact Chemical Constitution of the Buffer",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Exact chemical constitution of the buffer"
+                    },
+                    {
+                      "name": "Additives",
+                      "editRoles": "administrator, author",
+                      "domain": "enum(SYBR Green I, DMSO, Other)",
+                      "description": "Additives",
+                      "properties": [
+                        {
+                          "name": "Other Additives",
+                          "editRoles": "administrator, author",
+                          "domain": "string",
+                          "description": "Other Additives"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Manufacturer of Plates/Tube",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Manufacturer of plates/tube",
+                  "properties": [
+                    {
+                      "name": "Catalog Number",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Catalog number"
+                    }
+                  ]
+                },
+                {
+                  "name": "Complete Thermocycling Parameters",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Complete thermocycling parameters"
+                },
+                {
+                  "name": "Reaction Setup",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(Manual, Robotic)",
+                  "description": "Reaction setup"
+                },
+                {
+                  "name": "Manufacturer of qPCR Instrument",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Manufacturer of qPCR instrument"
+                },
+                {
+                  "name": "References",
+                  "conceptOntology": "HL7",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                  "description": "Items -- Protocol References",
+                  "items": [
+                    {
+                      "name": "Reference ID",
+                      "identifier": true,
+                      "conceptOntology": "OBI",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                      "index": true,
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "Reference ID",
+                      "properties": [
+                        {
+                          "name": "PubMed ID",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "posInt",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "PubMed ID of reference"
+                        },
+                        {
+                          "name": "DOI",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Digitial Object Identifier of the protocol reference"
+                        },
+                        {
+                          "name": "Other URL",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Other URL of the protocol reference"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "qPCR Validation",
+              "category": true,
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Category -- qPCR Validation",
+              "properties": [
+                {
+                  "name": "Evidence of Optimization from Gradients",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Evidence of optimization from gradients"
+                },
+                {
+                  "name": "Specificity",
+                  "editRoles": "administrator, author",
+                  "domain": "enum(gel, sequence, melt, or digest)",
+                  "description": "Specificity"
+                },
+                {
+                  "name": "Cq of the NCT for SYBR Green I",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Cq of the NCT for SYBR Green I"
+                },
+                {
+                  "name": "Standard Curves with Slope and y-Intercept",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Standard curves with slope and y-intercept",
+                  "properties": [
+                    {
+                      "name": "PCR Efficiency Calculated from Slope",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "PCR efficiency calculated from slope"
+                    },
+                    {
+                      "name": "Confidence Interval for PCR Efficiency or Standard Error",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Confidence interval for PCR efficiency or standard error"
+                    },
+                    {
+                      "name": "r2 of Standard Curve",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "r2 of standard curve"
+                    }
+                  ]
+                },
+                {
+                  "name": "Linear Dynamic Range",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Linear dynamic range",
+                  "properties": [
+                    {
+                      "name": "Cq Variation at Lower Limit",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Cq variation at lower limit"
+                    },
+                    {
+                      "name": "Confidence Intervals Throughout Range",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Confidence intervals throughout range"
+                    }
+                  ]
+                },
+                {
+                  "name": "Evidence for Limit of Detection",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Evidence for limit of detection"
+                },
+                {
+                  "name": "Multiplexed?",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "Multiplexed?",
+                  "properties": [
+                    {
+                      "name": "Efficiency",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Efficiency"
+                    },
+                    {
+                      "name": "LOD of Each Assay",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "LOD (Limit of Detection) of each assay"
+                    }
+                  ]
+                },
+                {
+                  "name": "References",
+                  "conceptOntology": "HL7",
+                  "category": true,
+                  "editRoles": "administrator, author",
+                  "domain": "numItems",
+                  "conceptURL": "http://purl.bioontology.org/ontology/HL7/C1561577",
+                  "description": "Items -- Protocol References",
+                  "items": [
+                    {
+                      "name": "Reference ID",
+                      "identifier": true,
+                      "conceptOntology": "OBI",
+                      "required": true,
+                      "editRoles": "administrator, author",
+                      "domain": "autoID(EXR, uniqAlphaNum, REF)",
+                      "index": true,
+                      "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                      "description": "Reference ID",
+                      "properties": [
+                        {
+                          "name": "PubMed ID",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "posInt",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "PubMed ID of reference"
+                        },
+                        {
+                          "name": "DOI",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Digitial Object Identifier of the protocol reference"
+                        },
+                        {
+                          "name": "Other URL",
+                          "conceptOntology": "OBI",
+                          "editRoles": "administrator, author",
+                          "domain": "url",
+                          "conceptURL": "http://purl.obolibrary.org/obo/OBI_0001617",
+                          "description": "Other URL of the protocol reference"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fixed": true
+        }
+      ]
+    },
+    {
+      "name": "Aliases",
+      "category": true,
+      "editRoles": "administrator, author",
+      "domain": "numItems",
+      "description": "Items -- Aliases",
+      "items": [
+        {
+          "name": "Accession",
+          "identifier": true,
+          "conceptOntology": "LOINC",
+          "category": true,
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "index": true,
+          "conceptURL": "http://purl.bioontology.org/ontology/LNC/MTHU034731",
+          "description": "Alias Accession ID of this experiment in other databases (Example: SRA, GEO)",
+          "properties": [
+            {
+              "name": "dbName",
+              "conceptOntology": "EDAM",
+              "editRoles": "administrator, author",
+              "domain": "enum(SRA, GEO, DDBJ, ENCODE, dbGaP)",
+              "conceptURL": "http://edamontology.org/data_1056",
+              "description": "Database name of alias (SRA, GEO, DDBJ, ENCODE, dbGaP)"
+            },
+            {
+              "name": "URL",
+              "conceptOntology": "SNOMEDCT",
+              "editRoles": "administrator, author",
+              "domain": "url",
+              "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+              "description": "URL that points to this experiment in alias database"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Custom Metadata",
+      "category": true,
+      "editRoles": "administrator, author",
+      "domain": "numItems",
+      "description": "Custom metadata fiels defined by users",
+      "items": [
+        {
+          "name": "Property Name",
+          "identifier": true,
+          "category": true,
+          "required": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "index": true,
+          "description": "Name of the metadata property",
+          "properties": [
+            {
+              "name": "Value",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Value of this additonal metadata property"
+            },
+            {
+              "name": "Notes",
+              "editRoles": "administrator, author",
+              "domain": "string",
+              "description": "Additional notes about this metadata property and value"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

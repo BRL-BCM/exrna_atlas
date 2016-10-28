@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="<%= current_language %>">
+<head>
+  <meta charset="utf-8" />
+  <title><%=h html_title %></title>
+  <meta name="description" content="<%= Redmine::Info.app_name %>" />
+  <%# Have Redmine add its authorization token meta tags (and favicon meta tag) %>
+  <%= csrf_meta_tag %>
+  <%= favicon %>
+
+  <%# Core assets needed by all pages. Handled in defined layout(s). %>
+  <%# * Latest bootstrap, if you use it in a View, needs at least jquery 1.9 %>
+  <%= javascript_include_tag 'jquery-1.12.min.js', :plugin => 'genboree_exrna_at' %>
+  <%# Slightly older jquery-ujs extracted from Redmine's concatenated multi-jquery js file %>
+  <%# * Newer jquery-ujs doesn't auto-provide csrf_* globals. They are available via $.rails.csrfToken() and $.rails.csrfParam() %>
+  <%= javascript_include_tag 'jquery-ujs-2.0.3.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'util.js', :plugin => 'genboree_exrna_at' %>
+  <%# Load Bootstrap related js/css files %>
+  <%# = javascript_include_tag 'bootstrap-fa-extensive-noMedia.js', :plugin => 'genboree_exrna_at' %>
+  <%# = stylesheet_link_tag 'bootstrap-fa-extensive-noMedia.css', :plugin => 'genboree_exrna_at', :media => 'all' %>
+  <%= javascript_include_tag 'bootstrap-exrna-extensive-noMedia.js', :plugin => 'genboree_exrna_at' %>
+  <%= stylesheet_link_tag 'bootstrap-exrna-extensive-noMedia.css', :plugin => 'genboree_exrna_at', :media => 'all' %>
+  <%= stylesheet_link_tag 'font-awesome.css', :plugin => 'genboree_exrna_at', :media => 'all' %>
+  <%= javascript_include_tag 'exat_header.js', :plugin => 'genboree_exrna_at' %>
+  <%= stylesheet_link_tag "exat_header.css", :plugin => 'genboree_exrna_at', :media => 'all' %>
+
+  <%# Common/base plugin CSS files - should be simple things and/or generic %>
+  <%= stylesheet_link_tag 'common.css', :plugin => 'genboree_exrna_at', :media => 'all' %>
+  <%= stylesheet_link_tag 'gce_footer.css', :plugin => 'genboree_exrna_at', :media => 'all' %>
+  <%= stylesheet_link_tag "exat_entry.css", :plugin => 'genboree_exrna_at', :media => 'all' %>
+  <%= stylesheet_link_tag "ngallagher.exRNA.css", :plugin => 'genboree_exrna_at', :media => 'all' %>
+  <%# Arrange for any <head> content from the specific View (i.e. via this: content_for :header_tags) %>
+  <%= yield :header_tags %>
+
+  <script type="application/javascript">
+    <%# We have this readily available (required in controllers for permission integration). %>
+    <%# So expose it here since javascript in this view needs it too %>
+    var projectId = "<%= @project.identifier %>" ;
+    var urlMount = "<%= RedmineApp::Application.routes.default_scope[:path] %>" ;
+    var isPublic = <%= @project.is_public %>
+    <%= @userPermsJS %>
+    <% # Settings related variables %>
+    var atlasSettings = new Object() ;
+    atlasSettings = {
+      gbHost : '<%=@settingsRec.gbHost.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>',
+      gbGroup: '<%=@settingsRec.gbGroup.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>',
+      gbKb: '<%=@settingsRec.gbKb.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>',
+      biosamplesColl: '<%=@settingsRec.biosamplesColl.to_s.gsub(/'/, "\\\\'").gsub(/\n/,' ').html_safe %>',
+      analysesColl : '<%=@settingsRec.analysesColl.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>' ,
+      donorsColl: '<%=@settingsRec.donorsColl.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>' ,
+      experimentsColl: '<%=@settingsRec.experimentsColl.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>',
+      jobsColl: '<%=@settingsRec.jobsColl.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>', 
+      resultFilesColl: '<%=@settingsRec.resultFilesColl.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>',
+      runsColl: '<%=@settingsRec.runsColl.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>', 
+      studiesColl: '<%=@settingsRec.studiesColl.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>',
+      submissionsColl: '<%=@settingsRec.submissionsColl.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>',
+      jobHost: '<%=@settingsRec.jobHost.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>',
+      updateData: '<%=@settingsRec.updateData.to_s.gsub(/'/, "\\\\'").gsub(/\n/, ' ').html_safe %>',
+      gbLogin: '<%=User.current.login%>'
+    } ;
+    // var for settings check
+    var settingsValid = null ;
+  </script>
+
+  <%# Layout-specific CSS that needs *dynamic* paths etc and can't be in a static .css file%>
+  <style media="all" type="text/css">
+    .row div.banner {
+      <%
+        mnt = @kbMount || 'BUG_controller_missing_getUrlMount_beforeFilter'
+      %>
+      background-image : url('<%= mnt %>/plugin_assets/genboree_exrna_at/images/exRNA-Atlas-Small-Banner.png');
+    }
+  </style>
+
+</head>
+<body>
+  <%# This will be in body %>
+  <%# * div#content wraps all View html %>
+  <div id="content">
+    <%= yield :header %>
+
+    <div class="page-container">
+
+    <!-- top navbar -->
+    <%= render(:partial => "shared/genboree_exrna_at_header") %>
+    <%= render(:partial => "shared/genboree_exrna_at_googleAnalytics") %>
+
+    <%= yield :body %>
+
+    <% # no redmine layout %>
+    <%= call_hook :view_layouts_base_content %>
+
+    <%# LAYOUTS should be the ones putting common partials like footers, headers etc. %>
+    <%= render(:partial => "shared/genboree_exrna_at_footer") %>
+
+    <%# Cleanly end the content block with an HTML "blank" line %>
+    <div style="clear:both;"></div>
+    </div>
+
+    <%= yield :end %>
+  </div>
+</body>
+</html>
+

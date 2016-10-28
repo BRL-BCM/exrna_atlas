@@ -1,0 +1,41 @@
+<% # @todo limit short to top 5; icons %>
+<% content_for :body do %>
+<div class="exrnaNews container-fluid">
+  <%# NEWS panel %>
+  <div class="newsCol col-xs-12">
+    <div class="news panel panel-default">
+      <div class="panel-heading">News</div>
+      <div class="minPad panel-body">
+        <ul id="newsLinksListLong" class="unstyledList">
+        <% if @news.nil? %>
+          <% # @todo should just internal server error instead %>
+          <h3>Unable to load news</h3>
+        <% else %>
+          <% @news.each do |newsItem| %>
+            <li class="samplesNews">
+              <span class="news">(<%=newsItem['date']%>)</span>
+              <div class="news-title">
+                <% if newsItem['type'] == 'new-samples' %>
+                  <i class="fa fa-book"></i>
+                <% else %>
+                  <i class="fa fa-plus-square"></i>
+                <% end %>
+                <%= newsItem['title'] %>
+              </div>
+              <div class="news-content">
+                <%= newsItem['content'] %>
+                <% if !newsItem['pmid'].nil? %>
+                  <a href=<%="http://www.ncbi.nlm.nih.gov/pubmed/#{newsItem['pmid']}"%> target="_blank">
+                    Pubmed
+                  </a>
+                <% end %>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

@@ -1,0 +1,54 @@
+<% 
+  @settingsFields, @settingsRec = GenboreeExrnaAtHelper.find_settings(@project)
+  @settingsFields ||= []
+  @settingsRec ||= nil
+%>
+<%# Set project-specific settings for this module %>
+<h3><%= l(:gbexat_label_edit_settings) %></h3>
+<%= form_tag("#{RedmineApp::Application.routes.default_scope[:path]}/projects/#{@project.identifier}/settings/genboreeExrnaAt/update") do %>
+  <table style="padding-top:20px;padding-left:20px;">
+    <%# Iterate through each setting, rendering as indicated %>
+    <% @settingsFields.each { |setting|
+      field = setting[:setting]
+      widget = ( setting[:widget] or :text_field )
+      label = setting[:label]
+      labelAttrs = {}
+      widgetAttrs = {}
+      title = setting[:title]
+      if(title)
+        labelAttrs[:title] = title.html_safe
+        widgetAttrs[:title] = title.html_safe
+      end
+      currValue = ( (widget == :checkbox ? false : "") )
+      unless(@settingsRec.nil? or widget == :_header)
+        currValue = @settingsRec.send(field)
+      end
+    %>
+      <tr>
+        <%# Label column: %>
+        <td>
+          <% if(widget == :_header) %>
+            <h3 style="margin-left:-20px;"><%= l(label) %></h3>
+          <% else %>
+            <b><%= label_tag field, l(label), labelAttrs %></b>
+          <% end %>
+        </td>
+        <%# Widget column: %>
+        <td>
+          <% if(widget == :_header) %>
+            &nbsp;
+          <% elsif(widget == :checkbox) %>
+            <%= check_box "updateData", 'aa', { :checked => (currValue ? true : false) }.merge(widgetAttrs) %>
+          <% elsif(widget == :text_field) %>
+            <%= text_field_tag field.to_s, currValue, { :size => 50 }.merge(widgetAttrs) %>
+          <% elsif(widget == :text_area) %>
+            <%= text_area_tag field.to_s, currValue, { :cols => 60, :rows => 5 }.merge(widgetAttrs) %>
+          <% else %> <%# error %>
+            <span style="color:red;">Settings error for <%= field.inspect %></span>
+          <% end %>
+        </td>
+      </tr>
+    <% } %>
+  </table>
+  <%= submit_tag "Update" %>
+<% end %>

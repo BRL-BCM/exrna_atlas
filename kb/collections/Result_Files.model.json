@@ -1,0 +1,170 @@
+{
+  "name": "Result Files",
+  "identifier": true,
+  "conceptOntology": "SNOMEDCT",
+  "comments": "Assigned after validation.",
+  "editRoles": "administrator, author",
+  "domain": "autoID(EXR, uniqAlphaNum, RF)",
+  "index": true,
+  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/272389005",
+  "description": "Document Describing Information About the Result Files; Result File ID",
+  "properties": [
+    {
+      "name": "Status",
+      "conceptOntology": "SNOMEDCT",
+      "comments": "Assigned by server at different stages.",
+      "default": "Add",
+      "required": true,
+      "editRoles": "administrator",
+      "domain": "enum(Add, Modify, Hold, Cancel, Suppress, Release, Protect, Validate)",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/263490005",
+      "description": "Status of the document"
+    },
+    {
+      "name": "Schema Version",
+      "conceptOntology": "SNOMEDCT",
+      "comments": "Assigned by server.",
+      "default": 1.0,
+      "editRoles": "administrator",
+      "domain": "float",
+      "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/22303008",
+      "description": "Version of this data model schema"
+    },
+    {
+      "name": "Related Analysis",
+      "required": true,
+      "editRoles": "administrator, author",
+      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-AN)",
+      "index": true,
+      "description": "Analysis ID associated with this result file",
+      "properties": [
+        {
+          "name": "DocURL",
+          "conceptOntology": "SNOMEDCT",
+          "editRoles": "administrator, author",
+          "domain": "url",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+          "description": "Relative ID (accession) of Analysis ID doc, provide Document URL"
+        }
+      ]
+    },
+    {
+      "name": "Biosample ID",
+      "category": true,
+      "required": true,
+      "editRoles": "administrator, author",
+      "domain": "regexp(EXR-[a-zA-Z0-9]{6,}-BS)",
+      "index": true,
+      "description": "Biosample ID associated with this result file",
+      "properties": [
+        {
+          "name": "DocURL",
+          "conceptOntology": "SNOMEDCT",
+          "editRoles": "administrator, author",
+          "domain": "url",
+          "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/900000000000469006",
+          "description": "Relative ID (accession) of Biosample ID doc, provide Document URL"
+        },
+        {
+          "name": "Results Archive File Name",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "description": "Main results archive file - Used for providing download links",
+          "properties": [
+            {
+              "name": "Genboree URL",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "fileUrl",
+              "index": true,
+              "description": "URL of result file's location on Genboree"
+            }
+          ]
+        },
+        {
+          "name": "Core Results Archive File Name",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "string",
+          "description": "Core results archive file - Used for providing download links",
+          "properties": [
+            {
+              "name": "Genboree URL",
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "fileUrl",
+              "index": true,
+              "description": "URL of result file's location on Genboree"
+            }
+          ]
+        },
+        {
+          "name": "Pipeline Result Files",
+          "category": true,
+          "editRoles": "administrator, author",
+          "domain": "numItems",
+          "description": "Items -- Result Files from the Data Processing Pipeline",
+          "items": [
+            {
+              "name": "File ID",
+              "identifier": true,
+              "required": true,
+              "editRoles": "administrator, author",
+              "domain": "autoID(EXR, uniqAlphaNum, FL)",
+              "index": true,
+              "description": "File ID - auto generated",
+              "properties": [
+                {
+                  "name": "File Name",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "index": true,
+                  "description": "Name of the result file"
+                },
+                {
+                  "name": "Genboree URL",
+                  "required": true,
+                  "editRoles": "administrator, author",
+                  "domain": "fileUrl",
+                  "index": true,
+                  "description": "URL of result file's location on Genboree"
+                },
+                {
+                  "name": "Description",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "index": true,
+                  "description": "Description of results file"
+                },
+                {
+                  "name": "Type",
+                  "conceptOntology": "SNOMEDCT",
+                  "comments": "enum(BAM, SAM, BAI, WIG, BED, Other)",
+                  "editRoles": "administrator, author",
+                  "domain": "bioportalTerm(http://data.bioontology.org/search?ontology=EDAM&subtree_root=http%3A%2F%2Fedamontology.org%2Fformat_1915)",
+                  "conceptURL": "http://purl.bioontology.org/ontology/SNOMEDCT/410656007",
+                  "description": "File type. This field is a look-ahead search box that connects to BioPortal and retrieves a list of correct ontology terms for all possible alignment file types (Example: BAM, SAM, BAI, WIG).",
+                  "properties": [
+                    {
+                      "name": "Other File Type",
+                      "editRoles": "administrator, author",
+                      "domain": "string",
+                      "description": "Specify alignment file type, if not listed"
+                    }
+                  ]
+                },
+                {
+                  "name": "MD5 Checksum",
+                  "editRoles": "administrator, author",
+                  "domain": "string",
+                  "description": "MD5 checksum of file"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+[
+  {
+    "id" : "samplesByPI",
+    "title" : "Submitted Samples / Biofluid",
+    "path" : "submittedSamplesPerBiofluid.percent.flat.d3.json",
+    "transformation" : ["submittedSamplesPerBiofluid"],
+    "transformColl": "runsColl",
+    "modifyd3": "percentage",
+    "percentage" : "onelist",
+    "colors" : [ "#3182bd", "#6baed6", "#9ecae1", "#c6dbef", "#31a354", "#74c476", "#a1d99b", "#c7e9c0", "#756bb1", "#9e9ac8", "#bcbddc", "#dadaeb", "#e6550d", "#fd8d3c", "#fdae6b", "#fdd0a2", "#636363", "#969696", "#bdbdbd", "#d9d9d9" ],
+    "sort" : true,
+    "labelMap" : {
+      "Cerebrospinal fluid" : "CSF",
+      "Culture Media, Conditioned" : "Culture Media"
+    },
+    "yAxis" :
+    {
+      "min" : 0
+    }
+  },
+  {
+    "id" : "qcReadsByPI",
+    "title" : "Samples Passed QC / Biofluid",
+    "path" : "samplesPassedConsQCStandardsTransformed.percent.flat.d3.json",
+    "transformation" : ["samplesPassedConsQCStandards"],
+    "transformColl": "analysesColl",
+    "modifyd3" : "sumAndPercentage",
+    "sumSubjectsMatchVal": ["PASS"],
+    "colors" : [ "#3182bd", "#6baed6", "#9ecae1", "#c6dbef", "#31a354", "#74c476", "#a1d99b", "#c7e9c0", "#756bb1", "#9e9ac8", "#bcbddc", "#dadaeb", "#e6550d", "#fd8d3c", "#fdae6b", "#fdd0a2", "#636363", "#969696", "#bdbdbd", "#d9d9d9" ],
+    "sort" : true,
+    "labelMap" : {
+      "Cerebrospinal fluid" : "CSF",
+      "Culture Media, Conditioned" : "Culture Media"
+    },
+    "yAxis" :
+    {
+      "min" : 0
+    }
+  },
+  {
+    "id" : "usableReadsByPI",
+    "title" : "Transcriptome Mapped Reads / Biofluid",
+    "path" : "transcriptomeMappedReadsForBiofluid.percent.flat.d3.json",
+    "transformation" : ["transcriptomeMappedReadsForBiofluid"],
+    "transformColl": "analysesColl",
+    "modifyd3": "sumAndPercentage",
+    "sumSubjectsMatchVal": ["all"],
+    "percentage" : "onelist",
+    "colors" : [ "#3182bd", "#6baed6", "#9ecae1", "#c6dbef", "#31a354", "#74c476", "#a1d99b", "#c7e9c0", "#756bb1", "#9e9ac8", "#bcbddc", "#dadaeb", "#e6550d", "#fd8d3c", "#fdae6b", "#fdd0a2", "#636363", "#969696", "#bdbdbd", "#d9d9d9" ],
+    "sort" : true,
+    "labelMap" : {
+      "Cerebrospinal fluid" : "CSF",
+      "Culture Media, Conditioned" : "Culture Media"
+    },
+    "yAxis" :
+    {
+      "min" : 0
+    }
+  },
+  {
+    "id" : "mappingsByRNA",
+    "title" : "Read Mappings / RNA Type",
+    "path" : "totalMappedReadsPercent.flat.d3.json",
+    "transformColl": "analysesColl",
+    "transformation" : ["genomeReadsForBiofluid","miRNASenseReadsForBiofluid", "piRNASenseReadsForBiofluid", "tRNASenseReadsForBiofluid", "gencodeSenseReadsForBiofluid", "circularRNAReadsForBiofluid", "repeatitiveElementsForBiofluid", "exogenousMirnaReadsForBiofluid" ] ,
+     "modifyd3": "merge",
+     "sumSubjectsMatchVal": ["Genome - No feature","miRNAs", "piRNAs","tRNAs","Gencode","Circular RNAs","Repeats","Exog miRNAs"],
+     "percentage": "onelist",
+    "colors" : [ "#e6550d", "#fd8d3c", "#fdae6b", "#fdd0a2", "#8c6d31", "#bd9e39", "#e7ba52", "#e7cb94", "#756bb1", "#9e9ac8", "#bcbddc", "#dadaeb", "#636363", "#969696", "#bdbdbd", "#d9d9d9", "#7b4173", "#a55194", "#ce6dbd", "#de9ed6" ],
+    "sort" : false,
+    "labelMap" : {
+      "Circular RNAs" : "Circ. RNA",
+      "Exogenous miRNAs" : "Exog. miRNA",
+      "Gencode Annotations" : "Gencode",
+      "Repetitive Elements" : "Repeats",
+      "Genome - No feature" : "Genome"
+    },
+    "yAxis" :
+    {
+      "min" : 0
+    }
+  }
+
+]

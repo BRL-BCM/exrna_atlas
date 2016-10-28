@@ -1,0 +1,34 @@
+/* The following rules allow for text wrapping in grid column header and cells*/
+.x-column-header-inner .x-column-header-text {
+    white-space: normal;
+}
+ 
+.x-column-header-inner {
+    line-height: normal;
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    text-align: center;
+    top: 20%;
+    font-weight: 
+}
+
+.x-grid-cell-inner {
+    white-space: normal
+}
+
+/* Add special background color to group header in grid */
+
+#panelContainer .x-grid-group-hd {
+    background-color: rgba(240,230,140, 0.4);
+}
+
+/* Make the font size for the column header bigger and more prominent */
+
+#panelContainer .x-column-header {
+    font-weight: 800;
+}
+
+#panelContainer .x-panel-header-text-container-default-framed {
+    font-size: 15px;
+}
+

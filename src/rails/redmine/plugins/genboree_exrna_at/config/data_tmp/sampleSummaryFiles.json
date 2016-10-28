@@ -1,0 +1,81 @@
+[
+  {
+    "id" : "diseases",
+    "title" : "Condition",
+    "groupLabelFile" : "conditionLabelMap.json",
+    "path": "diseasesSinglePartitionTransformed.flat.d3.json",
+    "colors" : [ "#843c39", "#ad494a", "#d6616b", "#e7969c", "#7b4173", "#a55194", "#ce6dbd", "#de9ed6", "#393b79", "#5254a3", "#6b6ecf", "#9c9ede", "#637939", "#3182bd", "#6baed6", "#9ecae1", "#c6dbef", "#e6550d", "#fd8d3c", "#fdae6b" ],
+    "labelMap" : {
+      "Alzheimer's Disease" : "Alzheimer's",
+      "Chronic Maternal Hypertension with Superimposed Preeclampsia" : "Chronic Hypertension w/ Preeclampsia",
+      "Fetus Small for Gestational Age" : "Gestationally Small Fetus",
+      "HELLP syndrome" : "HELLP Syndrome",
+      "Healthy Control" : "Healthy Control",
+      "Parkinson's Disease" : "Parkinson's",
+      "colorectal cancer" : "Colorectal Cancer",
+      "pre-eclampsia" : "Preeclampsia",
+      "severe pre-eclampsia" : "Severe Preeclampsia",
+      "Systemic Lupus Erythematosus" : "Lupus Erythematosus",
+      "ulcerative colitis" : "Ulcerative Colitis",
+      "glioblastoma multiforme" : "Glioblastoma Multiforme",
+      "liver disease" : "Liver Disease",
+      "Gastric Cancer Pathologic TNM Finding v7" : "Gastric Cancer",
+      "Subarachnoid Hemorrhage" : "Subarachnoid Hemorrhage"
+    },
+    "search" : "exat/gridview",
+    "transformation" : "diseases",
+    "transformColl" : "analysesColl",
+    "modifyd3": "grouplabel"
+  },
+  {
+    "id" : "biofluids",
+    "title" : "Biofluid",
+    "path": "biofluidsSinglePartitionTransformed.flat.d3.json",
+    "colors" : [ "#3182bd", "#6baed6", "#9ecae1", "#c6dbef", "#31a354", "#74c476", "#a1d99b", "#c7e9c0", "#756bb1", "#9e9ac8", "#bcbddc", "#dadaeb", "#e6550d", "#fd8d3c", "#fdae6b", "#fdd0a2", "#636363", "#969696", "#bdbdbd", "#d9d9d9" ],
+    "labelMap" : {
+      "Plasma" : "Plasma",
+      "Serum" : "Serum",
+      "Cerebrospinal fluid" : "Cerebrospinal Fluid",
+      "Saliva" : "Saliva",
+      "Bile" : "Bile",
+      "Culture Media, Conditioned" : "Conditioned Media"
+    },
+    "search" : "exat/gridview",
+    "transformation" : "biofluids",
+    "transformColl" : "analysesColl",
+    "modifyd3": "grouplabel"
+  },
+  {
+    "id" : "source",
+    "title" : "RNA Source",
+    "path": "exRNASourceSinglePartitionTransformed.flat.d3.json",
+    "colors" : [ "#f18177", "#db8d7e", "#ed5168", "#eec98e", "#e7cb94", "#dae794", "#f8db9d", "#e9de94", "#fbc189", "#dddb9a", "#e7a294", "#9e9ac8", "#ce6dbd", "#756bb1", "#9e9ac8", "#bcbddc", "#dadaeb", "#de9ed6" ],
+    "labelMap" : {
+      "extracellular exosome" : "Extracellular exosome",
+      "extracellular vesicle" : "Extracellular vesicle",
+      "HDL-containing protein-lipid-RNA complex" : "HDL-containing protein-lipid-RNA complex",
+      "total cell-free biofluid RNA" : "Total cell-free biofluid RNA"
+    },
+    "search" : "exat/gridview",
+    "transformation" : "exRNASource",
+    "transformColl" : "analysesColl",
+    "modifyd3": "grouplabel"
+  },
+  {
+    "id" : "kits",
+    "title" : "RNA Isolation Kit",
+    "path": "RNAisolationKitsSinglePartitionTransformed.flat.d3.json",
+    "colors" : [ "#e6550d", "#fd8d3c", "#fdae6b", "#fdd0a2", "#8c6d31", "#bd9e39", "#e7ba52", "#e7cb94", "#756bb1", "#9e9ac8", "#bcbddc", "#dadaeb", "#636363", "#969696", "#bdbdbd", "#d9d9d9", "#7b4173", "#a55194", "#ce6dbd", "#de9ed6" ],
+    "labelMap" : {
+      "miRNeasy (Qiagen)" : "miRNeasy (Qiagen)",
+      "SeraMir Kit (System Biosciences)" : "SeraMir Kit (System Biosci.)",
+      "Other" : "Other",
+      "miRCURY RNA isolation kit - Cell & Plant (Exiqon)" : "miRcury - Cell & Plant (Exiqon)",
+      "miRcury biofluids (Exiqon)" : "miRcury biofluids (Exiqon)"
+    },
+    "search" : "exat/gridview",
+    "transformation" : "RNAisolationKits",
+    "transformColl" : "analysesColl",
+    "modifyd3": "grouplabel"
+  }  
+]

@@ -1,0 +1,168 @@
+<% content_for :header_tags do %>
+  <%= javascript_include_tag 'd3.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'util.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'init.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'addSamplePie.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'addFilterMenu.js', :plugin => 'genboree_exrna_at' %>
+  <%= javascript_include_tag 'addDataSummary.js', :plugin => 'genboree_exrna_at' %>
+  <%= stylesheet_link_tag "ngallagher.exRNA.css", :plugin => 'genboree_exrna_at', :media => 'all' %>
+<% end %>
+
+<% content_for :header do %>
+<% end %>
+
+<% content_for :body do %>
+
+  <%# MISSION STATEMENT %>
+  <div class="missionStatement container-fluid">
+    <div class="row row-pad">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">Bringing exRNA Data and Analysis Tools Together</div>
+          <div class="panel-body">
+            <%= render(:partial => "placeholder", :locals => { :key => :missionStatement} ) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%# DONUT PROFILES %>
+  <div class="exrnaProfiles container-fluid">
+    <div class="row row-pad">
+      <div class="col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">Select exRNA Profiles: <span id="selectedCount" class="count selected">(0 selected)</span></div>
+          <div class="panel-body">
+            <%= render(:partial => "placeholder", :locals => { :key => :exrnaProfiles} ) %>
+            <div id="donuts" class="donuts row">
+              <div id="diseases-cont" class="diseases donut wrapperCol col-xs-12 col-sm-5 col-md-5 col-lg-3">
+                <% # filled by d3 %>
+              </div>
+              <div id="biofluids-cont" class="biolfluids donut wrapperCol col-xs-12 col-sm-7 col-md-7 col-lg-3">
+                <% # filled by d3 %>
+              </div>
+              <% # at sm and md viewport widths, selected diseases will unhide selection details which interferes with two column layout; add clearfix to fix %>
+              <div class="clearfix visible-sm-block visible-md-block"></div>
+              <div id="source-cont" class="sources donut wrapperCol col-xs-12 col-sm-5 col-md-5 col-lg-3">
+                <% # filled by d3 %>
+              </div>
+              <div id="kits-cont" class="kit donut wrapperCol col-xs-12 col-sm-7 col-md-7 col-lg-3">
+                <% # filled by d3 %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%# ATLAS STATS + BROWSE/NEWS "row" - with sensible responsive layout for small screens %>
+  <div class="atlasStatsBrowseNews container-fluid">
+    <div class="row row-pad">
+      <div class="col-xs-12">
+        <%# ATLAS STATS column %>
+        <div class="atlasStats wrapperCol col-sm-12 col-md-8 col-lg-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              Atlas Statistics
+              <a target="_blank" href="http://genboree.org/theCommons/projects/exrna-mads/wiki/Viewing_Summary_Bar_Graphs_of_exRNA_Profiling_Datasets">
+                <img border="0" src="/images/silk/help.png" alt="exRNA Atlas Wiki">
+              </a>
+            </div>
+            <div class="panel-body">
+              <%= render(:partial => "placeholder", :locals => { :key => :atlasStats_preamble} ) %>
+              <%# BAR CHARTS "row" %>
+              <div class="row">
+                <div id="samplesByPI-cont" class="submittedSamples bar wrapperCol col-xs-8 col-sm-5 col-md-5 col-lg-3">
+                  <% # filled by d3 %>
+                </div>
+                <div id="qcReadsByPI-cont" class="qcReads bar wrapperCol col-xs-8 col-sm-7 col-md-7 col-lg-3">
+                  <% # filled by d3 %>
+                </div>
+                <div id="usableReadsByPI-cont" class="usableReads bar wrapperCol col-xs-8 col-sm-5 col-md-5 col-lg-3">
+                  <% # filled by d3 %>
+                </div>
+                <div id="mappingsByRNA-cont" class="mappings bar wrapperCol col-xs-8 col-sm-7 col-md-7 col-lg-3">
+                  <% # filled by d3 %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <%# BROWSE/NEWS column %>
+        <div class="browseNews wrapperCol col-xs-12 col-sm-12 col-md-4 col-lg-4">
+          <%# BROWSE panel %>
+          <div class="browseCol col-xs-12 col-sm-6 col-md-12 col-lg-12">
+            <div class="browse panel panel-default">
+              <div class="panel-heading">Browse exRNA Profiles - Alternative Options</div>
+              <div class="minPad panel-body">
+                <%= render(:partial => "placeholder", :locals => { :key => :browse} ) %>
+              </div>
+            </div>
+          </div>
+          <%# NEWS panel %>
+          <div class="newsCol col-xs-12 col-sm-6 col-md-12 col-lg-12">
+            <div class="news panel panel-default">
+              <div class="panel-heading">News</div>
+              <div class="minPad panel-body">
+                <%= render(:partial => "shared/genboree_exrna_at_news_short", :locals => { :news => @news } ) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="usefulLinks col-xs-12">
+        <%= render(:partial => "placeholder", :locals => { :key => :usefulLinks} ) %>
+      </div>
+    </div>
+  </div>
+
+  <div id="alertModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="exrna close btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Alert</h4>
+        </div>
+        <div class="modal-body">
+          <p id="alertText">Alert</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+<% content_for :end do %>
+  <!-- Late script area for browsers (IE8...yeah, really?) that don't support the "DOMContentLoaded" event and other correct techniques -->
+  <script type="text/javascript">
+    var docReady = false ;
+    var barUpdated = false ;
+    var donutsUpdated = false ;
+    var totalReadsUpdated = false ;
+    var totalReads ;
+    var totalSamples = 0;
+    // Correct approach 1: Listen for "DOMContentLoaded" ; IE, as usual, is problematic with this standard.
+    document.addEventListener("DOMContentLoaded", function(event) {
+      init() ;
+    });
+    // Correct approach 2:  Listen for "onreadystatechange"
+    document.onreadystatechange = function () { init() ; } ;
+    // Correct approach 3: Listen for "load"
+    document.addEventListener("load", function(event) { init() ; });
+      setTimeout(function(){
+       console.log(barUpdated);
+       console.log(donutsUpdated);
+       console.log(totalReadsUpdated);
+       if(barUpdated == true){}
+       else if(atlasSettings.updateData == "true" && barUpdated == false){updateBars() ; }
+       if(donutsUpdated == true){}
+       else if(atlasSettings.updateData == "true" && donutsUpdated == false){ updateDonuts() ; }
+       if(totalReadsUpdated){}
+       else if(atlasSettings.updateData == "true" && totalReadsUpdated == false){ updateTotalReads() ; }
+      }, 5000);
+  </script>
+<% end %>

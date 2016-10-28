@@ -1,0 +1,11 @@
+<html>
+<body>
+  <%= yield :body %>
+
+  <% # no redmine layout %>
+  <%= call_hook :view_layouts_base_content %>
+
+  <%# Cleanly end the content block with an HTML "blank" line %>
+  <div style="clear:both;"></div>
+</body>
+</html>
